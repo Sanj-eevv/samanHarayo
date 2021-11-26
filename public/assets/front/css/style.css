@@ -1878,9 +1878,6 @@ textarea:focus {
 /*-------- 3. Header style ---------*/
 .header-small-device {
   display: none; }
-  @media only screen and (min-width: 765.5px) and (max-width: 991.5px) {
-    .header-small-device {
-      display: block; } }
   @media only screen and (max-width: 767.4px) {
     .header-small-device {
       display: block; } }
@@ -1890,6 +1887,9 @@ textarea:focus {
 .header-medium-device {
   display: none; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .header-medium-device {
+      display: block; } }
+  @media only screen and (min-width: 765.5px) and (max-width: 991.5px) {
     .header-medium-device {
       display: block; } }
   .header-medium-device.medium-device-ptb-1 {
@@ -1907,6 +1907,11 @@ textarea:focus {
     .header-large-device {
       display: none; } }
 
+.logo a {
+  display: block; }
+  .logo a img {
+    max-width: 100%; }
+
 .main-menu > nav > ul > li {
   display: inline-block;
   position: relative; }
@@ -1915,28 +1920,8 @@ textarea:focus {
     font-size: 16px;
     font-weight: 600;
     display: inline-block; }
-    .main-menu > nav > ul > li a span {
-      position: absolute;
-      top: 13px;
-      right: 15px;
-      color: #ffffff;
-      font-size: 12px;
-      line-height: 1;
-      padding: 1px 5px 3px;
-      border-radius: 3px; }
-      .main-menu > nav > ul > li a span.bg-red {
-        background-color: #ff2f2f; }
-      .main-menu > nav > ul > li a span.bg-green {
-        background-color: #70c01a; }
-    .main-menu > nav > ul > li a i {
-      position: relative;
-      top: 1px;
-      margin-left: 4px; }
   .main-menu > nav > ul > li:hover > a {
     color: #ff2f2f; }
-  .main-menu > nav > ul > li:hover > ul {
-    transform: rotateX(0deg);
-    visibility: visible; }
 
 .main-menu.main-menu-padding-1 > nav > ul > li {
   padding-right: 46px; }
@@ -1952,9 +1937,6 @@ textarea:focus {
 .header-action.header-action-flex {
   display: flex;
   justify-content: flex-end; }
-
-.header-action.header-action-mrg-right {
-  margin-right: 13px; }
 
 .header-action .same-style-2 {
   line-height: 1;
@@ -1981,62 +1963,8 @@ textarea:focus {
     @media only screen and (min-width: 576px) and (max-width: 767px) {
       .header-action .same-style-2 a {
         font-size: 22px; } }
-    .header-action .same-style-2 a span.pro-count {
-      position: absolute;
-      top: -8px;
-      font-size: 12px;
-      width: 20px;
-      height: 20px;
-      display: inline-block;
-      line-height: 19px;
-      color: #fff;
-      text-align: center;
-      left: 14px;
-      border-radius: 50px;
-      font-weight: 600; }
-      @media only screen and (max-width: 767.4px) {
-        .header-action .same-style-2 a span.pro-count {
-          font-size: 10px;
-          width: 18px;
-          height: 18px;
-          line-height: 17px; } }
-    .header-action .same-style-2 a span.red {
-      background-color: #ff2f2f; }
-    .header-action .same-style-2 a span.black {
-      background-color: #000000; }
-    .header-action .same-style-2 a span.green {
-      background-color: #4dbdaf; }
-    .header-action .same-style-2 a span.purple {
-      background-color: #6f50a7; }
     .header-action .same-style-2 a:hover {
       color: #ff2f2f; }
-  .header-action .same-style-2.same-style-2-white a {
-    color: #ffffff; }
-    .header-action .same-style-2.same-style-2-white a:hover {
-      color: #ff2f2f; }
-  .header-action .same-style-2.same-style-2-white.same-style-2-hover-black a:hover {
-    color: #000000; }
-  .header-action .same-style-2.header-cart a {
-    display: flex; }
-    .header-action .same-style-2.header-cart a span.cart-amount {
-      color: #df3434;
-      font-weight: 600;
-      font-size: 14px;
-      margin: 8px 0 0 16px; }
-      .header-action .same-style-2.header-cart a span.cart-amount.light-yellow {
-        color: #ffd74b; }
-      .header-action .same-style-2.header-cart a span.cart-amount.white {
-        color: #ffffff; }
-  .header-action .same-style-2.same-style-2-font-inc a {
-    font-size: 24px; }
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
-      .header-action .same-style-2.same-style-2-font-inc a {
-        font-size: 20px; } }
-    @media only screen and (max-width: 767.4px) {
-      .header-action .same-style-2.same-style-2-font-inc a {
-        font-size: 20px; } }
-  .header-action .same-style-2.same-style-2-font-dec a {
-    font-size: 18px; }
 
 .main-wrapper .body-overlay {
   background-color: #232324;
@@ -2057,34 +1985,18 @@ textarea:focus {
 
 .header-search-1 {
   position: relative; }
-  .header-search-1 .search-toggle {
-    z-index: 99; }
-    .header-search-1 .search-toggle i {
-      display: block; }
-      .header-search-1 .search-toggle i.s-close {
-        font-size: 35px;
-        left: 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%); }
-    .header-search-1 .search-toggle .s-close {
-      opacity: 0; }
-    .header-search-1 .search-toggle.open .s-close {
-      opacity: 1; }
-    .header-search-1 .search-toggle.open .s-open {
-      opacity: 0; }
 
 .search-wrap-1 {
   background-color: transparent;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
-  right: 0;
+  right: 100%;
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.3s ease 0s;
-  visibility: hidden;
+  visibility: visible;
   width: 340px;
-  z-index: -99;
+  z-index: 99;
   padding-bottom: 1px;
   margin-right: 10px; }
   .search-wrap-1 form {
@@ -2117,16 +2029,6 @@ textarea:focus {
       color: #000000; }
       .search-wrap-1 form button.button-search:hover {
         color: #ff2f2f; }
-  .search-wrap-1.open {
-    opacity: 1;
-    right: 100%;
-    visibility: visible;
-    z-index: 99; }
-
-.logo a {
-  display: block; }
-  .logo a img {
-    max-width: 100%; }
 
 .main-wrapper .body-overlay-1 {
   background: rgba(35, 35, 36, 0.7) none repeat scroll 0 0;
@@ -2199,10 +2101,6 @@ textarea:focus {
         border-bottom: 1px solid #ddd;
         margin-bottom: 20px;
         padding-bottom: 17px; }
-      .mobile-header-active .clickalbe-sidebar-wrap .mobile-header-content-area .mobile-header-padding-border-3 {
-        border-bottom: 1px solid #ddd;
-        margin-bottom: 24px;
-        padding-bottom: 30px; }
       .mobile-header-active .clickalbe-sidebar-wrap .mobile-header-content-area .mobile-header-padding-border-4 {
         border-bottom: 1px solid #ddd;
         margin-bottom: 30px;
