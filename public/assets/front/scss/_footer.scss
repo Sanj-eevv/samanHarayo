@@ -1,0 +1,187 @@
+/*-------- 12. Footer style ---------*/
+
+    .footer-logo {
+        margin: 0 0 20px;
+        //@media #{$xs-layout} {
+        //    margin: 0 0 30px;
+        //}
+        a {
+            display: block;
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+.footer-right-wrap {
+	text-align: right;
+    @media #{$xs-layout} {
+        text-align: left;
+    }
+    .social-style-2 {
+        &.social-style-2-mrg {
+            margin-bottom: 10px;
+            @media #{$xs-layout} {
+                margin: 23px 0 25px;
+            }
+        }
+        a {
+            display: inline-block;
+            font-size: 16px;
+            color: #999999;
+            border: 1px solid #cfcfcf;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 100%;
+            margin-right: 8px;
+            i {
+                line-height: 40px;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover {
+                color: $white;
+                border: 1px solid $theme-color-red;
+                background-color: $theme-color-red;
+            }
+        }
+        &.social-style-2-hover-black {
+            a {
+                &:hover {
+                    color: $white;
+                    border: 1px solid $black;
+                    background-color: $black;
+                }
+            }
+        }
+    }
+}
+
+.footer-menu {
+    padding: 20px 0px 20px;
+    @media #{$xs-layout} {
+        padding: 0px;
+        margin: 30px 0pc 20px;
+    }
+    nav {
+        ul {
+            li {
+                display: inline-block;
+                margin-right: 47px;
+                @media #{$lg-layout} {
+                    margin-right: 30px;
+                }
+                @media #{$md-layout} {
+                    margin-right: 6px;
+                }
+                @media #{$xs-layout} {
+                    margin-right: 5px;
+                }
+                @media #{$sm-layout} {
+                    margin-right: 15px;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                a {
+                    font-size: 16px;
+                    letter-spacing: .25px;
+                    color: $black;
+                    display: inline-block;
+                    text-transform: uppercase;
+                    @media #{$xs-layout} {
+                        font-size: 14px;
+                    }
+                    &:hover {
+                        color: $theme-color-red;
+                    }
+                }
+            }
+        }
+    }
+    &.footer-menu-mrg {
+        nav {
+            ul {
+                li {
+                    margin-right: 47px;
+                    @media #{$lg-layout} {
+                        margin-right: 30px;
+                    }
+                    @media #{$md-layout} {
+                        margin-right: 35px;
+                    }
+                    @media #{$xs-layout} {
+                        margin-right: 5px;
+                    }
+                    @media #{$sm-layout} {
+                        margin-right: 15px;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.copyright {
+    p {
+        color: #999;
+        letter-spacing: .25px;
+        a {
+            color: #999;
+            span {
+                color: $theme-color-red;
+            }
+            &:hover {
+                color: $theme-color-red;
+            }
+        }
+    }
+    @media #{$xs-layout} {
+        &.copyright-center {
+            text-align: center;
+        }
+    }
+}
+
+@media #{$md-layout} {
+    .footer-area {
+        &.pb-65 {
+            padding-bottom: 45px;
+        }
+    }
+    .footer-top {
+        &.pb-55 {
+            padding-bottom: 35px;
+        }
+    }
+}
+
+@media #{$xs-layout} {
+    .footer-area {
+        &.pb-65 {
+            padding-bottom: 55px;
+        }
+        &.pb-90 {
+            padding-bottom: 55px;
+        }
+        &.pt-85 {
+            padding-top: 55px;
+        }
+        &.pt-95 {
+            padding-top: 55px;
+        }
+    }
+    .footer-top {
+        &.pb-55 {
+            padding-bottom: 15px;
+        }
+    }
+}
+
+

@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Cerebri Sans';
-    src: url('public/assets/fonts/CerebriSans-Regular.eot');
-    src: url('public/assets/fonts/CerebriSans-Regular.eot?#iefix') format('embedded-opentype'),
-        url('public/assets/fonts/CerebriSans-Regular.woff2') format('woff2'),
-        url('public/assets/fonts/CerebriSans-Regular.woff') format('woff'),
-        url('public/assets/fonts/CerebriSans-Regular.ttf') format('truetype');
+    src: url('../../fonts/CerebriSans-Regular.eot');
+    src: url('../../fonts/CerebriSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/CerebriSans-Regular.woff2') format('woff2'),
+        url('../../fonts/CerebriSans-Regular.woff') format('woff'),
+        url('../../fonts/CerebriSans-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

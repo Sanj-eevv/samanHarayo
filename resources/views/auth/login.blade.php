@@ -1,0 +1,56 @@
+@extends('layouts.front')
+
+@section('title','Login')
+
+@section('content')
+    <div class="login-register-area pt-25 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 ms-auto me-auto">
+                    <div class="login-register-wrapper">
+                            <div class="login-form-container">
+                                <div class="login-register-tab-list nav">
+                                    <a class="active" href="#">
+                                        <h4> login </h4>
+                                    </a>
+                                    <a  href="{{route("register")}}">
+                                        <h4> register </h4>
+                                    </a>
+                                </div>
+                                <div class="login-register-form">
+                                    <form action="{{route('login')}}" method="post" novalidate="novalidate">
+                                        @csrf
+                                        <label for="email">Email</label>
+                                        <input {{old('email') }} name="email" type="email" class="form-control @error('email') is-invalid @enderror">
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                        {{ $message }}
+                                         </span>
+                                        @enderror
+
+                                        <label for="password">Password</label>
+                                        <input type="password" id="Password" name="password" class="form-control @error('password') is-invalid @enderror">
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                        {{ $message }}
+                                        </span>
+                                        @enderror
+
+                                        <div class="button-box">
+                                            <div class="login-toggle-btn">
+                                                <input type="checkbox">
+                                                <label>Remember me</label>
+                                                <a href="#">Forgot Password?</a>
+                                            </div>
+                                            <button type="submit">Login</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+

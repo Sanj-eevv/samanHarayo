@@ -79,7 +79,7 @@
             select {
                 -moz-appearance: none;
                 -webkit-appearance: none;
-                background: #fff url("public/assets/images/icon-img/shop.png") no-repeat scroll right 10px center;
+                background: #fff url("../../images/icon-img/shop.png") no-repeat scroll right 10px center;
                 border: 1px solid #ebebeb;
                 border-radius: 3px;
                 box-shadow: none;
@@ -338,14 +338,14 @@
 @media #{$md-layout} {
     .shop-location {
         &.pb-65 {
-            padding-bottom: 37px; 
+            padding-bottom: 37px;
         }
     }
 }
 @media #{$xs-layout} {
     .shop-location {
         &.pb-65 {
-            padding-bottom: 27px; 
+            padding-bottom: 27px;
         }
     }
 }

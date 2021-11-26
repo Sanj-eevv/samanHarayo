@@ -1,10 +1,10 @@
 /*-----------------------------------------------------------------------------------
-
+    
     Template Name: Norda - Minimal eCommerce HTML Template
     Version: 1.2
-
+    
 -----------------------------------------------------------------------------------
-
+    
     CSS INDEX
     ===================
     1. Template default CSS
@@ -34,7 +34,7 @@
     25. Contect us style
     26. Blog details style
     27. Order tracking style
-
+    
 -----------------------------------------------------------------------------------*/
 /*----------------------------------------*/
 /*  1. Template default CSS
@@ -57,6 +57,9 @@
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
   padding-right: var(--bs-gutter-x, 0.9rem);
   padding-left: var(--bs-gutter-x, 0.9rem); }
+
+.form-control:focus {
+  box-shadow: none !important; }
 
 *,
 *::after,
@@ -111,6 +114,11 @@ h5 {
 
 h6 {
   font-size: 12px; }
+
+p:last-child {
+  margin-bottom: 0px;
+  position: relative;
+  top: 10px; }
 
 a,
 button {
@@ -8893,33 +8901,12 @@ textarea:focus {
     padding-bottom: 55px; } }
 
 /*-------- 12. Footer style ---------*/
-.contact-info-wrap .footer-logo {
-  margin: 0 0 52px; }
-  @media only screen and (max-width: 767.4px) {
-    .contact-info-wrap .footer-logo {
-      margin: 0 0 30px; } }
-  .contact-info-wrap .footer-logo a {
+.footer-logo {
+  margin: 0 0 20px; }
+  .footer-logo a {
     display: block; }
-    .contact-info-wrap .footer-logo a img {
+    .footer-logo a img {
       max-width: 100%; }
-
-.contact-info-wrap .single-contact-info {
-  margin: 0 0 30px; }
-  @media only screen and (max-width: 767.4px) {
-    .contact-info-wrap .single-contact-info {
-      margin: 0 0 20px; } }
-  .contact-info-wrap .single-contact-info span {
-    font-size: 13px;
-    color: #999999;
-    font-family: "Jost", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    display: block; }
-  .contact-info-wrap .single-contact-info p {
-    font-size: 18px;
-    color: #000000;
-    font-family: "Cerebri Sans";
-    margin: 6px 0 0; }
 
 .footer-right-wrap {
   text-align: right; }
@@ -8927,7 +8914,7 @@ textarea:focus {
     .footer-right-wrap {
       text-align: left; } }
   .footer-right-wrap .social-style-2.social-style-2-mrg {
-    margin: 37px 0 30px; }
+    margin-bottom: 10px; }
     @media only screen and (max-width: 767.4px) {
       .footer-right-wrap .social-style-2.social-style-2-mrg {
         margin: 23px 0 25px; } }
@@ -8955,78 +8942,56 @@ textarea:focus {
     border: 1px solid #000000;
     background-color: #000000; }
 
-.footer-menu nav ul li {
-  display: inline-block;
-  margin-right: 47px; }
-  @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .footer-menu nav ul li {
-      margin-right: 30px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
-    .footer-menu nav ul li {
-      margin-right: 6px; } }
+.footer-menu {
+  padding: 20px 0px 20px; }
   @media only screen and (max-width: 767.4px) {
-    .footer-menu nav ul li {
-      margin-right: 5px; } }
-  @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .footer-menu nav ul li {
-      margin-right: 15px; } }
-  .footer-menu nav ul li:last-child {
-    margin-right: 0; }
-  .footer-menu nav ul li a {
-    font-size: 16px;
-    letter-spacing: .25px;
-    color: #000000;
+    .footer-menu {
+      padding: 0px;
+      margin: 30px 0pc 20px; } }
+  .footer-menu nav ul li {
     display: inline-block;
-    text-transform: uppercase; }
+    margin-right: 47px; }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .footer-menu nav ul li {
+        margin-right: 30px; } }
+    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      .footer-menu nav ul li {
+        margin-right: 6px; } }
     @media only screen and (max-width: 767.4px) {
-      .footer-menu nav ul li a {
-        font-size: 14px; } }
-    .footer-menu nav ul li a:hover {
-      color: #ff2f2f; }
-
-.footer-menu.footer-menu-mrg nav ul li {
-  margin-right: 47px; }
-  @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .footer-menu.footer-menu-mrg nav ul li {
-      margin-right: 30px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
-    .footer-menu.footer-menu-mrg nav ul li {
-      margin-right: 35px; } }
-  @media only screen and (max-width: 767.4px) {
-    .footer-menu.footer-menu-mrg nav ul li {
-      margin-right: 5px; } }
-  @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .footer-menu.footer-menu-mrg nav ul li {
-      margin-right: 15px; } }
-  .footer-menu.footer-menu-mrg nav ul li:last-child {
-    margin-right: 0; }
-
-.footer-menu.footer-menu-hover-border nav ul li {
-  position: relative; }
-  .footer-menu.footer-menu-hover-border nav ul li a {
-    position: relative; }
-    .footer-menu.footer-menu-hover-border nav ul li a::after {
-      content: "";
-      height: 1px;
-      right: 0px;
-      left: auto;
-      width: 0;
-      bottom: 0;
-      position: absolute;
-      transition: width 300ms ease-out;
-      background-color: #000000; }
-    .footer-menu.footer-menu-hover-border nav ul li a.active::after {
-      left: 0px;
-      right: auto;
-      width: 100%;
-      transition: width 300ms ease-in; }
-  .footer-menu.footer-menu-hover-border nav ul li:hover > a {
-    color: #000000; }
-    .footer-menu.footer-menu-hover-border nav ul li:hover > a::after {
-      left: 0px;
-      right: auto;
-      width: 100%;
-      transition: width 300ms ease-in; }
+      .footer-menu nav ul li {
+        margin-right: 5px; } }
+    @media only screen and (min-width: 576px) and (max-width: 767px) {
+      .footer-menu nav ul li {
+        margin-right: 15px; } }
+    .footer-menu nav ul li:last-child {
+      margin-right: 0; }
+    .footer-menu nav ul li a {
+      font-size: 16px;
+      letter-spacing: .25px;
+      color: #000000;
+      display: inline-block;
+      text-transform: uppercase; }
+      @media only screen and (max-width: 767.4px) {
+        .footer-menu nav ul li a {
+          font-size: 14px; } }
+      .footer-menu nav ul li a:hover {
+        color: #ff2f2f; }
+  .footer-menu.footer-menu-mrg nav ul li {
+    margin-right: 47px; }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .footer-menu.footer-menu-mrg nav ul li {
+        margin-right: 30px; } }
+    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      .footer-menu.footer-menu-mrg nav ul li {
+        margin-right: 35px; } }
+    @media only screen and (max-width: 767.4px) {
+      .footer-menu.footer-menu-mrg nav ul li {
+        margin-right: 5px; } }
+    @media only screen and (min-width: 576px) and (max-width: 767px) {
+      .footer-menu.footer-menu-mrg nav ul li {
+        margin-right: 15px; } }
+    .footer-menu.footer-menu-mrg nav ul li:last-child {
+      margin-right: 0; }
 
 .copyright p {
   color: #999;
@@ -9040,158 +9005,6 @@ textarea:focus {
 
 @media only screen and (max-width: 767.4px) {
   .copyright.copyright-center {
-    text-align: center; } }
-
-.social-style-3-wrap span {
-  font-weight: bold;
-  text-transform: uppercase;
-  display: block;
-  margin: 0 0 20px; }
-  @media only screen and (max-width: 767.4px) {
-    .social-style-3-wrap span {
-      margin: 0 0 7px; } }
-
-@media only screen and (max-width: 767.4px) {
-  .social-style-3-wrap.xs-center {
-    text-align: center; }
-    .social-style-3-wrap.xs-center .social-style-1 {
-      justify-content: center; } }
-
-.footer-logo-mrg {
-  margin-bottom: 30px; }
-  @media only screen and (max-width: 767.4px) {
-    .footer-logo-mrg {
-      margin-bottom: 10px; } }
-
-.contact-info-wrap-2 p {
-  margin-bottom: 7px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
-    .contact-info-wrap-2 p {
-      margin: 0 auto 7px;
-      width: 80%; } }
-
-@media only screen and (max-width: 767.4px) {
-  .contact-info-wrap-2 {
-    margin: 30px 0 30px; } }
-
-.language-style-2-wrap.language-style-2-right {
-  text-align: right; }
-  @media only screen and (max-width: 767.4px) {
-    .language-style-2-wrap.language-style-2-right {
-      text-align: center; } }
-
-.language-style-2-wrap span {
-  font-weight: bold;
-  text-transform: uppercase;
-  display: block;
-  margin: 0 0 20px; }
-  @media only screen and (max-width: 767.4px) {
-    .language-style-2-wrap span {
-      margin: 0 0 10px; } }
-
-.language-style-2-wrap .language-style-2 a {
-  display: inline-block;
-  margin-right: 15px;
-  font-size: 16px;
-  color: #999999; }
-  .language-style-2-wrap .language-style-2 a:hover {
-    color: #000000; }
-  .language-style-2-wrap .language-style-2 a:last-child {
-    margin-right: 0; }
-
-.footer-middle-mrg {
-  margin: 80px 0 75px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
-    .footer-middle-mrg {
-      margin: 40px 0 35px; } }
-  @media only screen and (max-width: 767.4px) {
-    .footer-middle-mrg {
-      margin: 30px 0 25px; } }
-
-.footer-widget {
-  overflow: hidden; }
-  .footer-widget h3.footer-title {
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: -.25px;
-    margin: 0 0 40px;
-    text-transform: uppercase; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
-      .footer-widget h3.footer-title {
-        margin: 0 0 20px; } }
-    @media only screen and (max-width: 767.4px) {
-      .footer-widget h3.footer-title {
-        margin: 0 0 20px; } }
-  .footer-widget .footer-info-list ul li {
-    display: block;
-    margin-bottom: 8px; }
-    .footer-widget .footer-info-list ul li:last-child {
-      margin-bottom: 0; }
-    .footer-widget .footer-info-list ul li a {
-      color: #666666;
-      display: block; }
-      .footer-widget .footer-info-list ul li a:hover {
-        color: #000000;
-        text-decoration: underline; }
-  .footer-widget .footer-info-list.info-list-50-parcent ul li {
-    width: 50%;
-    float: left; }
-  .footer-widget .contact-info-2 .single-contact-info-2 {
-    display: flex;
-    margin: 0 0 12px; }
-    .footer-widget .contact-info-2 .single-contact-info-2 .contact-info-2-icon i {
-      font-size: 16px;
-      color: #000000; }
-    .footer-widget .contact-info-2 .single-contact-info-2 .contact-info-2-content {
-      margin-left: 13px; }
-      .footer-widget .contact-info-2 .single-contact-info-2 .contact-info-2-content p {
-        color: #000000;
-        margin: 0 0 0px; }
-      .footer-widget .contact-info-2 .single-contact-info-2 .contact-info-2-content h3 {
-        font-size: 30px;
-        font-weight: 600;
-        color: #4dbdaf;
-        margin: 19px 0 28px; }
-        .footer-widget .contact-info-2 .single-contact-info-2 .contact-info-2-content h3.purple {
-          color: #6f50a7; }
-        .footer-widget .contact-info-2 .single-contact-info-2 .contact-info-2-content h3.blue {
-          color: #0064e0; }
-        .footer-widget .contact-info-2 .single-contact-info-2 .contact-info-2-content h3.green-2 {
-          color: #6aae27; }
-        .footer-widget .contact-info-2 .single-contact-info-2 .contact-info-2-content h3.orange {
-          color: #e44311; }
-        @media only screen and (min-width: 992px) and (max-width: 1199px) {
-          .footer-widget .contact-info-2 .single-contact-info-2 .contact-info-2-content h3 {
-            font-size: 23px; } }
-        @media only screen and (min-width: 768px) and (max-width: 991.5px) {
-          .footer-widget .contact-info-2 .single-contact-info-2 .contact-info-2-content h3 {
-            font-size: 16px;
-            margin: 12px 0 4px; } }
-        @media only screen and (max-width: 767.4px) {
-          .footer-widget .contact-info-2 .single-contact-info-2 .contact-info-2-content h3 {
-            font-size: 20px;
-            margin: 12px 0 5px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
-    .footer-widget.ml-70 {
-      margin-left: 20px; } }
-  @media only screen and (max-width: 767.4px) {
-    .footer-widget.ml-70 {
-      margin-left: 0px; } }
-
-.payment-img a {
-  display: block; }
-  .payment-img a img {
-    max-width: 100%; }
-
-.payment-img.payment-img-right {
-  text-align: right; }
-  @media only screen and (max-width: 767.4px) {
-    .payment-img.payment-img-right {
-      text-align: center; } }
-
-@media only screen and (max-width: 767.4px) {
-  .payment-img {
-    margin-bottom: 15px;
     text-align: center; } }
 
 @media only screen and (min-width: 768px) and (max-width: 991.5px) {
@@ -10658,7 +10471,7 @@ textarea:focus {
     cursor: pointer;
     padding: 2px 35px 2px 15px;
     -moz-appearance: none;
-    background: rgba(0, 0, 0, 0) url("../images/icon-img/select.png") no-repeat scroll right 18px center; }
+    background: rgba(0, 0, 0, 0) url("../../images/icon-img/select.png") no-repeat scroll right 18px center; }
 
 .shop-sidebar-border {
   border-top: 1px solid #ebebeb; }
@@ -10737,7 +10550,7 @@ textarea:focus {
       .shop-topbar-wrapper .product-sorting-wrapper .shorting-style select {
         -moz-appearance: none;
         -webkit-appearance: none;
-        background: #fff url("../images/icon-img/shop.png") no-repeat scroll right 10px center;
+        background: #fff url("../../images/icon-img/shop.png") no-repeat scroll right 10px center;
         border: 1px solid #ebebeb;
         border-radius: 3px;
         box-shadow: none;
@@ -11203,7 +11016,7 @@ h3.cart-page-title {
         .discount-code-wrapper .tax-wrapper .tax-select-wrapper .tax-select select {
           -moz-appearance: none;
           -webkit-appearance: none;
-          background: #fff url("../images/icon-img/cart.png") no-repeat scroll right 18px center;
+          background: #fff url("../../images/icon-img/cart.png") no-repeat scroll right 18px center;
           border: 1px solid #ebebeb;
           box-shadow: none;
           color: #242424;
@@ -11674,7 +11487,7 @@ h3.cart-page-title {
   font-size: 14px;
   height: 50px;
   padding: 2px 20px;
-  background: rgba(0, 0, 0, 0) url("../images/icon-img/select.png") no-repeat scroll right 18px center;
+  background: rgba(0, 0, 0, 0) url("../../images/icon-img/select.png") no-repeat scroll right 18px center;
   cursor: pointer; }
   .billing-info-wrap .billing-select select option {
     background: #fff;
@@ -11982,53 +11795,50 @@ h3.cart-page-title {
 
 /*-------- Start My Account Page Wrapper --------*/
 /*-------- 24. Login register style ---------*/
-.login-register-wrapper .login-register-tab-list {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px; }
-  @media only screen and (max-width: 767.4px) {
-    .login-register-wrapper .login-register-tab-list {
-      margin-bottom: 20px; } }
-  .login-register-wrapper .login-register-tab-list a {
-    position: relative; }
-    .login-register-wrapper .login-register-tab-list a::before {
-      background-color: #454545;
-      bottom: 5px;
-      content: "";
-      height: 18px;
-      margin: 0 auto;
-      position: absolute;
-      right: -2px;
-      transition: all 0.4s ease 0s;
-      width: 1px; }
-    .login-register-wrapper .login-register-tab-list a h4 {
-      font-size: 25px;
-      font-weight: 700;
-      margin: 0 20px;
-      text-transform: capitalize;
-      transition: all 0.3s ease 0s; }
-    .login-register-wrapper .login-register-tab-list a:last-child::before {
-      display: none; }
-  .login-register-wrapper .login-register-tab-list a.active h4 {
-    color: #ff2f2f; }
-
 .login-register-wrapper .login-form-container {
   background: transparent none repeat scroll 0 0;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  padding: 80px;
+  padding: 55px 40px;
   text-align: left; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .login-register-wrapper .login-form-container {
       padding: 80px 50px; } }
   @media only screen and (max-width: 767.4px) {
     .login-register-wrapper .login-form-container {
-      padding: 40px 15px; } }
+      padding: 40px 30px; } }
+  .login-register-wrapper .login-form-container .login-register-tab-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; }
+    @media only screen and (max-width: 767.4px) {
+      .login-register-wrapper .login-form-container .login-register-tab-list {
+        margin-bottom: 20px; } }
+    .login-register-wrapper .login-form-container .login-register-tab-list a {
+      position: relative; }
+      .login-register-wrapper .login-form-container .login-register-tab-list a::before {
+        background-color: #454545;
+        bottom: 5px;
+        content: "";
+        height: 18px;
+        margin: 0 auto;
+        position: absolute;
+        right: -2px;
+        transition: all 0.4s ease 0s;
+        width: 1px; }
+      .login-register-wrapper .login-form-container .login-register-tab-list a h4 {
+        font-size: 25px;
+        font-weight: 700;
+        margin: 0 20px;
+        text-transform: capitalize;
+        transition: all 0.3s ease 0s; }
+      .login-register-wrapper .login-form-container .login-register-tab-list a:last-child::before {
+        display: none; }
+    .login-register-wrapper .login-form-container .login-register-tab-list a.active h4 {
+      color: #ff2f2f; }
   .login-register-wrapper .login-form-container .login-register-form form input {
     background-color: transparent;
-    border: 1px solid #ebebeb;
     font-size: 14px;
-    height: 50px;
-    margin-bottom: 30px;
+    height: 45px;
     padding: 0 15px;
     color: #010225; }
   .login-register-wrapper .login-form-container .login-register-form form input[type="checkbox"] {
@@ -12038,16 +11848,20 @@ h3.cart-page-title {
     top: 2px;
     width: 17px;
     color: #010225; }
+  .login-register-wrapper .login-form-container .login-register-form form label {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 30px;
+    display: inline-block;
+    margin-bottom: 4px; }
+    @media only screen and (max-width: 767.4px) {
+      .login-register-wrapper .login-form-container .login-register-form form label {
+        font-size: 14px; } }
   .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn {
-    padding: 10px 0 19px; }
-    .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn label {
-      font-size: 15px;
-      font-weight: 400; }
-      @media only screen and (max-width: 767.4px) {
-        .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn label {
-          font-size: 14px; } }
+    padding: 0px 0px 30px; }
     .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn a {
       float: right;
+      margin-top: 30px;
       font-size: 15px;
       color: #010225;
       transition: all 0.3s ease 0s; }
@@ -12069,6 +11883,8 @@ h3.cart-page-title {
     transition: all 0.3s ease 0s; }
     .login-register-wrapper .login-form-container .login-register-form form .button-box button:hover {
       background-color: #010225; }
+  .login-register-wrapper .login-form-container .login-register-form form .button-box .register-btn {
+    margin-top: 40px; }
 
 @media only screen and (max-width: 767.4px) {
   .login-register-area.pb-100 {

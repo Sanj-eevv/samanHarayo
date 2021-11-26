@@ -27,6 +27,10 @@
 	padding-left: var(--bs-gutter-x,.90rem);
 }
 
+.form-control:focus {
+    //border-color: #28a745;
+    box-shadow: none !important;
+}
 
 
 
@@ -44,7 +48,7 @@ body {
 body {
     line-height: 24px;
     font-size: 14px;
-    font-style: normal; 
+    font-style: normal;
     font-weight: 400;
     color: #000;
     font-family: $poppins;
@@ -95,9 +99,11 @@ h6 {
     font-size: 12px;
 }
 
-//p:last-child {
-//    margin-bottom: 0;
-//}
+p:last-child {
+    margin-bottom: 0px;
+    position: relative;
+    top: 10px;
+}
 
 a,
 button {
@@ -143,7 +149,7 @@ ul {
 }
 
 
-/*-- 
+/*--
     - Common Classes
 -----------------------------------------*/
 
@@ -778,7 +784,7 @@ ul {
         padding-top: 70px;
     }
     @media #{$xs-layout} {
-        padding-top: 50px; 
+        padding-top: 50px;
     }
 }
 
@@ -788,7 +794,7 @@ ul {
         padding-top: 75px;
     }
     @media #{$xs-layout} {
-        padding-top: 55px; 
+        padding-top: 55px;
     }
 }
 
@@ -798,7 +804,7 @@ ul {
         padding-top: 80px;
     }
     @media #{$xs-layout} {
-        padding-top: 60px; 
+        padding-top: 60px;
     }
 }
 
@@ -820,7 +826,7 @@ ul {
         padding-top: 75px;
     }
     @media #{$xs-layout} {
-        padding-top: 55px; 
+        padding-top: 55px;
     }
 }
 .pt-165 {
@@ -1343,7 +1349,7 @@ ul {
 
 
 /***************************
-    Page section padding 
+    Page section padding
 ****************************/
 
 .ptb-0 {
@@ -1460,7 +1466,7 @@ ul {
 
 
 /***************************
-    Page section margin 
+    Page section margin
 ****************************/
 
 .mtb-0 {
@@ -1536,7 +1542,7 @@ ul {
 }
 
 
-/*-- 
+/*--
     - Input Placeholder
 -----------------------------------------*/
 
@@ -1630,7 +1636,7 @@ textarea:focus {
     padding-right: 15px;
     padding-left: 15px;
     position: relative;
-    width: 100%; 
+    width: 100%;
     min-height: 1px;
     @media #{$xx-layout} {
         flex: 0 0 20%;
@@ -1653,20 +1659,20 @@ textarea:focus {
         padding-left: 15px;
         flex: 0 0 100%;
         max-width: 100%;
-        
+
     }
     @media #{$sm-layout} {
         flex: 0 0 50%;
         max-width: 50%;
-        
+
     }
 }
 
 
 
 
-/*-- 
-    Scroll Up 
+/*--
+    Scroll Up
 -----------------------------------------*/
 
 #scrollUp {
@@ -1764,7 +1770,7 @@ textarea:focus {
     background-color: $blue;
 }
 .bg-orange {
-    background-color: $orange; 
+    background-color: $orange;
 }
 .bg-green-2 {
     background-color: $theme-color-green-2;
@@ -1838,7 +1844,7 @@ textarea:focus {
 @media #{$xs-layout} {
     .res-white-overly-xs {
         position: relative;
-        &:before { 
+        &:before {
             position: absolute;
             left: 0;
             top: 0;
@@ -1850,7 +1856,7 @@ textarea:focus {
             z-index: 9;
         }
     }
-} 
+}
 @media #{$xs-layout} {
     .res-black-overly-xs {
         position: relative;
@@ -1866,7 +1872,7 @@ textarea:focus {
             z-index: 9;
         }
     }
-} 
+}
 @media #{$md-layout} {
     .res-white-overly-md {
         position: relative;
@@ -1882,7 +1888,7 @@ textarea:focus {
             z-index: 1;
         }
     }
-} 
+}
 
 
 @media #{$xs-layout} {
@@ -1910,7 +1916,7 @@ textarea:focus {
             padding: 0 15px;
         }
         @media #{$sm-layout} {
-            padding: 0 30px; 
+            padding: 0 30px;
         }
     }
 }
@@ -1934,7 +1940,7 @@ textarea:focus {
             padding: 0 15px;
         }
         @media #{$sm-layout} {
-            padding: 0 30px; 
+            padding: 0 30px;
         }
     }
 }

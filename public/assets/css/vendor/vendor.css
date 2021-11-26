@@ -10,11 +10,11 @@
 
 @font-face {
     font-family: 'Cerebri Sans';
-    src: url('public/assets/fonts/CerebriSans-Regular.eot');
-    src: url('public/assets/fonts/CerebriSans-Regular.eot?#iefix') format('embedded-opentype'),
-        url('public/assets/fonts/CerebriSans-Regular.woff2') format('woff2'),
-        url('public/assets/fonts/CerebriSans-Regular.woff') format('woff'),
-        url('public/assets/fonts/CerebriSans-Regular.ttf') format('truetype');
+    src: url('../../fonts/CerebriSans-Regular.eot');
+    src: url('../../fonts/CerebriSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/CerebriSans-Regular.woff2') format('woff2'),
+        url('../../fonts/CerebriSans-Regular.woff') format('woff'),
+        url('../../fonts/CerebriSans-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -26,11 +26,11 @@
 
 @font-face {
 	font-family: 'ElegantIcons';
-	src:url('public/assets/fonts/ElegantIcons.eot');
-	src:url('public/assets/fonts/ElegantIcons.eot?#iefix') format('embedded-opentype'),
-		url('public/assets/fonts/ElegantIcons.woff') format('woff'),
-		url('public/assets/fonts/ElegantIcons.ttf') format('truetype'),
-		url('public/assets/fonts/ElegantIcons.svg#ElegantIcons') format('svg');
+	src:url('../../fonts/ElegantIcons.eot');
+	src:url('../../fonts/ElegantIcons.eot?#iefix') format('embedded-opentype'),
+		url('../../fonts/ElegantIcons.woff') format('woff'),
+		url('../../fonts/ElegantIcons.ttf') format('truetype'),
+		url('../../fonts/ElegantIcons.svg#ElegantIcons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -1183,19 +1183,19 @@ text-shadow: none;
 		font-size: 2em;
 	}
 
-	
+
 
 
 /*====================================*/
 
 @font-face {
 	font-family: 'Linearicons-Free';
-	src:url('public/assets/fonts/Linearicons-Free.eot?w118d');
-	src:url('public/assets/fonts/Linearicons-Free.eot?#iefixw118d') format('embedded-opentype'),
-		url('public/assets/fonts/Linearicons-Free.woff2?w118d') format('woff2'),
-		url('public/assets/fonts/Linearicons-Free.woff?w118d') format('woff'),
-		url('public/assets/fonts/Linearicons-Free.ttf?w118d') format('truetype'),
-		url('public/assets/fonts/Linearicons-Free.svg?w118d#Linearicons-Free') format('svg');
+	src:url('../../fonts/Linearicons-Free.eot?w118d');
+	src:url('../../fonts/Linearicons-Free.eot?#iefixw118d') format('embedded-opentype'),
+		url('../../fonts/Linearicons-Free.woff2?w118d') format('woff2'),
+		url('../../fonts/Linearicons-Free.woff?w118d') format('woff'),
+		url('../../fonts/Linearicons-Free.ttf?w118d') format('truetype'),
+		url('../../fonts/Linearicons-Free.svg?w118d#Linearicons-Free') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -1730,11 +1730,11 @@ text-shadow: none;
 
 @font-face {
     font-family: 'Signerica Fat';
-    src: url('public/assets/fonts/SignericaFat.eot');
-    src: url('public/assets/fonts/SignericaFat.eot?#iefix') format('embedded-opentype'),
-        url('public/assets/fonts/SignericaFat.woff2') format('woff2'),
-        url('public/assets/fonts/SignericaFat.woff') format('woff'),
-        url('public/assets/fonts/SignericaFat.ttf') format('truetype');
+    src: url('../../fonts/SignericaFat.eot');
+    src: url('../../fonts/SignericaFat.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/SignericaFat.woff2') format('woff2'),
+        url('../../fonts/SignericaFat.woff') format('woff'),
+        url('../../fonts/SignericaFat.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -1746,8 +1746,8 @@ text-shadow: none;
 
 @font-face {
   font-family: 'simple-line-icons';
-  src: url('public/assets/fonts/Simple-Line-Icons.eot?v=2.4.0');
-  src: url('public/assets/fonts/Simple-Line-Icons.eot?v=2.4.0#iefix') format('embedded-opentype'), url('public/assets/fonts/Simple-Line-Icons.woff2?v=2.4.0') format('woff2'), url('public/assets/fonts/Simple-Line-Icons.ttf?v=2.4.0') format('truetype'), url('public/assets/fonts/Simple-Line-Icons.woff?v=2.4.0') format('woff'), url('public/assets/fonts/Simple-Line-Icons.svg?v=2.4.0#simple-line-icons') format('svg');
+  src: url('../../fonts/Simple-Line-Icons.eot?v=2.4.0');
+  src: url('../../fonts/Simple-Line-Icons.eot?v=2.4.0#iefix') format('embedded-opentype'), url('../../fonts/Simple-Line-Icons.woff2?v=2.4.0') format('woff2'), url('../../fonts/Simple-Line-Icons.ttf?v=2.4.0') format('truetype'), url('../../fonts/Simple-Line-Icons.woff?v=2.4.0') format('woff'), url('../../fonts/Simple-Line-Icons.svg?v=2.4.0#simple-line-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }

@@ -169,7 +169,7 @@
             border: 1px solid #e8e8e8;
             height: 50px;
             background-color: transparent;
-            width: 48%; 
+            width: 48%;
             font-size: 14px;
             padding: 0 20px;
             &:focus {
@@ -263,12 +263,12 @@
             font-size: 14px;
             height: 50px;
             padding: 2px 20px;
-            background: rgba(0, 0, 0, 0) url("public/assets/images/icon-img/select.png") no-repeat scroll right 18px center;
+            background: rgba(0, 0, 0, 0) url("../../images/icon-img/select.png") no-repeat scroll right 18px center;
             cursor: pointer;
             option {
                 background: #fff;
                 border: 0px solid #626262;
-                padding-left: 10px; 
+                padding-left: 10px;
                 color: #333;
                 font-size: 12px;
             }
