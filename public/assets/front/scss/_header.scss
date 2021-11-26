@@ -13,12 +13,25 @@
     }
 }
 
+.header-medium-device {
+    display: none;
+    @media #{$lg-layout} {
+        display: block;
+    }
+    &.medium-device-ptb-1 {
+        padding: 25px 0 25px;
+    }
+}
+
 .header-large-device {
     display: block;
     @media #{$md-layout} {
         display: none;
     }
     @media #{$xs-layout} {
+        display: none;
+    }
+    @media #{$lg-layout} {
         display: none;
     }
 }
@@ -130,7 +143,7 @@
                             color: $theme-color-red;
                         }
                     }
-                }    
+                }
             }
         }
         .currency-dropdown {
@@ -697,7 +710,7 @@
             color: #999999;
             padding: 2px 0 2px 30px;
             border: none;
-            height: 35px; 
+            height: 35px;
             background-color: transparent;
             border-bottom: 1px solid #2d2d2d;
             &::-moz-input-placeholder {
@@ -766,7 +779,7 @@
             @media #{$xs-layout} {
                 font-size: 10px;
                 width: 18px;
-                height: 18px; 
+                height: 18px;
                 line-height: 17px;
             }
             &.black {
@@ -801,7 +814,7 @@
             z-index: 9999;
         }
     }
-} 
+}
 
 .sidebar-cart-active {
 	position: fixed;
@@ -1103,7 +1116,7 @@
                 min-width: 137px;
                 span {
                     font-size: 13px;
-                    color: #222222; 
+                    color: #222222;
                 }
             }
             &::after {
@@ -1210,7 +1223,7 @@
                 }
             }
         }
-    } 
+    }
     &.categori-search-wrap-modify-3 {
         border: 1px oslid #dadada;
         background-color: #f7f7f7;
@@ -1243,7 +1256,7 @@
                 }
             }
         }
-    } 
+    }
 }
 
 .main-categori-wrap {
@@ -1565,7 +1578,7 @@
             }
         }
     }
-} 
+}
 
 .header-offer-wrap-3 {
     p {
@@ -1789,7 +1802,7 @@
             visibility: visible;
         }
     }
-} 
+}
 
 .mobile-header-active {
 	position: fixed;
@@ -1822,7 +1835,7 @@
         }
         .sidebar-close {
             position: absolute;
-            top: 20px; 
+            top: 20px;
             left: 30px;
             font-size: 30px;
             line-height: 30px;
