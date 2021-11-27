@@ -35,9 +35,12 @@
                                 </div>
                             </div>
                             @if(\Illuminate\Support\Facades\Auth::check())
-                            <div class="same-style">
-                                <a href="{{route('login')}}"><i class="icon-user"></i></a>
-                            </div>
+                                <div class="same-style large-device-same-style">
+                                    <a href="{{route('login')}}"><i class="icon-user"></i></a>
+                                </div>
+                                <div class="same-style same-style-login">
+                                    <a href="{{route('login')}}">Logout</a>
+                                </div>
                             @else
                             <div class="same-style same-style-login">
                                 <a href="{{route('login')}}">Login</a>
@@ -67,8 +70,11 @@
                             </div>
                         </div>
                         @if(\Illuminate\Support\Facades\Auth::check())
-                            <div class="same-style">
+                            <div class="same-style large-device-same-style">
                                 <a href="{{route('login')}}"><i class="icon-user"></i></a>
+                            </div>
+                            <div class="same-style same-style-login">
+                                <a href="{{route('login')}}">Logout</a>
                             </div>
                         @else
                             <div class="same-style same-style-login">
@@ -94,8 +100,11 @@
                 <div class="col-7">
                     <div class="header-action header-action-flex">
                         @if(\Illuminate\Support\Facades\Auth::check())
-                            <div class="same-style">
+                            <div class="same-style large-device-same-style">
                                 <a href="{{route('login')}}"><i class="icon-user"></i></a>
+                            </div>
+                            <div class="same-style same-style-login">
+                                <a href="{{route('login')}}">Logout</a>
                             </div>
                         @else
                             <div class="same-style same-style-login">

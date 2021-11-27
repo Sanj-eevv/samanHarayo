@@ -103,6 +103,8 @@
         @media #{$sm-layout} {
             margin-right: 25px;
         }
+        @media #{$md-layout} {
+        }
         &:last-child {
             margin-right: 0;
             margin-top: 10px;
@@ -136,6 +138,9 @@
              color: $theme-color-red;
              font-weight: 600;
          }
+        }
+        &.large-device-same-style{
+            margin-top: 10px;
         }
     }
 }
