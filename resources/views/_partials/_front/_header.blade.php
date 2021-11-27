@@ -39,7 +39,7 @@
                                     <a href="{{route('login')}}"><i class="icon-user"></i></a>
                                 </div>
                                 <div class="same-style same-style-login">
-                                    <a href="{{route('login')}}">Logout</a>
+                                    <a href="{{route('logout')}}"  class="front-logout">Logout</a>
                                 </div>
                             @else
                             <div class="same-style same-style-login">
@@ -74,7 +74,7 @@
                                 <a href="{{route('login')}}"><i class="icon-user"></i></a>
                             </div>
                             <div class="same-style same-style-login">
-                                <a href="{{route('login')}}">Logout</a>
+                                <a href="{{route('logout')}}" class="front-logout">Logout</a>
                             </div>
                         @else
                             <div class="same-style same-style-login">
@@ -104,7 +104,7 @@
                                 <a href="{{route('login')}}"><i class="icon-user"></i></a>
                             </div>
                             <div class="same-style same-style-login">
-                                <a href="{{route('login')}}">Logout</a>
+                                <a href="{{route('logout')}}"  class="front-logout">Logout</a>
                             </div>
                         @else
                             <div class="same-style same-style-login">
@@ -119,6 +119,7 @@
             </div>
         </div>
     </div>
+    <form id="logout-form" action="{{route('logout')}}" method="post" style="display: none;">@csrf</form>
 </header>
 <div class="mobile-header-active mobile-header-wrapper-style">
     <div class="clickalbe-sidebar-wrap">
