@@ -17,11 +17,7 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = ['id'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -41,4 +37,27 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * @param bool $restrictAdmin
+     * @return bool
+     */
+    public function isAdmin(bool $restrictAdmin = false): bool
+    {
+        if($restrictAdmin){
+            $adminRoles = ['superAdmin'];
+        }else{
+            $adminRoles = Role::ADMIN_ROLE;
+        }
+        if(in_array($this->role->name,$adminRoles)){
+            return true;
+        }
+        return false;
+    }
+
+    public function role(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Role::class);
+    }
+
 }

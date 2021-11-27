@@ -32,7 +32,7 @@
                                         </div>
                                         <div class="col-lg-6 col-md-12">
                                             <label  for="first_name">Last Name</label>
-                                            <input {{old('last_name') }} type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror">
+                                            <input value="{{old('last_name') }}" type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror">
                                             @error('last_name')
                                             <span class="invalid-feedback" role="alert">
                                                 {{ $message }}
@@ -42,7 +42,7 @@
                                     </div>
 
                                     <label for="email">Email</label>
-                                    <input {{old('email') }} name="email" type="email" class="form-control @error('email') is-invalid @enderror">
+                                    <input value="{{old('email') }}" name="email" type="email" class="form-control @error('email') is-invalid @enderror">
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         {{ $message }}
@@ -79,7 +79,7 @@
 
 @section('page_level_script')
 <script type="text/javascript">
-    $( document ).ready(function() {
+    $( window ).on('load', function() {
         $('#Password').passtrength({
             minChars: 8,
             passwordToggle:false,
