@@ -4,7 +4,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-2">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/images/logo/logo.png" alt="logo"></a>
+                            <a href="{{route('front.index')}}"><img src="{{asset('storage/uploads/settings/header_logo.png')}}" alt="logo"></a>
                         </div>
                     </div>
                     <div class="col-xl-8 col-lg-7">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-xl-2 col-lg-3">
                         <div class="header-action header-action-flex">
-                            <div class="same-style-2 header-search-1">
+                            <div class="same-style header-search-1">
                                 <div class="search-wrap-1">
                                     <form action="#">
                                         <input placeholder="Search products…" type="text">
@@ -34,26 +34,31 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="same-style-2">
-                                <a href="login-register.html"><i class="icon-user"></i></a>
+                            @if(\Illuminate\Support\Facades\Auth::check())
+                            <div class="same-style">
+                                <a href="{{route('login')}}"><i class="icon-user"></i></a>
                             </div>
+                            @else
+                            <div class="same-style same-style-login">
+                                <a href="{{route('login')}}">Login</a>
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
-
         </div>
         <div class="header-medium-device medium-device-ptb-1">
             <div class="row align-items-center">
                 <div class="col-5">
                     <div class="mobile-logo">
-                        <a href="index.html">
-                            <img alt="" src="assets/images/logo/logo.png">
+                        <a href="{{route('front.index')}}">
+                            <img alt="" src="{{asset('storage/uploads/settings/header_logo.png')}}">
                         </a>
                     </div>
                 </div>
                 <div class="col-7">
                     <div class="header-action header-action-flex">
-                        <div class="same-style-2 header-search-1">
+                        <div class="same-style header-search-1">
                             <div class="search-wrap-1 open">
                                 <form action="#">
                                     <input placeholder="Search products…" type="text">
@@ -61,10 +66,16 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="same-style-2">
-                            <a href="login-register.html"><i class="icon-user"></i></a>
-                        </div>
-                        <div class="same-style-2 main-menu-icon">
+                        @if(\Illuminate\Support\Facades\Auth::check())
+                            <div class="same-style">
+                                <a href="{{route('login')}}"><i class="icon-user"></i></a>
+                            </div>
+                        @else
+                            <div class="same-style same-style-login">
+                                <a href="{{route('login')}}">Login</a>
+                            </div>
+                        @endif
+                        <div class="same-style main-menu-icon">
                             <a class="mobile-header-button-active" href="#"><i class="icon-menu"></i> </a>
                         </div>
                     </div>
@@ -75,17 +86,23 @@
             <div class="row align-items-center">
                 <div class="col-5">
                     <div class="mobile-logo">
-                        <a href="index.html">
-                            <img alt="" src="assets/images/logo/logo.png">
+                        <a href="{{route('front.index')}}">
+                            <img alt="" src="{{asset('storage/uploads/settings/header_logo.png')}}">
                         </a>
                     </div>
                 </div>
                 <div class="col-7">
                     <div class="header-action header-action-flex">
-                        <div class="same-style-2">
-                            <a href="login-register.html"><i class="icon-user"></i></a>
-                        </div>
-                        <div class="same-style-2 main-menu-icon">
+                        @if(\Illuminate\Support\Facades\Auth::check())
+                            <div class="same-style">
+                                <a href="{{route('login')}}"><i class="icon-user"></i></a>
+                            </div>
+                        @else
+                            <div class="same-style same-style-login">
+                                <a href="{{route('login')}}">Login</a>
+                            </div>
+                        @endif
+                        <div class="same-style main-menu-icon">
                             <a class="mobile-header-button-active" href="#"><i class="icon-menu"></i> </a>
                         </div>
                     </div>

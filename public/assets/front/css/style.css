@@ -1924,7 +1924,7 @@ textarea:focus {
     color: #ff2f2f; }
 
 .main-menu.main-menu-padding-1 > nav > ul > li {
-  padding-right: 46px; }
+  padding-right: 40px; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .main-menu.main-menu-padding-1 > nav > ul > li {
       padding-right: 40px; } }
@@ -1938,33 +1938,47 @@ textarea:focus {
   display: flex;
   justify-content: flex-end; }
 
-.header-action .same-style-2 {
+.header-action .same-style {
   line-height: 1;
-  margin-right: 30px; }
+  margin-right: 20px; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .header-action .same-style-2 {
+    .header-action .same-style {
       margin-right: 25px; } }
   @media only screen and (max-width: 767.4px) {
-    .header-action .same-style-2 {
+    .header-action .same-style {
       margin-right: 20px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .header-action .same-style-2 {
+    .header-action .same-style {
       margin-right: 25px; } }
-  .header-action .same-style-2:last-child {
-    margin-right: 0; }
-  .header-action .same-style-2 a {
+  .header-action .same-style:last-child {
+    margin-right: 0;
+    margin-top: 10px; }
+    @media only screen and (min-width: 1200px) and (max-width: 1365px) {
+      .header-action .same-style:last-child {
+        margin-top: 0px; } }
+    @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+      .header-action .same-style:last-child {
+        margin-top: 0px; } }
+  .header-action .same-style a {
     color: #000000;
     font-size: 22px;
     display: inline-block;
     position: relative; }
     @media only screen and (max-width: 767.4px) {
-      .header-action .same-style-2 a {
+      .header-action .same-style a {
         font-size: 20px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
-      .header-action .same-style-2 a {
+      .header-action .same-style a {
         font-size: 22px; } }
-    .header-action .same-style-2 a:hover {
+    .header-action .same-style a:hover {
       color: #ff2f2f; }
+  .header-action .same-style.same-style-login {
+    background: #FAFAFA;
+    padding: 10px 20px;
+    border-radius: 15px; }
+    .header-action .same-style.same-style-login a {
+      color: #ff2f2f;
+      font-weight: 600; }
 
 .main-wrapper .body-overlay {
   background-color: #232324;

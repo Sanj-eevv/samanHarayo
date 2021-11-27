@@ -65,7 +65,7 @@
         > nav {
             > ul {
                 > li {
-                    padding-right: 46px;
+                    padding-right: 40px;
                     @media #{$lg-layout} {
                         padding-right: 40px;
                     }
@@ -91,9 +91,9 @@
         display: flex;
         justify-content: flex-end;
     }
-    .same-style-2 {
+    .same-style {
         line-height: 1;
-        margin-right: 30px;
+        margin-right: 20px;
         @media #{$lg-layout} {
             margin-right: 25px;
         }
@@ -105,6 +105,13 @@
         }
         &:last-child {
             margin-right: 0;
+            margin-top: 10px;
+            @media #{$xl-layout} {
+                margin-top: 0px;
+            }
+            @media #{$xx-layout} {
+                margin-top: 0px;
+            }
         }
         a {
             color: $black;
@@ -120,6 +127,15 @@
             &:hover {
                 color: $theme-color-red;
             }
+        }
+        &.same-style-login{
+            background: $grey;
+            padding: 10px 20px;
+            border-radius: 15px;
+         a{
+             color: $theme-color-red;
+             font-weight: 600;
+         }
         }
     }
 }
