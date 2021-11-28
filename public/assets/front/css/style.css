@@ -1656,6 +1656,9 @@ textarea:focus {
     .box-layout-width-2 {
       width: 550px; } }
 
+.main-wrapper {
+  height: 100%; }
+
 /*-------- 2. Animation CSS ---------*/
 @keyframes hastechFade {
   0% {
@@ -10619,96 +10622,100 @@ h3.cart-page-title {
 
 /*-------- Start My Account Page Wrapper --------*/
 /*-------- 24. Login register style ---------*/
-.login-register-wrapper .login-form-container {
-  background: transparent none repeat scroll 0 0;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  padding: 55px 40px;
-  text-align: left; }
-  @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .login-register-wrapper .login-form-container {
-      padding: 80px 50px; } }
-  @media only screen and (max-width: 767.4px) {
-    .login-register-wrapper .login-form-container {
-      padding: 40px 30px; } }
-  .login-register-wrapper .login-form-container .login-register-tab-list {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px; }
+.login-register-wrapper {
+  margin: 50px 20px; }
+  .login-register-wrapper .login-form-container {
+    background: transparent none repeat scroll 0 0;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    padding: 55px 40px;
+    text-align: left; }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .login-register-wrapper .login-form-container {
+        padding: 80px 50px; } }
     @media only screen and (max-width: 767.4px) {
-      .login-register-wrapper .login-form-container .login-register-tab-list {
-        margin-bottom: 20px; } }
-    .login-register-wrapper .login-form-container .login-register-tab-list a {
-      position: relative; }
-      .login-register-wrapper .login-form-container .login-register-tab-list a::before {
-        background-color: #454545;
-        bottom: 5px;
-        content: "";
-        height: 18px;
-        margin: 0 auto;
-        position: absolute;
-        right: -2px;
-        transition: all 0.4s ease 0s;
-        width: 1px; }
-      .login-register-wrapper .login-form-container .login-register-tab-list a h4 {
-        font-size: 25px;
-        font-weight: 700;
-        margin: 0 20px;
-        text-transform: capitalize;
-        transition: all 0.3s ease 0s; }
-      .login-register-wrapper .login-form-container .login-register-tab-list a:last-child::before {
-        display: none; }
-    .login-register-wrapper .login-form-container .login-register-tab-list a.active h4 {
-      color: #ff2f2f; }
-  .login-register-wrapper .login-form-container .login-register-form form input {
-    background-color: transparent;
-    font-size: 14px;
-    height: 45px;
-    padding: 0 15px;
-    color: #010225; }
-  .login-register-wrapper .login-form-container .login-register-form form input[type="checkbox"] {
-    height: 15px;
-    margin: 0;
-    position: relative;
-    top: 2px;
-    width: 17px;
-    color: #010225; }
-  .login-register-wrapper .login-form-container .login-register-form form label {
-    font-size: 15px;
-    font-weight: 400;
-    margin-top: 30px;
-    display: inline-block;
-    margin-bottom: 4px; }
-    @media only screen and (max-width: 767.4px) {
-      .login-register-wrapper .login-form-container .login-register-form form label {
-        font-size: 14px; } }
-  .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn {
-    padding: 0px 0px 30px; }
-    .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn a {
-      float: right;
-      margin-top: 30px;
-      font-size: 15px;
-      color: #010225;
-      transition: all 0.3s ease 0s; }
+      .login-register-wrapper .login-form-container {
+        padding: 40px 30px; } }
+    .login-register-wrapper .login-form-container .login-register-tab-list {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px; }
       @media only screen and (max-width: 767.4px) {
-        .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn a {
-          font-size: 14px; } }
-      .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn a:hover {
+        .login-register-wrapper .login-form-container .login-register-tab-list {
+          margin-bottom: 20px; } }
+      .login-register-wrapper .login-form-container .login-register-tab-list a {
+        position: relative; }
+        .login-register-wrapper .login-form-container .login-register-tab-list a::before {
+          background-color: #454545;
+          bottom: 5px;
+          content: "";
+          height: 18px;
+          margin: 0 auto;
+          position: absolute;
+          right: -2px;
+          transition: all 0.4s ease 0s;
+          width: 1px; }
+        .login-register-wrapper .login-form-container .login-register-tab-list a h4 {
+          font-size: 25px;
+          font-weight: 700;
+          margin: 0 20px;
+          text-transform: capitalize;
+          transition: all 0.3s ease 0s; }
+        .login-register-wrapper .login-form-container .login-register-tab-list a:last-child::before {
+          display: none; }
+      .login-register-wrapper .login-form-container .login-register-tab-list a.active h4 {
         color: #ff2f2f; }
-  .login-register-wrapper .login-form-container .login-register-form form .button-box button {
-    background-color: #ff2f2f;
-    color: #fff;
-    border: medium none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1;
-    padding: 13px 30px 13px;
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s; }
-    .login-register-wrapper .login-form-container .login-register-form form .button-box button:hover {
-      background-color: #010225; }
-  .login-register-wrapper .login-form-container .login-register-form form .button-box .register-btn {
-    margin-top: 40px; }
+    .login-register-wrapper .login-form-container .login-register-form form label {
+      color: #6c757d; }
+    .login-register-wrapper .login-form-container .login-register-form form input {
+      background-color: transparent;
+      font-size: 13px;
+      height: 45px;
+      padding: 0 15px;
+      color: #181c32; }
+    .login-register-wrapper .login-form-container .login-register-form form input[type="checkbox"] {
+      height: 15px;
+      margin: 0;
+      position: relative;
+      top: 2px;
+      width: 17px;
+      color: #010225; }
+    .login-register-wrapper .login-form-container .login-register-form form label {
+      font-size: 15px;
+      font-weight: 400;
+      margin-top: 30px;
+      display: inline-block;
+      margin-bottom: 4px; }
+      @media only screen and (max-width: 767.4px) {
+        .login-register-wrapper .login-form-container .login-register-form form label {
+          font-size: 14px; } }
+    .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn {
+      padding: 0px 0px 30px; }
+      .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn a {
+        float: right;
+        margin-top: 30px;
+        font-size: 15px;
+        color: #010225;
+        transition: all 0.3s ease 0s; }
+        @media only screen and (max-width: 767.4px) {
+          .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn a {
+            font-size: 14px; } }
+        .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn a:hover {
+          color: #ff2f2f; }
+    .login-register-wrapper .login-form-container .login-register-form form .button-box button {
+      background-color: #ff2f2f;
+      color: #fff;
+      border: medium none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
+      padding: 13px 30px 13px;
+      text-transform: uppercase;
+      transition: all 0.3s ease 0s; }
+      .login-register-wrapper .login-form-container .login-register-form form .button-box button:hover {
+        background-color: #010225; }
+    .login-register-wrapper .login-form-container .login-register-form form .button-box .register-btn {
+      margin-top: 40px; }
 
 @media only screen and (max-width: 767.4px) {
   .login-register-area.pb-100 {

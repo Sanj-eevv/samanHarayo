@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div class="footer-logo pt-20">
-                    <a href="#"><img src="assets/images/logo/logo.png" alt="logo"></a>
+                    <a href="#"><img src="{{asset('storage/uploads/settings/header_logo.png')}}" alt="logo"></a>
                 </div>
                 <div class="copyright">
                     <p>Copyright © 2021 HasThemes | <a href="https://hasthemes.com/">Built with <span>Norda</span> by HasThemes</a>.</p>

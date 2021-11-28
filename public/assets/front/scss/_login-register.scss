@@ -1,6 +1,6 @@
 /*-------- 24. Login register style ---------*/
-
 .login-register-wrapper {
+    margin: 50px 20px;
     .login-form-container {
         background: transparent none repeat scroll 0 0;
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
@@ -49,13 +49,16 @@
         }
         .login-register-form {
             form {
+                label {
+                    color: #6c757d;
+                }
                 input {
                     background-color: transparent;
                     //border: 1px solid #ebebeb;
-                    font-size: 14px;
+                    font-size: 13px;
                     height: 45px;
                     padding: 0 15px;
-                    color: #010225;
+                    color: #181c32;
                 }
                 input[type="checkbox"] {
                     height: 15px;

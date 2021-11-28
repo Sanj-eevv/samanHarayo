@@ -1,12 +1,12 @@
-@extends('layouts.front')
+@extends('layouts.auth')
 
 @section('title','Register')
 
 @section('content')
-    <div class="login-register-area pt-25 pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 ms-auto me-auto">
+    <div class="login-register-area">
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+            <div class="row w-100">
+                <div class="col-lg-6 col-md-12 mx-auto">
                     <div class="login-register-wrapper">
                         <div class="login-form-container">
                             <div class="login-register-tab-list nav">

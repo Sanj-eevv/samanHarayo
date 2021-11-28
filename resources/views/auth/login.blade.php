@@ -1,12 +1,12 @@
-@extends('layouts.front')
+@extends('layouts.auth')
 
 @section('title','Login')
 
 @section('content')
-    <div class="login-register-area pt-25 pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 ms-auto me-auto">
+    <div class="login-register-area" style="height: 100%;">
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+            <div class="row w-100">
+                <div class="col-lg-6 col-md-12 mx-auto">
                     <div class="login-register-wrapper">
                             <div class="login-form-container">
                                 <div class="login-register-tab-list nav">
@@ -20,8 +20,13 @@
                                 <div class="login-register-form">
                                     <form action="{{route('login')}}" method="post" novalidate="novalidate">
                                         @csrf
+                                        @if (session('status'))
+                                            <div class="alert alert-success" style="margin-bottom: 0px; margin-top: 25px" role="alert">
+                                                {{ session('status') }}
+                                            </div>
+                                        @endif
                                         <label for="email">Email</label>
-                                        <input {{old('email') }} name="email" type="email" class="form-control @error('email') is-invalid @enderror">
+                                        <input value="{{old('email') }}" name="email" type="email" class="form-control @error('email') is-invalid @enderror">
                                         @error('email')
                                         <span class="invalid-feedback" role="alert">
                                         {{ $message }}
@@ -40,7 +45,7 @@
                                             <div class="login-toggle-btn">
                                                 <input type="checkbox">
                                                 <label>Remember me</label>
-                                                <a href="#">Forgot Password?</a>
+                                                <a href="{{route('password.request')}}">Forgot Password?</a>
                                             </div>
                                             <button type="submit">Login</button>
                                         </div>

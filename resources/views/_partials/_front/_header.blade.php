@@ -27,7 +27,7 @@
                     <div class="col-xl-2 col-lg-3">
                         <div class="header-action header-action-flex">
                             <div class="same-style header-search-1">
-                                <div class="search-wrap-1">
+                                <div class="search-wrap-1" @auth style="width: 240px;" @endauth>
                                     <form action="#">
                                         <input placeholder="Search products…" type="text">
                                         <button class="button-search"><i class="icon-magnifier"></i></button>
