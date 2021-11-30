@@ -181,6 +181,9 @@
     z-index: 99;
     padding-bottom: 1px;
     margin-right: 10px;
+    @media #{$md-layout} {
+        width: 300px;
+    }
     form {
         position: relative;
         overflow: hidden;

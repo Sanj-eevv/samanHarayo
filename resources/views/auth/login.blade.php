@@ -34,7 +34,7 @@
                                         @enderror
 
                                         <label for="password">Password</label>
-                                        <input type="password" id="Password" name="password" class="form-control @error('password') is-invalid @enderror">
+                                        <input type="password"  name="password" class="form-control @error('password') is-invalid @enderror">
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
                                         {{ $message }}
@@ -43,7 +43,7 @@
 
                                         <div class="button-box">
                                             <div class="login-toggle-btn">
-                                                <input type="checkbox">
+                                                <input type="checkbox" name="remember">
                                                 <label>Remember me</label>
                                                 <a href="{{route('password.request')}}">Forgot Password?</a>
                                             </div>

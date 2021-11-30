@@ -4,7 +4,12 @@
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-2">
                         <div class="logo">
-                            <a href="{{route('front.index')}}"><img src="{{asset('storage/uploads/settings/header_logo.png')}}" alt="logo"></a>
+                            <a href="{{route('front.index')}}">
+{{--                                <img src="{{asset('storage/uploads/settings/header_logo.png')}}" alt="logo">--}}
+                                <h3 style="font-weight: bold">
+                                    Saman<span style="color: red;">Harayo</span>
+                                </h3>
+                            </a>
                         </div>
                     </div>
                     <div class="col-xl-8 col-lg-7">
@@ -54,9 +59,9 @@
             <div class="row align-items-center">
                 <div class="col-5">
                     <div class="mobile-logo">
-                        <a href="{{route('front.index')}}">
-                            <img alt="" src="{{asset('storage/uploads/settings/header_logo.png')}}">
-                        </a>
+                        <h3 style="font-weight: bold">
+                            Saman<span style="color: red;">Harayo</span>
+                        </h3>
                     </div>
                 </div>
                 <div class="col-7">
@@ -92,9 +97,9 @@
             <div class="row align-items-center">
                 <div class="col-5">
                     <div class="mobile-logo">
-                        <a href="{{route('front.index')}}">
-                            <img alt="" src="{{asset('storage/uploads/settings/header_logo.png')}}">
-                        </a>
+                        <h3 style="font-weight: bold">
+                            Saman<span style="color: red;">Harayo</span>
+                        </h3>
                     </div>
                 </div>
                 <div class="col-7">

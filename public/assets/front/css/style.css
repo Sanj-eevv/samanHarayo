@@ -1,10 +1,10 @@
 /*-----------------------------------------------------------------------------------
-    
+
     Template Name: Norda - Minimal eCommerce HTML Template
     Version: 1.2
-    
+
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
     1. Template default CSS
@@ -34,7 +34,7 @@
     25. Contect us style
     26. Blog details style
     27. Order tracking style
-    
+
 -----------------------------------------------------------------------------------*/
 /*----------------------------------------*/
 /*  1. Template default CSS
@@ -2018,6 +2018,9 @@ textarea:focus {
   z-index: 99;
   padding-bottom: 1px;
   margin-right: 10px; }
+  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    .search-wrap-1 {
+      width: 300px; } }
   .search-wrap-1 form {
     position: relative;
     overflow: hidden; }
@@ -11155,3 +11158,19 @@ h3.cart-page-title {
       text-transform: uppercase; }
       .order-tracking-content .order-tracking-form .order-track-btn a:hover {
         background-color: #ff2f2f; }
+
+.section-report-area .section-report-area-wrapper button {
+  background-color: #ff2f2f;
+  color: #fff;
+  border: medium none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 20px 30px 20px;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  width: 100%;
+  margin-bottom: 20px; }
+  .section-report-area .section-report-area-wrapper button:hover {
+    background-color: #010225; }

@@ -1057,5 +1057,10 @@
         document.getElementById('logout-form').submit();
     })
 
+    $('#Password').passtrength({
+        minChars: 8,
+        passwordToggle:false,
+    });
+
 })(jQuery);
 

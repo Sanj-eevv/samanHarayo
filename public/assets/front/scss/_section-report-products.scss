@@ -1,0 +1,22 @@
+.section-report-area {
+    .section-report-area-wrapper {
+        button {
+            background-color: $theme-color-red;
+            color: #fff;
+            border: medium none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1;
+            padding: 20px 30px 20px;
+            text-transform: uppercase;
+            transition: all 0.3s ease 0s;
+            width: 100%;
+            margin-bottom: 20px;
+            &:hover {
+                background-color: #010225;
+            }
+        }
+
+    }
+}

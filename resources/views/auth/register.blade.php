@@ -77,14 +77,3 @@
     </div>
 @endsection
 
-@section('page_level_script')
-<script type="text/javascript">
-    $( window ).on('load', function() {
-        $('#Password').passtrength({
-            minChars: 8,
-            passwordToggle:false,
-        });
-    });
-</script>
-@endsection
-

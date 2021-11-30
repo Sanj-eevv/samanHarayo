@@ -3,10 +3,12 @@
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div class="footer-logo pt-20">
-                    <a href="#"><img src="{{asset('storage/uploads/settings/header_logo.png')}}" alt="logo"></a>
+                    <h3 style="font-weight: bold">
+                        Saman<span style="color: red;">Harayo</span>
+                    </h3>
                 </div>
                 <div class="copyright">
-                    <p>Copyright © 2021 HasThemes | <a href="https://hasthemes.com/">Built with <span>Norda</span> by HasThemes</a>.</p>
+                    <p>Copyright © 2021 | <a href="#"><span>Saman</span><span style="color: red;">Harayo</span></a>.</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
