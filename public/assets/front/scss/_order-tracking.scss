@@ -7,7 +7,7 @@
         text-align: center;
         width: 89%;
         color: #333;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             width: 100%;
         }
     }

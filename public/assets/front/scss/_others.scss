@@ -9,7 +9,7 @@
     @media #{$md-layout} {
         margin-left: 50px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         margin-left: 15px;
     }
     h2 {
@@ -17,7 +17,7 @@
         line-height: 36px;
         letter-spacing: -.25px;
         margin: 0;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             font-size: 20px;
             line-height: 25px;
         }
@@ -28,7 +28,7 @@
     p {
         font-size: 16px;
         margin: 15px 0 36px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin: 12px 0 20px;
         }
     }
@@ -39,7 +39,7 @@
             img {
                 max-width: 100%;
                 margin-right: 20px;
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     width: 110px;
                     margin-right: 10px;
                 }

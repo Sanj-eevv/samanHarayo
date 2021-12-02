@@ -31,7 +31,7 @@
     }
     .blog-details-content {
         margin-top: 30px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin-top: 15px;
         }
         .blog-meta-2 {
@@ -48,7 +48,7 @@
                         top: 50%;
                         transform: translateY(-50%);
                         width: 1px;
-                        height: 12px; 
+                        height: 12px;
                         background-color: #000;
                     }
                     &:last-child {
@@ -78,7 +78,7 @@
             @media #{$md-layout} {
                 font-size: 22px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 18px;
                 line-height: 28px;
                 margin: 8px 0 12px;
@@ -88,7 +88,7 @@
             margin: 0;
             font-size: 15px;
             line-height: 28px;
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 14px;
                 line-height: 26px;
             }
@@ -106,7 +106,7 @@
             @media #{$md-layout} {
                 font-size: 17px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 16px;
                 line-height: 28px;
                 margin: 15px 0 15px;
@@ -117,7 +117,7 @@
 
 .dec-img-wrapper {
     margin-top: 50px;
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         margin-top: 25px;
     }
     p {
@@ -129,7 +129,7 @@
             width: 100%;
         }
         &.mb-50 {
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin-bottom: 25px;
             }
         }
@@ -141,12 +141,12 @@
     justify-content: space-between;
     align-items: center;
     margin: 30px 0 30px;
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         display: block;
         margin: 20px 0 25px;
     }
     .dec-tag {
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin-bottom: 10px;
         }
         ul {
@@ -190,7 +190,7 @@
                             color: #e4405f;
                         }
                     }
-                    
+
                 }
             }
         }
@@ -214,7 +214,7 @@
 }
 
 .blog-comment-wrapper {
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.mt-55 {
             margin-top: 25px;
         }
@@ -224,13 +224,13 @@
         font-weight: 600;
         margin: 0;
         text-transform: uppercase;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             font-size: 18px;
         }
     }
     .single-comment-wrapper {
         display: flex;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             display: block;
             &.mt-35 {
                 margin-top: 20px;
@@ -242,13 +242,13 @@
         .blog-comment-img {
             flex: 0 0 120px;
             margin-right: 28px;
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin-right: 28px;
                 margin-bottom: 20px;
             }
             img {
                 width: 100%;
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     width: auto;
                 }
             }
@@ -268,7 +268,7 @@
             p {
                 font-size: 15px;
                 margin-bottom: 10px;
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     font-size: 14px;
                 }
             }
@@ -285,7 +285,7 @@
             }
         }
         &.ml-120 {
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin-left: 0;
             }
         }
@@ -293,7 +293,7 @@
 }
 
 .blog-reply-wrapper {
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.mt-50 {
             margin-top: 30px;
         }
@@ -303,13 +303,13 @@
         font-weight: 600;
         margin: 0;
         text-transform: uppercase;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             font-size: 18px;
         }
     }
     .blog-form {
         margin-top: 35px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin-top: 20px;
         }
         .leave-form {
@@ -333,7 +333,7 @@
                 padding-top: 20px;
                 margin-bottom: 20px;
                 padding-left: 20px;
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     height: 120px;
                 }
             }

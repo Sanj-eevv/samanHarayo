@@ -5,7 +5,7 @@
     @media #{$md-layout} {
         padding-bottom: 45px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-bottom: 20px;
     }
 }
@@ -20,7 +20,7 @@
                 transition: all .5s ease 0s;
             }
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             &.mb-25 {
                 margin-bottom: 15px;
             }
@@ -77,7 +77,7 @@
                 font-size: 18px;
                 margin: 8px 0 0;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 17px;
                 margin: 5px 0 0;
                 line-height: 28px;
@@ -99,7 +99,7 @@
             }
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.mb-40 {
             margin-bottom: 30px;
         }
@@ -156,7 +156,7 @@
     }
 }
 
-@media #{$xs-layout} {
+@media #{$sm-layout} {
     .blog-area {
         &.pb-80 {
             padding-bottom: 25px;

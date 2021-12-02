@@ -14,7 +14,7 @@
         @media #{$md-layout} {
             margin-top: -30px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin-top: 0px;
             border-bottom: 1px solid #e1e1e1;
         }
@@ -25,7 +25,7 @@
     @media #{$md-layout} {
         //margin-top: -50px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         //margin-top: -30px;
         //padding: 41px 0 15px;
     }
@@ -65,11 +65,11 @@
             font-size: 18px;
             font-weight: 600;
             margin: 0 0 8px;
-            color: #222222; 
+            color: #222222;
         }
         span {
             display: block;
-            line-height: 1; 
+            line-height: 1;
             color: #999999;
         }
     }
@@ -100,7 +100,7 @@
             }
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &:before {
             display: none;
         }
@@ -117,17 +117,17 @@
 }
 .service-wrap-padding-3 {
     padding: 32px 0 3px;
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding: 32px 20px 3px;
     }
 }
 
-.single-service-wrap-2 { 
+.single-service-wrap-2 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center; 
-    @media #{$xs-layout} {
+    justify-content: center;
+    @media #{$sm-layout} {
         justify-content: flex-start;
     }
     .service-icon-2 {
@@ -146,14 +146,14 @@
         }
         p {
             margin: 0;
-            letter-spacing: .25px; 
+            letter-spacing: .25px;
         }
     }
     &.single-service-wrap-2-modify {
         justify-content: flex-start;
         .service-icon-2 {
             i {
-                font-size: 30px; 
+                font-size: 30px;
             }
         }
         .service-content-2 {
@@ -186,7 +186,7 @@
     }
 }
 
-@media #{$xs-layout} {
+@media #{$sm-layout} {
     .service-area {
         &.pt-45 {
             padding-top: 25px;

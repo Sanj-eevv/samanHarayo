@@ -120,7 +120,7 @@
     </style>
 @endsection
 @section('content')
-<div class="slider-area pt-30">
+<div class="slider-area">
     <div class="container">
         <div class="hero-slider-active-2 nav-style-1 nav-style-1-modify nav-style-1-blue bg-gray-7">
             <div class="single-hero-slider slider-height-3 custom-d-flex custom-align-item-center single-animation-wrap">
@@ -243,7 +243,7 @@
                         <h3>Introduce</h3>
                         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi debitis deleniti ducimus ea eaque ipsum maiores maxime molestiae molestias, nesciunt qui quidem repellat repudiandae sapiente sint tempora, veniam vero? </p>
                         <div class="signature">
-                            <h2>Sanjeev Bhandari</h2>
+                            <h2>Sanju Bhandari</h2>
                         </div>
                     </div>
                 </div>

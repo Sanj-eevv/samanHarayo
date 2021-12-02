@@ -16,7 +16,7 @@
                 color: $theme-color-red;
             }
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             padding: 14px 30px 14px 40px;
         }
         &:before {
@@ -115,7 +115,7 @@
                 &:last-child {
                     margin: 0 0px 0 0;
                 }
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     margin: 0 5px 0 0;
                 }
                 a {
@@ -130,7 +130,7 @@
                     @media #{$md-layout} {
                         padding: 24px 70px 25px;
                     }
-                    @media #{$xs-layout} {
+                    @media #{$sm-layout} {
                         padding: 15px 13px 16px;
                     }
                     line-height: 1;
@@ -190,7 +190,7 @@
             @media #{$lg-layout} {
                 padding: 5px 15px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 padding: 5px 16px;
             }
             &:hover {
@@ -207,7 +207,7 @@
         position: relative;
         margin: 0 0 55px;
         text-transform: uppercase;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin-bottom: 40px;
         }
         &:before {
@@ -346,7 +346,7 @@
             margin-right: 0px;
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.mr-50 {
             margin-right: 0px;
         }
@@ -365,7 +365,7 @@
     @media #{$md-layout} {
         margin-top: 30px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding: 40px 12px 50px;
         margin-top: 30px;
     }
@@ -472,7 +472,7 @@
                     display: flex;
                     align-items: center;
                     font-weight: 500;
-                    @media #{$xs-layout} {
+                    @media #{$sm-layout} {
                         display: block;
                     }
                     img {
@@ -497,7 +497,7 @@
     }
     .Place-order {
         margin-top: 40px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin-top: 20px;
         }
         a {
@@ -520,7 +520,7 @@
 }
 
 .checkout-main-area {
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.pb-70 {
             padding-bottom: 50px;
         }

@@ -1,149 +1,138 @@
 /*-------- 3. Header style ---------*/
 
-.header-small-device {
-    display: none;
-    @media #{$xs-layout} {
-        display: block;
-    }
-    &.small-device-ptb-1 {
-        padding: 25px 0 25px;
-    }
-}
-.header-medium-device {
-    display: none;
-    @media #{$lg-layout} {
-        display: block;
-    }
-    @media #{$md-layout} {
-        display: block;
-    }
-    &.medium-device-ptb-1 {
-        padding: 25px 0 25px;
-    }
-}
-.header-large-device {
-    display: block;
-    @media #{$md-layout} {
-        display: none;
-    }
-    @media #{$xs-layout} {
-        display: none;
-    }
-    @media #{$lg-layout} {
-        display: none;
-    }
+.header-area{
+        .row {
+            padding: 1rem 0rem;
+        }
 }
 .logo {
     a {
-        display: block;
-        img {
-            max-width: 100%;
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 35px;
+            object-position: center;
         }
     }
 }
-.main-menu {
-    > nav {
-        > ul {
-            > li {
-                display: inline-block;
-                position: relative;
-                a {
-                    color: $black;
-                    font-size: 16px;
-                    font-weight: 600;
-                    display: inline-block;
-                }
-                &:hover {
-                    > a {
-                        color: $theme-color-red;
-                    }
-                }
-            }
-        }
+.header-nav{
+    @media #{$md-layout} {
+        display: none;
     }
-    &.main-menu-padding-1 {
-        > nav {
-            > ul {
-                > li {
-                    padding-right: 40px;
-                    @media #{$lg-layout} {
-                        padding-right: 40px;
-                    }
-                    &:last-child {
-                        padding-right: 0px;
-                    }
-                }
-            }
-        }
+    @media #{$sm-layout} {
+        display: none;
     }
-    &.main-menu-lh-1 {
-        > nav {
-            > ul {
-                > li {
-                    line-height: 95px;
-                }
+    @media #{$vsm-layout} {
+        display: none;
+    }
+    .main-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        div a {
+            color: $black;
+            font-size: 16px;
+            font-weight: 500;
+            &:hover {
+                color: $theme-color-red;
             }
         }
     }
 }
 .header-action {
-    &.header-action-flex {
-        display: flex;
-        justify-content: flex-end;
-    }
-    .same-style {
-        line-height: 1;
-        margin-right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .header-search {
+        @media #{$xl-layout} {
+            display: block;
+        }
         @media #{$lg-layout} {
-            margin-right: 25px;
+            display: block;
         }
-        @media #{$xs-layout} {
-            margin-right: 20px;
-        }
-        @media #{$sm-layout} {
-            margin-right: 25px;
-        }
-        @media #{$md-layout} {
-        }
-        &:last-child {
-            margin-right: 0;
-            margin-top: 10px;
-            @media #{$xl-layout} {
-                margin-top: 0px;
+        display: none;
+        position: relative;
+        form {
+            input {
+                background-color: #fff;
+                border: 1px solid #E2DCDC;
+                color: #000;
+                padding: 2px 60px 2px 10px;
+
+                &::-moz-input-placeholder {
+                    color: #000;
+                    opacity: 1;
+                }
+
+                &::-webkit-input-placeholder {
+                    color: #000;
+                    opacity: 1;
+                }
             }
-            @media #{$xx-layout} {
-                margin-top: 0px;
+
+            button.button-search {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 0;
+                border: none;
+                background-color: transparent;
+                height: 100%;
+                border-left: 1px solid #E2DCDC;
+                padding: 0 15px;
+                color: $black;
+
+                &:hover {
+                    color: $theme-color-red;
+                }
             }
+        }
+    }
+    .red-btn{
+        background-color: $theme-color-red;
+        color: #fff;
+        border: medium none;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 12px 25px;
+        text-transform: uppercase;
+        &:hover {
+            background-color: #010225;
+            color: #fff;
+        }
+    }
+    .header-user-icon{
+        display: none;
+        @media #{$xl-layout} {
+            display: block;
+        }
+        @media #{$lg-layout} {
+            display: block;
         }
         a {
-            color: $black;
-            font-size: 22px;
-            display: inline-block;
-            position: relative;
-            @media #{$xs-layout} {
-                font-size: 20px;
-            }
-            @media #{$sm-layout} {
-                font-size: 22px;
-            }
-            &:hover {
+        font-size: 23px;
+            &:hover{
                 color: $theme-color-red;
             }
         }
-        &.same-style-login{
-            background: $grey;
-            padding: 10px 20px;
-            border-radius: 15px;
-         a{
-             color: $theme-color-red;
-             font-weight: 600;
-         }
+    }
+    .mobile-header-button-active{
+        @media #{$xl-layout} {
+            display: none;
         }
-        &.large-device-same-style{
-            margin-top: 10px;
+        @media #{$lg-layout} {
+            display: none;
+        }
+        a {
+            font-size: 20px;
         }
     }
 }
+
+
+
 .main-wrapper {
     .body-overlay {
         background-color: #232324;
@@ -162,62 +151,6 @@
             opacity: .7;
             visibility: visible;
             z-index: 9999;
-        }
-    }
-}
-.header-search-1 {
-    position: relative;
-}
-.search-wrap-1 {
-    background-color: transparent;
-    opacity: 1;
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.3s ease 0s;
-    visibility: visible;
-    width: 340px;
-    z-index: 99;
-    padding-bottom: 1px;
-    margin-right: 10px;
-    @media #{$md-layout} {
-        width: 300px;
-    }
-    form {
-        position: relative;
-        overflow: hidden;
-        input {
-            background-color: #fff;
-            border: 1px solid #E2DCDC;
-            color: #000;
-            line-height: 30px;
-            padding: 2px 60px 2px 20px;
-            width: 100%;
-            &::-moz-input-placeholder {
-                color: #000;
-                opacity: 1;
-            }
-            &::-webkit-input-placeholder {
-                color: #000;
-                opacity: 1;
-            }
-        }
-        button.button-search {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            padding: 0;
-            border: none;
-            background-color: transparent;
-            height: 100%;
-            border-left: 1px solid #E2DCDC;
-            padding: 0 15px;
-            color: $black;
-            &:hover {
-                color: $theme-color-red;
-            }
         }
     }
 }
@@ -256,7 +189,7 @@
     background-color: $white;
     box-shadow: 0 0 15px 0 rgba(0,0,0,.09);
     z-index: 9999;
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         width: 290px;
     }
     &.sidebar-visible {
@@ -267,7 +200,7 @@
     & .clickalbe-sidebar-wrap {
         padding: 80px 30px 20px;
         height: 100%;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             padding: 80px 20px 20px;
         }
         .sidebar-close {
@@ -278,7 +211,7 @@
             line-height: 30px;
             transition: all 250ms ease-out;
             color: $black;
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 left: 20px;
             }
             &:hover {
@@ -341,7 +274,7 @@
                         top: 50%;
                         transform: translateY(-50%);
                         transition: all 0.3s ease 0s;
-                        @media #{$xs-layout} {
+                        @media #{$sm-layout} {
                             font-size: 16px;
                         }
                         &:hover{

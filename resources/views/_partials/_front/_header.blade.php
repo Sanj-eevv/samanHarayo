@@ -1,128 +1,48 @@
-<header class="header-area transparent-bar section-padding-1">
+<header class="header-area">
     <div class="container">
-        <div class="header-large-device">
-                <div class="row align-items-center">
-                    <div class="col-xl-2 col-lg-2">
+                <div class="row d-flex justify-content-between align-items-center ">
+                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-5">
                         <div class="logo">
                             <a href="{{route('front.index')}}">
-{{--                                <img src="{{asset('storage/uploads/settings/header_logo.png')}}" alt="logo">--}}
-                                <h3 style="font-weight: bold">
-                                    Saman<span style="color: red;">Harayo</span>
-                                </h3>
+                                <img src="{{asset('assets/logo.png')}}">
                             </a>
                         </div>
                     </div>
-                    <div class="col-xl-8 col-lg-7">
-                        <div class="main-menu main-menu-padding-1 main-menu-lh-1">
-                            <nav>
-                                <ul>
-                                    <li><a href="index.html">HOME </a>
-                                    </li>
-                                    <li><a href="shop.html">LISTING </a>
-                                    </li>
-                                    <li><a href="#">FAQ </a>
-                                    </li>
-                                    <li><a href="blog.html">ABOUT US </a>
-                                    </li>
-                                    <li><a href="contact.html">CONTACT </a></li>
-                                </ul>
-                            </nav>
+                    <div class="header-nav col-xl-6 col-lg-5">
+                        <div class="main-menu">
+                            <div class="mr-10"><a href="{{route('front.index')}}">HOME </a></div>
+                            <div class="mr-10"><a href="#">LISTING </a></div>
+                            <div class="mr-10"><a href="#">FAQ </a></div>
+                            <div class="mr-10"><a href="#">ABOUT US </a></div>
+                            <div class="mr-10"><a href="#">CONTACT </a></div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-3">
-                        <div class="header-action header-action-flex">
-                            <div class="same-style header-search-1">
-                                <div class="search-wrap-1" @auth style="width: 240px;" @endauth>
+                    <div class="col-xl-4 col-lg-5 col-md-3 col-sm-6 col-5">
+                        <div class="header-action">
+                            <div class="header-search mr-20">
                                     <form action="#">
                                         <input placeholder="Search products…" type="text">
                                         <button class="button-search"><i class="icon-magnifier"></i></button>
                                     </form>
-                                </div>
                             </div>
                             @if(\Illuminate\Support\Facades\Auth::check())
-                                <div class="same-style large-device-same-style">
-                                    <a href="{{route('login')}}"><i class="icon-user"></i></a>
-                                </div>
-                                <div class="same-style same-style-login">
-                                    <a href="{{route('logout')}}"  class="front-logout">Logout</a>
-                                </div>
+                            <div class="header-user-icon mr-20">
+                                <a href="{{route('login')}}"><i class="icon-user"></i></a>
+                            </div>
+                            <div>
+                                <a class="front-logout red-btn" href="{{route('logout')}}">Logout</a>
+                            </div>
                             @else
-                            <div class="same-style same-style-login">
-                                <a href="{{route('login')}}">Login</a>
+                            <div>
+                                <a class="red-btn" href="{{route('login')}}">Login</a>
                             </div>
                             @endif
-                        </div>
-                    </div>
-                </div>
-        </div>
-        <div class="header-medium-device medium-device-ptb-1">
-            <div class="row align-items-center">
-                <div class="col-5">
-                    <div class="mobile-logo">
-                        <h3 style="font-weight: bold">
-                            Saman<span style="color: red;">Harayo</span>
-                        </h3>
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="header-action header-action-flex">
-                        <div class="same-style header-search-1">
-                            <div class="search-wrap-1 open">
-                                <form action="#">
-                                    <input placeholder="Search products…" type="text">
-                                    <button class="button-search"><i class="icon-magnifier"></i></button>
-                                </form>
+                            <div class="mobile-header-button-active ml-20">
+                                <a href="#"><i class="icon-menu"></i> </a>
                             </div>
                         </div>
-                        @if(\Illuminate\Support\Facades\Auth::check())
-                            <div class="same-style large-device-same-style">
-                                <a href="{{route('login')}}"><i class="icon-user"></i></a>
-                            </div>
-                            <div class="same-style same-style-login">
-                                <a href="{{route('logout')}}" class="front-logout">Logout</a>
-                            </div>
-                        @else
-                            <div class="same-style same-style-login">
-                                <a href="{{route('login')}}">Login</a>
-                            </div>
-                        @endif
-                        <div class="same-style main-menu-icon">
-                            <a class="mobile-header-button-active" href="#"><i class="icon-menu"></i> </a>
-                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="header-small-device small-device-ptb-1">
-            <div class="row align-items-center">
-                <div class="col-5">
-                    <div class="mobile-logo">
-                        <h3 style="font-weight: bold">
-                            Saman<span style="color: red;">Harayo</span>
-                        </h3>
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="header-action header-action-flex">
-                        @if(\Illuminate\Support\Facades\Auth::check())
-                            <div class="same-style large-device-same-style">
-                                <a href="{{route('login')}}"><i class="icon-user"></i></a>
-                            </div>
-                            <div class="same-style same-style-login">
-                                <a href="{{route('logout')}}"  class="front-logout">Logout</a>
-                            </div>
-                        @else
-                            <div class="same-style same-style-login">
-                                <a href="{{route('login')}}">Login</a>
-                            </div>
-                        @endif
-                        <div class="same-style main-menu-icon">
-                            <a class="mobile-header-button-active" href="#"><i class="icon-menu"></i> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <form id="logout-form" action="{{route('logout')}}" method="post" style="display: none;">@csrf</form>
 </header>
@@ -135,6 +55,9 @@
                     <input type="text" placeholder="Search here…">
                     <button class="button-search"><i class="icon-magnifier"></i></button>
                 </form>
+            </div>
+            <div>
+                <button class="button-red">Login</button>
             </div>
             <div class="mobile-menu-wrap mobile-header-padding-border-2">
                 <!-- mobile menu start -->

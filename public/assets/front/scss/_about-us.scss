@@ -46,7 +46,7 @@
             margin: 15px 0 40px;
             width: 100%;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             font-size: 18px;
             line-height: 34px;
             margin: 10px 0 30px;
@@ -59,7 +59,7 @@
             font-family: $signericafat;
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         margin-top: 20px;
     }
 }
@@ -69,8 +69,8 @@
     @media #{$md-layout} {
         padding-bottom: 80px;
     }
-    @media #{$xs-layout} {
-        padding-bottom: 60px; 
+    @media #{$sm-layout} {
+        padding-bottom: 60px;
     }
 }
 
@@ -80,7 +80,7 @@
         @media #{$md-layout} {
             margin: 0 0 15px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin: 0 0 15px;
         }
         h4 {
@@ -96,7 +96,7 @@
         @media #{$md-layout} {
             margin: 0 0 15px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin: 0 0 15px;
         }
         &:last-child {
@@ -110,7 +110,7 @@
         font-size: 24px;
         text-transform: uppercase;
         margin: 0 0 10px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             font-size: 17px;
             line-height: 24px;
         }
@@ -127,7 +127,7 @@
         font-size: 16px;
         color: #666666;
         margin: 0;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             font-size: 15px;
         }
         @media #{$sm-layout} {
@@ -141,7 +141,7 @@
 .about-us-content-4 {
     .about-us-content-4-title {
         margin: 0 0 26px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin: 0 0 15px;
         }
         h4 {
@@ -154,7 +154,7 @@
     p {
         line-height: 28px;
         margin: 0 0 21px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin: 0 0 15px;
         }
         &:last-child {
@@ -267,7 +267,7 @@
             font-size: 17px;
             line-height: 32px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             width: 100%;
             margin: 14px auto 15px;
             font-size: 16px;
@@ -280,7 +280,7 @@
             font-weight: 600;
             margin: 0 0 6px;
             line-height: 1;
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 18px;
             }
         }
@@ -306,7 +306,7 @@
     }
 }
 
-@media #{$xs-layout} {
+@media #{$sm-layout} {
     .about-us-area {
         &.pt-85 {
             padding-top: 20px;

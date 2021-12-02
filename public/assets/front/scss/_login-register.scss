@@ -9,14 +9,14 @@
         @media #{$lg-layout}{
             padding: 80px 50px;
         }
-        @media #{$xs-layout}{
+        @media #{$sm-layout}{
             padding: 40px 30px;
         }
         .login-register-tab-list {
             display: flex;
             justify-content: center;
             margin-bottom: 10px;
-            @media #{$xs-layout}{
+            @media #{$sm-layout}{
                 margin-bottom: 20px;
             }
             a {
@@ -74,7 +74,7 @@
                     margin-top: 30px;
                     display: inline-block;
                     margin-bottom: 4px;
-                    @media #{$xs-layout}{
+                    @media #{$sm-layout}{
                         font-size: 14px;
                     }
                 }
@@ -86,7 +86,7 @@
                             margin-top: 30px;
                             font-size: 15px;
                             color: #010225;
-                            @media #{$xs-layout}{
+                            @media #{$sm-layout}{
                                 font-size: 14px;
                             }
                             transition: all 0.3s ease 0s;
@@ -120,7 +120,7 @@
 }
 
 .login-register-area {
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.pb-100 {
             padding-bottom: 60px;
         }

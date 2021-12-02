@@ -9,7 +9,7 @@
         @media #{$md-layout} {
             margin-left: 0px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin-left: 0px;
         }
     }
@@ -21,14 +21,14 @@
         @media #{$md-layout} {
             margin-right: 0px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin-right: 0px;
         }
     }
     @media #{$md-layout} {
         margin-top: 50px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         margin-top: 30px;
     }
 }

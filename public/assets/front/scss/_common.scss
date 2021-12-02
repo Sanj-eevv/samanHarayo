@@ -319,7 +319,7 @@ ul {
     @media #{$md-layout} {
         margin-top: 50px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         margin-top: 60px;
     }
 }
@@ -773,7 +773,7 @@ ul {
     @media #{$md-layout} {
         padding-top: 45px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-top: 25px;
     }
 }
@@ -783,7 +783,7 @@ ul {
     @media #{$md-layout} {
         padding-top: 70px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-top: 50px;
     }
 }
@@ -793,7 +793,7 @@ ul {
     @media #{$md-layout} {
         padding-top: 75px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-top: 55px;
     }
 }
@@ -803,7 +803,7 @@ ul {
     @media #{$md-layout} {
         padding-top: 80px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-top: 60px;
     }
 }
@@ -825,7 +825,7 @@ ul {
     @media #{$md-layout} {
         padding-top: 75px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-top: 55px;
     }
 }
@@ -1102,7 +1102,7 @@ ul {
     @media #{$md-layout} {
         padding-bottom: 65px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-bottom: 45px;
     }
 }
@@ -1112,7 +1112,7 @@ ul {
     @media #{$md-layout} {
         padding-bottom: 70px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-bottom: 50px;
     }
 }
@@ -1122,7 +1122,7 @@ ul {
     @media #{$md-layout} {
         padding-bottom: 75px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-bottom: 55px;
     }
 }
@@ -1132,7 +1132,7 @@ ul {
     @media #{$md-layout} {
         padding-bottom: 80px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-bottom: 60px;
     }
 }
@@ -1142,7 +1142,7 @@ ul {
     @media #{$md-layout} {
         padding-bottom: 65px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-bottom: 45px;
     }
 }
@@ -1152,7 +1152,7 @@ ul {
     @media #{$md-layout} {
         padding-bottom: 70px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-bottom: 50px;
     }
 }
@@ -1161,7 +1161,7 @@ ul {
     @media #{$md-layout} {
         padding-bottom: 75px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-bottom: 55px;
     }
 }
@@ -1171,7 +1171,7 @@ ul {
     @media #{$md-layout} {
         padding-bottom: 80px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-bottom: 60px;
     }
 }
@@ -1654,7 +1654,7 @@ textarea:focus {
         flex: 0 0 33.333%;
         max-width: 33.333%;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding-right: 15px;
         padding-left: 15px;
         flex: 0 0 100%;
@@ -1691,7 +1691,7 @@ textarea:focus {
         border: 1px solid $theme-color-red;
         background-color: $theme-color-red;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         width: 40px;
         height: 40px;
         right: 15px;
@@ -1700,7 +1700,7 @@ textarea:focus {
         display: block;
         line-height: 38px;
         font-size: 18px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             line-height: 40px;
             font-size: 16px;
         }
@@ -1841,7 +1841,7 @@ textarea:focus {
     }
 }
 
-@media #{$xs-layout} {
+@media #{$sm-layout} {
     .res-white-overly-xs {
         position: relative;
         &:before {
@@ -1857,7 +1857,7 @@ textarea:focus {
         }
     }
 }
-@media #{$xs-layout} {
+@media #{$sm-layout} {
     .res-black-overly-xs {
         position: relative;
         &:before {
@@ -1891,7 +1891,7 @@ textarea:focus {
 }
 
 
-@media #{$xs-layout} {
+@media #{$sm-layout} {
     .xs-mb-30 {
         margin-bottom: 30px;
     }
@@ -1912,7 +1912,7 @@ textarea:focus {
         @media #{$md-layout} {
             padding: 0 40px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             padding: 0 15px;
         }
         @media #{$sm-layout} {
@@ -1936,7 +1936,7 @@ textarea:focus {
         @media #{$md-layout} {
             padding: 0 40px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             padding: 0 15px;
         }
         @media #{$sm-layout} {
@@ -1974,7 +1974,7 @@ textarea:focus {
     @media #{$md-layout} {
         width: 730px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         width: 100%;
     }
     @media #{$sm-layout} {
@@ -2000,7 +2000,7 @@ textarea:focus {
     @media #{$md-layout} {
         width: 730px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         width: 100%;
     }
     @media #{$sm-layout} {
@@ -2010,6 +2010,25 @@ textarea:focus {
 
 .main-wrapper{
     height: 100%;
+}
+
+// custom css
+
+.button-red,
+.a-red {
+    background-color: $theme-color-red;
+    color: #fff;
+    border: medium none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 11px 30px 11px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    &:hover {
+        background-color: #010225;
+        color: #fff;
+    }
 }
 
 

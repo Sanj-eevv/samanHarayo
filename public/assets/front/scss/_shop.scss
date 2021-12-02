@@ -7,7 +7,7 @@
 	justify-content: space-between;
 	margin-bottom: 30px;
 	padding: 15px 24px;
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         display: block;
         padding: 15px 15px;
         justify-content: inherit;
@@ -24,7 +24,7 @@
             @media #{$md-layout}{
                 margin-right: 10px;
             }
-            @media #{$xs-layout}{
+            @media #{$sm-layout}{
                 margin-right: 7px;
             }
             a {
@@ -46,7 +46,7 @@
     .product-sorting-wrapper {
         display: flex;
         flex-wrap: wrap;
-        @media #{$xs-layout}{
+        @media #{$sm-layout}{
             display: block;
             flex-wrap: inherit;
             overflow: hidden;
@@ -59,7 +59,7 @@
         .shorting-style {
             margin-left: 20px;
             display: flex;
-            @media #{$xs-layout}{
+            @media #{$sm-layout}{
                 margin-left: 0px;
                 display: block;
                 margin-bottom: 15px;
@@ -95,7 +95,7 @@
                 @media #{$md-layout}{
                     width: 130px;
                 }
-                @media #{$xs-layout}{
+                @media #{$sm-layout}{
                     width: 150px;
                 }
                 option {
@@ -115,7 +115,7 @@
                     @media #{$md-layout}{
                         width: 75px;
                     }
-                    @media #{$xs-layout}{
+                    @media #{$sm-layout}{
                         width: 163px;
                     }
                 }
@@ -176,7 +176,7 @@
         }
         .pro-list-price {
             margin: 15px 0 8px;
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 10px 0 5px;
             }
             span {
@@ -213,7 +213,7 @@
         }
         p {
             margin: 7px 0 20px;
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 5px 0 15px;
             }
         }
@@ -237,7 +237,7 @@
                 }
             }
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin-top: 15px;
         }
         @media #{$sm-layout} {
@@ -296,7 +296,7 @@
             }
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.mt-10 {
             margin-top: 0px;
         }
@@ -310,7 +310,7 @@
         text-transform: capitalize;
         line-height: 28px;
         margin-bottom: 15px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             font-size: 20px;
             margin-bottom: 8px;
         }
@@ -329,7 +329,7 @@
             margin-bottom: 40px;
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.mb-50 {
             margin-bottom: 30px;
         }
@@ -342,7 +342,7 @@
         }
     }
 }
-@media #{$xs-layout} {
+@media #{$sm-layout} {
     .shop-location {
         &.pb-65 {
             padding-bottom: 27px;

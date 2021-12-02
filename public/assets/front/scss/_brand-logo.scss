@@ -7,7 +7,7 @@
     @media #{$md-layout} {
         justify-content: inherit;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         justify-content: inherit;
     }
     &.brand-logo-mrg {
@@ -21,7 +21,7 @@
         @media #{$md-layout} {
             margin: 0 0px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin: 0 0px;
         }
     }
@@ -32,7 +32,7 @@
             flex: 0 0 33.333%;
             max-width: 33.333%;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             flex: 0 0 50%;
             max-width: 50%;
         }
@@ -68,7 +68,7 @@
             flex: 0 0 33.333%;
             max-width: 33.333%;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             flex: 0 0 50%;
             max-width: 50%;
         }
@@ -81,7 +81,7 @@
             @media #{$md-layout} {
                 text-align: center;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 text-align: center;
             }
         }
@@ -90,7 +90,7 @@
             @media #{$md-layout} {
                 text-align: center;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 text-align: center;
             }
         }
@@ -122,7 +122,7 @@
         }
     }
 }
-@media #{$xs-layout} {
+@media #{$sm-layout} {
     .brand-logo-area {
         &.pt-100 {
             padding-top: 40px;

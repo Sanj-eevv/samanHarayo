@@ -12,7 +12,7 @@
                     @media #{$md-layout} {
                         padding: 20px 15px;
                     }
-                    @media #{$xs-layout} {
+                    @media #{$sm-layout} {
                         padding: 10px 20px;
                         display: block;
                         width: 100%;
@@ -27,7 +27,7 @@
                         @media #{$md-layout} {
                             min-width: 110px;
                         }
-                        @media #{$xs-layout} {
+                        @media #{$sm-layout} {
                             min-width: 100%;
                             display: block;
                             width: 100%;
@@ -46,7 +46,7 @@
                         @media #{$md-layout} {
                             min-width: 110px;
                         }
-                        @media #{$xs-layout} {
+                        @media #{$sm-layout} {
                             min-width: 100%;
                             display: block;
                             width: 100%;
@@ -114,7 +114,7 @@
                             padding: 0;
                             cursor: pointer;
                             &:hover {
-                                color: $theme-color-red; 
+                                color: $theme-color-red;
                             }
                             & i {
                                 font-size: 20px;
@@ -131,7 +131,7 @@
         }
     }
 }
-@media #{$xs-layout} {
+@media #{$sm-layout} {
     .compare-page-wrapper {
         &.pt-90 {
             padding-top: 20px;

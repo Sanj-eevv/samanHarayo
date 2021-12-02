@@ -16,7 +16,7 @@
             margin-bottom: 30px;
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.mb-45 {
             margin-bottom: 25px;
         }
@@ -52,7 +52,7 @@
             margin-bottom: 30px;
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.mb-45 {
             margin-bottom: 25px;
         }
@@ -69,7 +69,7 @@
             margin-bottom: 40px;
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.mb-70 {
             margin-bottom: 25px;
         }
@@ -90,7 +90,7 @@
     p {
         color: #999999;
         margin: 12px 0 0;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin: 7px 0 0;
         }
     }
@@ -99,7 +99,7 @@
             margin-bottom: 35px;
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.mb-45 {
             margin-bottom: 20px;
         }
@@ -112,7 +112,7 @@
         font-weight: 600;
         margin: 0;
         letter-spacing: -.25px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             font-size: 19px;
         }
     }
@@ -136,7 +136,7 @@
         letter-spacing: -.25px;
         text-transform: uppercase;
         line-height: 1;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             font-size: 20px;
         }
     }
@@ -145,7 +145,7 @@
 .section-title-5 {
     display: flex;
     padding: 15px 24px;
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         justify-content: center;
     }
     @media #{$sm-layout} {
@@ -202,7 +202,7 @@
         margin: 0;
         line-height: 1;
         letter-spacing: .25px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             font-size: 17px;
         }
         i {
@@ -216,7 +216,7 @@
             margin-bottom: 35px;
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.section-title-6-xs {
             h2 {
                 font-size: 20px;
@@ -249,7 +249,7 @@
         margin: 0 0 0;
         line-height: 1;
         letter-spacing: -.25px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             font-size: 20px;
             margin: 0 0 5px;
         }

@@ -28,7 +28,7 @@
 }
 
 #myaccountContent {
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         margin-top: 30px;
     }
 }
@@ -36,7 +36,7 @@
 .myaccount-content {
     border: 1px solid #eeeeee;
     padding: 30px;
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding: 20px 15px;
     }
     form {

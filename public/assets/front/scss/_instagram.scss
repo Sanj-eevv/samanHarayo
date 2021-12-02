@@ -5,11 +5,11 @@
         font-size: 16px;
         color: $black;
     }
-    @media #{$xs-layout} {
-        margin-top: 7px; 
+    @media #{$sm-layout} {
+        margin-top: 7px;
     }
     @media #{$sm-layout} {
-        margin-top: 0px; 
+        margin-top: 0px;
     }
 }
 
@@ -31,7 +31,7 @@
                 background-color: $black;
                 transition: all 0.3s ease 0s;
                 opacity: 0;
-                visibility: hidden; 
+                visibility: hidden;
             }
             &::after {
                 content: "\e609";
@@ -52,7 +52,7 @@
                 @media #{$md-layout} {
                     font-size: 28px;
                 }
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     font-size: 25px;
                 }
             }
@@ -80,7 +80,7 @@
     flex-wrap: wrap;
     .single-instafeed {
         flex: 0 0 12.5%;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             flex: 0 0 50%;
         }
         @media #{$sm-layout} {
@@ -140,7 +140,7 @@
                 @media #{$md-layout} {
                     font-size: 28px;
                 }
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     font-size: 25px;
                 }
             }

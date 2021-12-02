@@ -57,7 +57,7 @@
             }
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         margin-top: 15px;
     }
 }
@@ -84,7 +84,7 @@
                 background-color: $white;;
                 border: none;
                 height: 55px;
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     padding: 2px 113px 2px 60px;
                 }
                 @media #{$sm-layout} {
@@ -124,7 +124,7 @@
                     padding: 0 30px;
                     color: $white;
                     background-color: $theme-color-green;
-                    @media #{$xs-layout} {
+                    @media #{$sm-layout} {
                         padding: 0 10px;
                         font-size: 14px;
                     }
@@ -172,7 +172,7 @@
             }
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         margin-top: 15px;
     }
 }
@@ -189,7 +189,7 @@
 }
 
 
-@media #{$xs-layout} {
+@media #{$sm-layout} {
     .subscribe-area {
         &.pt-95 {
             padding-top: 55px;

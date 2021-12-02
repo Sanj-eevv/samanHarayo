@@ -7,7 +7,7 @@
         @media #{$md-layout} {
             margin-right: -15px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin-right: 0px;
         }
     }
@@ -16,7 +16,7 @@
         @media #{$md-layout} {
             margin-left: 15px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             margin-left: 0px;
         }
     }
@@ -54,7 +54,7 @@
         @media #{$md-layout} {
             left: 20px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 20px;
         }
         h2 {
@@ -68,15 +68,15 @@
                 font-size: 34px;
             }
             @media #{$md-layout} {
-                font-size: 27px; 
+                font-size: 27px;
                 line-height: 35px;
             }
-            @media #{$xs-layout} {
-                font-size: 22px; 
+            @media #{$sm-layout} {
+                font-size: 22px;
                 line-height: 30px;
             }
             @media #{$sm-layout} {
-                font-size: 25px; 
+                font-size: 25px;
                 line-height: 32px;
             }
         }
@@ -89,7 +89,7 @@
             @media #{$md-layout} {
                 margin: 12px 0 25px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 8px 0 21px;
             }
         }
@@ -102,11 +102,11 @@
             left: 30px;
         }
         @media #{$md-layout} {
-            left: 20px; 
+            left: 20px;
             top: 62px;
         }
-        @media #{$xs-layout} {
-            left: 20px; 
+        @media #{$sm-layout} {
+            left: 20px;
             top: 62px;
         }
         h2 {
@@ -122,7 +122,7 @@
             @media #{$md-layout} {
                 font-size: 27px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 22px;
             }
             @media #{$sm-layout} {
@@ -139,7 +139,7 @@
                 width: 95%;
                 margin: 10px 0 0px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 width: 95%;
                 margin: 10px 0 0px;
             }
@@ -150,7 +150,7 @@
         top: 50%;
         transform: translateY(-50%);
         left: 30px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 15px;
         }
         h2 {
@@ -163,7 +163,7 @@
                 font-size: 20px;
                 line-height: 26px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 20px;
                 line-height: 26px;
             }
@@ -179,7 +179,7 @@
             @media #{$md-layout} {
                 margin: 10px 0 2px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 6px 0 2px;
             }
         }
@@ -194,7 +194,7 @@
             @media #{$md-layout} {
                 margin: 0 0 20px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 0 0 12px;
             }
         }
@@ -204,7 +204,7 @@
         top: 50%;
         transform: translateY(-50%);
         left: 30px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 15px;
         }
         h2 {
@@ -217,7 +217,7 @@
                 font-size: 20px;
                 line-height: 26px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 20px;
                 line-height: 26px;
             }
@@ -237,7 +237,7 @@
             @media #{$md-layout} {
                 margin: 10px 0 2px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 6px 0 2px;
             }
         }
@@ -252,7 +252,7 @@
             @media #{$md-layout} {
                 margin: 0 0 20px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 0 0 12px;
             }
         }
@@ -262,7 +262,7 @@
         top: 50%;
         transform: translateY(-50%);
         left: 30px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 15px;
         }
         span {
@@ -278,7 +278,7 @@
             @media #{$md-layout} {
                 margin: 0 0 5px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 0 0 5px;
             }
         }
@@ -291,7 +291,7 @@
             @media #{$lg-layout} {
                 font-size: 20px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 20px;
             }
             span {
@@ -308,7 +308,7 @@
             @media #{$md-layout} {
                 margin: 5px 0 10px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 2px 0 4px;
             }
         }
@@ -318,7 +318,7 @@
         left: 56%;
         top: 50%;
         transform: translateY(-50%);
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 50%;
         }
         h3 {
@@ -331,7 +331,7 @@
                 line-height: 32px;
                 margin: 0 0 10px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 17px;
                 line-height: 24px;
                 margin: 0 0 3px;
@@ -348,7 +348,7 @@
                     font-size: 12px;
                     margin: 0 0 0 3px;
                 }
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     font-size: 13px;
                 }
                 &:hover {
@@ -363,7 +363,7 @@
         top: 50%;
         transform: translateY(-50%);
         display: flex;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 15px;
         }
         .banner-content-7 {
@@ -371,7 +371,7 @@
             @media #{$lg-layout} {
                 margin-right: 30px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin-right: 15px;
             }
             span {
@@ -388,7 +388,7 @@
                     font-size: 27px;
                     margin: 3px 0 8px;
                 }
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     font-size: 16px;
                     margin: 1px 0 3px;
                     line-height: 1;
@@ -403,7 +403,7 @@
                 color: #999999;
                 font-family: $heebo;
                 line-height: 22px;
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     line-height: 19px;
                 }
             }
@@ -414,7 +414,7 @@
                 font-size: 14px;
                 font-weight: 600;
                 color: $black;
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     font-size: 12px;
                 }
                 @media #{$sm-layout} {
@@ -433,7 +433,7 @@
                     font-size: 32px;
                     margin: 4px 0 10px;
                 }
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     font-size: 22px;
                     margin: 2px 0 4px;
                 }
@@ -458,7 +458,7 @@
                         font-size: 10px;
                         margin: 0 0 0 3px;
                     }
-                    @media #{$xs-layout} {
+                    @media #{$sm-layout} {
                         padding: 2px 10px 3px 12px;
                     }
                     &:hover {
@@ -479,7 +479,7 @@
         @media #{$md-layout} {
             left: 30px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 20px;
         }
         span {
@@ -501,7 +501,7 @@
             @media #{$md-layout} {
                 margin: 0 0 40px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 0 0 6px;
                 line-height: 16px;
             }
@@ -516,7 +516,7 @@
                 font-size: 34px;
                 line-height: 38px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 22px;
                 line-height: 27px;
             }
@@ -527,7 +527,7 @@
             @media #{$lg-layout} {
                 margin: 10px 0 20px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 5px 0 6px;
                 line-height: 20px;
                 width: 85%;
@@ -545,7 +545,7 @@
         @media #{$md-layout} {
             left: 30px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 20px;
         }
         > span {
@@ -567,7 +567,7 @@
             @media #{$md-layout} {
                 margin: 0 0 40px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 0 0 20px;
             }
         }
@@ -580,7 +580,7 @@
                 font-size: 34px;
                 line-height: 38px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 21px;
                 line-height: 25px;
             }
@@ -595,7 +595,7 @@
             @media #{$lg-layout} {
                 margin: 10px 0 20px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 7px 0 10px;
             }
         }
@@ -610,7 +610,7 @@
             @media #{$md-layout} {
                 left: 30px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 left: 20px;
             }
         }
@@ -621,7 +621,7 @@
                     font-size: 25px;
                     line-height: 30px;
                 }
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     font-size: 16px;
                     line-height: 17px;
                 }
@@ -632,7 +632,7 @@
             }
             p {
                 margin: 15px 0 0px;
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     margin: 7px 0 0px;
                     line-height: 1;
                 }
@@ -647,7 +647,7 @@
         @media #{$md-layout} {
             left: 30px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 20px;
         }
         h2 {
@@ -661,7 +661,7 @@
                 font-size: 22px;
                 line-height: 25px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 22px;
                 line-height: 25px;
             }
@@ -679,7 +679,7 @@
                 @media #{$md-layout} {
                     margin: 10px 0 30px;
                 }
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     margin: 4px 0 5px;
                 }
                 @media #{$sm-layout} {
@@ -692,7 +692,7 @@
             @media #{$md-layout} {
                 margin: 6px 0 7px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 6px 0 7px;
             }
         }
@@ -709,7 +709,7 @@
             left: 30px;
             top: 30px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 15px;
             top: 15px;
         }
@@ -729,7 +729,7 @@
                 font-size: 25px;
                 line-height: 30px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 18px;
                 line-height: 20px;
             }
@@ -752,7 +752,7 @@
             @media #{$md-layout} {
                 margin: 8px 0 10px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 5px 0 5px;
                 line-height: 20px;
             }
@@ -775,7 +775,7 @@
             line-height: 1;
             @media #{$xx-layout} {
                 margin: 6px 0 40px;
-            } 
+            }
             @media #{$xl-layout} {
                 margin: 6px 0 40px;
             }
@@ -787,7 +787,7 @@
                 margin: 6px 0 14px;
                 font-size: 35px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 3px 0 7px;
                 font-size: 25px;
             }
@@ -802,7 +802,7 @@
         left: 30px;
         top: 50%;
         transform: translateY(-50%);
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 15px;
         }
         > span {
@@ -827,7 +827,7 @@
                 font-size: 28px;
                 margin: 15px 0 18px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 25px;
                 line-height: 28px;
                 margin: 10px 0 10px;
@@ -866,7 +866,7 @@
         left: 30px;
         top: 50%;
         transform: translateY(-50%);
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 20px;
         }
         span {
@@ -891,7 +891,7 @@
             @media #{$md-layout} {
                 margin: 19px 0 27px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 25px;
                 line-height: 24px;
                 margin: 12px 0 15px;
@@ -919,12 +919,12 @@
             @media #{$lg-layout} {
                 margin: 0 0 10px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 0 0 10px;
             }
             .banner-content-15-brand {
                 margin-right: 60px;
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     margin-right:30px;
                 }
                 span {
@@ -943,7 +943,7 @@
             p {
                 line-height: 18px;
                 letter-spacing: -.25px;
-                
+
             }
         }
         h2 {
@@ -960,7 +960,7 @@
                 font-size: 24px;
                 line-height: 26px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 23px;
                 line-height: 26px;
             }
@@ -971,7 +971,7 @@
         top: 50%;
         transform: translateY(-50%);
         left: 30px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 20px;
         }
         h2 {
@@ -991,7 +991,7 @@
                 line-height: 30px;
                 margin: 0 0 10px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 17px;
                 line-height: 22px;
                 margin: 0 0 8px;
@@ -1017,7 +1017,7 @@
         position: absolute;
         top: 30px;
         left: 30px;
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 15px;
         }
         h2 {
@@ -1035,7 +1035,7 @@
                 font-size: 22px;
                 width:73%;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 20px;
                 margin: 0 0 10px;
                 width: 70%;
@@ -1095,7 +1095,7 @@
         left: 30px;
         top: 50%;
         transform: translateY(-50%);
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 20px;
         }
         h2 {
@@ -1115,7 +1115,7 @@
                 font-size: 20px;
                 line-height: 25px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 20px;
                 line-height: 22px;
             }
@@ -1131,7 +1131,7 @@
             @media #{$md-layout} {
                 margin: 7px 0 3px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 5px 0 1px;
             }
         }
@@ -1151,7 +1151,7 @@
         @media #{$md-layout} {
             top: 30px;
         }
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             top: 30px;
         }
         @media #{$sm-layout} {
@@ -1186,12 +1186,12 @@
             color: #010101;
             letter-spacing: -.25px;
             margin: 14px 0 0;
-            font-size: 30px; 
+            font-size: 30px;
             @media #{$md-layout} {
                 font-size: 24px;
                 margin: 10px 0 0;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 24px;
                 margin: 10px 0 0;
             }
@@ -1206,7 +1206,7 @@
         left: 30px;
         top: 50%;
         transform: translateY(-50%);
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 20px;
         }
         > span {
@@ -1231,7 +1231,7 @@
                 line-height: 30px;
                 margin: 14px 0 0;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 22px;
                 line-height: 25px;
                 margin: 12px 0 0;
@@ -1247,7 +1247,7 @@
         left: 30px;
         top: 50%;
         transform: translateY(-50%);
-        @media #{$xs-layout} {
+        @media #{$sm-layout} {
             left: 20px;
         }
         > span {
@@ -1262,8 +1262,8 @@
             font-style: italic;
         }
         h2 {
-            font-size: 24px; 
-            line-height: 30px; 
+            font-size: 24px;
+            line-height: 30px;
             letter-spacing: -.5px;
             margin: 5px 0 13px;
             @media #{$lg-layout} {
@@ -1276,7 +1276,7 @@
                 line-height: 27px;
                 margin: 3px 0 6px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 18px;
                 line-height: 25px;
                 margin: 2px 0 3px;
@@ -1305,7 +1305,7 @@
                 @media #{$lg-layout} {
                     margin: 0 20px 0 0;
                 }
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     margin: 0 20px 0 0;
                 }
             }
@@ -1318,7 +1318,7 @@
                     font-size: 24px;
                     line-height: 26px;
                 }
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     font-size: 22px;
                     line-height: 25px;
                 }
@@ -1340,7 +1340,7 @@
                 @media #{$lg-layout} {
                     padding: 14px 30px;
                 }
-                @media #{$xs-layout} {
+                @media #{$sm-layout} {
                     padding: 14px 50px;
                 }
                 &:hover {
@@ -1374,7 +1374,7 @@
                 line-height: 33px;
                 margin: 10px 0 10px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 33px;
                 line-height: 33px;
                 margin: 10px 0 10px;
@@ -1386,7 +1386,7 @@
             @media #{$lg-layout} {
                 margin: 0 0 20px;
             }
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 margin: 0 0 20px;
             }
         }
@@ -1420,7 +1420,7 @@
             line-height: 40px;
             letter-spacing: -.25px;
             margin: 5px 0 25px;
-            @media #{$xs-layout} {
+            @media #{$sm-layout} {
                 font-size: 20px;
                 line-height: 25px;
                 margin: 1px 0 20px;
@@ -1458,13 +1458,13 @@
             }
         }
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         &.banner-mt-none-xs {
             &.mt-40 {
                 margin-top: 0px;
             }
         }
-        
+
     }
 }
 
@@ -1497,7 +1497,7 @@
     @media #{$md-layout} {
         margin-right: 19px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         margin-right: 0px;
     }
 }
@@ -1510,7 +1510,7 @@
     @media #{$md-layout} {
         margin-left: -19px;
     }
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         margin-left: 0px;
     }
 }
@@ -1518,7 +1518,7 @@
 .section-wrap-2 {
     background-color: $white;
     padding: 30px 30px 0px 30px;
-    @media #{$xs-layout} {
+    @media #{$sm-layout} {
         padding: 30px 10px 0px 10px;
     }
     @media #{$sm-layout} {
@@ -1537,7 +1537,7 @@
     }
 }
 
-@media #{$xs-layout} {
+@media #{$sm-layout} {
     .banner-area {
         &.pb-85 {
             padding-bottom: 25px;
