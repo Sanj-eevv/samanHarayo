@@ -15,7 +15,13 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/jquery-ui.css') }}">
+
+{{-- custom --}}
+
     <link rel="stylesheet" href="{{ asset("assets/front/js/plugins/Visual-Password-Strength-Indicator-Plugin-For-jQuery-Passtrength-js/src/passtrength.css") }}" />
+    <link rel="stylesheet" href="{{ asset("assets/front/js/plugins/aos-master/dist/aos.css") }}" />
+    <link src="{{ asset("assets/front/js/plugins/fontawesome-free-5.15.4-web/css/all.css") }}" />
+
     <link rel="stylesheet" href="{{ asset("assets/front/css/style.css") }}">
     @yield('page_level_style')
 

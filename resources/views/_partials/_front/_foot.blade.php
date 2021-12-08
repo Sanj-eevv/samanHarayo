@@ -17,7 +17,13 @@
 <script src="{{ asset("assets/js/plugins/easyzoom.js") }}"></script>
 <script src="{{ asset("assets/js/plugins/scrollup.js") }}"></script>
 <script src="{{ asset("assets/js/plugins/ajax-mail.js") }}"></script>
+
+{{-- Plugins--}}
 <script src="{{ asset("assets/front/js/plugins/Visual-Password-Strength-Indicator-Plugin-For-jQuery-Passtrength-js/src/jquery.passtrength.js") }}"></script>
+<script src="{{ asset("assets/front/js/plugins/aos-master/dist/aos.js") }}"></script>
+<script src="{{ asset("assets/front/js/plugins/fontawesome-free-5.15.4-web/js/all.js") }}"></script>
+
+
 <!-- Main JS -->
 <script src="{{ asset("assets/js/main.js") }}"></script>
 

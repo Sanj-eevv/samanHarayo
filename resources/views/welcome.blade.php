@@ -1,136 +1,16 @@
 @extends('layouts.front')
-@section('page_level_style')
-    <style>
-        .highlight {
-            position: relative
-        }
-        .highlight:after {
-            content: '';
-            display: block;
-            padding-top: 100%
-        }
-
-        .highlight--circle,.highlight--circle__wrapper,.highlight--circle__content,.highlight--circle:before,.highlight--circle:after {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translateX(-50%)translateY(-50%);
-            transform: translateX(-50%)translateY(-50%);
-            border-radius: 50%;
-            background:  rgba(66,25,255,.06);
-            transition: all .2s ease-out
-        }
-
-        .highlight--circle {
-            width: 40%;
-            height: 40%;
-            cursor: default
-        }
-
-        .highlight--circle__wrapper {
-            z-index: 3;
-            width: 100%;
-            height: 100%;
-            /*background: rgba(34,44,255,.15)*/
-        }
-
-        .highlight--circle__content {
-            text-transform: uppercase;
-            text-align: center;
-            color: #b9bcbe;
-            font-size: .8em;
-            line-height: 1.2;
-            background: 0 0
-        }
-
-        .highlight--circle__content strong {
-            display: block;
-            margin-bottom: 10px;
-            color: #fff;
-            font-weight: 300;
-            font-size: 2.333rem
-        }
-
-        .highlight--circle:before {
-            z-index: 2;
-            content: '';
-            width: 150%;
-            height: 150%
-        }
-
-        .highlight--circle:after {
-            z-index: 1;
-            content: '';
-            width: 200%;
-            height: 200%;
-            transition-delay: .1s
-        }
-
-        @media only screen and (min-width: 768px) and (max-width: 991.5px){
-            .highlight--circle__content strong {
-                display: block;
-                margin-bottom: 10px;
-                color: #fff;
-                font-weight: 300;
-                font-size: 1.333rem
-            }
-        }
-
-        @media only screen and (min-width: 576px) and (max-width: 767px){
-            .highlight--circle {
-                width: 60%;
-                height: 60%;
-                cursor: default
-            }
-            .highlight--circle:before {
-                z-index: 2;
-                content: '';
-                width: 130%;
-                height: 130%
-            }
-            .highlight--circle:after {
-                z-index: 1;
-                content: '';
-                width: 160%;
-                height: 160%;
-                transition-delay: .1s
-            }
-            .highlight--circle__content strong {
-                display: block;
-                margin-bottom: 10px;
-                color: #fff;
-                font-weight: 300;
-                font-size: 1.333rem
-            }
-        }
-
-            .highlight--circle:hover:before,.highlight--circle:hover:after {
-            background: rgba(22,22,22,.06)
-        }
-
-        .highlight--circle:hover:before {
-            width: 155%;
-            height: 155%
-        }
-
-        .highlight--circle:hover:after {
-            width: 205%;
-            height: 205%
-        }
-    </style>
-@endsection
 @section('content')
-<div class="slider-area">
+<div class="slider-area mt-10">
     <div class="container">
-        <div class="hero-slider-active-2 nav-style-1 nav-style-1-modify nav-style-1-blue bg-gray-7">
-            <div class="single-hero-slider slider-height-3 custom-d-flex custom-align-item-center single-animation-wrap">
+        <div class="hero-slider-active nav-style bg-gray-7">
+            <div class="single-hero-slider slider-height custom-d-flex custom-align-item-center single-animation-wrap">
                 <div class="row align-items-center slider-animated-1">
                     <div class="col-lg-6 col-md-6 col-12 col-sm-6">
-                        <div class="hero-slider-content-5">
+                        <div class="hero-slider-content">
                             <h5 class="animated">Item Lost</h5>
                             <h1 class="animated">Laptop Lenovo Ideapad 530s</h1>
-                            <p class="animated">A laptop was found at Itahari near Vishwa Adarsha college.</p>
-                            <p class="animated"><a href="#"><span class="animated" style="color: red;">More Details</span></a></p>
+                            <p class="animated content">A laptop was found at Itahari near Vishwa Adarsha college.A laptop was found at Itahari near Vishwa Adarsha college. Adarsha college.</p>
+                            <p class="animated more"><a href="#"><span class="animated">More Details</span></a></p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12 col-sm-6">
@@ -140,14 +20,14 @@
                     </div>
                 </div>
             </div>
-            <div class="single-hero-slider slider-height-3 custom-d-flex custom-align-item-center single-animation-wrap">
+            <div class="single-hero-slider slider-height custom-d-flex custom-align-item-center single-animation-wrap">
                 <div class="row align-items-center slider-animated-1">
                     <div class="col-lg-6 col-md-6 col-12 col-sm-6">
-                        <div class="hero-slider-content-5">
+                        <div class="hero-slider-content">
                             <h5 class="animated">Item Lost</h5>
                             <h1 class="animated">Laptop Lenovo Ideapad 530s</h1>
-                            <p class="animated">A laptop was found at Itahari near Vishwa Adarsha college.</p>
-                            <p class="animated"><a href="#"><span class="animated" style="color: red;">More Details</span></a></p>
+                            <p class="animated content">A laptop was found at Itahari near Vishwa Adarsha college.A laptop was found at Itahari near Vishwa Adarsha college. Adarsha college.</p>
+                            <p class="animated"><a href="#"><span class="animated">More Details</span></a></p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12 col-sm-6">
@@ -160,88 +40,44 @@
         </div>
     </div>
 </div>
-<div class="section-report-area pt-60">
+<div class="section-report-area pt-50">
     <div class="container">
         <div class="section-report-area-wrapper">
             <div class="row">
                 <div class="col-md-6">
-                    <button>Report Lost Product</button>
+                    <button class="animated">
+                        <span><i class="fas fa-pencil-alt"></i></span>
+                        Report Lost Product
+                    </button>
                 </div>
                 <div class="col-md-6 ">
-                    <button class="float-end">Report Lost Product</button>
+                    <button class="animated float-end">
+                        <span><i class="far fa-clipboard"></i>
+                        </span>Report Found Product
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-{{--<div class="service-area pt-70">--}}
-{{--    <div class="container">--}}
-{{--        <div class="service-wrap">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-3 col-md-6 col-sm-6 col-12">--}}
-{{--                    <div class="single-service-wrap mb-30">--}}
-{{--                        <div class="service-icon">--}}
-{{--                            <i class="icon-cursor"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="service-content">--}}
-{{--                            <h3>Free Shipping</h3>--}}
-{{--                            <span>Orders over $100</span>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-3 col-md-6 col-sm-6 col-12">--}}
-{{--                    <div class="single-service-wrap mb-30">--}}
-{{--                        <div class="service-icon">--}}
-{{--                            <i class="icon-reload"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="service-content">--}}
-{{--                            <h3>Free Returns</h3>--}}
-{{--                            <span>Within 30 days</span>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-3 col-md-6 col-sm-6 col-12">--}}
-{{--                    <div class="single-service-wrap mb-30">--}}
-{{--                        <div class="service-icon">--}}
-{{--                            <i class="icon-lock"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="service-content">--}}
-{{--                            <h3>100% Secure</h3>--}}
-{{--                            <span>Payment Online</span>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-3 col-md-6 col-sm-6 col-12">--}}
-{{--                    <div class="single-service-wrap mb-30">--}}
-{{--                        <div class="service-icon">--}}
-{{--                            <i class="icon-tag"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="service-content">--}}
-{{--                            <h3>Best Price</h3>--}}
-{{--                            <span>Guaranteed</span>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-<div class="about-us-area pt-60">
+<div class="about-us-area pt-50">
     <div class="container">
         <div class="border-bottom-1 about-content-pb">
             <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="about-us-logo">
-                        <h3 style="font-weight: bold">
-                            Saman<span style="color: red;">Harayo</span>
-                        </h3>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-9">
+{{--                <div class="col-lg-3 col-md-3">--}}
+{{--                    <div class="about-us-logo">--}}
+{{--                        <a href="{{route('front.index')}}">--}}
+{{--                            <img src="{{asset('assets/logo.png')}}">--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <div class="col-lg-12 col-md-12">
                     <div class="about-us-content">
                         <h3>Introduce</h3>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi debitis deleniti ducimus ea eaque ipsum maiores maxime molestiae molestias, nesciunt qui quidem repellat repudiandae sapiente sint tempora, veniam vero? </p>
+                        <p>We are living on the era of technology and innovation. As days are passing by the technology is also improving along with days.
+                            There has been drastic change in the technology which has direct impact on the life of the people.
+                            Every aspect of life is leaning towards the maximum use of technology for the better and easier lifestyle.
+                        </p>
                         <div class="signature">
                             <h2>Sanju Bhandari</h2>
                         </div>
@@ -251,39 +87,33 @@
         </div>
     </div>
 </div>
-<div class="info-circle mt-15">
+<div class="report-info-area mt-15">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-4">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                 <div class="highlight">
                     <div class="highlight--circle">
-                        <div class="highlight--circle__wrapper">
                             <div class="highlight--circle__content">
-                                <strong>33</strong> Items found
+                                <strong>3333</strong> Items found
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-4">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                 <div class="highlight">
                     <div class="highlight--circle">
-                        <div class="highlight--circle__wrapper">
                             <div class="highlight--circle__content">
-                                <strong>212</strong> items reported
+                                <strong>21332</strong> items reported
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="highlight">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <div class="highlight ">
                     <div class="highlight--circle">
-                        <div class="highlight--circle__wrapper">
                             <div class="highlight--circle__content">
                                 <strong>3100</strong> items lost
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -304,7 +134,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="tab-content jump">
             <div id="product-1" class="tab-pane active">
                 <div class="row">

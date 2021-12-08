@@ -1,0 +1,129 @@
+.report-info-area {
+    .highlight {
+        position: relative;
+        height: 371.5px;
+
+        @media #{$lg-layout} {
+            height: 300px;
+        }
+
+        @media #{$md-layout} {
+            height: 215px;
+        }
+
+        @media #{$sm-layout} {
+            height: 215px;
+        }
+
+        @media #{$vsm-layout} {
+            height: 215px;
+        }
+
+
+        //&:after {
+        //content: '';
+        //display: block;
+        //padding-top: 100%
+        //}
+
+        .highlight--circle,.highlight--circle__content,.highlight--circle:before, .highlight--circle:after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            border-radius: 50%;
+            background: rgba(66, 25, 255, .06);
+            transition: all .2s ease-out
+        }
+
+        .highlight--circle {
+            width: 40%;
+            height: 40%;
+            cursor: default;
+
+            @media #{$md-layout}{
+                width: 50%;
+                height: 50%;
+            }
+
+            @media #{$sm-layout}{
+                width: 100px;
+                height: 100px;
+            }
+            @media #{$vsm-layout}{
+                width: 100px;
+                height: 97px;
+            }
+
+            &:before {
+                z-index: 2;
+                content: '';
+                width: 150%;
+                height: 150%;
+            }
+
+            &:after {
+                z-index: 1;
+                content: '';
+                width: 200%;
+                height: 200%;
+                transition-delay: .1s;
+            }
+
+            &:hover:before,
+            &:hover:after {
+                background: rgba(66, 25, 255, 0.1);
+            }
+
+            &:hover:before{
+                width: 155%;
+                height: 155%
+            }
+
+            &:hover:after {
+                width: 205%;
+                height: 205%
+            }
+
+
+        }
+
+        .highlight--circle__content {
+            z-index: 3;
+            background: none;
+            text-transform: uppercase;
+            text-align: center;
+            color: #b9bcbe;
+            font-size: .8em;
+            line-height: 1.2;
+            @media #{$vsm-layout}{
+                font-size: .5rem;
+            }
+            strong {
+                display: block;
+                margin-bottom: 10px;
+                color: #fff;
+                font-weight: 300;
+                font-size: 2rem;
+
+                @media #{$lg-layout}{
+                    font-size: 1.8rem;
+                }
+
+                @media #{$md-layout}{
+                    font-size: 1.5rem;
+                }
+
+                @media #{$sm-layout}{
+                    font-size: 1.5rem;
+                }
+
+                @media #{$vsm-layout}{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+}

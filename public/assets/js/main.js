@@ -1,4 +1,5 @@
 (function ($) {
+    AOS.init();
     "use strict";
     /*------ ScrollUp -------- */
     $.scrollUp({
@@ -24,7 +25,7 @@
     });
 
     /*------ Hero slider active 2 ----*/
-    $('.hero-slider-active-2').slick({
+    $('.hero-slider-active').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
