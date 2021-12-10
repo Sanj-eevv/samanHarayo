@@ -1909,14 +1909,12 @@ textarea:focus {
   animation-delay: .9s; }
 
 /*-------- 3. Header style ---------*/
-.header-area .row {
-  padding: 1rem 0rem; }
+.header-area {
+  line-height: 5; }
 
 .logo a img {
   object-fit: cover;
-  width: 100%;
-  height: 35px;
-  object-position: center; }
+  width: 100%; }
 
 @media only screen and (min-width: 768px) and (max-width: 991.5px) {
   .header-nav {
@@ -1937,7 +1935,7 @@ textarea:focus {
   .header-nav .main-menu div a {
     color: #000000;
     font-size: 16px;
-    font-weight: 500; }
+    font-weight: 600; }
     .header-nav .main-menu div a:hover {
       color: #ff2f2f; }
 
@@ -1946,6 +1944,7 @@ textarea:focus {
   justify-content: flex-end;
   align-items: center; }
   .header-action .header-search {
+    line-height: 0;
     display: none;
     position: relative; }
     @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -2259,7 +2258,7 @@ textarea:focus {
     left: auto;
     right: 1.5%; }
   .nav-style > span:hover {
-    background-color: #556ee6;
+    background-color: #ff2f2f;
     color: #ffffff; }
 
 .nav-style:hover span {
@@ -2514,14 +2513,16 @@ textarea:focus {
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .about-us-area .about-us-logo {
-    padding-top: 30px;
-    margin-bottom: 30px; } }
+    display: none; } }
 
 @media only screen and (max-width: 575.5px) {
   .about-us-area .about-us-logo {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    text-align: center; } }
+    display: none; } }
+
+.about-us-area .about-us-logo img {
+  object-fit: cover;
+  width: 100%;
+  object-position: center; }
 
 .about-us-content h3 {
   font-size: 24px;
@@ -2533,7 +2534,7 @@ textarea:focus {
 .about-us-content p {
   font-size: 20px;
   font-family: "Jost", sans-serif;
-  line-height: 36px;
+  line-height: 50px;
   margin: 23px 0 51px;
   text-align: justify; }
   @media only screen and (min-width: 768px) and (max-width: 991.5px) {
@@ -6603,16 +6604,22 @@ textarea:focus {
     padding-bottom: 55px; } }
 
 /*-------- 12. Footer style ---------*/
-.footer-logo {
-  margin: 0 0 20px; }
-  .footer-logo a {
-    display: block; }
+.footer-logo a img {
+  object-fit: cover;
+  width: 50%; }
+  @media only screen and (min-width: 576px) and (max-width: 767px) {
     .footer-logo a img {
-      max-width: 100%; }
+      width: 30%; } }
+  @media only screen and (max-width: 575.5px) {
+    .footer-logo a img {
+      width: 30%; } }
 
 .footer-right-wrap {
   text-align: right; }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
+    .footer-right-wrap {
+      text-align: left; } }
+  @media only screen and (max-width: 575.5px) {
     .footer-right-wrap {
       text-align: left; } }
   .footer-right-wrap .social-style-2.social-style-2-mrg {
@@ -6662,9 +6669,9 @@ textarea:focus {
     @media only screen and (min-width: 576px) and (max-width: 767px) {
       .footer-menu nav ul li {
         margin-right: 5px; } }
-    @media only screen and (min-width: 576px) and (max-width: 767px) {
+    @media only screen and (max-width: 575.5px) {
       .footer-menu nav ul li {
-        margin-right: 15px; } }
+        display: block; } }
     .footer-menu nav ul li:last-child {
       margin-right: 0; }
     .footer-menu nav ul li a {
@@ -6678,22 +6685,6 @@ textarea:focus {
           font-size: 14px; } }
       .footer-menu nav ul li a:hover {
         color: #ff2f2f; }
-  .footer-menu.footer-menu-mrg nav ul li {
-    margin-right: 47px; }
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
-      .footer-menu.footer-menu-mrg nav ul li {
-        margin-right: 30px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
-      .footer-menu.footer-menu-mrg nav ul li {
-        margin-right: 35px; } }
-    @media only screen and (min-width: 576px) and (max-width: 767px) {
-      .footer-menu.footer-menu-mrg nav ul li {
-        margin-right: 5px; } }
-    @media only screen and (min-width: 576px) and (max-width: 767px) {
-      .footer-menu.footer-menu-mrg nav ul li {
-        margin-right: 15px; } }
-    .footer-menu.footer-menu-mrg nav ul li:last-child {
-      margin-right: 0; }
 
 .copyright p {
   color: #999;
@@ -8323,8 +8314,8 @@ textarea:focus {
         border: 1px solid #ff2f2f; }
 
 .shop-list-wrap .shop-list-content h3 {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 13px;
+  font-weight: normal;
   margin: 0; }
   .shop-list-wrap .shop-list-content h3 a {
     color: #000000; }
@@ -8982,14 +8973,16 @@ h3.cart-page-title {
 /*-------- 22. Checkout style ---------*/
 .customer-zone > p {
   font-size: 15px;
+  cursor: pointer;
   position: relative;
   padding: 14px 30px 14px 60px;
   background-color: #eeeff2;
   margin: 0;
-  position: relative;
   color: #000000; }
   .customer-zone > p a {
-    color: #000000; }
+    color: #000000;
+    position: absolute;
+    right: 5%; }
     .customer-zone > p a:hover {
       color: #ff2f2f; }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -9005,286 +8998,131 @@ h3.cart-page-title {
     top: 15px;
     font-size: 18px; }
 
-.checkout-login-info {
+.checkout-login-info,
+.checkout-login-info2,
+.checkout-login-info3 {
   margin: 20px 0 0;
   display: none; }
-  .checkout-login-info p {
-    font-size: 14px;
-    margin: 0 0 12px; }
-  .checkout-login-info form {
-    display: block;
-    overflow: hidden; }
-    .checkout-login-info form .sin-checkout-login {
-      margin-bottom: 30px; }
-      .checkout-login-info form .sin-checkout-login label {
-        font-size: 14px;
-        text-transform: capitalize;
-        margin: 0 0 5px; }
-        .checkout-login-info form .sin-checkout-login label span {
-          color: red; }
-      .checkout-login-info form .sin-checkout-login input {
-        border: 1px solid #e8e8e8;
-        height: 50px;
-        background-color: transparent; }
-        .checkout-login-info form .sin-checkout-login input:focus {
-          border: 1px solid #343538; }
-    .checkout-login-info form .button-remember-wrap {
-      display: block;
-      overflow: hidden; }
-      .checkout-login-info form .button-remember-wrap button {
-        border: 1px solid #aaa;
-        font-size: 13px;
-        padding: 10px 30px 9px;
-        display: inline-block;
-        float: left;
-        margin-right: 20px;
-        font-weight: 600;
-        text-transform: uppercase; }
-        .checkout-login-info form .button-remember-wrap button:hover {
-          background-color: #ff2f2f;
-          color: #fff;
-          border: 1px solid #ff2f2f; }
-      .checkout-login-info form .button-remember-wrap .checkout-login-toggle-btn {
-        display: flex;
-        margin: 8px 0 0; }
-        .checkout-login-info form .button-remember-wrap .checkout-login-toggle-btn input {
-          height: 15px;
-          margin: 0;
-          position: relative;
-          top: 5px;
-          width: 17px; }
-        .checkout-login-info form .button-remember-wrap .checkout-login-toggle-btn label {
-          font-size: 14px;
-          margin: 0 0 0 5px; }
-    .checkout-login-info form .lost-password {
-      margin: 20px 0 11px; }
-      .checkout-login-info form .lost-password a {
-        font-size: 14px; }
-  .checkout-login-info .checkout-login-social span {
-    font-size: 14px;
-    margin: 0 0 13px;
-    display: block; }
-  .checkout-login-info .checkout-login-social ul li {
-    display: inline-block;
-    margin: 0 14px 0 0; }
-    .checkout-login-info .checkout-login-social ul li:last-child {
-      margin: 0 0px 0 0; }
-    @media only screen and (min-width: 576px) and (max-width: 767px) {
-      .checkout-login-info .checkout-login-social ul li {
-        margin: 0 5px 0 0; } }
-    .checkout-login-info .checkout-login-social ul li a {
-      background-color: #f5f5f5;
-      text-transform: uppercase;
-      font-weight: 500;
-      display: block;
-      float: left;
-      font-size: 13px;
-      padding: 20px;
-      padding: 24px 106px 25px;
-      line-height: 1; }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
-        .checkout-login-info .checkout-login-social ul li a {
-          padding: 24px 70px 25px; } }
-      @media only screen and (min-width: 576px) and (max-width: 767px) {
-        .checkout-login-info .checkout-login-social ul li a {
-          padding: 15px 13px 16px; } }
-      .checkout-login-info .checkout-login-social ul li a:hover {
-        background-color: #ff2f2f;
-        color: #fff; }
 
-.checkout-login-info2 {
-  display: none;
-  margin: 20px 0 0; }
-  .checkout-login-info2 ul li {
-    display: inline-block; }
-    .checkout-login-info2 ul li a {
-      color: #8a8a8a;
-      font-size: 12px; }
-      .checkout-login-info2 ul li a:hover {
-        color: #ff2f2f; }
-
-.checkout-login-info3 {
-  display: none;
-  margin-top: 20px; }
-  .checkout-login-info3 form input[type="text"] {
-    border: 1px solid #e8e8e8;
-    height: 50px;
-    background-color: transparent;
-    width: 48%;
-    font-size: 14px;
-    padding: 0 20px; }
-    .checkout-login-info3 form input[type="text"]:focus {
-      border: 1px solid #1f2226; }
-  .checkout-login-info3 form input[type="submit"] {
-    background: #1f2226 none repeat scroll 0 0;
-    border: medium none;
-    color: #fff;
-    height: 50px;
-    margin-left: 6px;
-    padding: 5px 30px;
-    font-size: 13px;
-    text-transform: uppercase;
-    font-weight: 600;
-    width: inherit; }
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
-      .checkout-login-info3 form input[type="submit"] {
-        padding: 5px 15px; } }
-    @media only screen and (min-width: 576px) and (max-width: 767px) {
-      .checkout-login-info3 form input[type="submit"] {
-        padding: 5px 16px; } }
-    .checkout-login-info3 form input[type="submit"]:hover {
-      background-color: #ff2f2f; }
-
-.billing-info-wrap h3 {
-  font-size: 20px;
-  font-weight: 600;
-  position: relative;
-  margin: 0 0 55px;
-  text-transform: uppercase; }
+.billing-info-wrap {
+  margin-right: 50px; }
+  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    .billing-info-wrap {
+      margin-right: 0px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .billing-info-wrap h3 {
-      margin-bottom: 40px; } }
-  .billing-info-wrap h3:before {
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: -12px;
-    background-color: #ff2f2f;
-    width: 50px;
-    height: 2px; }
-
-.billing-info-wrap .billing-info label {
-  font-size: 14px;
-  text-transform: capitalize;
-  display: block;
-  margin: 0 0 5px; }
-  .billing-info-wrap .billing-info label abbr {
-    color: red; }
-
-.billing-info-wrap .billing-info input {
-  border: 1px solid #e8e8e8;
-  height: 50px;
-  background-color: transparent;
-  padding: 2px 20px;
-  color: #1f2226;
-  font-size: 14px; }
-  .billing-info-wrap .billing-info input:focus {
-    border: 1px solid #343538; }
-  .billing-info-wrap .billing-info input.billing-address {
-    margin-bottom: 20px; }
-
-.billing-info-wrap .billing-select label {
-  font-size: 14px;
-  text-transform: capitalize;
-  display: block;
-  margin: 0 0 5px; }
-  .billing-info-wrap .billing-select label abbr {
-    color: red; }
-
-.billing-info-wrap .billing-select select {
-  border: 1px solid #e6e6e6;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  color: #333;
-  font-size: 14px;
-  height: 50px;
-  padding: 2px 20px;
-  background: rgba(0, 0, 0, 0) url("../../images/icon-img/select.png") no-repeat scroll right 18px center;
-  cursor: pointer; }
-  .billing-info-wrap .billing-select select option {
-    background: #fff;
-    border: 0px solid #626262;
-    padding-left: 10px;
-    color: #333;
-    font-size: 12px; }
-
-.billing-info-wrap .checkout-account input {
-  border: 1px solid #9fa0a2;
-  display: inline-block;
-  float: left;
-  height: 10px;
-  width: 10px;
-  position: relative;
-  top: 6px;
-  color: #333; }
-
-.billing-info-wrap .checkout-account span {
-  color: #333;
-  font-weight: 400;
-  margin: 0 0 0 12px;
-  font-size: 14px;
-  text-transform: uppercase; }
-
-.billing-info-wrap .checkout-account-toggle label {
-  font-size: 14px;
-  text-transform: capitalize;
-  display: block;
-  margin: 0 0 5px; }
-  .billing-info-wrap .checkout-account-toggle label abbr {
-    color: red; }
-
-.billing-info-wrap .checkout-account-toggle input {
-  border: 1px solid #e8e8e8;
-  height: 50px;
-  background-color: transparent;
-  color: #333;
-  font-size: 14px;
-  padding: 2px 20px; }
-  .billing-info-wrap .checkout-account-toggle input:focus {
-    border: 1px solid #343538; }
-
-.billing-info-wrap .different-address {
-  display: none; }
-
-.billing-info-wrap .additional-info-wrap {
-  margin: 22px 0 0; }
-  .billing-info-wrap .additional-info-wrap label {
-    color: #010225;
+    .billing-info-wrap {
+      margin-right: 0px; } }
+  @media only screen and (max-width: 575.5px) {
+    .billing-info-wrap {
+      margin-right: 0px; } }
+  .billing-info-wrap .billing-info label {
     font-size: 14px;
     text-transform: capitalize;
     display: block;
     margin: 0 0 5px; }
-  .billing-info-wrap .additional-info-wrap textarea {
-    min-height: 120px;
-    background-color: #f7f7f7;
-    border-color: #f7f7f7;
-    padding: 20px;
-    color: #333;
+    .billing-info-wrap .billing-info label abbr {
+      color: red; }
+  .billing-info-wrap .billing-info input {
+    border: 1px solid #e8e8e8;
+    height: 50px;
+    background-color: transparent;
+    padding: 2px 20px;
+    color: #1f2226;
     font-size: 14px; }
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .billing-info-wrap.mr-50 {
-    margin-right: 30px; } }
-
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
-  .billing-info-wrap.mr-50 {
-    margin-right: 0px; } }
-
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .billing-info-wrap.mr-50 {
-    margin-right: 0px; } }
+    .billing-info-wrap .billing-info input:focus {
+      border: 1px solid #343538; }
+    .billing-info-wrap .billing-info input.billing-address {
+      margin-bottom: 20px; }
+  .billing-info-wrap .billing-select label {
+    font-size: 14px;
+    text-transform: capitalize;
+    display: block;
+    margin: 0 0 5px; }
+    .billing-info-wrap .billing-select label abbr {
+      color: red; }
+  .billing-info-wrap .billing-select select {
+    border: 1px solid #e6e6e6;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    color: #333;
+    font-size: 14px;
+    height: 50px;
+    padding: 2px 20px;
+    background: rgba(0, 0, 0, 0) url("../../images/icon-img/select.png") no-repeat scroll right 18px center;
+    cursor: pointer; }
+    .billing-info-wrap .billing-select select option {
+      background: #fff;
+      border: 0px solid #626262;
+      padding-left: 10px;
+      color: #333;
+      font-size: 12px; }
+  .billing-info-wrap .additional-info-wrap {
+    margin: 22px 0 0; }
+    .billing-info-wrap .additional-info-wrap label {
+      color: #010225;
+      font-size: 14px;
+      text-transform: capitalize;
+      display: block;
+      margin: 0 0 5px; }
+    .billing-info-wrap .additional-info-wrap textarea {
+      min-height: 120px;
+      background-color: #f7f7f7;
+      border: none;
+      padding: 20px;
+      color: #333;
+      font-size: 14px; }
+  .billing-info-wrap .Place-order {
+    margin-top: 10px; }
+    @media only screen and (min-width: 576px) and (max-width: 767px) {
+      .billing-info-wrap .Place-order {
+        margin-top: 20px; } }
+    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      .billing-info-wrap .Place-order {
+        margin-top: 29px; } }
+    @media only screen and (max-width: 575.5px) {
+      .billing-info-wrap .Place-order {
+        margin-top: 29px; } }
+    .billing-info-wrap .Place-order a {
+      background-color: #ff2f2f;
+      display: block;
+      cursor: pointer;
+      padding: 16px 50px 17px;
+      text-transform: uppercase;
+      font-weight: 600;
+      width: 100%;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center; }
+      .billing-info-wrap .Place-order a:hover {
+        background-color: #333; }
 
 .your-order-area {
-  padding: 40px 50px 50px;
-  border-width: 2px;
+  padding: 30px 50px 0px;
+  border-width: 1px;
   border-style: solid;
   position: relative;
   border-color: rgba(52, 53, 56, 0.1); }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .your-order-area {
-      padding: 40px 25px 50px; } }
+      padding: 30px 25px 0px; } }
   @media only screen and (min-width: 768px) and (max-width: 991.5px) {
     .your-order-area {
-      margin-top: 30px; } }
+      margin-top: 30px;
+      padding: 30px 40px 0px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
     .your-order-area {
-      padding: 40px 12px 50px;
+      padding: 30px 30px 0px;
+      margin-top: 30px; } }
+  @media only screen and (max-width: 575.5px) {
+    .your-order-area {
+      padding: 30px 30px 0px;
       margin-top: 30px; } }
   .your-order-area h3 {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
     position: relative;
-    margin: 0 0 45px;
+    margin: 0 0 40px;
     text-transform: uppercase; }
     .your-order-area h3:before {
       position: absolute;
@@ -9294,100 +9132,39 @@ h3.cart-page-title {
       background-color: #ff2f2f;
       width: 50px;
       height: 2px; }
-  .your-order-area .your-order-wrap .your-order-info {
-    border-bottom: 1px solid #e8e8e8; }
-    .your-order-area .your-order-wrap .your-order-info ul li {
-      font-size: 14px;
-      padding: 0 0 7px;
-      text-transform: uppercase;
-      font-weight: 500; }
-      .your-order-area .your-order-wrap .your-order-info ul li span {
-        float: right;
-        color: #ff2f2f; }
-    .your-order-area .your-order-wrap .your-order-info.order-subtotal {
-      padding: 15px 0 10px; }
-      .your-order-area .your-order-wrap .your-order-info.order-subtotal ul li span {
-        font-size: 16px; }
-    .your-order-area .your-order-wrap .your-order-info.order-shipping {
-      padding: 15px 0 13px;
-      display: block;
-      overflow: hidden; }
-      .your-order-area .your-order-wrap .your-order-info.order-shipping ul li > p {
-        float: right;
-        font-size: 14px;
-        text-align: right;
-        color: #333;
-        text-transform: capitalize; }
-    .your-order-area .your-order-wrap .your-order-info.order-total {
-      padding: 15px 0 10px; }
-      .your-order-area .your-order-wrap .your-order-info.order-total ul li span {
-        font-size: 16px; }
-  .your-order-area .your-order-wrap .your-order-middle {
-    border-bottom: 1px solid #e8e8e8;
-    padding: 24px 0 23px; }
-    .your-order-area .your-order-wrap .your-order-middle ul li {
-      font-size: 14px;
-      margin: 0 0 11px; }
-      .your-order-area .your-order-wrap .your-order-middle ul li:last-child {
-        margin-bottom: 0; }
-      .your-order-area .your-order-wrap .your-order-middle ul li span {
-        float: right;
-        font-size: 16px; }
-  .your-order-area .your-order-wrap .payment-method {
-    margin: 40px 0 0; }
-    .your-order-area .your-order-wrap .payment-method .sin-payment {
-      margin-bottom: 20px; }
-      .your-order-area .your-order-wrap .payment-method .sin-payment input {
-        width: auto;
-        display: inline-block;
-        float: left;
-        height: auto;
-        margin-top: 5px; }
-      .your-order-area .your-order-wrap .payment-method .sin-payment label {
-        font-size: 14px;
-        text-transform: uppercase;
-        margin: 0px 0 0 21px;
-        display: flex;
-        align-items: center;
-        font-weight: 500; }
-        @media only screen and (min-width: 576px) and (max-width: 767px) {
-          .your-order-area .your-order-wrap .payment-method .sin-payment label {
-            display: block; } }
-        .your-order-area .your-order-wrap .payment-method .sin-payment label img {
-          max-width: 140px;
-          display: inline-block;
-          margin: 0 5px; }
-        .your-order-area .your-order-wrap .payment-method .sin-payment label a {
-          text-decoration: underline; }
-      .your-order-area .your-order-wrap .payment-method .sin-payment .payment-box {
-        margin: 6px 0 0;
-        display: none; }
-        .your-order-area .your-order-wrap .payment-method .sin-payment .payment-box p {
-          font-size: 14px;
-          margin: 0; }
-  .your-order-area .Place-order {
-    margin-top: 40px; }
-    @media only screen and (min-width: 576px) and (max-width: 767px) {
-      .your-order-area .Place-order {
-        margin-top: 20px; } }
-    .your-order-area .Place-order a {
-      background-color: #ff2f2f;
-      display: block;
-      cursor: pointer;
-      padding: 16px 50px 17px;
-      text-transform: uppercase;
-      font-weight: 700;
-      width: 100%;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 600;
-      text-align: center; }
-      .your-order-area .Place-order a:hover {
-        background-color: #333; }
+
+.shop-list-wrap .product-list-img {
+  overflow: hidden;
+  position: relative; }
+  .shop-list-wrap .product-list-img a {
+    display: block; }
+    .shop-list-wrap .product-list-img a img {
+      object-position: left;
+      object-fit: cover;
+      max-height: 90px; }
+
+.shop-list-wrap .shop-list-content h3 {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0; }
+  .shop-list-wrap .shop-list-content h3 a {
+    color: #000000; }
+    .shop-list-wrap .shop-list-content h3 a:hover {
+      color: #ff2f2f; }
+
+.shop-list-wrap .shop-list-content p {
+  text-align: justify; }
+  @media only screen and (min-width: 576px) and (max-width: 767px) {
+    .shop-list-wrap .shop-list-content p {
+      margin: 5px 0 15px; } }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-  .checkout-main-area.pb-70 {
-    padding-bottom: 50px; } }
+  .shop-list-wrap .shop-list-content {
+    margin-top: 15px; } }
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .shop-list-wrap .shop-list-content {
+    margin-top: 0px; } }
 
 /*-------- 23. My account style ---------*/
 .myaccount-tab-menu {
@@ -10031,15 +9808,9 @@ h3.cart-page-title {
       .order-tracking-content .order-tracking-form .order-track-btn a:hover {
         background-color: #ff2f2f; }
 
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .section-report-area .section-report-area-wrapper .row div:not(:last-child) {
-    margin-bottom: 20px; } }
-
-@media only screen and (max-width: 575.5px) {
-  .section-report-area .section-report-area-wrapper .row div:not(:last-child) {
-    margin-bottom: 20px; } }
-
-.section-report-area .section-report-area-wrapper .row button {
+.section-report-area .section-report-area-wrapper .row a {
+  text-align: center;
+  display: inline-block;
   animation-delay: 1.5s;
   animation-name: fadeInUp;
   background-color: #eaeff2;
@@ -10052,13 +9823,23 @@ h3.cart-page-title {
   padding: 20px 30px 20px;
   text-transform: uppercase;
   transition: all 0.2s ease 0s;
-  width: 100%; }
-  .section-report-area .section-report-area-wrapper .row button:last-child {
-    margin-bottom: 0px !important; }
-  .section-report-area .section-report-area-wrapper .row button:hover {
+  width: 48%; }
+  .section-report-area .section-report-area-wrapper .row a:last-child {
+    animation-delay: 1.8s; }
+  @media only screen and (min-width: 576px) and (max-width: 767px) {
+    .section-report-area .section-report-area-wrapper .row a {
+      font-size: 12px; } }
+  @media only screen and (max-width: 575.5px) {
+    .section-report-area .section-report-area-wrapper .row a {
+      font-size: 9px;
+      padding: 20px 10px; } }
+  .section-report-area .section-report-area-wrapper .row a:hover {
     color: #ff2f2f; }
-  .section-report-area .section-report-area-wrapper .row button span {
+  .section-report-area .section-report-area-wrapper .row a span {
     margin-right: 15px; }
+    @media only screen and (max-width: 575.5px) {
+      .section-report-area .section-report-area-wrapper .row a span {
+        margin-right: 5px; } }
 
 .report-info-area .highlight {
   position: relative;

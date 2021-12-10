@@ -1,6 +1,6 @@
 <header class="header-area">
     <div class="container">
-                <div class="row d-flex justify-content-between align-items-center ">
+                <div class="row d-flex justify-content-between align-items-center">
                     <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-5">
                         <div class="logo">
                             <a href="{{route('front.index')}}">
@@ -21,8 +21,10 @@
                         <div class="header-action">
                             <div class="header-search mr-20">
                                     <form action="#">
+                                        <div class="test">
                                         <input placeholder="Search products…" type="text">
                                         <button class="button-search"><i class="icon-magnifier"></i></button>
+                                        </div>
                                     </form>
                             </div>
                             @if(\Illuminate\Support\Facades\Auth::check())

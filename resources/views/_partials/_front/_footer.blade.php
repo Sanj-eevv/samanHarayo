@@ -1,17 +1,17 @@
 <footer class="footer-area bg-gray">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-6">
+            <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12 col-12">
                 <div class="footer-logo pt-20">
-                    <h3 style="font-weight: bold">
-                        Saman<span style="color: red;">Harayo</span>
-                    </h3>
+                        <a href="{{route('front.index')}}">
+                            <img src="{{asset('assets/logo.png')}}">
+                        </a>
                 </div>
                 <div class="copyright">
                     <p>Copyright © 2021 | <a href="#"><span>Saman</span><span style="color: red;">Harayo</span></a>.</p>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
+            <div class="col-xl-8 col-lg-8 col-md-7 col-sm-12 col-12">
                 <div class="footer-right-wrap">
                     <div class="footer-menu">
                         <nav>

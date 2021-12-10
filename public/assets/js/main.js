@@ -857,13 +857,24 @@
 
 
     /*--- checkout toggle function ----*/
-    $('.checkout-click1').on('click', function(e) {
+    $('.' +
+        '1').on('click', function(e) {
         e.preventDefault();
         $('.checkout-login-info').slideToggle(900);
     });
 
 
     /*--- checkout toggle function ----*/
+    $('.checkout-click').on('click', function(e) {
+        e.preventDefault();
+        $('.checkout-login-info').slideToggle(1000);
+    });
+
+    $('.checkout-click2').on('click', function(e) {
+        e.preventDefault();
+        $('.checkout-login-info2').slideToggle(1000);
+    });
+
     $('.checkout-click3').on('click', function(e) {
         e.preventDefault();
         $('.checkout-login-info3').slideToggle(1000);

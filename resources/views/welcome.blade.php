@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-<div class="slider-area mt-10">
+<div class="slider-area">
     <div class="container">
         <div class="hero-slider-active nav-style bg-gray-7">
             <div class="single-hero-slider slider-height custom-d-flex custom-align-item-center single-animation-wrap">
@@ -44,17 +44,15 @@
     <div class="container">
         <div class="section-report-area-wrapper">
             <div class="row">
-                <div class="col-md-6">
-                    <button class="animated">
+                <div class="d-flex justify-content-between">
+                    <a href="{{route('report-lost.index')}}" class="section-report-button-start animated">
                         <span><i class="fas fa-pencil-alt"></i></span>
                         Report Lost Product
-                    </button>
-                </div>
-                <div class="col-md-6 ">
-                    <button class="animated float-end">
+                    </a>
+                    <a href="{{route('report-found.index')}}" class="section-report-button-end animated float-end">
                         <span><i class="far fa-clipboard"></i>
                         </span>Report Found Product
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -63,22 +61,22 @@
 <div class="about-us-area pt-50">
     <div class="container">
         <div class="border-bottom-1 about-content-pb">
-            <div class="row">
-{{--                <div class="col-lg-3 col-md-3">--}}
-{{--                    <div class="about-us-logo">--}}
-{{--                        <a href="{{route('front.index')}}">--}}
-{{--                            <img src="{{asset('assets/logo.png')}}">--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-                <div class="col-lg-12 col-md-12">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-3">
+                    <div class="about-us-logo" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="200">
+                        <a href="{{route('front.index')}}">
+                            <img src="{{asset('assets/abc.svg')}}">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
                     <div class="about-us-content">
-                        <h3>Introduce</h3>
-                        <p>We are living on the era of technology and innovation. As days are passing by the technology is also improving along with days.
+                        <h3 data-aos="fade-up" data-aos-duration="1600">Introduce</h3>
+                        <p data-aos="fade-up" data-aos-duration="2000">We are living on the era of technology and innovation. As days are passing by the technology is also improving along with days.
                             There has been drastic change in the technology which has direct impact on the life of the people.
                             Every aspect of life is leaning towards the maximum use of technology for the better and easier lifestyle.
                         </p>
-                        <div class="signature">
+                        <div class="signature"  data-aos="fade-up" data-aos-duration="1600">
                             <h2>Sanju Bhandari</h2>
                         </div>
                     </div>
@@ -90,7 +88,7 @@
 <div class="report-info-area mt-15">
     <div class="container">
         <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12"  data-aos="fade-up" data-aos-duration="800">
                 <div class="highlight">
                     <div class="highlight--circle">
                             <div class="highlight--circle__content">
@@ -99,7 +97,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12"  data-aos="fade-up" data-aos-duration="1200">
                 <div class="highlight">
                     <div class="highlight--circle">
                             <div class="highlight--circle__content">
@@ -108,7 +106,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12"  data-aos="fade-up" data-aos-duration="1600">
                 <div class="highlight ">
                     <div class="highlight--circle">
                             <div class="highlight--circle__content">
