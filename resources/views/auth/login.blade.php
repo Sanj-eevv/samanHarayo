@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title','Login: samanHarayo')
+@section('title','Login')
 
 @section('content')
     <div class="container">
@@ -16,7 +16,7 @@
                                 </div>
                             </div>
                             <div class="col-5 align-self-end">
-                                <img src="{{asset("assets/images/auth-images/profile-img.png")}}" alt="" class="img-fluid">
+                                <img src="{{ asset('assets/images/auth-images/profile-img.png') }}" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -31,19 +31,26 @@
                                 @endif
                                 <div class="mb-4">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="sh-auth-input form-control @error('email') is-invalid @enderror" id="email" placeholder="Enter email" name="email">
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        {{ $message }}
-                                         </span>
-                                    @enderror
+                                    <div class="input-group">
+                                        <input type="email" class="sh-auth-input form-control @error('email') is-invalid @enderror"
+                                               id="email"
+                                               placeholder="Enter email"
+                                               name="email">
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            {{ $message }}
+                                             </span>
+                                        @enderror
+                                    </div>
                                 </div>
 
                                 <div class="mb-4">
                                     <label class="form-label">Password</label>
                                     <div class="input-group auth-pass-inputgroup">
-                                        <input type="password"  class="form-control  @error('password') is-invalid @enderror sh-auth-input" name="password" placeholder="Enter password" aria-label="Password" aria-describedby="password-addon">
-                                        <button class="btn btn-light sh-eye-toggle" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
+                                        <input type="password"  class="form-control  @error('password') is-invalid @enderror sh-auth-input"
+                                               name="password"
+                                               placeholder="Enter password" aria-label="Password" aria-describedby="password-addon">
+                                        <button class="btn btn-light sh-eye-toggle password-addon" type="button"><i class="mdi mdi-eye-outline"></i></button>
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
                                         {{ $message }}
@@ -95,9 +102,9 @@
                 </div>
                 <div class="mt-5 text-center">
 
-                    <div>
+                    <div class="bold-on-hover">
                         <p>Don't have an account ? <a href="{{route('register')}}" class="fw-medium text-primary"> Signup now </a> </p>
-                        <p>© <script>document.write(new Date().getFullYear())</script>-<a class="font-weight-normal text-dark" href="{{route('front.index')}}"> {{config('app.name')}} </a></p>
+                        <p>© {{now()->year}}-<a class="font-weight-normal text-dark" href="{{route('front.index')}}"> {{config('app.name')}} </a></p>
                     </div>
                 </div>
 

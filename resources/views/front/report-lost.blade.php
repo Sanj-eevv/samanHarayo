@@ -147,7 +147,7 @@
                                     </div>
                                     <div class="col-xl-8 col-lg-7 col-md-8 col-sm-8 col-8">
                                         <div class="shop-list-content">
-                                            <h3><a href="product-details.html">Basic Joggin Shorts</a></h3>
+                                            <h3><a href="product-details.html">Mobile Phone</a></h3>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipic it</p>
                                         </div>
                                     </div>
@@ -164,7 +164,7 @@
                                     </div>
                                     <div class="col-xl-8 col-lg-7 col-md-8 col-sm-8 col-8">
                                         <div class="shop-list-content">
-                                            <h3><a href="product-details.html">Basic Joggin Shorts</a></h3>
+                                            <h3><a href="product-details.html">HP Laptop</a></h3>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipic it</p>
                                         </div>
                                     </div>

@@ -122,7 +122,7 @@
         s("#light-mode-switch, #dark-mode-switch, #rtl-mode-switch, #dark-rtl-mode-switch").on("change", function(e) {
             r(e.target.id)
         }),
-        s("#password-addon").on("click", function() {
+        s(".password-addon").on("click", function() {
             0 < s(this).siblings("input").length && ("password" == s(this).siblings("input").attr("type") ? s(this).siblings("input").attr("type", "input") : s(this).siblings("input").attr("type", "password"))
         }),
     null != t && t !== n && a(t),

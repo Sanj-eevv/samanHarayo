@@ -8998,7 +8998,9 @@ h3.cart-page-title {
     top: 15px;
     font-size: 18px; }
 
-.checkout-login-info,
+.checkout-login-info {
+  margin: 20px 0 0; }
+
 .checkout-login-info2,
 .checkout-login-info3 {
   margin: 20px 0 0;

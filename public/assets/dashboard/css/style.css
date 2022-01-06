@@ -11,3 +11,8 @@
     outline: none !important;
     box-shadow: none !important;
 }
+
+.bold-on-hover a:hover{
+    font-weight: bolder;
+    transition: all 0.3s;
+}
