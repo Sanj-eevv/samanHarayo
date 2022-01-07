@@ -17,13 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 })->name('front.index');
 
+// Social Routes
+Route::get('auth/facebook', [\App\Http\Controllers\Social\FacebookController::class, 'facebookRedirect'])->name('auth.facebookRedirect');
+Route::get('auth/facebook/callback', [\App\Http\Controllers\Social\FacebookController::class, 'loginWithFacebook'])->name('auth.facebookLogin');
 
 // protected routes
 Route::group(['middleware' => ['auth', 'verified']], function () {
+    /** Custom Auth Routes */
     Route::get('/email-verified', function (){
         return view('auth.email-verified');
     });
-
     Route::resource('/report-lost', \App\Http\Controllers\Front\LostController::class);
     Route::resource('/report-found', \App\Http\Controllers\Front\FoundController::class);
 

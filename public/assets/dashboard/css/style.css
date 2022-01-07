@@ -13,6 +13,16 @@
 }
 
 .bold-on-hover a:hover{
-    font-weight: bolder;
-    transition: all 0.3s;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+
+.logo-small{
+    height: 35px;
+    width: 143px;
+}
+.logo-small img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }

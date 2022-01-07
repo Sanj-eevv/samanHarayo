@@ -25,7 +25,7 @@
                             <form class="form-horizontal" action="{{route('login')}}"  method="post" novalidate="novalidate">
                                 @csrf
                                 @if (session('status'))
-                                    <div class="alert alert-success" style="margin-bottom: 0px; margin-top: 25px" role="alert">
+                                    <div class="alert alert-success mb-4" role="alert">
                                         {{ session('status') }}
                                     </div>
                                 @endif
@@ -50,7 +50,7 @@
                                         <input type="password"  class="form-control  @error('password') is-invalid @enderror sh-auth-input"
                                                name="password"
                                                placeholder="Enter password" aria-label="Password" aria-describedby="password-addon">
-                                        <button class="btn btn-light sh-eye-toggle password-addon" type="button"><i class="mdi mdi-eye-outline"></i></button>
+                                        <button class="btn btn-light sh-eye-toggle password-addon" tabindex ="-1"  type="button"><i class="mdi mdi-eye-outline"></i></button>
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
                                         {{ $message }}
@@ -75,13 +75,8 @@
 
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
-                                            <a href="javascript::void()" class="social-list-item bg-primary text-white border-primary">
+                                            <a href="{{route('auth.facebookRedirect')}}" class="social-list-item bg-primary text-white border-primary">
                                                 <i class="mdi mdi-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="javascript::void()" class="social-list-item bg-info text-white border-info">
-                                                <i class="mdi mdi-twitter"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
@@ -92,8 +87,8 @@
                                     </ul>
                                 </div>
 
-                                <div class="mt-4 text-center">
-                                    <a href="auth-recoverpw.html" class="text-muted"><i class="mdi mdi-lock me-1"></i> Forgot your password?</a>
+                                <div class="mt-4 text-center bold-on-hover">
+                                    <a href="{{route('password.request')}}" class="text-muted"><i class="mdi mdi-lock me-1"></i> Forgot your password?</a>
                                 </div>
                             </form>
                         </div>

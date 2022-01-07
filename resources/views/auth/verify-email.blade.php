@@ -4,14 +4,13 @@
 
 @section('content')
     <div class="container">
-{{--        <div class="row">--}}
-{{--            <div class="col-lg-12">--}}
-{{--                <div class="text-center mb-5 text-muted">--}}
-{{--                    <p class="mt-3">{{config('app.name')}}</p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-        <!-- end row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="mb-5 text-muted logo-small mx-auto">
+                    <img class="img-fluid" src="{{asset('assets/logo.png')}}">
+                </div>
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6 col-xl-5">
                 <div class="card">
@@ -33,7 +32,7 @@
                                             {{session('status')}}
                                         </div>
                                     @endif
-                                    <p>We have sent you verification email <span class="fw-semibold">{{auth()->user()->email}}</span>, Please check it</p>
+                                    <p>We have sent you verification email to <span class="fw-semibold">{{auth()->user()->email}}</span>, Please check it</p>
                                     <p>Didn't receive a mail?</p>
                                     <form action="{{route('verification.send')}}" method="post" novalidate="novalidate">
                                         @csrf
@@ -47,9 +46,8 @@
 
                     </div>
                 </div>
-                <div class="mt-5 text-center">
-{{--                    <p>Didn't receive an email ? <a href="#" class="fw-medium text-primary"> Resend </a> </p>--}}
-                    <p>© <script>document.write(new Date().getFullYear())</script>-<a class="font-weight-normal text-dark" href={{route('front.index')}}>{{config('app.name')}}</a></p>
+                <div class="mt-5 text-center bold-on-hover">
+                    <p>© {{now()->year}}-<a class="font-weight-normal text-dark" href={{route('front.index')}}>{{config('app.name')}}</a></p>
                 </div>
 
             </div>

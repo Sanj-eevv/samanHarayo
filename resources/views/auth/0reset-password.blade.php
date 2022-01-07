@@ -22,8 +22,8 @@
                                     <input value="{{ $request->email ?? old('email') }}" name="email" type="email" class="form-control @error('email') is-invalid @enderror">
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        {{ $message }}
-                                         </span>
+                                    {{ $message }}
+                                     </span>
                                     @enderror
 
                                     <label for="password">Password</label>

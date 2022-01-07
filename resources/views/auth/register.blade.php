@@ -73,7 +73,7 @@
                                        placeholder="Enter password"
                                        name="password"
                                        required>
-                                <button class="btn btn-light sh-eye-toggle password-addon" type="button"><i class="mdi mdi-eye-outline"></i></button>
+                                <button class="btn btn-light sh-eye-toggle password-addon"  tabindex ="-1" type="button"><i class="mdi mdi-eye-outline"></i></button>
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                         {{ $message }}
@@ -89,7 +89,7 @@
                                        placeholder="Enter password"
                                        name="password_confirmation"
                                        required>
-                                <button class="btn btn-light sh-eye-toggle password-addon" type="button"><i class="mdi mdi-eye-outline"></i></button>
+                                <button class="btn btn-light sh-eye-toggle password-addon" type="button" tabindex="-1"><i class="mdi mdi-eye-outline"></i></button>
                                 @error('password_confirmation')
                                     <span class="invalid-feedback" role="alert">
                                         {{ $message }}
@@ -107,13 +107,8 @@
 
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <a href="javascript::void()" class="social-list-item bg-primary text-white border-primary">
+                                    <a href="{{route('auth.facebookRedirect')}}" class="social-list-item bg-primary text-white border-primary">
                                         <i class="mdi mdi-facebook"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="javascript::void()" class="social-list-item bg-info text-white border-info">
-                                        <i class="mdi mdi-twitter"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
@@ -124,7 +119,7 @@
                             </ul>
                         </div>
 
-                        <div class="mt-4 text-center">
+                        <div class="mt-4 text-center bold-on-hover">
                             <p class="mb-0">By registering you agree to the {{config('app.name')}} <a href="#" class="text-primary">Terms of Use</a></p>
                         </div>
                     </form>
