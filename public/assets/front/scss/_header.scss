@@ -1,88 +1,80 @@
 /*-------- 3. Header style ---------*/
 
 .header-area{
-       line-height: 5;
+       line-height: 80px;
+}
+.header-container-flex-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 .logo {
-    //margin-top: -1rem;
-    a {
-        img{
-            object-fit: cover;
-            width: 100%;
-            ////height: 45px;
-            //object-position: center;
-        }
-    }
-}
-.header-nav{
-    @media #{$md-layout} {
-        display: none;
-    }
-    @media #{$sm-layout} {
-        display: none;
-    }
-    @media #{$vsm-layout} {
-        display: none;
-    }
-    .main-menu {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        div a {
-            color: $black;
-            font-size: 16px;
-            font-weight: 600;
-            &:hover {
-                color: $theme-color-red;
+       a {
+            img{
+                width: 150px;
+                height: 40px;
+                object-fit: cover;
             }
+    }
+}
+
+.header-nav{
+    display: none;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    @media #{$xx-layout} {
+        display: flex;
+    }
+    @media #{$xl-layout} {
+        display: flex;
+    }
+
+    div a {
+        color: $black;
+        font-size: 16px;
+        font-weight: 500;
+        &:hover {
+            color: $theme-color-red;
         }
     }
 }
+
 .header-action {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    line-height: 0;
+    gap: 20px;
     .header-search {
-        line-height: 0;
+        position: relative;
+        display: none;
+        @media #{$xx-layout} {
+            display: block;
+        }
         @media #{$xl-layout} {
             display: block;
         }
-        @media #{$lg-layout} {
-            display: block;
-        }
-        display: none;
-        position: relative;
         form {
+            width: 230px;
             input {
                 background-color: #fff;
                 border: 1px solid #E2DCDC;
-                color: #000;
                 padding: 2px 60px 2px 10px;
-
-                &::-moz-input-placeholder {
-                    color: #000;
-                    opacity: 1;
-                }
-
-                &::-webkit-input-placeholder {
-                    color: #000;
-                    opacity: 1;
-                }
             }
-
             button.button-search {
                 position: absolute;
                 right: 0;
                 top: 50%;
                 transform: translateY(-50%);
-                padding: 0;
                 border: none;
                 background-color: transparent;
                 height: 100%;
                 border-left: 1px solid #E2DCDC;
                 padding: 0 15px;
                 color: $black;
-
                 &:hover {
                     color: $theme-color-red;
                 }
@@ -92,11 +84,11 @@
     .red-btn{
         background-color: $theme-color-red;
         color: #fff;
-        border: medium none;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 600;
-        padding: 12px 25px;
+        display: inline-flex;
+        align-items: center;
+        font-weight: 500;
+        height: 45px;
+        padding: 0 20px;
         text-transform: uppercase;
         &:hover {
             background-color: #010225;
@@ -104,13 +96,7 @@
         }
     }
     .header-user-icon{
-        display: none;
-        @media #{$xl-layout} {
-            display: block;
-        }
-        @media #{$lg-layout} {
-            display: block;
-        }
+        display: block;
         a {
         font-size: 23px;
             &:hover{
@@ -119,10 +105,10 @@
         }
     }
     .mobile-header-button-active{
-        @media #{$xl-layout} {
+        @media #{$xx-layout} {
             display: none;
         }
-        @media #{$lg-layout} {
+        @media #{$xl-layout} {
             display: none;
         }
         a {
@@ -130,8 +116,6 @@
         }
     }
 }
-
-
 
 .main-wrapper {
     .body-overlay {
@@ -180,7 +164,6 @@
 	width: 350px;
 	min-height: 100vh;
 	bottom: 0;
-	z-index: 111;
 	right: 0;
 	visibility: hidden;
 	opacity: 0;
@@ -240,12 +223,6 @@
                 padding-bottom: 24px;
             }
             .mobile-search {
-                @media #{$lg-layout} {
-                    display: none;
-                }
-                @media #{$md-layout} {
-                    display: none;
-                }
                 form {
                     position: relative;
                     input {

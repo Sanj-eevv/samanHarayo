@@ -2017,12 +2017,8 @@ textarea:focus {
 .button-red,
 .a-red {
     background-color: $theme-color-red;
-    color: #fff;
-    border: medium none;
-    cursor: pointer;
-    font-size: 14px;
     font-weight: 600;
-    padding: 11px 30px 11px;
+    padding: 10px 30px 10px;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
     &:hover {

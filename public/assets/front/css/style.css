@@ -285,7 +285,7 @@ ul {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .mt-130 {
       margin-top: 70px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .mt-130 {
       margin-top: 50px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -639,7 +639,7 @@ ul {
 
 .pt-105 {
   padding-top: 105px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pt-105 {
       padding-top: 45px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -648,7 +648,7 @@ ul {
 
 .pt-110 {
   padding-top: 110px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pt-110 {
       padding-top: 70px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -657,7 +657,7 @@ ul {
 
 .pt-115 {
   padding-top: 115px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pt-115 {
       padding-top: 75px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -666,7 +666,7 @@ ul {
 
 .pt-120 {
   padding-top: 120px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pt-120 {
       padding-top: 80px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -684,7 +684,7 @@ ul {
 
 .pt-135 {
   padding-top: 135px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pt-135 {
       padding-top: 75px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -906,7 +906,7 @@ ul {
 
 .pb-105 {
   padding-bottom: 105px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pb-105 {
       padding-bottom: 65px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -915,7 +915,7 @@ ul {
 
 .pb-110 {
   padding-bottom: 110px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pb-110 {
       padding-bottom: 70px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -924,7 +924,7 @@ ul {
 
 .pb-115 {
   padding-bottom: 115px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pb-115 {
       padding-bottom: 75px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -933,7 +933,7 @@ ul {
 
 .pb-120 {
   padding-bottom: 120px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pb-120 {
       padding-bottom: 80px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -942,7 +942,7 @@ ul {
 
 .pb-125 {
   padding-bottom: 125px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pb-125 {
       padding-bottom: 65px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -951,7 +951,7 @@ ul {
 
 .pb-130 {
   padding-bottom: 130px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pb-130 {
       padding-bottom: 70px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -960,7 +960,7 @@ ul {
 
 .pb-135 {
   padding-bottom: 135px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pb-135 {
       padding-bottom: 75px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -969,7 +969,7 @@ ul {
 
 .pb-140 {
   padding-bottom: 140px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pb-140 {
       padding-bottom: 80px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -1342,7 +1342,7 @@ textarea:focus {
   position: relative;
   width: 100%;
   min-height: 1px; }
-  @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  @media only screen and (min-width: 1366px) {
     .custom-col-5 {
       flex: 0 0 20%;
       max-width: 20%; } }
@@ -1354,7 +1354,7 @@ textarea:focus {
     .custom-col-5 {
       flex: 0 0 25%;
       max-width: 25%; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .custom-col-5 {
       flex: 0 0 33.333%;
       max-width: 33.333%; } }
@@ -1542,7 +1542,7 @@ textarea:focus {
       opacity: .5;
       z-index: 9; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .res-white-overly-md {
     position: relative; }
     .res-white-overly-md:after {
@@ -1562,7 +1562,7 @@ textarea:focus {
 
 .section-padding-1 .container-fluid {
   padding: 0 180px; }
-  @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  @media only screen and (min-width: 1366px) {
     .section-padding-1 .container-fluid {
       padding: 0 100px; } }
   @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -1571,7 +1571,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .section-padding-1 .container-fluid {
       padding: 0 30px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .section-padding-1 .container-fluid {
       padding: 0 40px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -1583,7 +1583,7 @@ textarea:focus {
 
 .section-padding-2 .container-fluid {
   padding: 0 70px; }
-  @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  @media only screen and (min-width: 1366px) {
     .section-padding-2 .container-fluid {
       padding: 0 30px; } }
   @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -1592,7 +1592,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .section-padding-2 .container-fluid {
       padding: 0 30px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .section-padding-2 .container-fluid {
       padding: 0 40px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -1613,7 +1613,7 @@ textarea:focus {
   display: block;
   margin: 0px auto;
   width: 1310px; }
-  @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  @media only screen and (min-width: 1366px) {
     .box-layout-width {
       width: 1200px; } }
   @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -1622,7 +1622,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .box-layout-width {
       width: 970px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .box-layout-width {
       width: 730px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -1637,7 +1637,7 @@ textarea:focus {
   margin: 0px auto;
   width: 1370px;
   background-color: #ffffff; }
-  @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  @media only screen and (min-width: 1366px) {
     .box-layout-width-2 {
       width: 1200px; } }
   @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -1646,7 +1646,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .box-layout-width-2 {
       width: 970px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .box-layout-width-2 {
       width: 730px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -1662,12 +1662,8 @@ textarea:focus {
 .button-red,
 .a-red {
   background-color: #ff2f2f;
-  color: #fff;
-  border: medium none;
-  cursor: pointer;
-  font-size: 14px;
   font-weight: 600;
-  padding: 11px 30px 11px;
+  padding: 10px 30px 10px;
   text-transform: uppercase;
   transition: all 0.3s ease 0s; }
   .button-red:hover,
@@ -1910,102 +1906,93 @@ textarea:focus {
 
 /*-------- 3. Header style ---------*/
 .header-area {
-  line-height: 5; }
+  line-height: 80px; }
+
+.header-container-flex-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px; }
 
 .logo a img {
-  object-fit: cover;
-  width: 100%; }
+  width: 150px;
+  height: 40px;
+  object-fit: cover; }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
-  .header-nav {
-    display: none; } }
-
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .header-nav {
-    display: none; } }
-
-@media only screen and (max-width: 575.5px) {
-  .header-nav {
-    display: none; } }
-
-.header-nav .main-menu {
-  display: flex;
+.header-nav {
+  display: none;
+  flex: 1;
   flex-wrap: wrap;
-  justify-content: space-between; }
-  .header-nav .main-menu div a {
+  justify-content: space-evenly; }
+  @media only screen and (min-width: 1366px) {
+    .header-nav {
+      display: flex; } }
+  @media only screen and (min-width: 1200px) and (max-width: 1365px) {
+    .header-nav {
+      display: flex; } }
+  .header-nav div a {
     color: #000000;
     font-size: 16px;
-    font-weight: 600; }
-    .header-nav .main-menu div a:hover {
+    font-weight: 500; }
+    .header-nav div a:hover {
       color: #ff2f2f; }
 
 .header-action {
   display: flex;
   justify-content: flex-end;
-  align-items: center; }
+  align-items: center;
+  line-height: 0;
+  gap: 20px; }
   .header-action .header-search {
-    line-height: 0;
-    display: none;
-    position: relative; }
+    position: relative;
+    display: none; }
+    @media only screen and (min-width: 1366px) {
+      .header-action .header-search {
+        display: block; } }
     @media only screen and (min-width: 1200px) and (max-width: 1365px) {
       .header-action .header-search {
         display: block; } }
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
-      .header-action .header-search {
-        display: block; } }
-    .header-action .header-search form input {
-      background-color: #fff;
-      border: 1px solid #E2DCDC;
-      color: #000;
-      padding: 2px 60px 2px 10px; }
-      .header-action .header-search form input::-moz-input-placeholder {
-        color: #000;
-        opacity: 1; }
-      .header-action .header-search form input::-webkit-input-placeholder {
-        color: #000;
-        opacity: 1; }
-    .header-action .header-search form button.button-search {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 0;
-      border: none;
-      background-color: transparent;
-      height: 100%;
-      border-left: 1px solid #E2DCDC;
-      padding: 0 15px;
-      color: #000000; }
-      .header-action .header-search form button.button-search:hover {
-        color: #ff2f2f; }
+    .header-action .header-search form {
+      width: 230px; }
+      .header-action .header-search form input {
+        background-color: #fff;
+        border: 1px solid #E2DCDC;
+        padding: 2px 60px 2px 10px; }
+      .header-action .header-search form button.button-search {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background-color: transparent;
+        height: 100%;
+        border-left: 1px solid #E2DCDC;
+        padding: 0 15px;
+        color: #000000; }
+        .header-action .header-search form button.button-search:hover {
+          color: #ff2f2f; }
   .header-action .red-btn {
     background-color: #ff2f2f;
     color: #fff;
-    border: medium none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 12px 25px;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    height: 45px;
+    padding: 0 20px;
     text-transform: uppercase; }
     .header-action .red-btn:hover {
       background-color: #010225;
       color: #fff; }
   .header-action .header-user-icon {
-    display: none; }
-    @media only screen and (min-width: 1200px) and (max-width: 1365px) {
-      .header-action .header-user-icon {
-        display: block; } }
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
-      .header-action .header-user-icon {
-        display: block; } }
+    display: block; }
     .header-action .header-user-icon a {
       font-size: 23px; }
       .header-action .header-user-icon a:hover {
         color: #ff2f2f; }
-  @media only screen and (min-width: 1200px) and (max-width: 1365px) {
+  @media only screen and (min-width: 1366px) {
     .header-action .mobile-header-button-active {
       display: none; } }
-  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+  @media only screen and (min-width: 1200px) and (max-width: 1365px) {
     .header-action .mobile-header-button-active {
       display: none; } }
   .header-action .mobile-header-button-active a {
@@ -2050,7 +2037,6 @@ textarea:focus {
   width: 350px;
   min-height: 100vh;
   bottom: 0;
-  z-index: 111;
   right: 0;
   visibility: hidden;
   opacity: 0;
@@ -2103,12 +2089,6 @@ textarea:focus {
         border-bottom: 1px solid #ddd;
         margin-bottom: 30px;
         padding-bottom: 24px; }
-      @media only screen and (min-width: 992px) and (max-width: 1199px) {
-        .mobile-header-active .clickalbe-sidebar-wrap .mobile-header-content-area .mobile-search {
-          display: none; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
-        .mobile-header-active .clickalbe-sidebar-wrap .mobile-header-content-area .mobile-search {
-          display: none; } }
       .mobile-header-active .clickalbe-sidebar-wrap .mobile-header-content-area .mobile-search form {
         position: relative; }
         .mobile-header-active .clickalbe-sidebar-wrap .mobile-header-content-area .mobile-search form input {
@@ -2217,11 +2197,11 @@ textarea:focus {
     .slider-height {
       height: 320px;
       padding: 50px 0; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .slider-height {
       height: 315px;
       padding: 50px 0; } }
-  @media only screen and (max-width: 575.5px) {
+  @media only screen and (max-width: 575px) {
     .slider-height {
       height: 485px; } }
 
@@ -2242,7 +2222,7 @@ textarea:focus {
   z-index: 1;
   opacity: 0;
   display: none; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .nav-style > span {
       width: 40px;
       height: 40px;
@@ -2287,7 +2267,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .hero-slider-content {
       padding-left: 70px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .hero-slider-content {
       padding-left: 50px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -2296,14 +2276,14 @@ textarea:focus {
       margin-bottom: 0;
       padding-left: 30px;
       padding-right: 0px; } }
-  @media only screen and (max-width: 575.5px) {
+  @media only screen and (max-width: 575px) {
     .hero-slider-content {
       padding: 20px; } }
   .hero-slider-content h5 {
     font-size: 16px;
     font-weight: 600;
     margin: 0; }
-    @media only screen and (max-width: 575.5px) {
+    @media only screen and (max-width: 575px) {
       .hero-slider-content h5 {
         display: none;
         text-align: center; } }
@@ -2315,7 +2295,7 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .hero-slider-content h1 {
         font-size: 38px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .hero-slider-content h1 {
         font-size: 28px;
         line-height: 40px;
@@ -2325,7 +2305,7 @@ textarea:focus {
         margin: 7px 0 10px;
         font-size: 25px;
         line-height: 33px; } }
-    @media only screen and (max-width: 575.5px) {
+    @media only screen and (max-width: 575px) {
       .hero-slider-content h1 {
         font-size: 28px;
         line-height: 30px;
@@ -2337,20 +2317,20 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .hero-slider-content p {
         width: 90%; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .hero-slider-content p {
         width: 90%; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
       .hero-slider-content p {
         width: 100%; } }
-    @media only screen and (max-width: 575.5px) {
+    @media only screen and (max-width: 575px) {
       .hero-slider-content p {
         width: 100%; } }
-    @media only screen and (max-width: 575.5px) {
+    @media only screen and (max-width: 575px) {
       .hero-slider-content p.content {
         padding: 20px 0px 0px 0px;
         margin-bottom: 0px; } }
-    @media only screen and (max-width: 575.5px) {
+    @media only screen and (max-width: 575px) {
       .hero-slider-content p:last-child {
         margin-bottom: 0px; } }
     .hero-slider-content p:last-child a:hover {
@@ -2358,7 +2338,7 @@ textarea:focus {
 
 .hm7-hero-slider-img {
   margin: 0 165px 0 0; }
-  @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  @media only screen and (min-width: 1366px) {
     .hm7-hero-slider-img {
       margin: 0 100px 0 0; } }
   @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -2367,14 +2347,14 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .hm7-hero-slider-img {
       margin: 0 70px 0 0; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .hm7-hero-slider-img {
       margin: 0 50px 0 0; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
     .hm7-hero-slider-img {
       text-align: center;
       margin: 0 30px 0 0; } }
-  @media only screen and (max-width: 575.5px) {
+  @media only screen and (max-width: 575px) {
     .hm7-hero-slider-img {
       text-align: center;
       margin: 20px; } }
@@ -2390,7 +2370,7 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .service-wrap.service-wrap-hm9 {
         margin-top: -50px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .service-wrap.service-wrap-hm9 {
         margin-top: -30px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -2442,7 +2422,7 @@ textarea:focus {
     width: 1px;
     height: 63px;
     background-color: #e0e0e0; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .service-border-1.service-border-1-none-md:before {
       display: none; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -2507,7 +2487,7 @@ textarea:focus {
   .about-us-area.pt-60 {
     padding-top: 5px; } }
 
-@media only screen and (max-width: 575.5px) {
+@media only screen and (max-width: 575px) {
   .about-us-area.pt-60 {
     padding-top: 20px; } }
 
@@ -2515,7 +2495,7 @@ textarea:focus {
   .about-us-area .about-us-logo {
     display: none; } }
 
-@media only screen and (max-width: 575.5px) {
+@media only screen and (max-width: 575px) {
   .about-us-area .about-us-logo {
     display: none; } }
 
@@ -2537,7 +2517,7 @@ textarea:focus {
   line-height: 50px;
   margin: 23px 0 51px;
   text-align: justify; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .about-us-content p {
       font-size: 18px;
       line-height: 34px;
@@ -2560,7 +2540,7 @@ textarea:focus {
 
 .about-content-pb {
   padding-bottom: 50px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .about-content-pb {
       padding-bottom: 80px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -2569,7 +2549,7 @@ textarea:focus {
 
 .about-us-content-2 .about-us-content-2-title {
   margin: 0 0 35px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .about-us-content-2 .about-us-content-2-title {
       margin: 0 0 15px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -2584,7 +2564,7 @@ textarea:focus {
 .about-us-content-2 p {
   line-height: 30px;
   margin: 0 0 35px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .about-us-content-2 p {
       margin: 0 0 15px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -2724,7 +2704,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .single-testimonial-2 p {
       width: 85%; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .single-testimonial-2 p {
       width: 79%;
       margin: 15px auto 20px;
@@ -2752,7 +2732,7 @@ textarea:focus {
   display: block;
   line-height: 1; }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .about-us-area.pt-85 {
     padding-top: 25px; }
   .team-area.pb-90 {
@@ -2772,7 +2752,7 @@ textarea:focus {
   align-items: center; }
   .section-title-tab-wrap.align-items-inherit {
     align-items: inherit; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .section-title-tab-wrap.mb-45 {
       margin-bottom: 40px; }
     .section-title-tab-wrap.mb-55 {
@@ -2793,7 +2773,7 @@ textarea:focus {
   font-family: "Heebo", sans-serif;
   margin: 0;
   text-transform: uppercase; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .section-title h2 {
       font-size: 22px; } }
 
@@ -2801,7 +2781,7 @@ textarea:focus {
   font-size: 16px;
   margin: 10px 0 0; }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .section-title.mb-45 {
     margin-bottom: 30px; } }
 
@@ -2814,7 +2794,7 @@ textarea:focus {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .section-title-tag-wrap.mb-70 {
       margin-bottom: 40px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -2837,7 +2817,7 @@ textarea:focus {
     .section-title-2 p {
       margin: 7px 0 0; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .section-title-2.mb-45 {
     margin-bottom: 35px; } }
 
@@ -2928,7 +2908,7 @@ textarea:focus {
     top: 2px;
     margin-right: 14px; }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .section-title-6.mb-60 {
     margin-bottom: 35px; } }
 
@@ -2976,7 +2956,7 @@ textarea:focus {
   font-size: 16px;
   margin-right: 40px;
   color: #000000; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .tab-style-1 a {
       margin-right: 18px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -3074,7 +3054,7 @@ textarea:focus {
       opacity: 0;
       visibility: hidden;
       transition: all .3s ease 0s; }
-      @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+      @media only screen and (min-width: 1366px) {
         .single-product-wrap .product-img .product-action-wrap {
           padding: 18px 15px; } }
       @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -3102,7 +3082,7 @@ textarea:focus {
           text-transform: uppercase;
           background-color: transparent;
           transition: all .3s ease 0s; }
-          @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+          @media only screen and (min-width: 1366px) {
             .single-product-wrap .product-img .product-action-wrap .product-action-left button {
               font-size: 15px; } }
           @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -3116,7 +3096,7 @@ textarea:focus {
             margin-right: 15px;
             position: relative;
             top: 2px; }
-            @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+            @media only screen and (min-width: 1366px) {
               .single-product-wrap .product-img .product-action-wrap .product-action-left button i {
                 margin-right: 10px; } }
             @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -3688,7 +3668,7 @@ textarea:focus {
       font-size: 50px;
       line-height: 55px;
       margin: 25px 0 14px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .deal-content-1 h2 {
       font-size: 50px;
       line-height: 55px;
@@ -3710,7 +3690,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .deal-content-1 p {
       width: 37%; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .deal-content-1 p {
       width: 37%; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -3722,7 +3702,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .deal-content-1 .timer-wrap {
       margin: 35px 0 40px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .deal-content-1 .timer-wrap {
       margin: 35px 0 40px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -3801,7 +3781,7 @@ textarea:focus {
 
 .deal-content-1.deal-content-1-modify {
   padding-left: 170px; }
-  @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  @media only screen and (min-width: 1366px) {
     .deal-content-1.deal-content-1-modify {
       padding-left: 100px; } }
   @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -3810,7 +3790,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .deal-content-1.deal-content-1-modify {
       padding-left: 70px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .deal-content-1.deal-content-1-modify {
       padding-left: 50px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -3833,7 +3813,7 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .deal-content-1.deal-content-1-modify .timer-wrap {
         margin: 35px 0 0px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .deal-content-1.deal-content-1-modify .timer-wrap {
         margin: 35px 0 0px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -3862,7 +3842,7 @@ textarea:focus {
     color: #4dbdaf;
     background-color: #edf8f7; }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .tab-style-3.tab-style-3-blue a {
     padding: 2px 10px 4px;
     margin-right: 3px; } }
@@ -3927,7 +3907,7 @@ textarea:focus {
     flex: 0 0 63%;
     max-width: 63%;
     padding: 0 15px 0 25px; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .single-product-wrap-2 .product-content-3 {
         padding: 0 10px 0 10px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4096,7 +4076,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .product-categories-wrap .product-categories-content ul {
           margin: 6px 0 8px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .product-categories-wrap .product-categories-content ul {
           margin: 6px 0 8px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4111,7 +4091,7 @@ textarea:focus {
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
           .product-categories-wrap .product-categories-content ul li {
             margin: 0 0 1px; } }
-        @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
           .product-categories-wrap .product-categories-content ul li {
             margin: 0 0 2px; } }
         @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4141,13 +4121,13 @@ textarea:focus {
         color: #4dbdaf; }
   .product-categories-wrap.product-categories-border {
     border-right: 1px solid #e1e1e1; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .product-categories-wrap.product-categories-border.categories-border-none-md {
         border: none; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
       .product-categories-wrap.product-categories-border {
         border: none; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .product-categories-wrap.categories-border-add-md {
       border-right: 1px solid #e1e1e1; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4180,7 +4160,7 @@ textarea:focus {
   margin-right: 50px;
   padding: 0 0 22px;
   border-bottom: 1px solid transparent; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .tab-style-4 a {
       margin-right: 15px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4216,7 +4196,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .nav-style-3 > span {
       left: 2%; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .nav-style-3 > span {
       left: 0%; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4231,7 +4211,7 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .nav-style-3 > span.pro-slider-icon-1-next {
         right: 2%; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .nav-style-3 > span.pro-slider-icon-1-next {
         right: 0%; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4250,7 +4230,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .nav-style-3:hover span {
       left: -1%; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .nav-style-3:hover span {
       left: -1%; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4265,7 +4245,7 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .nav-style-3:hover span.pro-slider-icon-1-next {
         right: -1%; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .nav-style-3:hover span.pro-slider-icon-1-next {
         right: -1%; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4316,7 +4296,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .nav-style-4:hover span {
       left: -3%; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .nav-style-4:hover span {
       left: -3%; } }
   .nav-style-4:hover span.pro-slider-icon-1-next {
@@ -4328,7 +4308,7 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .nav-style-4:hover span.pro-slider-icon-1-next {
         right: -3%; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .nav-style-4:hover span.pro-slider-icon-1-next {
         right: -3%; } }
 
@@ -4336,14 +4316,14 @@ textarea:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .product-categories-wrap-2 {
       justify-content: inherit; } }
   .product-categories-wrap-2 .single-product-categories-2 {
     display: flex;
     flex-wrap: wrap;
     align-items: center; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .product-categories-wrap-2 .single-product-categories-2 {
         width: 33.333%;
         flex: 0 0 33.333%; } }
@@ -4377,7 +4357,7 @@ textarea:focus {
 
 .tab-btn-wrap-2 {
   display: flex; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .tab-btn-wrap-2 {
       margin: 10px 0 0; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4399,7 +4379,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .tab-style-5 a {
       margin-right: 20px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .tab-style-5 a {
       margin-right: 30px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4431,7 +4411,7 @@ textarea:focus {
 
 .hm4-pb-100 {
   padding-bottom: 80px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .hm4-pb-100 {
       padding-bottom: 40px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4452,7 +4432,7 @@ textarea:focus {
 .section-title-deal-wrap {
   display: flex;
   flex-wrap: wrap; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .section-title-deal-wrap {
       display: block; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4463,7 +4443,7 @@ textarea:focus {
     display: flex;
     align-items: center;
     margin-left: 75px; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .section-title-deal-wrap .timer-wrap-2 {
         margin-left: 0;
         margin-top: 5px; } }
@@ -4545,7 +4525,7 @@ textarea:focus {
 .product-list-style-wrap {
   border: 1px solid #e0e0e0;
   padding: 18px 30px 33px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .product-list-style-wrap {
       padding: 34px 30px 33px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4557,7 +4537,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .product-list-style {
       margin: 0 0 97px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .product-list-style {
       margin: 0 0 30px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4569,7 +4549,7 @@ textarea:focus {
     width: 100%;
     margin: 0 0 14px;
     letter-spacing: .25px; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .product-list-style a {
         margin: 0 0 10px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4638,7 +4618,7 @@ textarea:focus {
   .tab-style-8 a.active {
     color: #999999; }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .tab-style-8.tab-res-mrg {
     margin-top: 10px; } }
 
@@ -4654,7 +4634,7 @@ textarea:focus {
 
 .product-pb-80 {
   padding-bottom: 80px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .product-pb-80 {
       padding-bottom: 40px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4668,7 +4648,7 @@ textarea:focus {
   .single-sidebar-product .sidebar-product-img {
     margin-right: 28px;
     flex: 0 0 30%; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .single-sidebar-product .sidebar-product-img {
         flex: 0 0 20%; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4774,7 +4754,7 @@ textarea:focus {
     .deal-content-2 > h2 {
       line-height: 30px;
       font-size: 26px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .deal-content-2 > h2 {
       line-height: 34px;
       font-size: 27px;
@@ -4796,7 +4776,7 @@ textarea:focus {
     .deal-content-2 p {
       width: 100%;
       margin: 0 0 10px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .deal-content-2 p {
       margin: 0 0 15px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4820,7 +4800,7 @@ textarea:focus {
   .deal-content-2.pl-35 {
     padding-left: 0px; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .deal-content-2 {
     padding-top: 50px; }
     .deal-content-2.pl-50 {
@@ -4861,7 +4841,7 @@ textarea:focus {
 .section-wrap-1 {
   background-color: #ffffff;
   padding: 36px 30px 34px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .section-wrap-1 {
       padding: 36px 20px 34px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4911,11 +4891,11 @@ textarea:focus {
     font-weight: bold;
     color: #e44311; }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .tab-style-10 {
     margin: 5px 0 0; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .product-area.pb-100 {
     padding-bottom: 40px; }
   .product-area.pb-75 {
@@ -4984,7 +4964,7 @@ textarea:focus {
   position: relative; }
   .banner-wrap.banner-mr-1 {
     margin-right: -30px; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .banner-wrap.banner-mr-1 {
         margin-right: -15px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -4992,7 +4972,7 @@ textarea:focus {
         margin-right: 0px; } }
   .banner-wrap.banner-ml-1 {
     margin-left: 30px; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .banner-wrap.banner-ml-1 {
         margin-left: 15px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5021,7 +5001,7 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .banner-wrap .banner-content-1 {
         left: 30px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .banner-wrap .banner-content-1 {
         left: 20px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5037,7 +5017,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-1 h2 {
           font-size: 34px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-1 h2 {
           font-size: 27px;
           line-height: 35px; } }
@@ -5055,7 +5035,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-1 p {
           margin: 28px 0 80px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-1 p {
           margin: 12px 0 25px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5068,7 +5048,7 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .banner-wrap .banner-content-2 {
         left: 30px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .banner-wrap .banner-content-2 {
         left: 20px;
         top: 62px; } }
@@ -5086,7 +5066,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-2 h2 {
           font-size: 34px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-2 h2 {
           font-size: 27px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5101,7 +5081,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-2 p {
           width: 80%; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-2 p {
           width: 95%;
           margin: 10px 0 0px; } }
@@ -5139,7 +5119,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-3 span {
           margin: 10px 0 2px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-3 span {
           margin: 10px 0 2px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5153,7 +5133,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-3 h3 {
           margin: 0 0 20px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-3 h3 {
           margin: 0 0 20px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5192,7 +5172,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-4 > span {
           margin: 10px 0 2px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-4 > span {
           margin: 10px 0 2px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5206,7 +5186,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-4 h3 {
           margin: 0 0 20px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-4 h3 {
           margin: 0 0 20px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5230,7 +5210,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-5 span {
           margin: 0 0 5px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-5 span {
           margin: 0 0 5px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5257,7 +5237,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-5 p {
           margin: 5px 0 10px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-5 p {
           margin: 5px 0 10px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5404,7 +5384,7 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .banner-wrap .banner-content-9 {
         left: 30px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .banner-wrap .banner-content-9 {
         left: 30px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5417,7 +5397,7 @@ textarea:focus {
       letter-spacing: 1px;
       display: block;
       margin: 0 0 220px; }
-      @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+      @media only screen and (min-width: 1366px) {
         .banner-wrap .banner-content-9 span {
           margin: 0 0 40px; } }
       @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -5426,7 +5406,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-9 span {
           margin: 0 0 15px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-9 span {
           margin: 0 0 40px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5466,7 +5446,7 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .banner-wrap .banner-content-10 {
         left: 30px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .banner-wrap .banner-content-10 {
         left: 30px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5479,7 +5459,7 @@ textarea:focus {
       letter-spacing: 1px;
       display: block;
       margin: 0 0 220px; }
-      @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+      @media only screen and (min-width: 1366px) {
         .banner-wrap .banner-content-10 > span {
           margin: 0 0 40px; } }
       @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -5488,7 +5468,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-10 > span {
           margin: 0 0 15px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-10 > span {
           margin: 0 0 40px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5526,7 +5506,7 @@ textarea:focus {
     transform: translateY(-50%); }
     .banner-wrap .banner-content-11.banner-content-11-modify {
       left: 50px; }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-11.banner-content-11-modify {
           left: 30px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5534,7 +5514,7 @@ textarea:focus {
           left: 20px; } }
     .banner-wrap .banner-content-11.banner-content-11-modify-2 h2 {
       font-size: 36px; }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-11.banner-content-11-modify-2 h2 {
           font-size: 25px;
           line-height: 30px; } }
@@ -5558,7 +5538,7 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .banner-wrap .banner-content-11 {
         left: 35px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .banner-wrap .banner-content-11 {
         left: 30px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5571,7 +5551,7 @@ textarea:focus {
       color: #000000;
       font-weight: 300;
       margin: 0; }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-11 h2 {
           font-size: 22px;
           line-height: 25px; } }
@@ -5588,7 +5568,7 @@ textarea:focus {
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
           .banner-wrap .banner-content-11 p.mrg-inc {
             margin: 15px 0 50px; } }
-        @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
           .banner-wrap .banner-content-11 p.mrg-inc {
             margin: 10px 0 30px; } }
         @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5600,7 +5580,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-11 p {
           margin: 10px 0 25px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-11 p {
           margin: 6px 0 7px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5614,7 +5594,7 @@ textarea:focus {
       .banner-wrap .banner-content-12 {
         left: 30px;
         top: 30px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .banner-wrap .banner-content-12 {
         left: 30px;
         top: 30px; } }
@@ -5634,7 +5614,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-12 h2 {
           font-size: 30px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-12 h2 {
           font-size: 25px;
           line-height: 30px; } }
@@ -5648,7 +5628,7 @@ textarea:focus {
           line-height: 27px; } }
     .banner-wrap .banner-content-12 p {
       margin: 25px 0 48px; }
-      @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+      @media only screen and (min-width: 1366px) {
         .banner-wrap .banner-content-12 p {
           margin: 25px 0 35px; } }
       @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -5657,7 +5637,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-12 p {
           margin: 15px 0 22px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-12 p {
           margin: 8px 0 10px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5679,7 +5659,7 @@ textarea:focus {
       letter-spacing: -.25px;
       margin: 6px 0 81px;
       line-height: 1; }
-      @media only screen and (min-width: 1366px) and (max-width: 1600px) {
+      @media only screen and (min-width: 1366px) {
         .banner-wrap .banner-content-12 h3 {
           margin: 6px 0 40px; } }
       @media only screen and (min-width: 1200px) and (max-width: 1365px) {
@@ -5689,7 +5669,7 @@ textarea:focus {
         .banner-wrap .banner-content-12 h3 {
           margin: 6px 0 20px;
           font-size: 40px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-12 h3 {
           margin: 6px 0 14px;
           font-size: 35px; } }
@@ -5726,7 +5706,7 @@ textarea:focus {
         .banner-wrap .banner-content-13 h2 {
           font-size: 28px;
           margin: 10px 0 12px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-13 h2 {
           font-size: 28px;
           margin: 15px 0 18px; } }
@@ -5783,7 +5763,7 @@ textarea:focus {
           font-size: 27px;
           line-height: 28px;
           margin: 10px 0 10px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-14 h2 {
           margin: 19px 0 27px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -5843,7 +5823,7 @@ textarea:focus {
         .banner-wrap .banner-content-15 h2 {
           font-size: 25px;
           line-height: 25px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-15 h2 {
           font-size: 24px;
           line-height: 26px; } }
@@ -5871,7 +5851,7 @@ textarea:focus {
           font-size: 19px;
           line-height: 24px;
           margin: 0 0 10px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-16 h2 {
           font-size: 20px;
           line-height: 30px;
@@ -5911,7 +5891,7 @@ textarea:focus {
         .banner-wrap .banner-content-17 h2 {
           font-size: 20px;
           width: 73%; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-17 h2 {
           font-size: 22px;
           width: 73%; } }
@@ -5979,7 +5959,7 @@ textarea:focus {
       .banner-wrap .banner-content-19 h2.capitalize {
         font-weight: 300;
         text-transform: capitalize; }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-19 h2 {
           font-size: 20px;
           line-height: 25px; } }
@@ -5995,7 +5975,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .banner-wrap .banner-content-19 span {
           margin: 10px 0 3px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-19 span {
           margin: 7px 0 3px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6012,7 +5992,7 @@ textarea:focus {
     right: 0;
     top: 40px;
     text-align: center; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .banner-wrap .banner-content-20 {
         top: 30px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6047,7 +6027,7 @@ textarea:focus {
       letter-spacing: -.25px;
       margin: 14px 0 0;
       font-size: 30px; }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-20 h2 {
           font-size: 24px;
           margin: 10px 0 0; } }
@@ -6124,7 +6104,7 @@ textarea:focus {
           font-size: 18px;
           line-height: 25px;
           margin: 3px 0 6px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .banner-wrap .banner-content-22 h2 {
           font-size: 20px;
           line-height: 27px;
@@ -6299,7 +6279,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .banner-wrap-mrg-1 {
       margin-right: 25px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .banner-wrap-mrg-1 {
       margin-right: 19px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6311,7 +6291,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .banner-wrap-mrg-2 {
       margin-left: -25px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .banner-wrap-mrg-2 {
       margin-left: -19px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6328,7 +6308,7 @@ textarea:focus {
     .section-wrap-2 {
       padding: 30px 30px 0px 30px; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .banner-area.pb-85 {
     padding-bottom: 45px; }
   .banner-area.pb-90 {
@@ -6345,7 +6325,7 @@ textarea:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .brand-logo-wrap {
       justify-content: inherit; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6359,7 +6339,7 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .brand-logo-wrap.brand-logo-mrg {
         margin: 0 0px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .brand-logo-wrap.brand-logo-mrg {
         margin: 0 0px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6368,7 +6348,7 @@ textarea:focus {
   .brand-logo-wrap .single-brand-logo {
     flex: 0 0 20%;
     max-width: 20%; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .brand-logo-wrap .single-brand-logo {
         flex: 0 0 33.333%;
         max-width: 33.333%; } }
@@ -6398,7 +6378,7 @@ textarea:focus {
     flex: 0 0 16.63%;
     max-width: 16.63%;
     text-align: center; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .brand-logo-wrap-2 .single-brand-logo-2 {
         flex: 0 0 33.333%;
         max-width: 33.333%; } }
@@ -6412,7 +6392,7 @@ textarea:focus {
         max-width: 33.333%; } }
     .brand-logo-wrap-2 .single-brand-logo-2:first-child {
       text-align: left; }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .brand-logo-wrap-2 .single-brand-logo-2:first-child {
           text-align: center; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6420,7 +6400,7 @@ textarea:focus {
           text-align: center; } }
     .brand-logo-wrap-2 .single-brand-logo-2:last-child {
       text-align: right; }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .brand-logo-wrap-2 .single-brand-logo-2:last-child {
           text-align: center; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6435,7 +6415,7 @@ textarea:focus {
       opacity: 1;
       transform: scale(1.1); }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .brand-logo-area.pt-100 {
     padding-top: 50px; }
   .brand-logo-area.pb-100 {
@@ -6591,7 +6571,7 @@ textarea:focus {
   .subscribe-form-2 {
     margin-top: 15px; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .subscribe-area.pt-95 {
     padding-top: 75px; }
   .subscribe-area.pb-95 {
@@ -6610,7 +6590,7 @@ textarea:focus {
   @media only screen and (min-width: 576px) and (max-width: 767px) {
     .footer-logo a img {
       width: 30%; } }
-  @media only screen and (max-width: 575.5px) {
+  @media only screen and (max-width: 575px) {
     .footer-logo a img {
       width: 30%; } }
 
@@ -6619,7 +6599,7 @@ textarea:focus {
   @media only screen and (min-width: 576px) and (max-width: 767px) {
     .footer-right-wrap {
       text-align: left; } }
-  @media only screen and (max-width: 575.5px) {
+  @media only screen and (max-width: 575px) {
     .footer-right-wrap {
       text-align: left; } }
   .footer-right-wrap .social-style-2.social-style-2-mrg {
@@ -6663,13 +6643,13 @@ textarea:focus {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .footer-menu nav ul li {
         margin-right: 30px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .footer-menu nav ul li {
         margin-right: 6px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
       .footer-menu nav ul li {
         margin-right: 5px; } }
-    @media only screen and (max-width: 575.5px) {
+    @media only screen and (max-width: 575px) {
       .footer-menu nav ul li {
         display: block; } }
     .footer-menu nav ul li:last-child {
@@ -6700,7 +6680,7 @@ textarea:focus {
   .copyright.copyright-center {
     text-align: center; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .footer-area.pb-65 {
     padding-bottom: 45px; }
   .footer-top.pb-55 {
@@ -6765,7 +6745,7 @@ textarea:focus {
       visibility: hidden;
       transform: scale(0.5);
       transition: all 0.3s ease 0s; }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .instagram-wrap-1 .single-instafeed a::after {
           font-size: 28px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6834,7 +6814,7 @@ textarea:focus {
     visibility: hidden;
     transform: scale(0.5);
     transition: all 0.3s ease 0s; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .instagram-style-1 .single-instafeed a::after {
         font-size: 28px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6854,7 +6834,7 @@ textarea:focus {
 /*-------- 14. Blog style ---------*/
 .blog-area-pb {
   padding-bottom: 90px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .blog-area-pb {
       padding-bottom: 45px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6910,7 +6890,7 @@ textarea:focus {
     .blog-wrap .blog-content h3, .blog-wrap .blog-content h1 {
       font-size: 17px;
       margin: 8px 0 0; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .blog-wrap .blog-content h3, .blog-wrap .blog-content h1 {
       font-size: 18px;
       margin: 8px 0 0; } }
@@ -6938,7 +6918,7 @@ textarea:focus {
   .single-sidebar-blog .sidebar-blog-img {
     margin-right: 20px;
     flex: 0 0 30%; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .single-sidebar-blog .sidebar-blog-img {
         flex: 0 0 20%; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -6961,7 +6941,7 @@ textarea:focus {
     font-size: 13px;
     color: #999999; }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .blog-area.pb-80 {
     padding-bottom: 45px; }
   .blog-area.pb-75 {
@@ -6980,7 +6960,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .download-app-content {
       margin-left: 70px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .download-app-content {
       margin-left: 50px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -7066,7 +7046,7 @@ textarea:focus {
   margin: 2% auto 8%;
   max-width: 960px;
   width: 960px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .modal-dialog {
       width: 720px;
       max-width: 720px; } }
@@ -7244,7 +7224,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .product-details-content .product-details-meta {
       margin: 20px 0 20px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .product-details-content .product-details-meta {
       margin: 20px 0 20px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -7275,7 +7255,7 @@ textarea:focus {
     justify-content: center; }
   .product-details-content .pro-details-action-wrap .pro-details-add-to-cart {
     margin-right: 15px; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .product-details-content .pro-details-action-wrap .pro-details-add-to-cart {
         margin-right: 10px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -7292,7 +7272,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .product-details-content .pro-details-action-wrap .pro-details-add-to-cart a {
           padding: 18px 30px 17px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .product-details-content .pro-details-action-wrap .pro-details-add-to-cart a {
           padding: 14px 18px 15px; } }
       .product-details-content .pro-details-action-wrap .pro-details-add-to-cart a:hover {
@@ -7311,7 +7291,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .product-details-content .pro-details-action-wrap .pro-details-action > a {
           padding: 16px 15px 17px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .product-details-content .pro-details-action-wrap .pro-details-action > a {
           padding: 12px 14px 13px;
           margin-right: 5px; } }
@@ -7540,7 +7520,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .product-dec-small-style1 {
       width: 100%; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .product-dec-small-style1 {
       width: 100%; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -7582,7 +7562,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .product-dec-small-style1 span.pro-dec-prev {
           left: -4%; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .product-dec-small-style1 span.pro-dec-prev {
           left: -4%; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -7594,7 +7574,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .product-dec-small-style1 span.pro-dec-next {
           right: -4%; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .product-dec-small-style1 span.pro-dec-next {
           right: -4%; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -7617,7 +7597,7 @@ textarea:focus {
     position: relative; }
     .dec-review-topbar a:last-child {
       margin: 0 0px 0 0; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .dec-review-topbar a {
         padding: 0 15px 22px;
         margin: 0 7px 0 0; } }
@@ -7684,7 +7664,7 @@ textarea:focus {
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
           .dec-review-bottom .specification-wrap table tbody tr td {
             padding: 17px 20px; } }
-        @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
           .dec-review-bottom .specification-wrap table tbody tr td {
             padding: 17px 20px; } }
         @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -7830,7 +7810,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .product-dec-left {
       width: 110px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .product-dec-left {
       width: 135px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -7847,7 +7827,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .product-dec-right {
       width: calc(100% - 110px); } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .product-dec-right {
       width: calc(100% - 135px); } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -7899,7 +7879,7 @@ textarea:focus {
       padding-left: 15px;
       padding-right: 15px; }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .pro-details-content-mt-md {
     margin-top: 40px; } }
 
@@ -7943,7 +7923,7 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .sidebar-wrapper.sidebar-wrapper-mrg-left {
       margin-left: 0px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .sidebar-wrapper.sidebar-wrapper-mrg-left {
       margin-left: 0px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -7955,14 +7935,14 @@ textarea:focus {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .sidebar-wrapper.sidebar-wrapper-mrg-right {
       margin-right: 0px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .sidebar-wrapper.sidebar-wrapper-mrg-right {
       margin-right: 0px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
     .sidebar-wrapper.sidebar-wrapper-mrg-right {
       margin-right: 0px; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .sidebar-wrapper {
     margin-top: 50px; } }
 
@@ -8191,7 +8171,7 @@ textarea:focus {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .shop-topbar-wrapper .shop-topbar-left .view-mode {
           margin-right: 10px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .shop-topbar-wrapper .shop-topbar-left .view-mode {
           margin-right: 10px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -8256,7 +8236,7 @@ textarea:focus {
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
           .shop-topbar-wrapper .product-sorting-wrapper .shorting-style select {
             width: 130px; } }
-        @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
           .shop-topbar-wrapper .product-sorting-wrapper .shorting-style select {
             width: 130px; } }
         @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -8274,7 +8254,7 @@ textarea:focus {
           @media only screen and (min-width: 992px) and (max-width: 1199px) {
             .shop-topbar-wrapper .product-sorting-wrapper .shorting-style.product-shorting select {
               width: 75px; } }
-          @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+          @media only screen and (min-width: 768px) and (max-width: 991px) {
             .shop-topbar-wrapper .product-sorting-wrapper .shorting-style.product-shorting select {
               width: 75px; } }
           @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -8441,7 +8421,7 @@ textarea:focus {
   .single-store ul li:last-child {
     margin-bottom: 0; }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .single-store.mb-50 {
     margin-bottom: 40px; } }
 
@@ -8449,7 +8429,7 @@ textarea:focus {
   .single-store.mb-50 {
     margin-bottom: 30px; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .shop-location.pb-65 {
     padding-bottom: 37px; } }
 
@@ -8493,7 +8473,7 @@ h3.cart-page-title {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .cart-table-content table thead > tr th {
           padding: 21px 35px 22px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .cart-table-content table thead > tr th {
           padding: 21px 15px 22px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -8578,7 +8558,7 @@ h3.cart-page-title {
       padding: 30px 0;
       text-align: center;
       font-weight: 500; }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .cart-table-content table tbody > tr td {
           padding: 30px 0 30px 10px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -8611,7 +8591,7 @@ h3.cart-page-title {
     padding: 18px 40px 17px;
     text-transform: capitalize;
     letter-spacing: .3px; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .cart-shiping-update-wrapper .cart-shiping-update > a,
       .cart-shiping-update-wrapper .cart-clear > button,
       .cart-shiping-update-wrapper .cart-clear > a {
@@ -8632,7 +8612,7 @@ h3.cart-page-title {
     cursor: pointer;
     margin-right: 27px;
     transition: all 0.3s ease 0s; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .cart-shiping-update-wrapper .cart-clear > button {
         margin-right: 15px; } }
 
@@ -8646,7 +8626,7 @@ h3.cart-page-title {
     .cart-tax,
     .discount-code-wrapper {
       padding: 45px 18px 50px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .cart-tax,
     .discount-code-wrapper {
       padding: 45px 20px 50px; } }
@@ -8774,10 +8754,10 @@ h3.cart-page-title {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .grand-totall {
       padding: 45px 18px 50px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .grand-totall {
       padding: 45px 20px 50px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .grand-totall {
       margin-top: 30px; } }
   .grand-totall .title-wrap {
@@ -8872,7 +8852,7 @@ h3.cart-page-title {
     padding: 20px 20px;
     vertical-align: middle;
     border-color: #ccc; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .compare-table .table tbody tr td {
         padding: 20px 15px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -8887,7 +8867,7 @@ h3.cart-page-title {
       font-size: 16px;
       font-weight: 600;
       margin: 0; }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .compare-table .table tbody tr td.first-column {
           min-width: 110px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -8905,7 +8885,7 @@ h3.cart-page-title {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .compare-table .table tbody tr td.product-image-title {
           min-width: 210px; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .compare-table .table tbody tr td.product-image-title {
           min-width: 110px; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -8936,7 +8916,7 @@ h3.cart-page-title {
         font-weight: 600;
         text-transform: capitalize;
         margin-top: 5px; }
-        @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
           .compare-table .table tbody tr td.product-image-title .title {
             font-size: 16px; } }
         .compare-table .table tbody tr td.product-image-title .title:hover {
@@ -9008,13 +8988,13 @@ h3.cart-page-title {
 
 .billing-info-wrap {
   margin-right: 50px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .billing-info-wrap {
       margin-right: 0px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
     .billing-info-wrap {
       margin-right: 0px; } }
-  @media only screen and (max-width: 575.5px) {
+  @media only screen and (max-width: 575px) {
     .billing-info-wrap {
       margin-right: 0px; } }
   .billing-info-wrap .billing-info label {
@@ -9078,10 +9058,10 @@ h3.cart-page-title {
     @media only screen and (min-width: 576px) and (max-width: 767px) {
       .billing-info-wrap .Place-order {
         margin-top: 20px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .billing-info-wrap .Place-order {
         margin-top: 29px; } }
-    @media only screen and (max-width: 575.5px) {
+    @media only screen and (max-width: 575px) {
       .billing-info-wrap .Place-order {
         margin-top: 29px; } }
     .billing-info-wrap .Place-order a {
@@ -9108,7 +9088,7 @@ h3.cart-page-title {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .your-order-area {
       padding: 30px 25px 0px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .your-order-area {
       margin-top: 30px;
       padding: 30px 40px 0px; } }
@@ -9116,7 +9096,7 @@ h3.cart-page-title {
     .your-order-area {
       padding: 30px 30px 0px;
       margin-top: 30px; } }
-  @media only screen and (max-width: 575.5px) {
+  @media only screen and (max-width: 575px) {
     .your-order-area {
       padding: 30px 30px 0px;
       margin-top: 30px; } }
@@ -9385,7 +9365,7 @@ h3.cart-page-title {
     .contact-info-wrap-3 h3, .get-in-touch-wrap h3 {
       margin: 0 0 24px; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991.5px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .contact-info-wrap-3.pb-85, .get-in-touch-wrap.pb-85 {
     padding-bottom: 45px; } }
 
@@ -9396,7 +9376,7 @@ h3.cart-page-title {
 .single-contact-info-3 {
   background-color: #f7f7f7;
   padding: 48px 10px 49px; }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .single-contact-info-3 {
       padding: 28px 20px 29px; } }
   .single-contact-info-3 > i {
@@ -9410,7 +9390,7 @@ h3.cart-page-title {
     letter-spacing: 0.4px;
     text-transform: capitalize;
     margin: 19px 0 10px; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .single-contact-info-3 h4 {
         font-size: 18px;
         margin: 12px 0 10px; } }
@@ -9427,7 +9407,7 @@ h3.cart-page-title {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .single-contact-info-3 ul li {
         display: block;
         margin-bottom: 11px;
@@ -9442,7 +9422,7 @@ h3.cart-page-title {
       color: #ff2f2f;
       transition: all .3s ease 0s;
       display: inline-block; }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .single-contact-info-3 ul li i {
           display: block;
           margin-right: 0px;
@@ -9551,7 +9531,7 @@ h3.cart-page-title {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .blog-details-top .blog-details-content h1 {
         font-size: 22px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .blog-details-top .blog-details-content h1 {
         font-size: 22px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -9577,7 +9557,7 @@ h3.cart-page-title {
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .blog-details-top .blog-details-content blockquote {
         font-size: 17px; } }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .blog-details-top .blog-details-content blockquote {
         font-size: 17px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -9831,7 +9811,7 @@ h3.cart-page-title {
   @media only screen and (min-width: 576px) and (max-width: 767px) {
     .section-report-area .section-report-area-wrapper .row a {
       font-size: 12px; } }
-  @media only screen and (max-width: 575.5px) {
+  @media only screen and (max-width: 575px) {
     .section-report-area .section-report-area-wrapper .row a {
       font-size: 9px;
       padding: 20px 10px; } }
@@ -9839,7 +9819,7 @@ h3.cart-page-title {
     color: #ff2f2f; }
   .section-report-area .section-report-area-wrapper .row a span {
     margin-right: 15px; }
-    @media only screen and (max-width: 575.5px) {
+    @media only screen and (max-width: 575px) {
       .section-report-area .section-report-area-wrapper .row a span {
         margin-right: 5px; } }
 
@@ -9849,13 +9829,13 @@ h3.cart-page-title {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .report-info-area .highlight {
       height: 300px; } }
-  @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .report-info-area .highlight {
       height: 215px; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
     .report-info-area .highlight {
       height: 215px; } }
-  @media only screen and (max-width: 575.5px) {
+  @media only screen and (max-width: 575px) {
     .report-info-area .highlight {
       height: 215px; } }
   .report-info-area .highlight .highlight--circle, .report-info-area .highlight .highlight--circle__content, .report-info-area .highlight .highlight--circle:before, .report-info-area .highlight .highlight--circle:after {
@@ -9871,7 +9851,7 @@ h3.cart-page-title {
     width: 40%;
     height: 40%;
     cursor: default; }
-    @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
       .report-info-area .highlight .highlight--circle {
         width: 50%;
         height: 50%; } }
@@ -9879,7 +9859,7 @@ h3.cart-page-title {
       .report-info-area .highlight .highlight--circle {
         width: 100px;
         height: 100px; } }
-    @media only screen and (max-width: 575.5px) {
+    @media only screen and (max-width: 575px) {
       .report-info-area .highlight .highlight--circle {
         width: 100px;
         height: 97px; } }
@@ -9910,7 +9890,7 @@ h3.cart-page-title {
     color: #b9bcbe;
     font-size: .8em;
     line-height: 1.2; }
-    @media only screen and (max-width: 575.5px) {
+    @media only screen and (max-width: 575px) {
       .report-info-area .highlight .highlight--circle__content {
         font-size: .5rem; } }
     .report-info-area .highlight .highlight--circle__content strong {
@@ -9922,12 +9902,12 @@ h3.cart-page-title {
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .report-info-area .highlight .highlight--circle__content strong {
           font-size: 1.8rem; } }
-      @media only screen and (min-width: 768px) and (max-width: 991.5px) {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
         .report-info-area .highlight .highlight--circle__content strong {
           font-size: 1.5rem; } }
       @media only screen and (min-width: 576px) and (max-width: 767px) {
         .report-info-area .highlight .highlight--circle__content strong {
           font-size: 1.5rem; } }
-      @media only screen and (max-width: 575.5px) {
+      @media only screen and (max-width: 575px) {
         .report-info-area .highlight .highlight--circle__content strong {
           font-size: 1.5rem; } }

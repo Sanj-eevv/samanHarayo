@@ -26,11 +26,11 @@ $theme-color-purple: #6f50a7;
 $theme-color-blue: #556ee6;
 
 // Responsive Variables
-$xx-layout : 'only screen and (min-width: 1366px) and (max-width: 1600px)';
+$xx-layout : 'only screen and (min-width: 1366px)';
 // my laptop screen size
 $xl-layout : 'only screen and (min-width: 1200px) and (max-width: 1365px)';
 $lg-layout : 'only screen and (min-width: 992px) and (max-width: 1199px)';
-$md-layout:'only screen and (min-width: 768px) and (max-width: 991.5px)';
+$md-layout:'only screen and (min-width: 768px) and (max-width: 991px)';
 $sm-layout: 'only screen and (min-width: 576px) and (max-width: 767px)';
-$vsm-layout: 'only screen and (max-width: 575.5px)';
+$vsm-layout: 'only screen and (max-width: 575px)';
 
