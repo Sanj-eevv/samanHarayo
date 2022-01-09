@@ -3,6 +3,7 @@
 .header-area{
     line-height: 100px;
     #sh_nav_bar{
+        width: 100%;
         &.sticky-nav {
             position: fixed;
             z-index: 1;
@@ -11,6 +12,7 @@
             transform: translateX(-50%);
             background: white;
             transition: background 0.3s ease;
+            box-shadow: 0 1px 10px #999;
         }
     }
 }

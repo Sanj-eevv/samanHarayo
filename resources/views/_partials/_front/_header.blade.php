@@ -1,6 +1,6 @@
 <header class="header-area">
-    <div id="sh_nav_bar" class="container">
-        <div class="header-container-flex-box">
+    <div id="sh_nav_bar">
+        <div class="container header-container-flex-box">
             <div class="logo">
                 <a href="{{route('front.index')}}">
                     <img class="img-fluid" src="{{asset('assets/logo.png')}}" alt="">

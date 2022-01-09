@@ -5,6 +5,7 @@
     flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
+    gap: 20px;
     &.align-items-inherit {
         align-items: inherit;
     }
@@ -35,12 +36,22 @@
 .section-title {
     h2 {
         font-size: 24px;
-        font-weight: bold;
+        font-weight: 500;
         font-family: $heebo;
         margin: 0;
         text-transform: uppercase;
+        position: relative;
         @media #{$md-layout} {
             font-size: 22px;
+        }
+        &:before{
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: -8px;
+            background-color: #ff2f2f;
+            width: 50px;
+            height: 2px;
         }
     }
     p {
