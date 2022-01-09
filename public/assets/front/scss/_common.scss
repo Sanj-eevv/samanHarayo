@@ -2043,8 +2043,35 @@ textarea:focus {
         color: #fff;
     }
 }
+.underlined-link{
+    font-style: normal;
+    line-height: 22px;
+    position: relative;
+    padding-bottom: 5px;
+}
+.underlined-link:after, .underlined-link::before{
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all ease 0.6s;
+}
+.underlined-link::before{
+    width: 0;
+    transition: width ease 0.4s;
+}
 
-
+.underlined-link:hover::before{
+    width: 100%;
+    border-bottom: 3px solid #ff2f2f;
+}
+.underlined-link:hover:after{
+    left: 100%;
+    width: 0%;
+    transition: all ease 0.2s;
+    border-bottom: 3px solid #ff2f2f;
+}
 
 
 

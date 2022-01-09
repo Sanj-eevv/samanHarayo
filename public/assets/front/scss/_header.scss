@@ -1,7 +1,18 @@
 /*-------- 3. Header style ---------*/
 
 .header-area{
-       line-height: 80px;
+    line-height: 100px;
+    #sh_nav_bar{
+        &.sticky-nav {
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            background: white;
+            transition: background 0.3s ease;
+        }
+    }
 }
 .header-container-flex-box{
     display: flex;
@@ -31,14 +42,11 @@
     @media #{$xl-layout} {
         display: flex;
     }
-
-    div a {
+    a {
+        position: relative;
         color: $black;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
-        &:hover {
-            color: $theme-color-red;
-        }
     }
 }
 
@@ -58,8 +66,9 @@
             display: block;
         }
         form {
-            width: 230px;
+            width: 200px;
             input {
+                height: 40px;
                 background-color: #fff;
                 border: 1px solid #E2DCDC;
                 padding: 2px 60px 2px 10px;
@@ -87,7 +96,7 @@
         display: inline-flex;
         align-items: center;
         font-weight: 500;
-        height: 45px;
+        height: 40px;
         padding: 0 20px;
         text-transform: uppercase;
         &:hover {
@@ -96,12 +105,14 @@
         }
     }
     .header-user-icon{
-        display: block;
-        a {
-        font-size: 23px;
-            &:hover{
-                color: $theme-color-red;
-            }
+        display: inline-flex;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+        object-position: center;
+        img {
+            border-radius: 50%;
         }
     }
     .mobile-header-button-active{
@@ -228,7 +239,7 @@
                     input {
                         background-color: #f6f6f6;
                         border: none;
-                        border-radius: 0px;
+                        border-radius: 0;
                         height: 50px;
                         padding: 0 60px 0 15px;
                         width: 100%;
@@ -272,7 +283,7 @@
                             display: block;
                             position: relative;
                             a {
-                                font-size: 16px;
+                                font-size: 14px;
                                 text-transform: capitalize;
                                 line-height: 18px;
                                 position: relative;
@@ -298,7 +309,7 @@
                         color: $black;
                         display: flex;
                         margin: 0 0 14px;
-                        font-size: 15px;
+                        font-size: 14px;
                         &:last-child {
                             margin: 0 0 0px;
                         }

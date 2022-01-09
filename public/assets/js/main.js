@@ -17,6 +17,8 @@
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
         loop: true,
         dots: true,
         arrows: true,
@@ -26,25 +28,26 @@
 
     /*------ Hero slider active 2 ----*/
     $('.hero-slider-active').slick({
+        draggable: true,
+        autoplay: true, /* this is the new line */
+        autoplaySpeed: 2000,
+        infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        fade: true,
-        loop: true,
-        dots: false,
-        arrows: true,
-        prevArrow: '<span class="slider-icon-1-prev"><i class="icon-arrow-left"></i></span>',
-        nextArrow: '<span class="slider-icon-1-next"><i class="icon-arrow-right"></i></span>',
+        touchThreshold: 100,
+        speed: 2500,
+        arrows: false
     });
 
-    /*------ Hero slider active 3 ----*/
-    $('.hero-slider-active-3').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        fade: true,
-        loop: true,
-        dots: true,
-        arrows: false,
-    });
+    // /*------ Hero slider active 3 ----*/
+    // $('.hero-slider-active-3').slick({
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     fade: true,
+    //     loop: true,
+    //     dots: true,
+    //     arrows: false,
+    // });
 
     /*------ Product slider active ----*/
     $('.product-slider-active').slick({
@@ -1075,4 +1078,17 @@
     });
 
 })(jQuery);
+
+window.onscroll = function() {myFunction()};
+var header = document.getElementById("sh_nav_bar");
+// Get the offset position of the navbar
+var sticky = header.offsetTop + 70;
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky-nav");
+    } else {
+        header.classList.remove("sticky-nav");
+    }
+}
 

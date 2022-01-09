@@ -1,5 +1,6 @@
 @extends('layouts.front')
 @section('content')
+    <hr>
     <div class="checkout-main-area pb-20 pt-20">
         <div class="container">
                 <div class="row">

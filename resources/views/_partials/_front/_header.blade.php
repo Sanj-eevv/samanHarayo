@@ -1,5 +1,5 @@
 <header class="header-area">
-    <div class="container">
+    <div id="sh_nav_bar" class="container">
         <div class="header-container-flex-box">
             <div class="logo">
                 <a href="{{route('front.index')}}">
@@ -7,11 +7,11 @@
                 </a>
             </div>
             <div class="header-nav">
-                    <div class="mr-10"><a href="{{route('front.index')}}">HOME </a></div>
-                    <div class="mr-10"><a href="#">LISTING </a></div>
-                    <div class="mr-10"><a href="#">FAQ </a></div>
-                    <div class="mr-10"><a href="#">ABOUT US </a></div>
-                    <div class="mr-10"><a href="#">CONTACT </a></div>
+                   <a class="underlined-link" href="{{route('front.index')}}">HOME </a>
+                   <a class="underlined-link" href="#">LISTING </a>
+                   <a class="underlined-link" href="#">FAQ </a>
+                   <a class="underlined-link" href="#">ABOUT US </a>
+                   <a class="underlined-link" href="#">CONTACT </a>
             </div>
             <div class="header-action">
                 <div class="header-search">
@@ -24,9 +24,9 @@
                 </div>
                 @if(auth()->check())
                     <a class="front-logout red-btn" href="{{route('logout')}}">Logout</a>
-                    <div class="header-user-icon">
-                        <a href="{{route('login')}}"><i class="icon-user"></i></a>
-                    </div>
+                    <a href="#" class="header-user-icon">
+                        <img class="img-fluid" alt="" src="{{asset('assets/images/users/avatar-1.jpg')}}">
+                    </a>
                 @else
                     <a class="red-btn" href="{{route('login')}}">Login</a>
                 @endif
