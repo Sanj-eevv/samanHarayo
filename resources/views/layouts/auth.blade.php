@@ -9,5 +9,8 @@
 </div>
 @include('_partials._dashboard._foot')
 @yield('page_level_script')
+@yield('page_level_script')
+@include('utils._toastify')
+@include('utils._alertify')
 </body>
 </html>

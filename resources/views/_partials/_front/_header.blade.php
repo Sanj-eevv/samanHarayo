@@ -3,7 +3,7 @@
         <div class="container header-container-flex-box">
             <div class="logo">
                 <a href="{{route('front.index')}}">
-                    <img class="img-fluid" src="{{asset('assets/logo.png')}}" alt="">
+                    <img class="img-fluid" src="{{asset('storage/uploads/settings/logo.png')}}" alt="">
                 </a>
             </div>
             <div class="header-nav">
@@ -25,7 +25,13 @@
                 @if(auth()->check())
                     <a class="front-logout red-btn" href="{{route('logout')}}">Logout</a>
                     <a href="#" class="header-user-icon">
-                        <img class="img-fluid" alt="" src="{{asset('assets/images/users/avatar-1.jpg')}}">
+                        @php
+                            $img_src = asset('assets/media/avatars/blank.png');
+                            if (!empty(auth()->user()->image)) {
+                                $img_src = asset('storage/uploads/profiles/' . auth()->user()->avatar);
+                            }
+                        @endphp
+                        <img class="img-fluid" alt="" src="{{$img_src}}">
                     </a>
                 @else
                     <a class="red-btn" href="{{route('login')}}">Login</a>

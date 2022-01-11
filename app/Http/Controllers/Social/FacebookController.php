@@ -44,18 +44,15 @@ class FacebookController extends Controller
             );
             // if user is already present, update user's facebook id if not any.
             if($user){
-                $fb_id = $user->fb_id;
-                if(!$fb_id) {
                     $user->fb_id = $response->id;
                     $user->save();
-                }
             }
             // authenticate user based on role
             Auth::login($user);
             $home = auth()->user()->isAdmin() ? '/dashboard' : '/';
             return redirect()->intended($home.'#');
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
+            return redirect()->intended('/login'.'#')->with('toast.error', 'Couldn\'t login. Please try again later!');
         }
     }
 }

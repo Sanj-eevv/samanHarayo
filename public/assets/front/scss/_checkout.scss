@@ -42,17 +42,7 @@
     display: none;
 }
 
-.billing-info-wrap {
-    margin-right: 50px;
-    @media #{$md-layout} {
-        margin-right: 0px;
-    }
-    @media #{$sm-layout} {
-        margin-right: 0px;
-    }
-    @media #{$vsm-layout} {
-        margin-right: 0px;
-    }
+
     .billing-info {
         label {
             font-size: 14px;
@@ -154,87 +144,8 @@
             }
         }
     }
-}
 
-.your-order-area {
-	padding: 30px 50px 0px;
-	border-width: 1px;
-	border-style: solid;
-	position: relative;
-	border-color: rgba(52,53,56,.1);
-    @media #{$lg-layout} {
-        padding: 30px 25px 0px;
-    }
-    @media #{$md-layout} {
-        margin-top: 30px;
-        padding: 30px 40px 0px;
-    }
-    @media #{$sm-layout} {
-        padding: 30px 30px 0px;
-        margin-top: 30px;
-    }
-    @media #{$vsm-layout} {
-        padding: 30px 30px 0px;
-        margin-top: 30px;
-    }
-    h3 {
-        font-size: 15px;
-        font-weight: 600;
-        position: relative;
-        margin: 0 0 40px;
-        text-transform: uppercase;
-        &:before {
-            position: absolute;
-            content: "";
-            left: 0;
-            bottom: -12px;
-            background-color: $theme-color-red;
-            width: 50px;
-            height: 2px;
-        }
-    }
-}
 
-.shop-list-wrap {
-    .product-list-img {
-        overflow: hidden;
-        position: relative;
-        a {
-            display: block;
-            img {
-                object-position: left;
-                object-fit: cover;
-                max-height: 90px;
-            }
-        }
-    }
-    .shop-list-content {
-        h3 {
-            font-size: 13px;
-            font-weight: 500;
-            margin: 0;
-            a {
-                color: $black;
-                &:hover {
-                    color: $theme-color-red;
-                }
-            }
-        }
-        p {
-            text-align: justify;
-            //margin: 7px 0 20px;
-            @media #{$sm-layout} {
-                margin: 5px 0 15px;
-            }
-        }
-        @media #{$sm-layout} {
-            margin-top: 15px;
-        }
-        @media #{$sm-layout} {
-            margin-top: 0px;
-        }
-    }
-}
 
 
 

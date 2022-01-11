@@ -23,6 +23,7 @@ class UserSeeder extends Seeder
                 'last_name'                 => 'Bhandari',
                 'email'                     => 'sanjeevvsanjeev1@gmail.com',
                 'email_verified_at'         => now(),
+                'avatar'                    => null,
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
                 'role_id'                   => $role->id,
                 'remember_token'            => Str::random(10),
@@ -32,10 +33,12 @@ class UserSeeder extends Seeder
                 'last_name'                 => 'Bhandari',
                 'email'                     => 'sanjeevvsanjeev11@gmail.com',
                 'email_verified_at'         => now(),
+                'avatar'                    => null,
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
                 'role_id'                   => 3,
                 'remember_token'            => Str::random(10),
             ],
             ],['email'],[]);
+       User::factory(20)->create();
     }
 }

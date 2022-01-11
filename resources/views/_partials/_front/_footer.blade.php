@@ -3,7 +3,7 @@
         <div class="footer-content pt-20 pb-20">
             <div class="footer-logo">
                     <a href="{{route('front.index')}}">
-                        <img class="img-fluid" src="{{asset('assets/logo.png')}}">
+                        <img class="img-fluid" src="{{asset('storage/uploads/settings/logo.png')}}">
                     </a>
             </div>
             <div class="footer-menu">

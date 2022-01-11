@@ -1,4 +1,3 @@
-@include('_partials._common._script')
 <script src="{{ asset("assets/js/vendor/jquery-v3.6.0.min.js") }}"></script>
 <script src="{{ asset("assets/js/vendor/modernizr-3.11.7.min.js") }}></script>
 <script src="{{ asset("assets/js/vendor/jquery-v3.6.0.min.js") }}"></script>
@@ -18,6 +17,7 @@
 <script src="{{ asset("assets/js/plugins/scrollup.js") }}"></script>
 <script src="{{ asset("assets/js/plugins/ajax-mail.js") }}"></script>
 
+@include('_partials._common._script')
 {{-- Plugins--}}
 <script src="{{ asset("assets/front/js/plugins/Visual-Password-Strength-Indicator-Plugin-For-jQuery-Passtrength-js/src/jquery.passtrength.js") }}"></script>
 <script src="{{ asset("assets/front/js/plugins/aos-master/dist/aos.js") }}"></script>

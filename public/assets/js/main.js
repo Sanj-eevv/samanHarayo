@@ -868,10 +868,10 @@
 
 
     /*--- checkout toggle function ----*/
-    $('.checkout-click').on('click', function(e) {
-        e.preventDefault();
-        $('.checkout-login-info').slideToggle(1000);
-    });
+    // $('.checkout-click').on('click', function(e) {
+    //     e.preventDefault();
+    //     $('.checkout-login-info').slideToggle(1000);
+    // });
 
     $('.checkout-click2').on('click', function(e) {
         e.preventDefault();

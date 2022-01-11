@@ -24,9 +24,9 @@
                         <div class="p-2">
                             <form class="form-horizontal" action="{{route('login')}}"  method="post" novalidate="novalidate">
                                 @csrf
-                                @if (session('status'))
+                                @if (session('alert.error'))
                                     <div class="alert alert-success mb-4" role="alert">
-                                        {{ session('status') }}
+                                        {{ session('alert.error') }}
                                     </div>
                                 @endif
                                 <div class="mb-4">
@@ -102,7 +102,6 @@
                         <p>© {{now()->year}}-<a class="font-weight-normal text-dark" href="{{route('front.index')}}"> {{config('app.name')}} </a></p>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
