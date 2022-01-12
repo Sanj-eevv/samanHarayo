@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -80,44 +84,62 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $this->authorize('create', User::class);
+        $user = new User();
+        $roles = Role::pluck('label', 'id');
+        return view('dashboard.users.create', compact('user', 'roles'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        $this->authorize('create', User::class);
+        $user = User::create([
+            'first_name'        => $request->input('first_name'),
+            'last_name'         => $request->input('last_name'),
+            'email'             => $request->input('email'),
+            'role_id'           => $request->input('role_id'),
+            'fb_id'             => null,
+            'avatar'            => null,
+            'email_verified_at' => now(),
+            'password'          => $request->input('password')
+        ]);
+        return redirect()->route('users.show', compact('user'))->with('alert.success', 'User Successfully Created !!');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        $this->authorize('view', User::class);
+        return view('dashboard.users.show', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        $this->authorize('update', User::class);
+        $roles = Role::pluck('label', 'id');
+
+        return view('dashboard.users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -125,21 +147,35 @@ class UserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, User $user)
     {
-        //
+        $this->authorize('update', User::class);
+        User::where('id', $user->id)->update([
+            'first_name'        => $request->input('first_name'),
+            'last_name'         => $request->input('last_name'),
+            'email'             => $request->input('email'),
+            'fb_id'             => null,
+            'avatar'            => null,
+            'role_id'           => $request->input('role_id'),
+            'updated_at'        => now(),
+        ]);
+        return redirect()->route('users.show', compact('user'))->with('alert.success', 'User Successfully Updated !!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        //
+        $this->authorize('destroy', User::class);
+        User::where('id', $id)->delete();
+        return response()->json([
+            'message' => 'User Successfully Deleted',
+        ], 200);
     }
 }

@@ -14,7 +14,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('users.index')}}" key="t-login">User Listing</a></li>
-                        <li><a href="auth-login.html" key="t-login">Add User</a></li>
+                        <li><a href="{{route('users.create')}}" key="t-login">Add User</a></li>
                     </ul>
                 </li>
                 <li class="menu-title" key="t-apps">Apps</li>
