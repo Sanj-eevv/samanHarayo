@@ -1,139 +1,180 @@
 
 /*-------- 22. Checkout style ---------*/
 
-.customer-zone {
-    > p {
-        font-size: 15px;
-        cursor: pointer;
-        position: relative;
-        padding: 14px 30px 14px 60px;
-        background-color: #eeeff2;
-        margin: 0;
-        color: $black;
-        a {
-            color: $black;
-            position: absolute;
-            right: 5%;
-            &:hover {
-                color: $theme-color-red;
-            }
-        }
-        @media #{$sm-layout} {
-            padding: 14px 30px 14px 40px;
-        }
-        &:before {
-            content: "\e080";
-            color: #6dde6d;
-            display: inline-block;
-            position: absolute;
-            font-family: 'simple-line-icons';
-            left: 15px;
-            top: 15px;
-            font-size: 18px;
-        }
-    }
-}
 .checkout-login-info{
     margin: 20px 0 0;
 }
-.checkout-login-info2,
-.checkout-login-info3 {
-    margin: 20px 0 0;
-    display: none;
+
+.report-form-product-details {
+    label {
+        font-size: 14px;
+        text-transform: capitalize;
+        display: block;
+        margin: 0 0 5px;
+        abbr {
+            color: red;
+        }
+    }
+    input,select {
+        border: 1px solid #e8e8e8;
+        height: 45px;
+        background-color: transparent;
+        padding: 2px 20px;
+        color: #1f2226;
+        font-size: 14px;
+        &:focus {
+            border: 1px solid #343538;
+        }
+        &.billing-address {
+            margin-bottom: 20px;
+        }
+    }
+    select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: rgba(0, 0, 0, 0) url("../../images/icon-img/select.png") no-repeat scroll right 18px center;
+        option {
+            background: #fff;
+            border: 0px solid #626262;
+            padding-left: 10px;
+            color: #333;
+            font-size: 12px;
+        }
+    }
+    textarea {
+        min-height: 120px;
+        background-color: #f7f7f7;
+        border: none;
+        padding: 20px;
+    }
 }
 
-
-    .billing-info {
-        label {
-            font-size: 14px;
-            text-transform: capitalize;
-            display: block;
-            margin: 0 0 5px;
-            abbr {
-                color: red;
+.report-form-payment-container {
+    padding: 40px 50px;
+    border-width: 1px;
+    border-style: solid;
+    position: relative;
+    border-color: rgba(52,53,56,.1);
+    @media #{$lg-layout} {
+        padding: 40px 50px;
+    }
+    @media #{$md-layout} {
+        margin-top: 30px;
+    }
+    @media #{$vsm-layout} {
+        padding: 40px;
+        margin-top: 30px;
+    }
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+        position: relative;
+        margin: 0 0 45px;
+        text-transform: uppercase;
+        &:before {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: -12px;
+            background-color: $theme-color-red;
+            width: 50px;
+            height: 2px;
+        }
+    }
+    .payment-details-wrap{
+        .payment-title {
+            border-bottom: 1px solid #e8e8e8;
+            ul {
+                li {
+                    padding: 0 0 7px;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    span {
+                        float: right;
+                        color: $theme-color-red;
+                    }
+                }
             }
         }
-        input {
-            border: 1px solid #e8e8e8;
-            height: 50px;
-            background-color: transparent;
-            padding: 2px 20px;
-            color: #1f2226;
-            font-size: 14px;
-            &:focus {
-                border: 1px solid #343538;
+        .payment-value {
+            border-bottom: 1px solid #e8e8e8;
+            padding: 24px 0 24px;
+            ul {
+                li {
+                    margin: 0 0 11px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    span {
+                        float: right;
+                    }
+                }
             }
-            &.billing-address {
-                margin-bottom: 20px;
+        }
+        .payment-subtotal{
+            padding: 15px 0 10px;
+            ul {
+                li {
+                    font-weight: 500;
+                    span {
+                        float: right;
+                        color: $theme-color-red;
+                    }
+                }
             }
         }
     }
-    .billing-select {
-        label {
-            font-size: 14px;
-            text-transform: capitalize;
-            display: block;
-            margin: 0 0 5px;
-            abbr {
-                color: red;
+    .payment-method-container {
+        margin: 30px 0 0;
+        .payment-method {
+            margin-bottom: 20px;
+            input {
+                width: auto;
+                display: inline-block;
+                float: left;
+                height: auto;
+                margin-top: 5px;
             }
-        }
-        select {
-            border: 1px solid #e6e6e6;
-            -moz-appearance: none;
-            -webkit-appearance: none;
-            color: #333;
-            font-size: 14px;
-            height: 50px;
-            padding: 2px 20px;
-            background: rgba(0, 0, 0, 0) url("../../images/icon-img/select.png") no-repeat scroll right 18px center;
-            cursor: pointer;
-            option {
-                background: #fff;
-                border: 0px solid #626262;
-                padding-left: 10px;
-                color: #333;
-                font-size: 12px;
+            label {
+                font-size: 14px;
+                text-transform: uppercase;
+                margin: 0px 0 0 21px;
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+                @media #{$vsm-layout} {
+                    display: block;
+                }
+                img {
+                    max-width: 140px;
+                    display: inline-block;
+                    margin: 0 5px
+                }
+                a {
+                    text-decoration: underline;
+                }
             }
-        }
-    }
-    .additional-info-wrap {
-        margin: 22px 0 0;
-        label {
-            color: #010225;
-            font-size: 14px;
-            text-transform: capitalize;
-            display: block;
-            margin: 0 0 5px;
-        }
-        textarea {
-            min-height: 120px;
-            background-color: #f7f7f7;
-            //border-color: #f7f7f7;
-            border: none;
-            padding: 20px;
-            color: #333;
-            font-size: 14px;
+            .payment-box {
+                margin: 6px 0 0;
+                display: none;
+                p {
+                    font-size: 14px;
+                    margin: 0;
+                }
+            }
         }
     }
     .Place-order {
-        margin-top: 10px;
-        @media #{$sm-layout} {
-            margin-top: 20px;
-        }
-        @media #{$md-layout} {
-            margin-top: 29px;
-        }
+        margin-top: 40px;
         @media #{$vsm-layout} {
-            margin-top: 29px;
+            margin-top: 20px;
         }
         a {
             background-color: $theme-color-red;
             display: block;
             cursor: pointer;
-            padding: 16px 50px 17px;
+            padding: 15px 50px 15px;
             text-transform: uppercase;
-            font-weight: 600;
             width: 100%;
             color: #fff;
             font-size: 14px;
@@ -144,6 +185,7 @@
             }
         }
     }
+}
 
 
 

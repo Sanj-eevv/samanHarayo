@@ -16,14 +16,9 @@
 <script src="{{ asset("assets/js/plugins/easyzoom.js") }}"></script>
 <script src="{{ asset("assets/js/plugins/scrollup.js") }}"></script>
 <script src="{{ asset("assets/js/plugins/ajax-mail.js") }}"></script>
-<!-- Gmaps file -->
-
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
 
 @include('_partials._common._script')
 {{-- Plugins--}}
-<script src="{{ asset("assets/front/js/plugins/Visual-Password-Strength-Indicator-Plugin-For-jQuery-Passtrength-js/src/jquery.passtrength.js") }}"></script>
 <script src="{{ asset("assets/front/js/plugins/aos-master/dist/aos.js") }}"></script>
 <script src="{{ asset("assets/front/js/plugins/fontawesome-free-5.15.4-web/js/all.js") }}"></script>
 

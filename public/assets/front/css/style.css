@@ -6820,127 +6820,151 @@ h3.cart-page-title {
 
 /*------ end Compare Page Wrapper -----*/
 /*-------- 22. Checkout style ---------*/
-.customer-zone > p {
-  font-size: 15px;
-  cursor: pointer;
-  position: relative;
-  padding: 14px 30px 14px 60px;
-  background-color: #eeeff2;
-  margin: 0;
-  color: #000000; }
-  .customer-zone > p a {
-    color: #000000;
-    position: absolute;
-    right: 5%; }
-    .customer-zone > p a:hover {
-      color: #ff2f2f; }
-  @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .customer-zone > p {
-      padding: 14px 30px 14px 40px; } }
-  .customer-zone > p:before {
-    content: "\e080";
-    color: #6dde6d;
-    display: inline-block;
-    position: absolute;
-    font-family: 'simple-line-icons';
-    left: 15px;
-    top: 15px;
-    font-size: 18px; }
-
 .checkout-login-info {
   margin: 20px 0 0; }
 
-.checkout-login-info2,
-.checkout-login-info3 {
-  margin: 20px 0 0;
-  display: none; }
-
-.billing-info label {
+.report-form-product-details label {
   font-size: 14px;
   text-transform: capitalize;
   display: block;
   margin: 0 0 5px; }
-  .billing-info label abbr {
+  .report-form-product-details label abbr {
     color: red; }
 
-.billing-info input {
+.report-form-product-details input, .report-form-product-details select {
   border: 1px solid #e8e8e8;
-  height: 50px;
+  height: 45px;
   background-color: transparent;
   padding: 2px 20px;
   color: #1f2226;
   font-size: 14px; }
-  .billing-info input:focus {
+  .report-form-product-details input:focus, .report-form-product-details select:focus {
     border: 1px solid #343538; }
-  .billing-info input.billing-address {
+  .report-form-product-details input.billing-address, .report-form-product-details select.billing-address {
     margin-bottom: 20px; }
 
-.billing-select label {
-  font-size: 14px;
-  text-transform: capitalize;
-  display: block;
-  margin: 0 0 5px; }
-  .billing-select label abbr {
-    color: red; }
-
-.billing-select select {
-  border: 1px solid #e6e6e6;
+.report-form-product-details select {
   -moz-appearance: none;
   -webkit-appearance: none;
-  color: #333;
-  font-size: 14px;
-  height: 50px;
-  padding: 2px 20px;
-  background: rgba(0, 0, 0, 0) url("../../images/icon-img/select.png") no-repeat scroll right 18px center;
-  cursor: pointer; }
-  .billing-select select option {
+  background: rgba(0, 0, 0, 0) url("../../images/icon-img/select.png") no-repeat scroll right 18px center; }
+  .report-form-product-details select option {
     background: #fff;
     border: 0px solid #626262;
     padding-left: 10px;
     color: #333;
     font-size: 12px; }
 
-.additional-info-wrap {
-  margin: 22px 0 0; }
-  .additional-info-wrap label {
-    color: #010225;
-    font-size: 14px;
-    text-transform: capitalize;
-    display: block;
-    margin: 0 0 5px; }
-  .additional-info-wrap textarea {
-    min-height: 120px;
-    background-color: #f7f7f7;
-    border: none;
-    padding: 20px;
-    color: #333;
-    font-size: 14px; }
+.report-form-product-details textarea {
+  min-height: 120px;
+  background-color: #f7f7f7;
+  border: none;
+  padding: 20px; }
 
-.Place-order {
-  margin-top: 10px; }
-  @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .Place-order {
-      margin-top: 20px; } }
+.report-form-payment-container {
+  padding: 40px 50px;
+  border-width: 1px;
+  border-style: solid;
+  position: relative;
+  border-color: rgba(52, 53, 56, 0.1); }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .report-form-payment-container {
+      padding: 40px 50px; } }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .Place-order {
-      margin-top: 29px; } }
+    .report-form-payment-container {
+      margin-top: 30px; } }
   @media only screen and (max-width: 575px) {
-    .Place-order {
-      margin-top: 29px; } }
-  .Place-order a {
-    background-color: #ff2f2f;
-    display: block;
-    cursor: pointer;
-    padding: 16px 50px 17px;
-    text-transform: uppercase;
+    .report-form-payment-container {
+      padding: 40px;
+      margin-top: 30px; } }
+  .report-form-payment-container h3 {
+    font-size: 16px;
     font-weight: 600;
-    width: 100%;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center; }
-    .Place-order a:hover {
-      background-color: #333; }
+    position: relative;
+    margin: 0 0 45px;
+    text-transform: uppercase; }
+    .report-form-payment-container h3:before {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: -12px;
+      background-color: #ff2f2f;
+      width: 50px;
+      height: 2px; }
+  .report-form-payment-container .payment-details-wrap .payment-title {
+    border-bottom: 1px solid #e8e8e8; }
+    .report-form-payment-container .payment-details-wrap .payment-title ul li {
+      padding: 0 0 7px;
+      text-transform: uppercase;
+      font-weight: 500; }
+      .report-form-payment-container .payment-details-wrap .payment-title ul li span {
+        float: right;
+        color: #ff2f2f; }
+  .report-form-payment-container .payment-details-wrap .payment-value {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 24px 0 24px; }
+    .report-form-payment-container .payment-details-wrap .payment-value ul li {
+      margin: 0 0 11px; }
+      .report-form-payment-container .payment-details-wrap .payment-value ul li:last-child {
+        margin-bottom: 0; }
+      .report-form-payment-container .payment-details-wrap .payment-value ul li span {
+        float: right; }
+  .report-form-payment-container .payment-details-wrap .payment-subtotal {
+    padding: 15px 0 10px; }
+    .report-form-payment-container .payment-details-wrap .payment-subtotal ul li {
+      font-weight: 500; }
+      .report-form-payment-container .payment-details-wrap .payment-subtotal ul li span {
+        float: right;
+        color: #ff2f2f; }
+  .report-form-payment-container .payment-method-container {
+    margin: 30px 0 0; }
+    .report-form-payment-container .payment-method-container .payment-method {
+      margin-bottom: 20px; }
+      .report-form-payment-container .payment-method-container .payment-method input {
+        width: auto;
+        display: inline-block;
+        float: left;
+        height: auto;
+        margin-top: 5px; }
+      .report-form-payment-container .payment-method-container .payment-method label {
+        font-size: 14px;
+        text-transform: uppercase;
+        margin: 0px 0 0 21px;
+        display: flex;
+        align-items: center;
+        font-weight: 500; }
+        @media only screen and (max-width: 575px) {
+          .report-form-payment-container .payment-method-container .payment-method label {
+            display: block; } }
+        .report-form-payment-container .payment-method-container .payment-method label img {
+          max-width: 140px;
+          display: inline-block;
+          margin: 0 5px; }
+        .report-form-payment-container .payment-method-container .payment-method label a {
+          text-decoration: underline; }
+      .report-form-payment-container .payment-method-container .payment-method .payment-box {
+        margin: 6px 0 0;
+        display: none; }
+        .report-form-payment-container .payment-method-container .payment-method .payment-box p {
+          font-size: 14px;
+          margin: 0; }
+  .report-form-payment-container .Place-order {
+    margin-top: 40px; }
+    @media only screen and (max-width: 575px) {
+      .report-form-payment-container .Place-order {
+        margin-top: 20px; } }
+    .report-form-payment-container .Place-order a {
+      background-color: #ff2f2f;
+      display: block;
+      cursor: pointer;
+      padding: 15px 50px 15px;
+      text-transform: uppercase;
+      width: 100%;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center; }
+      .report-form-payment-container .Place-order a:hover {
+        background-color: #333; }
 
 /*-------- 23. My account style ---------*/
 .myaccount-tab-menu {

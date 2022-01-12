@@ -1,13 +1,10 @@
 <div class="row">
-    <div class="col-md-4">
-        <input id="address" name="address" class="form-control" type="text" value="" placeholder="Enter the place name" />
-    </div>
-    <div class="col-md-4 d-flex">
-{{--        <input type="button" value="Geocode"  onclick="codeAddress()">--}}
-        <button type="button" class="btn btn-primary" onclick="codeAddress()">Submit</button>
+    <div class="col-lg-12 mb-20 d-flex">
+        <input id="address" name="address" class="form-control mr-10" type="text" value="" placeholder="Enter the place name" />
+        <button type="button" class="btn btn-secondary" onclick="codeAddress()">Submit</button>
     </div>
 </div>
-<div class="map-container my-3">
+<div class="map-container">
     <div id="map_canvas"></div>
 </div>
 <style>
@@ -19,7 +16,6 @@
         height: 100%;
         width: 100%;
     }
-
 </style>
 @section('page_level_script')
     <script>

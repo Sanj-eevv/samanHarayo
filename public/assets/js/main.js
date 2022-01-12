@@ -878,10 +878,10 @@
         $('.checkout-login-info2').slideToggle(1000);
     });
 
-    $('.checkout-click3').on('click', function(e) {
-        e.preventDefault();
-        $('.checkout-login-info3').slideToggle(1000);
-    });
+    // $('.checkout-click3').on('click', function(e) {
+    //     e.preventDefault();
+    //     $('.checkout-login-info3').slideToggle(1000);
+    // });
 
     /*-------------------------
     Create an account toggle
@@ -1071,11 +1071,6 @@
         e.preventDefault();
         document.getElementById('logout-form').submit();
     })
-
-    $('#Password').passtrength({
-        minChars: 8,
-        passwordToggle:false,
-    });
 
 })(jQuery);
 
