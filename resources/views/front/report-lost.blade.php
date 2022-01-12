@@ -124,8 +124,9 @@
                         <label>Order notes</label>
                         <textarea placeholder="Notes about your order, e.g. special notes for delivery. " name="message"></textarea>
                     </div>
-                    <div id="map"></div>
-                    <pre id="coordinates" class="coordinates"></pre>
+                    @include('front._google-map')
+{{--                    <div id="map"></div>--}}
+{{--                    <pre id="coordinates" class="coordinates"></pre>--}}
                     <div class="Place-order">
                         <a href="#">Submit Report</a>
                     </div>
@@ -135,36 +136,36 @@
 @endsection()
 @section('page_level_script')
 <script>
-    $(document).ready(function() {
-        mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuamVldjEyNzEyNyIsImEiOiJja3lhemh6dWMwYWxwMm9wbG1tYzB4dWV4In0._EiMclyfYIjZHPvJbnKTrw';
-        const coordinates = document.getElementById('coordinates');
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [85.351251257846, 27.691849893078142],
-            zoom: 2
-        });
-        const marker1 = new mapboxgl.Marker({
-            draggable: true
-        }).setLngLat([85.351251257846, 27.691849893078142])
-            .addTo(map);
-        map.addControl(new mapboxgl.FullscreenControl());
-        map.addControl(
-            new MapboxGeocoder({
-                marker: {
-                   draggable: true
-                },
-                accessToken: mapboxgl.accessToken,
-                mapboxgl: mapboxgl
-            })
-        );
-        function onDragEnd() {
-            const lngLat = marker.getLngLat();
-            coordinates.style.display = 'block';
-            coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-        }
-
-        marker.on('dragend', onDragEnd);
-    });
+    // $(document).ready(function() {
+    //     mapboxgl.accessToken = 'pk.eyJ1Ijoic2FuamVldjEyNzEyNyIsImEiOiJja3lhemh6dWMwYWxwMm9wbG1tYzB4dWV4In0._EiMclyfYIjZHPvJbnKTrw';
+    //     const coordinates = document.getElementById('coordinates');
+    //     const map = new mapboxgl.Map({
+    //         container: 'map',
+    //         style: 'mapbox://styles/mapbox/streets-v11',
+    //         center: [85.351251257846, 27.691849893078142],
+    //         zoom: 2
+    //     });
+    //     const marker1 = new mapboxgl.Marker({
+    //         draggable: true
+    //     }).setLngLat([85.351251257846, 27.691849893078142])
+    //         .addTo(map);
+    //     map.addControl(new mapboxgl.FullscreenControl());
+    //     map.addControl(
+    //         new MapboxGeocoder({
+    //             marker: {
+    //                draggable: true
+    //             },
+    //             accessToken: mapboxgl.accessToken,
+    //             mapboxgl: mapboxgl
+    //         })
+    //     );
+    //     function onDragEnd() {
+    //         const lngLat = marker.getLngLat();
+    //         coordinates.style.display = 'block';
+    //         coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+    //     }
+    //
+    //     marker.on('dragend', onDragEnd);
+    // });
 </script>
 @endsection
