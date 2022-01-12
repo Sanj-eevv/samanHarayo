@@ -27,7 +27,7 @@
 <script src="{{ asset("assets/front/js/plugins/aos-master/dist/aos.js") }}"></script>
 <script src="{{ asset("assets/front/js/plugins/fontawesome-free-5.15.4-web/js/all.js") }}"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZyezDR7JaDQGUKVUju-SFwZecagq6tm4"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{config('services.google_map.api_key')}}"></script>
 
 <!-- Main JS -->
 <script src="{{ asset("assets/js/main.js") }}"></script>
