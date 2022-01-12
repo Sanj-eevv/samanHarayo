@@ -1,5 +1,3 @@
-<div>
-</div>
 <div class="row">
     <div class="col-md-4">
         <input id="address" name="address" class="form-control" type="text" value="" placeholder="Enter the place name" />
@@ -101,5 +99,13 @@
             });
         }
         google.maps.event.addDomListener(window, "load", initialize);
+
+        //on enter keypress
+        var input = document.getElementById('address');
+        input.addEventListener("keydown", function (e) {
+            if (e.code === "Enter") {
+                codeAddress();
+            }
+        });
     </script>
 @endsection
