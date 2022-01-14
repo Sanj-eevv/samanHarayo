@@ -13,5 +13,7 @@
 </div>
 @include('_partials._front._foot')
 @yield('page_level_script')
+@include('utils._toastify')
+@include('utils._alertify')
 </body>
 </html>

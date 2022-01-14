@@ -47,6 +47,60 @@
         border: none;
         padding: 20px;
     }
+    .form-check{
+        padding-left: unset;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        #rewardCheckBox,
+        #featureCheckBox{
+            width: unset;
+            height: unset;
+        }
+        label{
+            display: inline-block;
+            margin-bottom: unset;
+        }
+        span{
+            color: gray;
+            cursor: pointer;
+        }
+    }
+    .rewardInput,
+    .featureReportInput{
+        display: none;
+    }
+    //.test-s {
+    //    ul {
+    //        li {
+    //            color: #242424;
+    //            list-style: outside none none;
+    //            margin: 0 0 6px;
+    //
+    //            &:last-child {
+    //                margin: 0 0 0px;
+    //            }
+    //
+    //            input {
+    //                background: #e9e9e9 none repeat scroll 0 0;
+    //                border: 1px solid #d7d7d7;
+    //                border-radius: 5px !important;
+    //                color: #626262;
+    //                cursor: pointer;
+    //                height: 13px;
+    //                margin-right: 10px;
+    //                padding: 0;
+    //                position: relative;
+    //                top: 2px;
+    //                width: 13px;
+    //            }
+    //
+    //            span {
+    //                float: right;
+    //            }
+    //        }
+    //    }
+    //}
 }
 
 .report-form-payment-container {

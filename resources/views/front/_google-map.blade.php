@@ -1,7 +1,19 @@
 <div class="row">
     <div class="col-lg-12 mb-20 d-flex">
-        <input id="address" name="address" class="form-control mr-10" type="text" value="" placeholder="Enter the place name" />
+        <input id="search_address" name="search_address" class="form-control mr-10" type="text" value="{{old('search_address')}}" placeholder="Enter the place name" />
         <button type="button" class="btn btn-secondary" onclick="codeAddress()">Submit</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 mb-20">
+        <input id="_address" name="address" value="{{old('address')}}" class="form-control @error('address') is-invalid @enderror" type="text" placeholder="Drag the marker below to your location or search for the location" readonly/>
+        <input id="latitude" name="latitude" type="hidden" readonly/>
+        <input id="longitude" name="longitude" type="hidden" readonly/>
+        @error('address')
+        <span class="invalid-feedback"  role="alert">
+                {{$message}}
+            </span>
+        @enderror
     </div>
 </div>
 <div class="map-container">
@@ -44,28 +56,45 @@
             geocoder.geocode({
                 latLng: pos
             }, function(responses) {
-                var address = document.getElementById('address').value;
+                var address = document.getElementById('search_address').value;
                 if (responses && responses.length > 0) {
                     marker.formatted_address = responses[0].formatted_address;
+                    returned_location = getAddress(responses[0].address_components);
                 } else {
-
                     // marker.formatted_address = 'Cannot determine address at this location.';
                     marker.formatted_address = address;
+                    returned_location = address;
                 }
+                document.getElementById('latitude').value =  marker.getPosition().lat();
+                document.getElementById('longitude').value =  marker.getPosition().lng();
+                document.getElementById('_address').setAttribute('value',address.replace(/,/g, ', '));
+                console.log(document.getElementById('_address'));
                 infowindow.setContent(marker.formatted_address);
-                console.log('lat ==>', marker.getPosition().lat());
-                console.log('long ==>', marker.getPosition().lng());
                 infowindow.open(map, marker);
             });
         }
 
+        function getAddress(address_component){
+            let address = '';
+            for (var i = 0; i < address_component.length; i++) {
+                address += address_component[i].long_name;
+                if(i != address_component.length-1){
+                    address += ','
+                }
+            }
+            return address;
+        }
+
         function codeAddress() {
-            var address = document.getElementById('address').value;
+            var search_address = document.getElementById('search_address').value;
             geocoder.geocode({
-                'address': address
+                'address': search_address
             }, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
-                    map.setCenter(results[0].geometry.location);
+                    let result = results[0]
+                    let address_component = result.address_components;
+                    map.setCenter(result.geometry.location);
+                    let address = getAddress(address_component);
                     if (marker) {
                         marker.setMap(null);
                         if (infowindow) infowindow.close();
@@ -79,29 +108,55 @@
                         geocodePosition(marker.getPosition());
                     });
                     google.maps.event.addListener(marker, 'click', function() {
-                        console.log('lat ==>', marker.getPosition().lat());
-                        console.log('long ==>', marker.getPosition().lng());
+                        // console.log('lat ==>', marker.getPosition().lat());
+                        // console.log('long ==>', marker.getPosition().lng());
                         if (marker.formatted_address) {
                             infowindow.setContent(marker.formatted_address);
                         } else {
-                            infowindow.setContent(address);
+                            infowindow.setContent(search_address);
                         }
                         infowindow.open(map, marker);
                     });
                     google.maps.event.trigger(marker, 'click');
+                    let latitude =  marker.getPosition().lat();
+                    let longitude = marker.getPosition().lng();
+                    document.getElementById('latitude').value = latitude;
+                    document.getElementById('longitude').value = longitude;
+                    document.getElementById('_address').setAttribute('value',address.replace(/,/g, ', '));
+
                 } else {
-                    alert('Geocode was not successful for the following reason: ' + status);
+                    toastError('Geocode was not successful for the following reason: ' + status);
                 }
+
             });
         }
         google.maps.event.addDomListener(window, "load", initialize);
 
         //on enter keypress
-        var input = document.getElementById('address');
+        var input = document.getElementById('search_address');
         input.addEventListener("keydown", function (e) {
             if (e.code === "Enter") {
                 codeAddress();
             }
         });
+
+        $(document).ready(function() {
+            //reward check box
+            if ($("#rewardCheckBox").is(":checked")) {
+                $('.rewardInput').show();
+            }
+            if ($("#featureCheckBox").is(":checked")) {
+                $('.featureReportInput').show();
+            }
+
+            // disabling enter key for submitting form
+            $('form input').keydown(function (e) {
+                if (e.keyCode == 13) {  // 13 = enter key
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        } );
+    </script>
     </script>
 @endsection

@@ -1072,6 +1072,36 @@
         document.getElementById('logout-form').submit();
     })
 
+    // Reward and feature report check box toggle
+    $("#rewardCheckBox").on('click', function (e){
+        if($(this).is(':checked')){
+            $('.rewardInput').slideDown();
+        }else{
+            $('.rewardInput').slideUp();
+        }
+    });
+
+    $("#featureCheckBox").on('click', function (e){
+        if($(this).is(':checked')){
+            $('.featureReportInput').slideDown();
+        }else{
+            $('.featureReportInput').slideUp();
+        }
+    });
+
+    // Jquery initialization for multiple image upload
+    $('.input-images').imageUploader({
+        'extensions': ['.jpg', '.jpeg', '.png'],
+        'mimes':   ['image/jpeg', 'image/png',],
+        'maxFiles': 5,
+        'imagesInputName': 'product_photo'
+    });
+
+    // phone number filed validaiton
+    $('.numeric').on('input', function (event) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
 })(jQuery);
 
 window.onscroll = function() {myFunction()};

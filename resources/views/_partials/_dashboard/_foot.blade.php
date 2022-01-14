@@ -10,12 +10,12 @@
 <script src="{{asset("assets/dashboard/js/libs/apexcharts/apexcharts.min.js")}}"></script>
 
 <!-- Sweet Alerts js -->
-<script src="{{asset("assets/dashboard/libs/sweetalert2/sweetalert2.min.js")}}"></script>
+
 
 <!-- Sweet alert init js-->
 {{--<script src="{{asset("assets/dashboard/js/pages/sweet-alerts.init.js")}}"></script>--}}
 <!-- Toast message -->
-<script src="{{asset("assets/dashboard/libs/toastr/build/toastr.min.js")}}"></script>
+
 
 @include('_partials._common._script')
 

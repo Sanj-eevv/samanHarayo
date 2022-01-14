@@ -43,7 +43,7 @@
         <div class="col-lg-12">
             <div class="mt-4">
                 <label class="form-label">Select Role</label>
-                <select class="form-select @error('role_id') is-invalid @enderror" name="role_id" value="{{old('role_id', $user->role_id)}}">
+                <select class="form-select @error('role_id') is-invalid @enderror" name="role_id">
                     <option value="">{{ __('-- Select Role --') }}</option>
                     @foreach ($roles as $k => $v)
                         <?php

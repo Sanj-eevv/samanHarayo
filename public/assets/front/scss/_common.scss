@@ -2074,6 +2074,16 @@ textarea:focus {
 }
 
 
+/* bootstrap button */
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+.btn{
+    box-shadow: none !important;
+    border: none !important;
+}
+
 
 
 

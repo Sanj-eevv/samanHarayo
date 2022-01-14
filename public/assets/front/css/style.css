@@ -1709,6 +1709,15 @@ textarea:focus {
   transition: all ease 0.2s;
   border-bottom: 3px solid #ff2f2f; }
 
+/* bootstrap button */
+.btn:focus {
+  outline: none;
+  box-shadow: none; }
+
+.btn {
+  box-shadow: none !important;
+  border: none !important; }
+
 /*-------- 2. Animation CSS ---------*/
 @keyframes hastechFade {
   0% {
@@ -2733,7 +2742,7 @@ textarea:focus {
 
 .all_product_container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   /* 2 */
   justify-content: space-between;
   row-gap: 30px;
@@ -2755,7 +2764,7 @@ textarea:focus {
     .single-product-wrap .product-img a {
       display: block; }
       .single-product-wrap .product-img a img {
-        height: 280px;
+        height: 250px;
         width: 100%;
         object-fit: cover;
         object-position: center; }
@@ -6859,6 +6868,26 @@ h3.cart-page-title {
   background-color: #f7f7f7;
   border: none;
   padding: 20px; }
+
+.report-form-product-details .form-check {
+  padding-left: unset;
+  display: flex;
+  align-items: center;
+  gap: 10px; }
+  .report-form-product-details .form-check #rewardCheckBox,
+  .report-form-product-details .form-check #featureCheckBox {
+    width: unset;
+    height: unset; }
+  .report-form-product-details .form-check label {
+    display: inline-block;
+    margin-bottom: unset; }
+  .report-form-product-details .form-check span {
+    color: gray;
+    cursor: pointer; }
+
+.report-form-product-details .rewardInput,
+.report-form-product-details .featureReportInput {
+  display: none; }
 
 .report-form-payment-container {
   padding: 40px 50px;
