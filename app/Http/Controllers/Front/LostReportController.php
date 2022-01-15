@@ -30,13 +30,30 @@ class LostReportController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(LostProductRequest $request)
     {
+            $product_photos = $request->file('product_photo');
+            if($product_photos){
+                foreach($product_photos as $image) {
+                    $imageName = SamanHarayoHelper::renameImageFileUpload($image);
+                    $image->storeAs(
+                        'public/uploads/report', $imageName
+                    );
+                    Photo::create([
+                        'photo'         =>          $imageName,
+                        'report_id'     =>          null,
+                        'store_type'    =>          Photo::STORE_TYPE_TEMPORARY,
+                    ]);
+                }
 
-        DB::transaction(function () use ($request){
-            $report = Report::create([
+            }
+
+        if(session('lost_report_data')) {
+            $request->session()->forget('lost_report_data');
+        }
+            $lost_report_data = [
                 'name'                  =>              $request->input('name'),
                 'description'           =>              $request->description,
                 'category_id'           =>              $request->input('category'),
@@ -44,30 +61,32 @@ class LostReportController extends Controller
                 'report_type'           =>              Report::REPORT_TYPE,
                 'contact_number'        =>              $request->input('phone'),
                 'contact_email'         =>              $request->input('email') ?? auth()->user()->email,
-            ]);
+            ];
+            session(['lost_report_data' => $lost_report_data]);
 
-            Location::create([
+             if(session('location_data')){
+                 $request->session()->forget('location_data');
+             }
+            $location_data = [
                 'latitude'              =>              $request->input('latitude'),
                 'longitude'             =>              $request->input('longitude'),
                 'address'               =>              $request->input('address'),
-                'report_id'             =>              $report->id,
-            ]);
+                'report_id'             =>              null,
+            ];
+            session(['location_data' => $location_data]);
 
-            $product_photos = $request->file('product_photo');
-            foreach($product_photos as $image) {
-                $imageName = SamanHarayoHelper::renameImageFileUpload($image);
-                $image->storeAs(
-                    'public/uploads/report', $imageName
-                );
-                Photo::create([
-                    'photo'         =>          $imageName,
-                    'report_id'     =>          $report->id
-                ]);
+            if(session('reward_data')) {
+                $request->session()->forget('reward_data');
             }
 
-        });
+            session(['reward_amount' => $request->input('reward_amount')]);
 
-      return redirect()->route('front.index')->with('toast.success', 'Report Successfully Recorded !!');
+            if(session('feature_report_duration')) {
+                $request->session()->forget('feature_report_duration');
+            }
+            session(['feature_report_duration' => $request->input('feature_report_duration')]);
+              return redirect()->route('checkout.index');
+
     }
 
     /**

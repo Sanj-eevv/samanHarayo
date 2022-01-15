@@ -5,14 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Photo extends Model
+class Payment extends Model
 {
     use HasFactory;
-
-    protected  $guarded = ['id'];
-
-    const STORE_TYPE_TEMPORARY = 'temp';
-
-    const STORE_TYPE_PERMANENT = 'perm';
+    protected $guarded = ['id'];
+    protected $dates = ['created_at','updated_at'];
 
 }

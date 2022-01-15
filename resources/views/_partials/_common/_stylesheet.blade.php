@@ -11,4 +11,9 @@
     .swal2-content{
         font-size: 14px;
     }
+
+    .sh-auth-input{
+        border-radius: 0rem !important;
+        box-shadow: none !important;
+    }
 </style>

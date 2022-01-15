@@ -15,6 +15,9 @@ class CreateRewardsTable extends Migration
     {
         Schema::create('rewards', function (Blueprint $table) {
             $table->id();
+            $table->float('reward_amount');
+            $table->foreignId('report_id')->nullable()->constrained();
+            $table->foreignId('owned_by')->nullable()->constrained('users');
             $table->timestamps();
         });
     }

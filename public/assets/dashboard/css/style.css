@@ -2,11 +2,6 @@
     margin-left: 1px!important;
     border-radius: 0rem !important;
 }
-
-.sh-auth-input{
-    border-radius: 0rem !important;
-    box-shadow: none !important;
-}
 .auth-pass-inputgroup button.sh-eye-toggle:focus{
     outline: none !important;
     box-shadow: none !important;

@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class LostProductRequest extends FormRequest
 {
@@ -24,16 +25,34 @@ class LostProductRequest extends FormRequest
      */
     public function rules(Request $request)
     {
+        $reward_amount = [
+            Rule::requiredIf(function () use ($request) {
+                if ($request->rewardCheckBox) {
+                    return true;
+                }
+                return false;
+            })
+        ];
+        $feature_report_duration = [
+            Rule::requiredIf(function () use ($request) {
+                if ($request->featureCheckBox) {
+                    return true;
+                }
+                return false;
+            })
+        ];
         return [
-            'name'                  =>          ['required', 'string', 'max:191'],
-            'description'           =>          ['required', 'string', 'max:191'],
-            'category'              =>          ['required', 'exists:categories,id'],
-            'brand'                 =>          ['nullable', 'string', 'max:191'],
-            'phone'                 =>          ['required', 'numeric', 'digits:10'],
-            'email'                 =>          ['required', 'email'],
-            'product_photo'         =>          ['nullable'],
-            'product_photo.*'       =>          [ 'image', 'mimes:jpg,png,jepg'],
-            'address'               =>          ['required', 'string', 'max:191']
+            'name'                      =>          ['required', 'string', 'max:191'],
+            'description'               =>          ['required', 'string', 'max:191'],
+            'category'                  =>          ['required', 'exists:categories,id'],
+            'brand'                     =>          ['nullable', 'string', 'max:191'],
+            'phone'                     =>          ['required', 'numeric', 'digits:10'],
+            'email'                     =>          ['required', 'email'],
+            'product_photo'             =>          ['nullable'],
+            'product_photo.*'           =>          [ 'image', 'mimes:jpg,png,jepg'],
+            'address'                   =>          ['required', 'string', 'max:191'],
+            'reward_amount'             =>          [$reward_amount, 'numeric', 'max:191','nullable'],
+            'feature_report_duration'   =>          [$feature_report_duration, 'numeric', 'max:30', 'nullable']
         ];
     }
 }

@@ -894,17 +894,6 @@
         $('.open-toggle').slideToggle(1000);
     });
 
-    /*-------------------------
-    checkout one click toggle function
-    --------------------------*/
-    var checked = $( '.sin-payment input:checked' )
-    if(checked){
-        $(checked).siblings( '.payment-box' ).slideDown(900);
-    };
-	 $( '.sin-payment input' ).on('change', function() {
-        $( '.payment-box' ).slideUp(900);
-        $(this).siblings( '.payment-box' ).slideToggle(900);
-    });
 
 
     // Instantiate EasyZoom instances
@@ -1071,6 +1060,21 @@
         e.preventDefault();
         document.getElementById('logout-form').submit();
     })
+
+
+    /*-------------------------
+checkout one click toggle function
+    --------------------------*/
+    var checked = $( '.sin-payment input:checked' )
+    if(checked){
+        $(checked).siblings( '.payment-box' ).slideDown(900);
+    };
+     $( '.sin-payment input' ).on('change', function() {
+        $( '.payment-box' ).slideUp(900);
+        $(this).siblings( '.payment-box' ).slideToggle(900);
+    });
+
+
 
     // Reward and feature report check box toggle
     $("#rewardCheckBox").on('click', function (e){
