@@ -59,7 +59,7 @@
                         </div>
                         <div class="payment-method">
                             <div class="payment-select-div">
-                                <input id="payment_method_stripe" class="input-radio" type="radio" checked="checked" name="payment_method_stripe">
+                                <input id="payment_method_stripe" class="input-radio" type="radio" checked="checked" name="payment_method">
                                 <label for="payment_method_stripe">Stripe</label>
                             </div>
 
@@ -103,7 +103,7 @@
                         </div>
                         <div class="payment-method">
                             <div class="payment-select-div">
-                                <input id="payment_method_paypal" class="input-radio" type="radio" checked="checked" name="payment_method_paypal">
+                                <input id="payment_method_paypal" class="input-radio" type="radio" name="payment_method">
                                 <label for="payment_method_paypal">Paypal</label>
                             </div>
 
@@ -128,17 +128,17 @@
                                     <form action="{{route('checkout.fulfillOrder')}}"
                                           id="payment-form-paypal" name="paypalPayForm" method="POST">
                                         @csrf
-                                        <input type="hidden" id="transaction_stripe"
+                                        <input type="hidden" id="transaction_paypal"
                                                name="transaction_id" />
-                                        <input type="hidden" id="total_stripe" name="total" />
+                                        <input type="hidden" id="total_paypal" name="total" />
                                         <div class="place-order-flex-box">
                                             <div class="checkout-page Place-order">
                                                 <button class="button btn btn-payment btn-dark btn-block"
-                                                        id="payStartBtnStripe" form="payment-form-stripe"
+                                                        id="payStartBtnPaypal" form="payment-form-Paypal"
                                                         type="submit">Place Order
                                                 </button>
                                             </div>
-                                            <div class="spinner-border" id="payStartSpinner" role="status"  style="width: 2rem; height: 2rem; display: none">
+                                            <div class="spinner-border" id="PaypalpayStartSpinner" role="status"  style="width: 2rem; height: 2rem; display: none">
                                             </div>
                                         </div>
                                     </form>
@@ -153,4 +153,5 @@
 @endsection
 @section('page_level_script')
     @include('front.checkout.stripe-script')
+    @include('front.checkout.paypal-script')
 @endsection

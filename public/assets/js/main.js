@@ -1065,13 +1065,15 @@
     /*-------------------------
 checkout one click toggle function
     --------------------------*/
-    var checked = $( '.sin-payment input:checked' )
+    var checked = $( '.payment-select-div input:checked' )
+    var parent_element = $(checked).parent('.payment-select-div');
     if(checked){
-        $(checked).siblings( '.payment-box' ).slideDown(900);
+        $(parent_element).siblings( '.payment-box' ).slideDown(900);
     };
-     $( '.sin-payment input' ).on('change', function() {
+     $( '.payment-select-div input' ).on('change', function() {
+         let parent_element = $(this).parent('.payment-select-div');
         $( '.payment-box' ).slideUp(900);
-        $(this).siblings( '.payment-box' ).slideToggle(900);
+        $(parent_element).siblings( '.payment-box' ).slideToggle(900);
     });
 
 

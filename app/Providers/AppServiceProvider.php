@@ -57,13 +57,13 @@ class AppServiceProvider extends ServiceProvider
                 }
                 if (config('app.settings.app_environment') === "live") {
                     config([
-                        'app.settings.paypal_client_id'      => $settings['paypal_live_client_id'] ?? null,
-                        'app.settings.paypal_secret_key'           => $settings['paypal_live_secret_key'] ?? null,
+                        'app.settings.paypal_client_id'             => $settings['paypal_live_client_id'] ?? null,
+                        'app.settings.paypal_secret_key'            => $settings['paypal_live_secret_key'] ?? null,
                     ]);
                 } else {
                     config([
-                        'app.settings.paypal_client_id'      => $settings['paypal_test_client_id'] ?? null,
-                        'app.settings.paypal_secret_key'           => $settings['paypal_test_secret_key'] ?? null,
+                        'app.settings.paypal_client_id'             => $settings['paypal_test_client_id'] ?? null,
+                        'app.settings.paypal_secret_key'            => $settings['paypal_test_secret_key'] ?? null,
                     ]);
                 }
             }

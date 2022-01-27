@@ -1954,7 +1954,7 @@ textarea:focus {
     width: 100%; }
     .header-area #sh_nav_bar.sticky-nav {
       position: fixed;
-      z-index: 1;
+      z-index: 99999;
       left: 50%;
       top: 0;
       transform: translateX(-50%);
@@ -7014,7 +7014,8 @@ h3.cart-page-title {
             .report-form-payment-container .payment-method-container .payment-method .payment-select-div label {
               display: block; } }
       .report-form-payment-container .payment-method-container .payment-method .payment-box {
-        margin: 20px 0 0; }
+        margin: 20px 0 0;
+        display: none; }
         .report-form-payment-container .payment-method-container .payment-method .payment-box p {
           font-size: 14px;
           margin: 0; }

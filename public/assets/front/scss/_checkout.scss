@@ -265,6 +265,7 @@
             }
             .payment-box {
                 margin: 20px 0 0;
+                display: none;
                 p {
                     font-size: 14px;
                     margin: 0;
@@ -319,7 +320,6 @@ div#stripe-card-element{
         }
     }
 }
-
 
 
 
