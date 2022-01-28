@@ -1061,9 +1061,21 @@
         document.getElementById('logout-form').submit();
     })
 
+    /*-------------------------
+         hide image on click
+      --------------------------*/
+    $('.sh_preview_image_close').click(function (e) {
+        e.preventDefault();
+        let parent_container = $(this).parent('.sh_preview_image_container');
+        parent_container.addClass('d-none');
+        parent_container.siblings("input[type='file']").val('');
+        // parent_container.siblings("input[type='hidden']").val('');
+        // $(this).siblings('.sh_preview_img_element').attr('src','#');
+        // $("#file_upload").replaceWith($("#file_upload").val('').clone(true));
+    });
 
     /*-------------------------
-checkout one click toggle function
+        checkout one click toggle function
     --------------------------*/
     var checked = $( '.payment-select-div input:checked' )
     var parent_element = $(checked).parent('.payment-select-div');
@@ -1075,8 +1087,6 @@ checkout one click toggle function
         $( '.payment-box' ).slideUp(900);
         $(parent_element).siblings( '.payment-box' ).slideToggle(900);
     });
-
-
 
     // Reward and feature report check box toggle
     $("#rewardCheckBox").on('click', function (e){
@@ -1090,14 +1100,16 @@ checkout one click toggle function
     $("#featureCheckBox").on('click', function (e){
         if($(this).is(':checked')){
             $('.featureReportInput').slideDown();
+            $('.feature-image-box').slideDown();
         }else{
             $('.featureReportInput').slideUp();
+            $('.feature-image-box').slideUp();
         }
     });
 
     // Jquery initialization for multiple image upload
     $('.input-images').imageUploader({
-        'extensions': ['.jpg', '.jpeg', '.png'],
+        'extensions': ['.jpg', '.jpeg', '.png', '.JPG'],
         'mimes':   ['image/jpeg', 'image/png',],
         'maxFiles': 5,
         'imagesInputName': 'product_photo'
@@ -1109,6 +1121,23 @@ checkout one click toggle function
     });
 
 })(jQuery);
+
+/** remove and show row ends here **/
+/** preview currently uploaded images on form**/
+function loadPreview(input, id) {
+    id = id || '#sh_preview_img';
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $(id).attr('src', e.target.result);
+        };
+        // input.previousElementSibling.value = 'yes';
+        // console.log('input >>',input);
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
 
 window.onscroll = function() {myFunction()};
 var header = document.getElementById("sh_nav_bar");

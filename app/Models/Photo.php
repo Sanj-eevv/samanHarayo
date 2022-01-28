@@ -15,4 +15,8 @@ class Photo extends Model
 
     const STORE_TYPE_PERMANENT = 'perm';
 
+    const NOT_FEATURED = 'no';
+
+    const FEATURED = 'yes';
+
 }

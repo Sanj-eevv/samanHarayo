@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\category;
 use Illuminate\Http\Request;
 
-class FoundController extends Controller
+class FoundReportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class FoundController extends Controller
      */
     public function index()
     {
-        return view('front.report-found');
+        $categories = category::all();
+        return view('front.report.report-found',  compact('categories'));
     }
 
     /**

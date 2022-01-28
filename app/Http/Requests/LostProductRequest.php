@@ -33,7 +33,7 @@ class LostProductRequest extends FormRequest
                 return false;
             })
         ];
-        $feature_report_duration = [
+        $feature_check = [
             Rule::requiredIf(function () use ($request) {
                 if ($request->featureCheckBox) {
                     return true;
@@ -51,8 +51,9 @@ class LostProductRequest extends FormRequest
             'product_photo'             =>          ['nullable'],
             'product_photo.*'           =>          [ 'image', 'mimes:jpg,png,jepg'],
             'address'                   =>          ['required', 'string', 'max:191'],
-            'reward_amount'             =>          [$reward_amount, 'numeric', 'max:191','nullable'],
-            'feature_report_duration'   =>          [$feature_report_duration, 'numeric', 'max:30', 'nullable']
+            'reward_amount'             =>          [$reward_amount, 'numeric','nullable'],
+            'feature_report_duration'   =>          [$feature_check, 'numeric', 'max:30', 'nullable'],
+            'featured_image'            =>          [$feature_check, 'image', 'mimes:jpg,png,jepg'],
         ];
     }
 }

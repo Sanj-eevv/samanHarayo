@@ -22,7 +22,7 @@ class LostReportController extends Controller
     public function index()
     {
         $categories = category::all();
-        return view('front.report-lost', compact('categories'));
+        return view('front.report.report-lost', compact('categories'));
     }
 
 
@@ -45,9 +45,22 @@ class LostReportController extends Controller
                         'photo'         =>          $imageName,
                         'report_id'     =>          null,
                         'store_type'    =>          Photo::STORE_TYPE_TEMPORARY,
+                        'featured'      =>          Photo::NOT_FEATURED,
                     ]);
                 }
-
+            }
+            $featured_image = $request->file('featured_image');
+            if($featured_image){
+                $imageName = SamanHarayoHelper::renameImageFileUpload($featured_image);
+                $image->storeAs(
+                    'public/uploads/report', $imageName
+                );
+                Photo::create([
+                    'photo'         =>          $imageName,
+                    'report_id'     =>          null,
+                    'store_type'    =>          Photo::STORE_TYPE_TEMPORARY,
+                    'featured'      =>          Photo::FEATURED,
+                ]);
             }
 
         if(session('lost_report_data')) {

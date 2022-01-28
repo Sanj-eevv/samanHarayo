@@ -18,6 +18,7 @@ class CreatePhotosTable extends Migration
             $table->string('photo');
             $table->foreignId('report_id')->nullable()->constrained();
             $table->enum('store_type', ['temp', 'perm'])->default('temp');
+            $table->enum('featured', ['yes', 'no'])->default('no');
             $table->timestamps();
         });
     }
