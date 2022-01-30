@@ -18,7 +18,7 @@ class CreateLocationsTable extends Migration
             $table->string('latitude');
             $table->string('longitude');
             $table->string('address');
-            $table->foreignId('report_id')->constrained();
+            $table->foreignId('report_id')->constrained()->onDelete('cascade');;
             $table->timestamps();
         });
     }

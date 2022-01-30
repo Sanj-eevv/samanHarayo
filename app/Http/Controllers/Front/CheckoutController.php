@@ -29,6 +29,7 @@ class CheckoutController extends Controller
         DB::transaction(function () use ($request) {
             // Data for reports table
             $report_data = session('lost_report_data');
+            $report_data['verified'] = Report::STATUS_VERIFIED;
             $report = Report::create($report_data);
 
             // Data for payments table

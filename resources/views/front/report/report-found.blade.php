@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-12">
 
-                    <form action="{{route('report-lost.store')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('report-found.store')}}" method="POST" enctype="multipart/form-data">
                         @include('front.report._form', ['buttonText' => 'Submit', 'show' => false])
                     </form>
                 </div>

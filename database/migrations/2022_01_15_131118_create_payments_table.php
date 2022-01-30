@@ -17,7 +17,7 @@ class CreatePaymentsTable extends Migration
             $table->id();
             $table->float('total');
             $table->string('transaction_id');
-            $table->foreignId('report_id')->constrained();
+            $table->foreignId('report_id')->constrained()->onDelete('cascade');;
             $table->timestamps();
         });
     }

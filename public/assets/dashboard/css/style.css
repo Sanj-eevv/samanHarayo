@@ -39,3 +39,11 @@
     box-shadow: none !important;
     border: none !important;
 }
+
+#toggle-report-status{
+    font-size: 25px;
+    position: absolute;
+    top: 5px;
+    color: #495057;
+    padding: 0;
+}

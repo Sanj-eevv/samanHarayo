@@ -17,8 +17,9 @@ class CreateReportsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null');
             $table->string('brand')->nullable();
+            $table->enum('status', ['verified', 'pending']);
             $table->enum('report_type', ['found','lost']);
             $table->string('contact_number');
             $table->string('contact_email');

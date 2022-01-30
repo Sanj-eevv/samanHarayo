@@ -17,7 +17,10 @@ class Report extends Model
     protected $guarded = ['id'];
     protected $table = 'reports';
 
-    const REPORT_TYPE = 'lost';
+    const STATUS_VERIFIED = 'verified';
+    const STATUS_PENDING = 'pending';
+    const REPORT_TYPE_LOST = 'lost';
+    const REPORT_TYPE_FOUND = 'found';
 
     public function location(){
         return $this->hasOne(Location::class);

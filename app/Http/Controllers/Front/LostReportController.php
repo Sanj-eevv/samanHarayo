@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Helpers\SamanHarayoHelper;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\LostProductRequest;
+use App\Http\Requests\ReportRequest;
 use App\Models\category;
 use App\Models\Location;
 use App\Models\Photo;
@@ -32,7 +32,7 @@ class LostReportController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(LostProductRequest $request)
+    public function store(ReportRequest $request)
     {
             $product_photos = $request->file('product_photo');
             if($product_photos){
@@ -53,7 +53,7 @@ class LostReportController extends Controller
             if($featured_image){
                 $imageName = SamanHarayoHelper::renameImageFileUpload($featured_image);
                 $image->storeAs(
-                    'public/uploads/report', $imageName
+                    'public/uploads/featured', $imageName
                 );
                 Photo::create([
                     'photo'         =>          $imageName,
@@ -71,7 +71,8 @@ class LostReportController extends Controller
                 'description'           =>              $request->description,
                 'category_id'           =>              $request->input('category'),
                 'brand'                 =>              $request->input('brand'),
-                'report_type'           =>              Report::REPORT_TYPE,
+                'report_type'           =>              Report::REPORT_TYPE_LOST,
+                'verified'              =>              Report::STATUS_PENDING,
                 'contact_number'        =>              $request->input('phone'),
                 'contact_email'         =>              $request->input('email') ?? auth()->user()->email,
             ];

@@ -103,7 +103,8 @@
             </div>
         </div>
         @include('front.report._google-map')
-        <div class="row mb-20">
+        @if($show)
+            <div class="row mb-20">
             <div class="col-lg-6">
                 <div class="row mb-20">
                     <div class="col-lg-12">
@@ -160,6 +161,7 @@
                 </div>
             </div>
         </div>
+        @endif
         <div class="Place-order">
             <button type="submit">{{$buttonText}}</button>
         </div>

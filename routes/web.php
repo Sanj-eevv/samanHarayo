@@ -37,6 +37,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     /** BackEnd Starts*/
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
+        Route::resource('reports', \App\Http\Controllers\Dashboard\ReportController::class);
+
     });
 
 });
