@@ -3,32 +3,21 @@
 <div class="slider-area">
     <div class="container">
         <div class="hero-slider-active bg-gray-7" data-aos="fade-up" data-aos-duration="1600">
+            @foreach($featured_reports as $featured_report)
             <div class="single-hero-slider slider-height d-flex single-animation-wrap slider-animated">
                 <div class="hero-slider-content">
                     <div>
                         <h5>Item Lost</h5>
-                        <h1>Laptop Lenovo Ideapad 530s</h1>
-                        <p class="content">A laptop was found at Itahari near Vishwa Adarsha college.A laptop was found at Itahari near Vishwa Adarsha college. Adarsha college.</p>
+                        <h1>{{$featured_report->name}}</h1>
+                        <p class="content">{{\Illuminate\Support\Str::limit($featured_report->description, 140)}}</p>
                         <p class="more"><a href="#"><span>More Details</span></a></p>
                     </div>
                 </div>
                 <div class="hero-slider-img">
-                    <img class="img-fluid" src="{{asset('storage/uploads/featured/Laptop.jpg')}}" alt="">
+                    <img class="img-fluid" src="{{asset('storage/uploads/featured/'.$featured_report->featured_photo->photo)}}" alt="">
                 </div>
             </div>
-            <div class="single-hero-slider slider-height d-flex single-animation-wrap slider-animated">
-                <div class="hero-slider-content">
-                    <div>
-                        <h5>Item Lost</h5>
-                        <h1>Laptop Lenovo Ideapad 530s</h1>
-                        <p class="content">A laptop was found at Itahari near Vishwa Adarsha college.A laptop was found at Itahari near Vishwa Adarsha college. Adarsha college.</p>
-                        <p class="more"><a href="#"><span>More Details</span></a></p>
-                    </div>
-                </div>
-                <div class="hero-slider-img">
-                    <img class="img-fluid" src="{{asset('storage/uploads/featured/h.jfif')}}" alt="">
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

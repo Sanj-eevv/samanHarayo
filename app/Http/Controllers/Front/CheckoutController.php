@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Boost;
 use App\Models\Location;
 use App\Models\Payment;
 use App\Models\Photo;
@@ -36,9 +37,9 @@ class CheckoutController extends Controller
             $transactionId = $request->transaction_id;
             $total = $request->total;
             Payment::create([
-                'report_id' => $report->id,
-                'total' => $total,
-                'transaction_id' => $transactionId,
+                'report_id'         => $report->id,
+                'total'             => $total,
+                'transaction_id'    => $transactionId,
             ]);
 
             // Data for rewards table
@@ -46,6 +47,12 @@ class CheckoutController extends Controller
                 'report_id'             =>          $report->id,
                 'reward_amount'         =>          session('reward_amount'),
                 'owned_by'              =>          null,
+            ]);
+
+            //Data for boosts table
+            Boost::create([
+                'boost_duration'        =>           session('feature_report_duration'),
+                'report_id'             =>           $report->id,
             ]);
 
             // Data for Location table

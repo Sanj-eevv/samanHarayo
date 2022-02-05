@@ -5,13 +5,13 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <table id="userDatatable" class="table table-bordered dt-responsive  nowrap w-100">
+                    <table id="foundReportDatatable" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
                             <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Email</th>
-                                <th>Role</th>
+                                <th>Item Name</th>
+                                <th>Brand</th>
+                                <th>Category</th>
+                                <th>Status</th>
                                 <th>Created at</th>
                                 <th>Actions</th>
                             </tr>
@@ -26,41 +26,38 @@
     </div> <!-- end row -->
 @endsection
 @section('page_level_script')
-    @include('dashboard.users._shared')
+    @include('dashboard.found-reports._shared')
     <script>
             $(document).ready(function($) {
-                let table = $('#userDatatable').DataTable({
+                $('#foundReportDatatable').DataTable({
                     "serverSide": true,
                     "ajax": {
-                        "url": '{{url('/')}}' + '/dashboard/users',
+                        "url": BASE_URL + '/dashboard/found-reports',
                         "dataType": "json",
                         "type": "GET",
                         "data": {
-                            "_token": '{{csrf_token()}}'
+                            "_token": CSRF_TOKEN
                         },
                         "tryCount" : 0,
                         "retryLimit" : 3,
                         error: function(xhr, ajaxOptions, thrownError) {
-                            if (xhr.status === 500) {
-                                this.tryCount++;
-                                if (this.tryCount <= this.retryLimit) {
-                                    //try again
-                                    $.ajax(this);
-                                }
-                            }
                         }
                     },
                     "columns": [{
-                        "data": "first_name",
-                    },
-                        {
-                            "data": "last_name"
+                            "data": "item_name",
                         },
                         {
-                            "data": "email"
+                            "data": "brand"
                         },
                         {
-                            "data": "role"
+                            "data": "category"
+                        },
+                        {
+                            "data": "status",
+                            "render": function ( data, type, row, meta ) {
+                                badge_color = data === "verified" ? "bg-success" : "bg-danger"
+                                return '<span class="p-2 badge '+badge_color + '">'+data+'</span>';
+                            }
                         },
                         {
                             "data": "created_at"
@@ -83,7 +80,6 @@
                     "pageLength": 25,
                     "deferRender": true,
                     fixedHeader: true,
-                    // "pagingType": "simple",
                     "searchable": false,
                     "language": {
                         "emptyTable": " "

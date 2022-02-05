@@ -1,0 +1,10 @@
+.swal2-title{
+    font-size: 25px;
+}
+.swal2-content{
+    font-size: 14px;
+}
+.sh-auth-input{
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}

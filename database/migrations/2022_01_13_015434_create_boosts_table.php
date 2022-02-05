@@ -15,6 +15,8 @@ class CreateBoostsTable extends Migration
     {
         Schema::create('boosts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('report_id')->constrained()->onDelete('cascade');
+            $table->unsignedInteger('boost_duration')->nullable();
             $table->timestamps();
         });
     }

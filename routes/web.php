@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('front.index');
+Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('front.index');
 
 // Social Routes
 Route::get('auth/facebook', [\App\Http\Controllers\Social\FacebookController::class, 'facebookRedirect'])->name('auth.facebookRedirect');
@@ -37,12 +35,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     /** BackEnd Starts*/
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
-        Route::resource('reports', \App\Http\Controllers\Dashboard\ReportController::class);
-
+        Route::resource('found-reports', \App\Http\Controllers\Dashboard\FoundReportController::class);
+        Route::resource('lost-reports', \App\Http\Controllers\Dashboard\LostReportController::class);
+        Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
     });
 
-});
-// admin routes dashboard
-Route::group(['prefix' => 'dashboard','middleware' => ['auth', 'verified']], function () {
-    Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
 });

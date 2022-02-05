@@ -25,4 +25,21 @@ class Report extends Model
     public function location(){
         return $this->hasOne(Location::class);
     }
+
+    public function category(){
+        return $this->belongsTo(category::class);
+    }
+
+    public function boost(){
+        return $this->hasOne(Boost::class, 'report_id', 'id');
+    }
+
+    public function featured_photo(){
+        return $this->hasOne(Photo::class, 'report_id', 'id')->where(function($q){
+            $q->where('featured', 'yes');
+        });
+    }
+    public function photoes(){
+        return $this->hasMany(Photo::class, 'report_id', 'id');
+    }
 }

@@ -17,6 +17,7 @@ function confirmDelete(callback) {
         }
     });
 }
+
 /** confirm delete ends **/
 /**
  * following row remove and show row are used while deleting from table
@@ -24,6 +25,7 @@ function confirmDelete(callback) {
  * if failed, will be shown back
  **/
 /** remove row removes row from table **/
+
 function removeRowFromTable(table, id) {
     $('#' + table + ' tr#' + id).hide();
 }

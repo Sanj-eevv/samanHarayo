@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Boost;
+use App\Models\Payment;
 use Illuminate\Database\Seeder;
 
-class BoostSeeder extends Seeder
+class PaymentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,25 +14,21 @@ class BoostSeeder extends Seeder
      */
     public function run()
     {
-        Boost::upsert([
+        Payment::upsert([
             [
+                'total'                 =>              1012.00,
+                'transaction_id'        =>              'pi_3KNgtsDb5yVTJO3Q1sGafR5v',
                 'report_id'             =>              5,
-                'boost_duration'        =>              8,
                 'created_at'            =>              now(),
                 'updated_at'            =>              now(),
             ],
             [
+                'total'                 =>              1012.00,
+                'transaction_id'        =>              'pi_3KNgytDb5yVTJO3Q1sDxKabD',
                 'report_id'             =>              6,
-                'boost_duration'        =>              2,
                 'created_at'            =>              now(),
                 'updated_at'            =>              now(),
             ],
-            [
-                'report_id'             =>              2,
-                'boost_duration'        =>              15,
-                'created_at'            =>              now(),
-                'updated_at'            =>              now(),
-            ]
-        ],['report_id'],['updated_at', 'boost_duration']);
+        ],['transaction_id'],['updated_at', 'total']);
     }
 }
