@@ -2,16 +2,14 @@
 @section('content')
 <div class="slider-area">
     <div class="container">
-        <div class="hero-slider-active bg-gray-7" data-aos="fade-up" data-aos-duration="1600">
+        <div class="xhero-slider-active bg-gray-7" data-aos="fade-up" data-aos-duration="1600">
             @foreach($featured_reports as $featured_report)
-            <div class="single-hero-slider slider-height d-flex single-animation-wrap slider-animated">
+            <div class="single-hero-slider slider-height d-flex">
                 <div class="hero-slider-content">
-                    <div>
                         <h5>Item Lost</h5>
                         <h1>{{$featured_report->name}}</h1>
                         <p class="content">{{\Illuminate\Support\Str::limit($featured_report->description, 140)}}</p>
-                        <p class="more"><a href="#"><span>More Details</span></a></p>
-                    </div>
+                        <span><a href="#">More Details</a></span>
                 </div>
                 <div class="hero-slider-img">
                     <img class="img-fluid" src="{{asset('storage/uploads/featured/'.$featured_report->featured_photo->photo)}}" alt="">

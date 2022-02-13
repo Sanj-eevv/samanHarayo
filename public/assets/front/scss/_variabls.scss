@@ -26,12 +26,19 @@ $theme-color-purple: #6f50a7;
 $theme-color-blue: #556ee6;
 $theme-color-gray: #eaeff2;
 
-// Responsive Variables
-$xx-layout : 'only screen and (min-width: 1366px)';
-// my laptop screen size
-$xl-layout : 'only screen and (min-width: 1200px) and (max-width: 1365px)';
-$lg-layout : 'only screen and (min-width: 992px) and (max-width: 1199px)';
-$md-layout:'only screen and (min-width: 768px) and (max-width: 991px)';
-$sm-layout: 'only screen and (min-width: 576px) and (max-width: 767px)';
-$vsm-layout: 'only screen and (max-width: 575px)';
+//// Responsive Variables
+//$xx-layout : 'only screen and (min-width: 1366px)';
+//// my laptop screen size
+//$xl-layout : 'only screen and (min-width: 1200px) and (max-width: 1365px)';
+//$lg-layout : 'only screen and (min-width: 992px) and (max-width: 1199px)';
+//$md-layout:'only screen and (min-width: 768px) and (max-width: 991px)';
+//$sm-layout: 'only screen and (min-width: 576px) and (max-width: 767px)';
+//$vsm-layout: 'only screen and (max-width: 575px)';
 
+$xx-layout : '(min-width: 1320px)';
+// my laptop screen size
+$xl-layout : '(min-width: 1280px)';
+$lg-layout : '(min-width: 1024px)';
+$md-layout:'(min-width: 768px)';
+$sm-layout: '(min-width: 640px)';
+$vsm-layout: '(max-width: 640px)';

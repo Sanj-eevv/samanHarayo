@@ -8,11 +8,31 @@
 
 /*-- Common Style --*/
 
-@media only screen and (min-width: 1200px) {
-    .container {
-        max-width: 1200px;
+//@media only screen and (min-width: 1200px) {
+//    .container {
+//        max-width: 1200px;
+//    }
+//}
+
+
+.container{
+    @media #{$sm-layout}{
+        max-width: 640px;
+    }
+    @media #{$md-layout}{
+        max-width: 768px;
+    }
+    @media #{$lg-layout}{
+        max-width: 1024px;
+    }
+    @media #{$xl-layout}{
+        max-width: 1280px;
+    }
+    @media #{$xx-layout}{
+        max-width: 1320px;
     }
 }
+
 
 .row {
 	margin-right: calc(var(--bs-gutter-x) * -.6);
@@ -23,8 +43,8 @@
 	padding-left: calc(var(--bs-gutter-x) * .6);
 }
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-	//padding-right: var(--bs-gutter-x,.90rem);
-	//padding-left: var(--bs-gutter-x,.90rem);
+	padding-right: var(--bs-gutter-x,.90rem);
+	padding-left: var(--bs-gutter-x,.90rem);
 }
 
 .form-control:focus {

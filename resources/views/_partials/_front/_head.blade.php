@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('assets/front/css/vendor/bootstrap.min.css') }}">
 
     <!-- plugins -->
-    <link rel="stylesheet" href="{{ asset("assets/front/css/plugins/all.css") }}" />
+    <link rel="stylesheet" href="{{ asset("assets/front/css/plugins/all.min.css") }}" />
     <link rel="stylesheet" href="{{ asset('assets/front/css/plugins/simple-line-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/front/css/plugins/signericafat.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/front/css/plugins/slick.css') }}">
