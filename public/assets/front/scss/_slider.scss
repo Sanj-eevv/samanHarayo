@@ -1,18 +1,11 @@
 /*-------- 4. Slider style ---------*/
-.slider-area{
-//    margin-top: 80px;
-}
-.slider-height {
+.single-hero-slider{
     @media #{$md-layout} {
         max-height: 310px;
     }
     @media #{$lg-layout} {
         max-height: 420px;
     }
-    max-height: auto;
-}
-
-.single-hero-slider{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -90,6 +83,9 @@
         }
         @media #{$lg-layout} {
             height: 340px;
+        }
+        &:hover{
+            transform: scale(1.02);
         }
     }
 }

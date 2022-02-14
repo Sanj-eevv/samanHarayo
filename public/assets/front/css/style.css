@@ -2306,21 +2306,18 @@ a.sh_preview_image_close:hover {
             background-color: transparent; }
 
 /*-------- 4. Slider style ---------*/
-.slider-height {
-  max-height: auto; }
-  @media (min-width: 768px) {
-    .slider-height {
-      max-height: 310px; } }
-  @media (min-width: 1024px) {
-    .slider-height {
-      max-height: 420px; } }
-
 .single-hero-slider {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 30px; }
+  @media (min-width: 768px) {
+    .single-hero-slider {
+      max-height: 310px; } }
+  @media (min-width: 1024px) {
+    .single-hero-slider {
+      max-height: 420px; } }
   @media (min-width: 768px) {
     .single-hero-slider {
       padding: 40px; } }
@@ -2382,6 +2379,8 @@ a.sh_preview_image_close:hover {
     @media (min-width: 1024px) {
       .hero-slider-img img {
         height: 340px; } }
+    .hero-slider-img img:hover {
+      transform: scale(1.02); }
 
 /*-------- 5. Service style ---------*/
 .service-wrap {
@@ -2509,22 +2508,16 @@ a.sh_preview_image_close:hover {
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  .about-us-area .container .about-us-logo {
+  .about-us-area .container .about-us-img {
     flex: 1;
     display: none; }
-    .about-us-area .container .about-us-logo img {
+    .about-us-area .container .about-us-img img {
       object-fit: cover;
       height: 250px;
       width: 450px;
       object-position: center; }
     @media (min-width: 1024px) {
-      .about-us-area .container .about-us-logo {
-        display: flex; } }
-    @media (min-width: 1280px) {
-      .about-us-area .container .about-us-logo {
-        display: flex; } }
-    @media (min-width: 1320px) {
-      .about-us-area .container .about-us-logo {
+      .about-us-area .container .about-us-img {
         display: flex; } }
   .about-us-area .container .about-us-content {
     flex: 2; }
@@ -7761,33 +7754,38 @@ div#stripe-card-element {
       .order-tracking-content .order-tracking-form .order-track-btn a:hover {
         background-color: #ff2f2f; }
 
-.section-report-area .section-report-area-wrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px; }
-  @media (min-width: 640px) {
-    .section-report-area .section-report-area-wrapper {
-      gap: 15px; } }
-  @media (max-width: 640px) {
-    .section-report-area .section-report-area-wrapper {
-      gap: 15px; } }
-  .section-report-area .section-report-area-wrapper a {
-    text-align: center;
-    display: inline-block;
-    background-color: #eaeff2;
-    opacity: 0.8;
-    font-weight: 600;
-    padding: 20px 0;
-    text-transform: uppercase;
-    flex: 1; }
-    .section-report-area .section-report-area-wrapper a:hover {
-      color: #ff2f2f; }
-    .section-report-area .section-report-area-wrapper a span {
-      margin-right: 15px; }
-    @media (max-width: 640px) {
-      .section-report-area .section-report-area-wrapper a {
-        padding: 20px 10px;
-        text-align: right; } }
+.section-report-area {
+  margin-top: 40px; }
+  @media (min-width: 768px) {
+    .section-report-area {
+      margin-top: 55px; } }
+  @media (min-width: 1024px) {
+    .section-report-area {
+      margin-top: 70px; } }
+  .section-report-area .section-report-area-wrapper {
+    display: flex;
+    row-gap: 30px;
+    flex-wrap: wrap;
+    white-space: nowrap; }
+    @media (min-width: 768px) {
+      .section-report-area .section-report-area-wrapper {
+        column-gap: 6%; } }
+    .section-report-area .section-report-area-wrapper a {
+      text-align: center;
+      display: inline-block;
+      background-color: #eaeff2;
+      opacity: 0.8;
+      font-weight: 600;
+      padding: 20px 0;
+      width: 100%;
+      text-transform: uppercase; }
+      @media (min-width: 768px) {
+        .section-report-area .section-report-area-wrapper a {
+          width: 47%; } }
+      .section-report-area .section-report-area-wrapper a:hover {
+        color: #ff2f2f; }
+      .section-report-area .section-report-area-wrapper a span {
+        margin-right: 15px; }
 
 @media (max-width: 640px) {
   .report-info-area {

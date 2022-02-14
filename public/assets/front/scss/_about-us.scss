@@ -5,7 +5,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .about-us-logo{
+        .about-us-img{
             flex: 1;
             display: none;
             img{
@@ -15,12 +15,6 @@
                 object-position: center;
             }
             @media #{$lg-layout} {
-                display: flex;
-            }
-            @media #{$xl-layout} {
-                display: flex;
-            }
-            @media #{$xx-layout} {
                 display: flex;
             }
         }

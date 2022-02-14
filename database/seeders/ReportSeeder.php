@@ -17,7 +17,7 @@ class ReportSeeder extends Seeder
         Report::upsert([
             [
                 'name'                  =>            'samsung mobile',
-                'description'           =>            'I found a samsung Phone at itahari',
+                'description'           =>            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut deserunt fugiat hic perferendis perspiciatis? Eveniet, illum iure laboriosam magni modi molestiae molestias odit quaerat quia quod, rerum sint sunt!',
                 'category_id'           =>            1,
                 'brand'                 =>            'Samsung',
                 'status'                =>            'verified',
@@ -29,7 +29,7 @@ class ReportSeeder extends Seeder
             ],
             [
                 'name'                  =>            'Laptop n90',
-                'description'           =>            'I found a laptop at itahari',
+                'description'           =>            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut deserunt fugiat hic perferendis perspiciatis? Eveniet, illum iure laboriosam magni modi molestiae molestias odit quaerat quia quod, rerum sint sunt!',
                 'category_id'           =>            1,
                 'brand'                 =>            'Lenovo',
                 'status'                =>            'pending',
@@ -65,7 +65,7 @@ class ReportSeeder extends Seeder
             ],
             [
                 'name'                  =>            'Laptop n3040',
-                'description'           =>            'I Lost my laptop at itahari',
+                'description'           =>            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut deserunt fugiat hic perferendis perspiciatis? Eveniet, illum iure laboriosam magni modi molestiae molestias odit quaerat quia quod, rerum sint sunt!',
                 'category_id'           =>            1,
                 'brand'                 =>            'Apple',
                 'status'                =>            'verified',

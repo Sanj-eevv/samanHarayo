@@ -16,7 +16,7 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->longText('description');
             $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null');
             $table->string('brand')->nullable();
             $table->enum('status', ['verified', 'pending']);

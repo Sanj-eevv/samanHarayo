@@ -1,30 +1,6 @@
 (function ($) {
     // AOS.init();
     "use strict";
-    /*------ ScrollUp -------- */
-    // $.scrollUp({
-    //     scrollText: '<i class="icon-arrow-up"></i>',
-    //     easingType: 'linear',
-    //     scrollSpeed: 900,
-    //     animation: 'fade'
-    // });
-
-    // /*------ Wow Active ----*/
-    // new WOW().init();
-
-    /*------ Hero slider active 1 ----*/
-    $('.hero-slider-active-1').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        fade: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        loop: true,
-        dots: true,
-        arrows: true,
-        prevArrow: '<span class="slider-icon-1-prev"><i class="icon-arrow-left"></i></span>',
-        nextArrow: '<span class="slider-icon-1-next"><i class="icon-arrow-right"></i></span>',
-    });
 
     /*------ Hero slider active 2 ----*/
     $('.hero-slider-active').slick({
@@ -39,15 +15,6 @@
         arrows: false
     });
 
-    // /*------ Hero slider active 3 ----*/
-    // $('.hero-slider-active-3').slick({
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     fade: true,
-    //     loop: true,
-    //     dots: true,
-    //     arrows: false,
-    // });
 
     /*------ Product slider active ----*/
     $('.product-slider-active').slick({
