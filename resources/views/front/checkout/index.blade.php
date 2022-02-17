@@ -111,7 +111,7 @@
                                 <p>Pay securely with your credit card via Paypal.</p>
                                 <div class="col-lg-8 mt-20">
                                     <div id="paypal-card-element">
-                                        <!-- A Stripe Element will be inserted here. -->
+                                        <!-- A Paypal Element will be inserted here. -->
                                     </div>
                                 </div>
                                 <div class="col-lg-8 mt-20">
@@ -125,19 +125,13 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
-                                    <form action="{{route('checkout.fulfillOrderPaypal')}}"
+                                    <form action="{{route('checkout.fulfillOrder')}}"
                                           id="payment-form-paypal" name="paypalPayForm" method="POST">
                                         @csrf
                                         <input type="hidden" id="transaction_paypal"
                                                name="transaction_id" />
                                         <input type="hidden" id="total_paypal" name="total" />
                                         <div class="place-order-flex-box">
-                                            <div class="checkout-page Place-order">
-                                                <button class="button btn btn-payment btn-dark btn-block"
-                                                        id="payStartBtnPaypal" form="payment-form-Paypal"
-                                                        type="submit">Place Order
-                                                </button>
-                                            </div>
                                             <div class="spinner-border" id="PaypalpayStartSpinner" role="status"  style="width: 2rem; height: 2rem; display: none">
                                             </div>
                                         </div>
@@ -154,4 +148,5 @@
 @section('page_level_script')
     @include('front.checkout.stripe-script')
     @include('front.checkout.paypal-script')
+    @include('front.checkout.checkout-script')
 @endsection

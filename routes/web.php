@@ -34,7 +34,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('/checkout', [\App\Http\Controllers\Front\CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('checkout/fulfill-order', [\App\Http\Controllers\Front\CheckoutController::class, 'fulfillOrder'])->name('checkout.fulfillOrder');
-    Route::post('checkout/fulfill-order-paypal', [\App\Http\Controllers\Front\CheckoutController::class, 'fulfillOrderPaypal'])->name('checkout.fulfillOrderPaypal');
 
 
 

@@ -46,23 +46,10 @@ class StripeController extends Controller
 
     public function getPaypalPaymentIntent(Request $request){
         $session_total = session('total');
-        $total_price = $request->input('amount');
+        $total_price = $request->input('total');
         if (floatval($total_price) != floatval($session_total)) {
             return response()->json(['price_discrepancy',201]);
         }
         return response()->json(['successful_validation' => 'success',200]);
-    }
-
-    public function createOrderPaypal(Request $request){
-        $session_total = session('total');
-        $total_price = $request->input('amount');
-        if (floatval($total_price) != floatval($session_total)) {
-            return null;
-        }
-        return PayPalSdkHelper::createOrder($total_price);
-    }
-
-    public function captureOrderPayPal(Request $request,$orderId){
-        return PayPalSdkHelper::captureOrder($orderId);
     }
 }

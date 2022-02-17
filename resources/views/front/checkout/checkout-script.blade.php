@@ -56,7 +56,7 @@
     function appendBasicData(emptyForm)
     {
         emptyForm.append("_token", "{{ csrf_token() }}");
-        emptyForm.append("total", {{$total}});
+        emptyForm.append("total", "{{$total}}");
         emptyForm.append("currency", "{{$currencyTextRaw}}");
     }
     function beautifyJson(passedStr)

@@ -88,4 +88,4 @@
         });
     }
 </script>
-@include('front.checkout.checkout-script')
+
