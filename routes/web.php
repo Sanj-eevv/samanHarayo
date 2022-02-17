@@ -28,8 +28,14 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('/report-lost', \App\Http\Controllers\Front\LostReportController::class)->except('create' );
     Route::resource('/report-found', \App\Http\Controllers\Front\FoundReportController::class);
     Route::post('payment/stripe', [\App\Http\Controllers\Front\StripeController::class, 'getStripePaymentIntent'])->name('stripe.payment');
+    Route::post('payment/paypal', [\App\Http\Controllers\Front\StripeController::class, 'getPaypalPaymentIntent'])->name('paypal.payment');
+    Route::post('payment/createOrderPaypal', [\App\Http\Controllers\Front\StripeController::class, 'createOrderPaypal']);
+
+
     Route::get('/checkout', [\App\Http\Controllers\Front\CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('checkout/fulfill-order', [\App\Http\Controllers\Front\CheckoutController::class, 'fulfillOrder'])->name('checkout.fulfillOrder');
+    Route::post('checkout/fulfill-order-paypal', [\App\Http\Controllers\Front\CheckoutController::class, 'fulfillOrderPaypal'])->name('checkout.fulfillOrderPaypal');
+
 
 
     /** BackEnd Starts*/

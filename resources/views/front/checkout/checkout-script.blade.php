@@ -1,13 +1,22 @@
 <script>
-
-    function checkTermsAcceptance()
+    function checkTermsAcceptance(method = "stripe")
     {
-        if( $("#terms_checkbox").prop("checked") == false )
-        {
+        let isChecked = true;
+        if(method === "paypal"){
+            if( $("#paypal_terms_checkbox").prop("checked") == false ){
+                isChecked = false;
+            }
+        }
+        if(method === "stripe"){
+            if( $("#terms_checkbox").prop("checked") == false )
+            {
+                isChecked = false;
+            }
+        }
+        if(!isChecked){
             showErrorAndScrollUp("The terms and conditions and the privacy policy must be accepted before payment.");
             return false;
         }
-
         return true;
     }
 

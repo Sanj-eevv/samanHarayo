@@ -34,6 +34,7 @@ class Report extends Model
         return $this->hasOne(Boost::class, 'report_id', 'id');
     }
 
+//    TODO: LocalScope;
     public function featured_photo(){
         return $this->hasOne(Photo::class, 'report_id', 'id')->where(function($q){
             $q->where('featured', 'yes');

@@ -89,7 +89,7 @@ class SettingSeeder extends Seeder
             ],
             [
                 'key_name'                              => 'paypal_test_client_id',
-                'key_value'                             => 'ARB8Ix-XXIx89Cv24GhgJK2Xk73Mvl2atMIBKPmKRpWcX7lraOYk1X90r8DAJSb5Wl8dIwSmSZa5cB1t',
+                'key_value'                             => 'AfMF7kQ2_eQZ-Wmu2W0WsrrUo7rY1rvu8UMz4YM_km71ObWKqYQLrJSeawS7ZE4BFhBYUYTplIbcg9ai',
                 'type'                                  => 'text',
                 'availability'                          => 'all',
                 'created_at'                            => now(),
@@ -97,7 +97,7 @@ class SettingSeeder extends Seeder
             ],
             [
                 'key_name'                              => 'paypal_test_secret_key',
-                'key_value'                             => 'EOyjRcfpfzuYpKpCPmS23q9ZjeFUuDXs0njoYW304XrlXrC7YQX_79SzUVBQwCwTKOEmZL1TPxiaqcyz',
+                'key_value'                             => 'EKDX-IDAf2bw8rkjAaYkshUufviii7oSYtMDtH1_1f99EdBe1GOGE6rekFpuDX6r7SOXXfDqDvikNLmO',
                 'type'                                  => 'text',
                 'availability'                          => 'all',
                 'created_at'                            => now(),

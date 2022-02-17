@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
-                                    <form action="{{route('checkout.fulfillOrder')}}"
+                                    <form action="{{route('checkout.fulfillOrderPaypal')}}"
                                           id="payment-form-paypal" name="paypalPayForm" method="POST">
                                         @csrf
                                         <input type="hidden" id="transaction_paypal"

@@ -43,7 +43,7 @@ class ReportRequest extends FormRequest
         ];
         return [
             'name'                      =>          ['required', 'string', 'max:191'],
-            'description'               =>          ['required', 'string', 'max:191'],
+            'description'               =>          ['required', 'string', 'min:100'],
             'category'                  =>          ['required', 'exists:categories,id'],
             'brand'                     =>          ['nullable', 'string', 'max:191'],
             'phone'                     =>          ['required', 'numeric', 'digits:10'],
