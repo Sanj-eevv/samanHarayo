@@ -1,4 +1,4 @@
-<script src="https://www.paypal.com/sdk/js?client-id={{config('app.settings.paypal_client_id')}}&currency=USD">
+<script src="https://www.paypal.com/sdk/js?client-id={{config('app.settings.paypal_client_id')}}&currency=USD&disable-funding=credit,card">
 </script>
 <script>
     var chosenCurrency = @json($currencyTextRaw);
