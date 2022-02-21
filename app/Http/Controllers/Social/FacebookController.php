@@ -15,7 +15,8 @@ class FacebookController extends Controller
 {
     public function facebookRedirect()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('facebook')->with(['auth_type' =>  'reauthenticate'])->redirect();
+
     }
 
     public function loginWithFacebook()

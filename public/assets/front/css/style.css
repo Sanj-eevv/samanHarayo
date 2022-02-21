@@ -2344,10 +2344,14 @@ a.sh_preview_image_close:hover {
     text-align: justify;
     margin-bottom: 10px;
     font-size: 14px;
-    letter-spacing: 0.8px; }
+    letter-spacing: 0.8px;
+    height: 72px; }
     @media (min-width: 1024px) {
       .hero-slider-content p {
         font-size: 16px; } }
+    @media (min-width: 768px) {
+      .hero-slider-content p {
+        height: auto; } }
   .hero-slider-content span a:hover {
     color: #6f50a7; }
 
@@ -4443,26 +4447,8 @@ a.sh_preview_image_close:hover {
   display: grid;
   grid-template-columns: 30% calc(100% - 30%);
   gap: 10px; }
-  @media (min-width: 768px) {
-    .footer-area .footer-content {
-      grid-template-columns: 100%; } }
-  @media (min-width: 640px) {
-    .footer-area .footer-content {
-      grid-template-columns: 100%; } }
-  @media (max-width: 640px) {
-    .footer-area .footer-content {
-      grid-template-columns: 100%; } }
   .footer-area .footer-content .footer-menu {
     text-align: right; }
-    @media (min-width: 768px) {
-      .footer-area .footer-content .footer-menu {
-        text-align: left; } }
-    @media (min-width: 640px) {
-      .footer-area .footer-content .footer-menu {
-        text-align: left; } }
-    @media (max-width: 640px) {
-      .footer-area .footer-content .footer-menu {
-        text-align: left; } }
 
 .footer-area .footer-logo a img {
   width: 150px;
@@ -4474,12 +4460,6 @@ a.sh_preview_image_close:hover {
   margin-right: 45px; }
   .footer-menu nav ul li:last-child {
     margin-right: 0; }
-  @media (min-width: 640px) {
-    .footer-menu nav ul li {
-      display: block; } }
-  @media (max-width: 640px) {
-    .footer-menu nav ul li {
-      display: block; } }
   .footer-menu nav ul li a {
     font-size: 14px;
     letter-spacing: .25px;
@@ -4490,12 +4470,6 @@ a.sh_preview_image_close:hover {
 
 .copyright {
   line-height: 0; }
-  @media (min-width: 640px) {
-    .copyright {
-      padding-bottom: 10px; } }
-  @media (max-width: 640px) {
-    .copyright {
-      padding-bottom: 10px; } }
   .copyright p {
     line-height: 0;
     color: #999; }

@@ -34,13 +34,21 @@ class Report extends Model
         return $this->hasOne(Boost::class, 'report_id', 'id');
     }
 
+    public function reward(){
+        return $this->hasOne(Reward::class, 'report_id', 'id');
+    }
+
 //    TODO: LocalScope;
     public function featured_photo(){
         return $this->hasOne(Photo::class, 'report_id', 'id')->where(function($q){
             $q->where('featured', 'yes');
         });
     }
-    public function photoes(){
+    public function random_photo(){
+        return $this->hasOne(Photo::class, 'report_id', 'id')->inRandomOrder();
+    }
+
+    public function photos(){
         return $this->hasMany(Photo::class, 'report_id', 'id');
     }
 }

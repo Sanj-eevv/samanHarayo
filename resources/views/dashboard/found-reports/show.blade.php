@@ -14,7 +14,7 @@
                     </div>
                     <hr>
                     <div class="table-responsive">
-                        <table class="table table-nowrap mb-0 table-borderless">
+                        <table class="table mb-0 table-borderless">
                             <tbody>
                             <tr>
                                 <th scope="row">Item Name :</th>
@@ -60,18 +60,6 @@
                                 <th scope="row">Status :</th>
                                 <td class="position-relative"><span id="report-status" class="badge p-2 {{$report->status === 'verified'? 'bg-success' : 'bg-danger'}}">{{ucwords($report->status)}}</span><button id="toggle-report-status" class="btn"><span><i class="mdi mdi-menu-swap"></i></span></button></td>
                             </tr>
-{{--                            <tr>--}}
-{{--                                <th scope="row">Image: </th>--}}
-{{--                                @php--}}
-{{--                                    $img_src = asset('assets/media/avatars/blank.png');--}}
-{{--                                    if ($user->avatar) {--}}
-{{--                                        $img_src = asset('storage/uploads/profiles/' . $user->avatar);--}}
-{{--                                    }--}}
-{{--                                @endphp--}}
-{{--                                <td>--}}
-{{--                                    <img class="rounded avatar-md" src="{{$img_src}}" data-holder-rendered="true">--}}
-{{--                                </td>--}}
-{{--                            </tr>--}}
                             </tbody>
                         </table>
                     </div>

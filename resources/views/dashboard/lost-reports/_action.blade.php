@@ -1,5 +1,5 @@
 {{--@can('view',\App\Models\User::class)--}}
-<a href="{{route('reports.show', $r->id)}}" class="btn btn-secondary position-relative p-0 avatar-xs rounded waves-effect waves-light">
+<a href="{{route('lost-reports.show', $r->id)}}" class="btn btn-secondary position-relative p-0 avatar-xs rounded waves-effect waves-light">
     <span class="avatar-title bg-transparent">
         <i class="mdi mdi-eye-outline"></i>
     </span>

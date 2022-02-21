@@ -1,6 +1,5 @@
 <footer class="footer-area bg-gray">
-    <div class="container">
-        <div class="footer-content pt-20 pb-20">
+        <div class="container footer-content pt-20 pb-20">
             <div class="footer-logo">
                     <a href="{{route('front.index')}}">
                         <img class="img-fluid" src="{{asset('storage/uploads/settings/logo.png')}}">
@@ -21,5 +20,4 @@
                 <p>Copyright © 2021 | <a href="#">{{config('app.name')}}</a></p>
             </div>
         </div>
-    </div>
 </footer>

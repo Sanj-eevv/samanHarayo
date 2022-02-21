@@ -22,7 +22,7 @@
                             <button class="button-search"><i class="icon-magnifier"></i></button>
                         </form>
                 </div>
-                @if(auth()->check())
+                @auth
                     <a class="front-logout red-btn" href="{{route('logout')}}">Logout</a>
                     <a href="#" class="header-user-icon">
                         @php
@@ -35,14 +35,14 @@
                     </a>
                 @else
                     <a class="red-btn" href="{{route('login')}}">Login</a>
-                @endif
+                @endauth
                     <div class="mobile-header-button-active">
                         <a href="#"><i class="icon-menu"></i></a>
                     </div>
             </div>
         </div>
     </div>
-    <form id="logout-form" action="{{route('logout')}}" method="post" style="display: none;">@csrf</form>
+    <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">@csrf</form>
 </header>
 <div class="mobile-header-active">
     <div class="clickalbe-sidebar-wrap">

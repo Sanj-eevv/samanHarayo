@@ -70,7 +70,7 @@
         </div>
     </div>
 </div>
-<div class="product-area mt-70">
+<div class="product-area mt-70 pb-70">
     <div class="container">
         <div class="product-title-wrapper">
             <div class="section-title">
@@ -82,78 +82,37 @@
             </div>
         </div>
         <div class="all_product_container">
-            <div class="single-product-wrap">
-                <div class="product-img">
-                    <a href="#">
-                        <img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="" class="img-fluid">
-                    </a>
-                    <span class="pro-badge bg-red">-20%</span>
+        @foreach($lost_reports as $lost_report)
+                <div class="single-product-wrap">
+
+                    <div class="product-img">
+                    @if($lost_report->random_photo)
+                        @php
+                            $src = $lost_report->random_photo->featured === "yes" ? asset('storage/uploads/featured/'.$lost_report->random_photo->photo) : asset('storage/uploads/report/'.$lost_report->random_photo->photo)
+                       @endphp
+                        <a href="#">
+                            <img src="{{$src}}" alt="" class="img-fluid">
+                        </a>
+                        @if($lost_report->reward)
+                        <span class="pro-badge bg-red">Reward: ${{$lost_report->reward->reward_amount}}</span>
+                        @endif
+                    @else
+                        <img src="{{asset('storage/uploads/report/placeholder.jpg')}}" alt="" class="img-fluid">
+                    @endif
+                    </div>
+                    <h4><a href="#" class="underlined-link">{{$lost_report->name.' '.($lost_report->brand ? '('.$lost_report->brand.')' : '')}}</a></h4>
                 </div>
-                <h4><a href="#" class="underlined-link">Simple Black T-Shirt</a></h4>
-            </div>
-            <div class="single-product-wrap">
-                <div class="product-img">
-                    <a href="#">
-                        <img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="" class="img-fluid">
-                    </a>
-                    <span class="pro-badge bg-red">-20%</span>
+            @endforeach
+            @foreach($found_reports as $found_report)
+                    <div class="single-product-wrap">
+                        <div class="product-img">
+                            <a href="#">
+                                <img src="{{asset('storage/uploads/report/'.$found_report->random_photo->photo)}}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    <h4><a href="#" class="underlined-link">{{$found_report->name.' '.($found_report->brand ? '('.$found_report->brand.')' : '')}}</a></h4>
                 </div>
-                <h4><a href="#" class="underlined-link">Simple Black T-Shirt</a></h4>
-            </div>
-            <div class="single-product-wrap">
-                <div class="product-img">
-                    <a href="#">
-                        <img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="" class="img-fluid">
-                    </a>
-                    <span class="pro-badge bg-red">-20%</span>
-                </div>
-                <h4><a href="#" class="underlined-link">Simple Black T-Shirt</a></h4>
-            </div>
-            <div class="single-product-wrap">
-                <div class="product-img">
-                    <a href="#">
-                        <img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="" class="img-fluid">
-                    </a>
-                    <span class="pro-badge bg-red">-20%</span>
-                </div>
-                <h4><a href="#" class="underlined-link">Simple Black T-Shirt</a></h4>
-            </div>
-            <div class="single-product-wrap">
-                <div class="product-img">
-                    <a href="#">
-                        <img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="" class="img-fluid">
-                    </a>
-                    <span class="pro-badge bg-red">-20%</span>
-                </div>
-                <h4><a href="#" class="underlined-link">Simple Black T-Shirt</a></h4>
-            </div>
-            <div class="single-product-wrap">
-                <div class="product-img">
-                    <a href="#">
-                        <img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="" class="img-fluid">
-                    </a>
-                    <span class="pro-badge bg-red">-20%</span>
-                </div>
-                <h4><a href="#" class="underlined-link">Simple Black T-Shirt</a></h4>
-            </div>
-            <div class="single-product-wrap">
-                <div class="product-img">
-                    <a href="#">
-                        <img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="" class="img-fluid">
-                    </a>
-                    <span class="pro-badge bg-red">-20%</span>
-                </div>
-                <h4><a href="#" class="underlined-link">Simple Black T-Shirt</a></h4>
-            </div>
-            <div class="single-product-wrap">
-                <div class="product-img">
-                    <a href="#">
-                        <img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="" class="img-fluid">
-                    </a>
-                    <span class="pro-badge bg-red">-20%</span>
-                </div>
-                <h4><a href="#" class="underlined-link">Simple Black T-Shirt</a></h4>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

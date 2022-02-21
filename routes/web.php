@@ -18,6 +18,8 @@ Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->
 // Social Routes
 Route::get('auth/facebook', [\App\Http\Controllers\Social\FacebookController::class, 'facebookRedirect'])->name('auth.facebookRedirect');
 Route::get('auth/facebook/callback', [\App\Http\Controllers\Social\FacebookController::class, 'loginWithFacebook'])->name('auth.facebookLogin');
+Route::get('auth/google', [\App\Http\Controllers\Social\GoogleController::class, 'googleRedirect'])->name('auth.googleRedirect');
+Route::get('auth/google/callback', [\App\Http\Controllers\Social\GoogleController::class, 'loginWithGoogle'])->name('auth.googleLogin');
 
 // protected routes
 Route::group(['middleware' => ['auth', 'verified']], function () {

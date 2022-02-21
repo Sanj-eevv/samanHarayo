@@ -32,7 +32,7 @@ class PhotoSeeder extends Seeder
                 'updated_at'        =>              now(),
             ],
             [
-                'photo'             =>              'samsungg1.jepg',
+                'photo'             =>              'samsungg1.jpeg',
                 'report_id'         =>              1,
                 'store_type'        =>              'perm',
                 'featured'          =>              'no',
@@ -56,18 +56,10 @@ class PhotoSeeder extends Seeder
                 'updated_at'        =>              now(),
             ],
             [
-                'photo'             =>              'laptop5.png',
+                'photo'             =>              'laptop5.jpg',
                 'report_id'         =>              2,
                 'store_type'        =>              'perm',
                 'featured'          =>              'no',
-                'created_at'        =>              now(),
-                'updated_at'        =>              now(),
-            ],
-            [
-                'photo'             =>              'dell5.jpg',
-                'report_id'         =>              2,
-                'store_type'        =>              'perm',
-                'featured'          =>              'yes',
                 'created_at'        =>              now(),
                 'updated_at'        =>              now(),
             ],
@@ -81,15 +73,15 @@ class PhotoSeeder extends Seeder
             ],
             [
                 'photo'             =>              'atmcardd.jpg',
-                'report_id'         =>              2,
+                'report_id'         =>              3,
                 'store_type'        =>              'perm',
                 'featured'          =>              'no',
                 'created_at'        =>              now(),
                 'updated_at'        =>              now(),
             ],
             [
-                'photo'             =>              'atmmm.jpg',
-                'report_id'         =>              2,
+                'photo'             =>              'atmmm.png',
+                'report_id'         =>              3,
                 'store_type'        =>              'perm',
                 'featured'          =>              'no',
                 'created_at'        =>              now(),
@@ -104,7 +96,7 @@ class PhotoSeeder extends Seeder
                 'updated_at'        =>              now(),
             ],
             [
-                'photo'             =>              'goldringgg4.jepg',
+                'photo'             =>              'goldringgg4.jpeg',
                 'report_id'         =>              4,
                 'store_type'        =>              'perm',
                 'featured'          =>              'no',
@@ -112,7 +104,7 @@ class PhotoSeeder extends Seeder
                 'updated_at'        =>              now(),
             ],
             [
-                'photo'             =>              'goldring5.jepg',
+                'photo'             =>              'goldring5.png',
                 'report_id'         =>              4,
                 'store_type'        =>              'perm',
                 'featured'          =>              'no',
@@ -122,6 +114,14 @@ class PhotoSeeder extends Seeder
             [
                 'photo'             =>              '2.jpg',
                 'report_id'         =>              5,
+                'store_type'        =>              'perm',
+                'featured'          =>              'yes',
+                'created_at'        =>              now(),
+                'updated_at'        =>              now(),
+            ],
+            [
+                'photo'             =>              'dell5.jpg',
+                'report_id'         =>              2,
                 'store_type'        =>              'perm',
                 'featured'          =>              'yes',
                 'created_at'        =>              now(),
@@ -175,8 +175,6 @@ class PhotoSeeder extends Seeder
                 'created_at'        =>              now(),
                 'updated_at'        =>              now(),
             ],
-
-
         ], ['photo'], ['report_id', 'store_type', 'featured', 'updated_at']);
     }
 }

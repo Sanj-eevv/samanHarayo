@@ -2,7 +2,7 @@
     function deleteReport(id,redirect = false)
     {
         let table = 'reportDatatable';
-        let action = BASE_URL+"/dashboard/reports/"+id;
+        let action = BASE_URL+"/dashboard/lost-reports/"+id;
         $.ajax({
             "url": action,
             "dataType":"json",
@@ -15,7 +15,7 @@
             success:function(resp){
                 // $form.removeClass("sp-loading");
                 if(redirect){
-                    alertifySuccessAndRedirect(resp.message, "{{route('reports.index')}}");
+                    alertifySuccessAndRedirect(resp.message, "{{route('lost-reports.index')}}");
                 }else{
                     alertifySuccess(resp.message);
                 }

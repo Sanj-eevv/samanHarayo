@@ -4,26 +4,26 @@
         display: grid;
         grid-template-columns: 30% calc(100% - 30%);
         gap: 10px;
-        @media #{$md-layout} {
-            grid-template-columns: 100%;
-        }
-        @media #{$sm-layout} {
-            grid-template-columns: 100%;
-        }
-        @media #{$vsm-layout} {
-            grid-template-columns: 100%;
-        }
+        //@media #{$md-layout} {
+        //    grid-template-columns: 100%;
+        //}
+        //@media #{$sm-layout} {
+        //    grid-template-columns: 100%;
+        //}
+        //@media #{$vsm-layout} {
+        //    grid-template-columns: 100%;
+        //}
         .footer-menu{
             text-align: right;
-            @media #{$md-layout} {
-                text-align: left;
-            }
-            @media #{$sm-layout} {
-                text-align: left;
-            }
-            @media #{$vsm-layout} {
-                text-align: left;
-            }
+            //@media #{$md-layout} {
+            //    text-align: left;
+            //}
+            //@media #{$sm-layout} {
+            //    text-align: left;
+            //}
+            //@media #{$vsm-layout} {
+            //    text-align: left;
+            //}
         }
     }
     .footer-logo {
@@ -38,9 +38,6 @@
 }
 
 
-
-
-
 .footer-menu {
     nav {
         ul {
@@ -50,12 +47,12 @@
                 &:last-child {
                     margin-right: 0;
                 }
-                @media #{$sm-layout} {
-                    display: block;
-                }
-                @media #{$vsm-layout} {
-                   display: block;
-                }
+                //@media #{$sm-layout} {
+                //    display: block;
+                //}
+                //@media #{$vsm-layout} {
+                //   display: block;
+                //}
                 a {
                     font-size: 14px;
                     letter-spacing: .25px;
@@ -72,12 +69,12 @@
 
 .copyright {
     line-height: 0;
-    @media #{$sm-layout} {
-       padding-bottom: 10px;
-    }
-    @media #{$vsm-layout} {
-        padding-bottom: 10px;
-    }
+    //@media #{$sm-layout} {
+    //   padding-bottom: 10px;
+    //}
+    //@media #{$vsm-layout} {
+    //    padding-bottom: 10px;
+    //}
     p {
         line-height: 0;
         color: #999;

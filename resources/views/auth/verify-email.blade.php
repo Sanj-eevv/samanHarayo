@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="mb-5 text-muted logo-small mx-auto">
-                    <img class="img-fluid" src="{{asset('assets/logo.png')}}">
+                    <img class="img-fluid" src="{{asset('storage/uploads/settings/logo.png')}}">
                 </div>
             </div>
         </div>

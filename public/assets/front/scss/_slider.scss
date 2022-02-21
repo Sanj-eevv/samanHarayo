@@ -55,6 +55,10 @@
         margin-bottom: 10px;
         font-size: 14px;
         letter-spacing: 0.8px;
+        height: 72px;
+        @media #{$md-layout} {
+            height: auto;
+        }
     }
     span {
         a{

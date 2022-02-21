@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,9 +21,8 @@ class LostReportController extends Controller
                 0 => 'name',
                 1 => 'brand',
                 2 => 'category_id',
-                3 => 'verified',
-                4 => 'created_at',
-                5 => 'action',
+                3 => 'created_at',
+                4 => 'action',
             );
 
             $limit  = $request->input('length') ?? '-1';
@@ -38,14 +38,14 @@ class LostReportController extends Controller
                     'r.name',
                     'r.brand',
                     'c.name as category',
-                    'r.status',
                     'r.created_at',
-                );
-            $query->where('r.name', 'like', $search . '%')
-                ->orWhere('r.brand', 'like', $search . '%')
-                ->orWhere('c.name', 'like', $search . '%')
-                ->orWhere('r.status', 'like', $search . '%')
-                ->orWhere('r.created_at', 'like', $search . '%');
+                )->where('report_type', Report::REPORT_TYPE_LOST);
+            $query->where(function($query) use($search) {
+                $query->where('r.name', 'like', $search . '%')
+                    ->orWhere('r.brand', 'like', $search . '%')
+                    ->orWhere('c.name', 'like', $search . '%')
+                    ->orWhere('r.created_at', 'like', $search . '%');
+            });
             $totalData = $query->count();
             $query->orderBy($order, $dir);
             if ($limit != '-1') {
@@ -58,11 +58,10 @@ class LostReportController extends Controller
                 foreach ($records as $k => $v) {
                     $nestedData['id'] = $v->id;
                     $nestedData['item_name'] = $v->name;
-                    $nestedData['brand'] = $v->brand ?? 'Not Specified';
-                    $nestedData['category'] = $v->category;
-                    $nestedData['status'] = $v->status;
+                    $nestedData['brand'] = $v->brand ? ucwords($v->brand) : 'Not Specified';
+                    $nestedData['category'] = ucwords($v->category);
                     $nestedData['created_at'] = \Carbon\Carbon::parse($v->created_at)->format('Y-m-d');
-                    $nestedData['action'] = \View::make('dashboard.reports._action')->with('r',$v)->render();
+                    $nestedData['action'] = \View::make('dashboard.lost-reports._action')->with('r',$v)->render();
                     $data[] = $nestedData;
                 }
             }
@@ -73,7 +72,7 @@ class LostReportController extends Controller
                 "data" => $data
             ], 200);
         }
-        return view('dashboard.reports.index');
+        return view('dashboard.lost-reports.index');
     }
 
     /**
