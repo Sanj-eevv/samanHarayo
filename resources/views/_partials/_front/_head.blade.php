@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('assets/front/css/plugins/slick.css') }}">
     <link rel="stylesheet" href="{{ asset("assets/front/css/plugins/image-uploader.min.css")}}"/>
 
+
     <!-- Common -->
     @include('_partials._common._stylesheet')
 

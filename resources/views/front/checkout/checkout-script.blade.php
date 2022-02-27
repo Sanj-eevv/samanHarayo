@@ -53,11 +53,33 @@
             $("#payStartBtnStripe").prop("disabled", true);
         }
     }
-    function appendBasicData(emptyForm)
+    function appendBasicData(emptyForm, require_identity = false)
     {
         emptyForm.append("_token", "{{ csrf_token() }}");
         emptyForm.append("total", "{{$total}}");
         emptyForm.append("currency", "{{$currencyTextRaw}}");
+        emptyForm.append("require_identity", require_identity);
+        if(require_identity){
+            let identity_front =   document.getElementById('identity_front_input').files[0];
+            let identity_back  =   document.getElementById('identity_back_input').files[0];
+            let current_photo  =   document.getElementById('current_photo_input').files[0];
+            let product_photo  =   document.querySelector("[name='product_photo[]']").files;
+            let description    =   document.getElementById('description').value;
+
+            if(identity_front){
+                emptyForm.append("identity_front", identity_front);
+            }
+            if(identity_back){
+                emptyForm.append("identity_back", identity_back);
+            }
+            if(current_photo){
+                emptyForm.append("current_photo", current_photo);
+            }
+            if(description){
+                emptyForm.append("description", description);
+            }
+            emptyForm.append("product_photo", product_photo);
+        }
     }
     function beautifyJson(passedStr)
     {

@@ -6,11 +6,11 @@
 
     $per_report_price = config('app.settings.per_report_price');
     $per_feature_price = config('app.settings.per_feature_report_price');
-    $feature_report_duration =  intval(session()->get('feature_report_duration'));
+    $feature_report_duration =  session()->get('feature_report_duration') ? intval(session()->get('feature_report_duration')) : 0;
 
     $sanitized_per_feature_price = \App\Helpers\SanitizeData::currency(floatval($per_feature_price));
     $sanitized_per_report_price = \App\Helpers\SanitizeData::currency(floatval($per_report_price));
-    $sanitized_reward_amount = \App\Helpers\SanitizeData::currency(floatval(session()->get('reward_amount')));
+    $sanitized_reward_amount = session()->get('reward_amount') ? \App\Helpers\SanitizeData::currency(floatval(session()->get('reward_amount'))) : 0;
 
     $comma_removed_reward_amount = floatVal(\App\Helpers\SanitizeData::removeCurrecnyAndComma($sanitized_reward_amount));
     $comma_removed_per_feature_price = floatval(\App\Helpers\SanitizeData::removeCurrecnyAndComma($sanitized_per_feature_price));

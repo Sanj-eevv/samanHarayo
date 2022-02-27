@@ -8,13 +8,6 @@
 
 /*-- Common Style --*/
 
-//@media only screen and (min-width: 1200px) {
-//    .container {
-//        max-width: 1200px;
-//    }
-//}
-
-
 .container{
     @media #{$sm-layout}{
         max-width: 640px;
@@ -2031,22 +2024,43 @@ textarea:focus {
 .main-wrapper{
     height: 100%;
 }
+/*Custom Css Starts */
 
-// custom css
+/* bootstrap button */
 
-.button-red,
-.a-red {
-    background-color: $theme-color-red;
-    font-weight: 600;
+.text-right{
+    text-align: right;
+}
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+.btn{
+    box-shadow: none !important;
+    border: none !important;
+}
+
+
+.sh-btn{
+    background-color: $black;
+    color: #fff;
+    border: none;
+    font-weight: 500;
     padding: 10px 30px 10px;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
-    &:hover {
-        background-color: #010225;
-        color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    &:hover{
+        background-color: $theme-color-purple;
+        color: $white;
+    }
+    &:visited{
+        color: $white;
     }
 }
-
 
 .mobile-button-red{
     background-color: $theme-color-red;
@@ -2058,12 +2072,14 @@ textarea:focus {
     padding: 5px 10px ;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
+
     &:hover {
         background-color: #010225;
         color: #fff;
     }
 }
 .underlined-link{
+    cursor: pointer;
     font-style: normal;
     line-height: 22px;
     position: relative;
@@ -2082,6 +2098,28 @@ textarea:focus {
 .underlined-link:hover::after{
     width: 100%;
 }
+
+/*Title*/
+
+.sh-title{
+        cursor: pointer;
+        font-size: 24px;
+        font-weight: 500;
+        font-family: $heebo;
+        text-transform: uppercase;
+        position: relative;
+        &:before{
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: -8px;
+            background-color: #ff2f2f;
+            width: 50px;
+            height: 2px;
+        }
+}
+
+
 .sh_preview_image_container{
     width: fit-content;
     padding-top: 10px;
@@ -2106,6 +2144,53 @@ textarea:focus {
 a.sh_preview_image_close:hover{
     color: unset;
 }
+
+.sh-input-div{
+    position: relative;
+    flex: 1;
+    span.sh-input-div-icon{
+        position: absolute;
+        border-radius: .25rem 0 0 .25rem;
+        top: 1px;
+        left: 1px;
+        background: #eaeff2;
+        border-right: none;
+        padding: 10px 21px 9px;
+    }
+}
+.sh-input{
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: .25rem;
+    height: 45px;
+    background-color: transparent;
+    padding: 2px 10px 2px 70px;
+    color: #1f2226;
+    font-size: 14px;
+    &:focus {
+        border: 1px solid #343538;
+    }
+}
+
+.sh-image-input-div {
+    input{
+        padding: 8px 2px;
+        &:before{
+            content: "Choose File";
+            padding: 10px 0 9px;
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            top: 1px;
+            left: 1px;
+            background-color: #eaeff2;
+            border-radius: 0.25rem 0 0 0.25rem;
+            border-right: none;
+            width: 100px;
+        }
+    }
+}
+
 .map-container{
     height: 400px;
     position: relative;
@@ -2113,15 +2198,6 @@ a.sh_preview_image_close:hover{
 #map_canvas {
     height: 100%;
     width: 100%;
-}
-/* bootstrap button */
-.btn:focus {
-    outline: none;
-    box-shadow: none;
-}
-.btn{
-    box-shadow: none !important;
-    border: none !important;
 }
 
 

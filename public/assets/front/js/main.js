@@ -2,10 +2,10 @@
     // AOS.init();
     "use strict";
 
-    /*------ Hero slider active  ----*/
+    /*------ Hero slider  ----*/
     $('.hero-slider-active').slick({
         draggable: true,
-        // autoplay: true, /* this is the new line */
+        autoplay: true, /* this is the new line */
         autoplaySpeed: 1000,
         infinite: true,
         slidesToShow: 1,
@@ -104,22 +104,100 @@
     $(".front-logout").on('click', function (e){
         e.preventDefault();
         document.getElementById('logout-form').submit();
-    })
+    });
+
+
+    // var product_isotope = $('.product-grid').isotope({
+    //     // options
+    //     itemSelector: '.product-item',
+    //     filter: '.lost-product',
+    //     layoutMode: 'fitRows'
+    // });
+    // let isotope_lost_product_btn =  $('.lost-product-btn');
+    // let isotope_found_product_btn =  $('.found-product-btn');
+    //
+    // isotope_lost_product_btn.on('click', function(){
+    //     // $(this).prop('disabled', true);
+    //     // $(this).removeClass('bg-front-gray');
+    //     // $(this).addClass('bg-theme-blue');
+    //
+    //     // isotope_celebrities_btn.prop('disabled', false);
+    //     // isotope_celebrities_btn.addClass('bg-front-gray');
+    //     // isotope_celebrities_btn.removeClass('bg-theme-blue');
+    //     product_isotope.isotope({ filter: '.lost-product' });
+    // });
+    //
+    // isotope_found_product_btn.on('click', function(){
+    //     // $(this).prop('disabled', true);
+    //     // $(this).removeClass('bg-front-gray');
+    //     // $(this).addClass('bg-theme-blue');
+    //     //
+    //     // isotope_collection_btn.prop('disabled', false);
+    //     // isotope_collection_btn.removeClass('bg-theme-blue');
+    //     // $(isotope_collection_btn).addClass('bg-front-gray');
+    //     product_isotope.isotope({ filter: '.found-product' });
+    // });
+
+    /*-------------------------------------
+       Product details big image slider
+   ---------------------------------------*/
+    $('.product-details-big-img-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        draggable: false,
+        fade: false,
+        asNavFor: '.product-details-small-img-slider',
+    });
+
+    /*---------------------------------------
+        Product details small image slider
+    -----------------------------------------*/
+    $('.product-details-small-img-slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.product-details-big-img-slider',
+        dots: false,
+        infinite: true,
+        focusOnSelect: true,
+        fade: false,
+        prevArrow: '<span class="pro-dec-prev"><i class="icon-arrow-left"></i></span>',
+        nextArrow: '<span class="pro-dec-next"><i class="icon-arrow-right"></i></span>',
+        variableWidth: true,
+        responsive: [{
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 2,
+                }
+            }
+        ]
+    });
 
 })(jQuery);
 
-/** remove and show row ends here **/
 /** preview currently uploaded images on form**/
 function loadPreview(input, id) {
     id = id || '#sh_preview_img';
+    let image_container = $(input).siblings('div');
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
             $(id).attr('src', e.target.result);
         };
-        // input.previousElementSibling.value = 'yes';
-        // console.log('input >>',input);
         reader.readAsDataURL(input.files[0]);
+        image_container.removeClass("d-none");
     }
 }
 

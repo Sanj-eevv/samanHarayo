@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-<div class="slider-area">
+<div class="slider-area  pt-50">
     <div class="container">
         <div class="hero-slider-active bg-gray-7">
             @foreach($featured_reports as $featured_report)
@@ -9,7 +9,7 @@
                         <h5>Item Lost</h5>
                         <h1>{{$featured_report->name}}</h1>
                         <p>{{\Illuminate\Support\Str::limit($featured_report->description, 140)}}</p>
-                        <span><a href="#">More Details</a></span>
+                        <span><a href="{{route('front.details',[$featured_report, "type" => \App\Models\Report::REPORT_TYPE_LOST])}}">More Details</a></span>
                 </div>
                 <div class="hero-slider-img">
                     <img class="img-fluid" src="{{asset('storage/uploads/featured/'.$featured_report->featured_photo->photo)}}" alt="">
@@ -37,7 +37,7 @@
                 <img class="img-fluid" src="{{asset('assets/abc.svg')}}" alt="">
         </div>
         <div class="about-us-content">
-            <h3>Introduce</h3>
+            <h3 class="sh-title">Introduce</h3>
             <p>We are living on the era of technology and innovation. As days are passing by the technology is also improving along with days. There has been drastic change in the technology which has direct impact on the life of the people. Every aspect of life is leaning towards the maximum use of technology for the better and easier lifestyle...
                 <span class="text-primary"><a href="#">Read more.</a></span>
             </p>
@@ -74,44 +74,44 @@
     <div class="container">
         <div class="product-title-wrapper">
             <div class="section-title">
-                <h2>Featured Products</h2>
+                <h2 class="sh-title">Recently Reported</h2>
             </div>
             <div class="section-nav">
-                <button class="active" href="#">Best Seller</button>
-                <button href="#"> Trending</button>
+                <button class="active lost-product-btn">Lost</button>
+                <button class="found-product-btn">Found</button>
             </div>
         </div>
-        <div class="all_product_container">
+        <div class="product-grid">
         @foreach($lost_reports as $lost_report)
-                <div class="single-product-wrap">
+                <div class="single-product-wrap lost-product product-item">
 
                     <div class="product-img">
                     @if($lost_report->random_photo)
                         @php
                             $src = $lost_report->random_photo->featured === "yes" ? asset('storage/uploads/featured/'.$lost_report->random_photo->photo) : asset('storage/uploads/report/'.$lost_report->random_photo->photo)
                        @endphp
-                        <a href="#">
+                        <a href="{{route('front.details',[$lost_report, "type" => \App\Models\Report::REPORT_TYPE_LOST])}}">
                             <img src="{{$src}}" alt="" class="img-fluid">
                         </a>
                         @if($lost_report->reward)
                         <span class="pro-badge bg-red">Reward: ${{$lost_report->reward->reward_amount}}</span>
                         @endif
                     @else
-                        <img src="{{asset('storage/uploads/report/placeholder.jpg')}}" alt="" class="img-fluid">
+                        <img src="{{asset('storage/uploads/report/placeholder.jpg')}}" alt="" class="img-fluid"/>
                     @endif
                     </div>
-                    <h4><a href="#" class="underlined-link">{{$lost_report->name.' '.($lost_report->brand ? '('.$lost_report->brand.')' : '')}}</a></h4>
+                    <h4><a href="{{route('front.details',[$lost_report, "type" => \App\Models\Report::REPORT_TYPE_LOST])}}" class="underlined-link">{{$lost_report->name.' '.($lost_report->brand ? '('.$lost_report->brand.')' : '')}}</a></h4>
                 </div>
             @endforeach
             @foreach($found_reports as $found_report)
-                    <div class="single-product-wrap">
-                        <div class="product-img">
-                            <a href="#">
-                                <img src="{{asset('storage/uploads/report/'.$found_report->random_photo->photo)}}" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    <h4><a href="#" class="underlined-link">{{$found_report->name.' '.($found_report->brand ? '('.$found_report->brand.')' : '')}}</a></h4>
+                <div class="single-product-wrap found-product product-item">
+                    <div class="product-img">
+                        <a href="{{route('front.details', [$found_report, "type" => \App\Models\Report::REPORT_TYPE_FOUND])}}">
+                            <img src="{{asset('storage/uploads/report/'.$found_report->random_photo->photo)}}" alt="" class="img-fluid">
+                    </a>
                 </div>
+                <h4><a href="{{route('front.details', [$found_report, "type" => \App\Models\Report::REPORT_TYPE_FOUND])}}" class="underlined-link">{{$found_report->name.' '.($found_report->brand ? '('.$found_report->brand.')' : '')}}</a></h4>
+            </div>
             @endforeach
         </div>
     </div>

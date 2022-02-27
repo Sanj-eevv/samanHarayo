@@ -9,9 +9,11 @@ use App\Models\Payment;
 use App\Models\Photo;
 use App\Models\Report;
 use App\Models\Reward;
+use App\Rules\OnlyAsciiCharacters;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class CheckoutController extends Controller
 {
@@ -78,6 +80,36 @@ class CheckoutController extends Controller
             return redirect()->route('front.index')->with('toast.error', 'Payment received but logged-in user not found!');
         }
         return redirect()->route('front.index')->with('toast.success', 'Report Successfully Recorded !!');
+
+    }
+
+    public function prePaymentValidation(Request $request){
+        if(!$request->has('require_identity')){
+            return response()->json(['Some thing went wrong!!!']);
+        }
+        $require_identity = $request->input('require_identity');
+        if($require_identity === "true"){
+            $validator = Validator::make($request->all(), [
+                'identity_front'                  =>              ['required','image', 'mimes:jpg,png,jepg'],
+                'identity_back'                   =>              ['required', 'image', 'mimes:jpg,png,jepg'],
+                'current_photo'                   =>              ['required','image', 'mimes:jpg,png,jepg'],
+                'product_photo'                   =>              ['nullable'],
+                'description'                     =>              ['required', 'string', 'min:100'],
+            ]);
+            if( $validator->fails() )
+            {
+                return response()->json($validator->errors());
+            }
+        }
+        $session_total = $require_identity === "true"? config('app.settings.per_report_price'): session('total');
+        $total = $request->input('total');
+        if (floatval($total) != floatval($session_total)) {
+            return response()->json(['Price Discrepancy']);
+        }
+
+        return response()->json([
+            'successful_validation' => 'success',
+        ],200);
 
     }
 }

@@ -89,16 +89,19 @@ class LostReportController extends Controller
             ];
             session(['location_data' => $location_data]);
 
-            if(session('reward_data')) {
-                $request->session()->forget('reward_data');
+            if(session('reward_amount')) {
+                $request->session()->forget('reward_amount');
             }
-
-            session(['reward_amount' => $request->input('reward_amount') ?? 0]);
+            if($request->input('reward_amount')){
+                session(['reward_amount' => $request->input('reward_amount')]);
+            }
 
             if(session('feature_report_duration')) {
                 $request->session()->forget('feature_report_duration');
             }
-            session(['feature_report_duration' => $request->input('feature_report_duration') ?? 0]);
+            if($request->input('feature_report_duration')){
+                session(['feature_report_duration' => $request->input('feature_report_duration')]);
+            }
               return redirect()->route('checkout.index');
 
     }

@@ -23,7 +23,7 @@
                         </form>
                 </div>
                 @auth
-                    <a class="front-logout red-btn" href="{{route('logout')}}">Logout</a>
+                    <a class="front-logout sh-btn" href="{{route('logout')}}">Logout</a>
                     <a href="#" class="header-user-icon">
                         @php
                             $img_src = asset('assets/media/avatars/blank.png');
@@ -34,7 +34,7 @@
                         <img class="img-fluid" alt="" src="{{$img_src}}">
                     </a>
                 @else
-                    <a class="red-btn" href="{{route('login')}}">Login</a>
+                    <a class="sh-btn" href="{{route('login')}}">Login</a>
                 @endauth
                     <div class="mobile-header-button-active">
                         <a href="#"><i class="icon-menu"></i></a>

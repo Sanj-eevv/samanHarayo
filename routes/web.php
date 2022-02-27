@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('front.index');
+Route::get('/details/{report}', [\App\Http\Controllers\Front\IndexController::class , 'show'])->name('front.details');
 
 // Social Routes
 Route::get('auth/facebook', [\App\Http\Controllers\Social\FacebookController::class, 'facebookRedirect'])->name('auth.facebookRedirect');
@@ -29,15 +30,15 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     });
     Route::resource('/report-lost', \App\Http\Controllers\Front\LostReportController::class)->except('create' );
     Route::resource('/report-found', \App\Http\Controllers\Front\FoundReportController::class);
-    Route::post('payment/stripe', [\App\Http\Controllers\Front\StripeController::class, 'getStripePaymentIntent'])->name('stripe.payment');
-    Route::post('payment/paypal', [\App\Http\Controllers\Front\StripeController::class, 'getPaypalPaymentIntent'])->name('paypal.payment');
-    Route::post('payment/createOrderPaypal', [\App\Http\Controllers\Front\StripeController::class, 'createOrderPaypal']);
+    Route::resource('/identity', \App\Http\Controllers\Front\IdentityController::class);
+    Route::post('payment/stripe', [\App\Http\Controllers\Front\PaymentController::class, 'getStripePaymentIntent'])->name('stripe.payment');
+    Route::post('payment/paypal', [\App\Http\Controllers\Front\PaymentController::class, 'getPaypalPaymentIntent'])->name('paypal.payment');
+    Route::post('payment/createOrderPaypal', [\App\Http\Controllers\Front\PaymentController::class, 'createOrderPaypal']);
+    Route::post('payment/pre-payment-validation', [\App\Http\Controllers\Front\CheckoutController::class, 'prePaymentValidation'])->name('checkout.prePaymentValidation');
 
 
     Route::get('/checkout', [\App\Http\Controllers\Front\CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('checkout/fulfill-order', [\App\Http\Controllers\Front\CheckoutController::class, 'fulfillOrder'])->name('checkout.fulfillOrder');
-
-
 
     /** BackEnd Starts*/
     Route::group(['prefix' => 'dashboard'], function () {

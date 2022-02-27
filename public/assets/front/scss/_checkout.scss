@@ -1,82 +1,19 @@
 
 /*-------- 22. Checkout style ---------*/
-
-.checkout-main-area{
-    .report-lost-title{
-        h2 {
-            font-size: 16px;
-            font-weight: 600;
-            position: relative;
-            margin: 0 0 45px;
-            text-transform: uppercase;
-            &:before {
-                position: absolute;
-                content: "";
-                left: 0;
-                bottom: -12px;
-                background-color: $theme-color-red;
-                width: 50px;
-                height: 2px;
-            }
-        }
-    }
-}
-
-.checkout-login-info{
-    margin: 20px 0 0;
-}
-
 .report-form-product-details {
     .flex-google-div {
         display: flex;
         gap: 20px;
     }
-    .input-div{
-        position: relative;
-        flex: 1;
-        span.input-div-icon{
-            position: absolute;
-            border-radius: .25rem 0 0 .25rem;
-            //border: 1px solid rgba(0, 0, 0, 0.3);
-            top: 1px;
-            left: 1px;
-            background: #eaeff2;
-            border-right: none;
-            padding-top: 10px;
-            padding-bottom: 9px;
-            padding-left: 21px;
-            padding-right: 21px;
-        }
+    label {
+        text-transform: capitalize;
+        margin: 0 0 5px;
     }
-
     .image-uploader{
         border: 1px solid rgba(0,0,0,0.3);
+        border-radius: .25rem;
     }
 
-    label {
-        font-size: 14px;
-        text-transform: capitalize;
-        display: block;
-        margin: 0 0 5px;
-        abbr {
-            color: red;
-        }
-    }
-    input,select {
-        border: 1px solid rgba(0,0,0,0.3);
-        border-radius: .25rem;
-        height: 45px;
-        background-color: transparent;
-        padding: 2px 10px 2px 70px;
-        color: #1f2226;
-        font-size: 14px;
-        &:focus {
-            border: 1px solid #343538;
-        }
-        &.billing-address {
-            margin-bottom: 20px;
-        }
-    }
     select {
         -moz-appearance: none;
         -webkit-appearance: none;
@@ -108,6 +45,10 @@
         #featureCheckBox{
             width: unset;
             height: unset;
+            transform: scale(1.3);
+            & + label{
+                cursor: pointer;
+            }
         }
         label{
             display: inline-block;
@@ -126,51 +67,24 @@
     .featured-image-input input{
         padding: 8px 2px;
         &:before{
-                content: "Choose File";
-                padding: 10px 0 9px;
-                position: absolute;
-                z-index: 2;
-                display: flex;
-                justify-content: center;
-                top: 1px;
-                left: 1px;
-                background-color: #eaeff2;
-                border-radius: 0.25rem 0 0 0.25rem;
-                border-right: none;
-                width: 100px;
+            content: "Choose File";
+            padding: 10px 0 9px;
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            top: 1px;
+            left: 1px;
+            background-color: #eaeff2;
+            border-radius: 0.25rem 0 0 0.25rem;
+            border-right: none;
+            width: 100px;
         }
     }
-    //.test-s {
-    //    ul {
-    //        li {
-    //            color: #242424;
-    //            list-style: outside none none;
-    //            margin: 0 0 6px;
-    //
-    //            &:last-child {
-    //                margin: 0 0 0px;
-    //            }
-    //
-    //            input {
-    //                background: #e9e9e9 none repeat scroll 0 0;
-    //                border: 1px solid #d7d7d7;
-    //                border-radius: 5px !important;
-    //                color: #626262;
-    //                cursor: pointer;
-    //                height: 13px;
-    //                margin-right: 10px;
-    //                padding: 0;
-    //                position: relative;
-    //                top: 2px;
-    //                width: 13px;
-    //            }
-    //
-    //            span {
-    //                float: right;
-    //            }
-    //        }
-    //    }
-    //}
+}
+
+.checkout-login-info{
+    margin: 20px 0 0;
 }
 
 .report-form-payment-container {
@@ -274,6 +188,7 @@
                     height: auto;
                 }
                 label {
+                    cursor: pointer;
                     align-items: center;
                     font-weight: 500;
                     @media #{$vsm-layout} {

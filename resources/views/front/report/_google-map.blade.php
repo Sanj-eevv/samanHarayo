@@ -1,8 +1,8 @@
 <div class="row">
     <div class="flex-google-div col-lg-12 mb-20">
-        <div class="input-div">
-            <span class="input-div-icon"><i class="fas fa-braille"></i></span>
-            <input id="search_address" name="search_address" class="form-control mr-10" type="text" value="{{old('search_address')}}" placeholder="Enter the place name" />
+        <div class="sh-input-div">
+            <span class="sh-input-div-icon"><i class="fas fa-braille"></i></span>
+            <input id="search_address" name="search_address" class="form-control mr-10  sh-input" type="text" value="{{old('search_address')}}" placeholder="Enter the place name" />
         </div>
         <button type="button" class="btn btn-secondary" onclick="codeAddress()">Submit</button>
     </div>

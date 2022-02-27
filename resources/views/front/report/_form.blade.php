@@ -2,11 +2,11 @@
 <div class="report-form-container">
     <div class="report-form-product-details">
         <div class="row mb-20">
-            <div class="col-lg-6">
-                <label class="form-label">Item name<abbr class="required" title="required">*</abbr></label>
-                <div class="input-div">
-                    <span class="input-div-icon"><i class="fas fa-people-carry"></i></span>
-                    <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{old('name')}}">
+            <div class="col-lg-6 form-group">
+                <label class="form-label">Item name</label>
+                <div class="sh-input-div">
+                    <span class="sh-input-div-icon"><i class="fas fa-people-carry"></i></span>
+                    <input class="form-control @error('name') is-invalid @enderror sh-input" type="text" name="name" value="{{old('name')}}" required>
                     @error('name')
                     <span class="invalid-feedback" role="alert">
                         {{ $message }}
@@ -14,11 +14,11 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 form-group form-group">
                 <label class="form-label">Brand</label>
-                <div class="input-div">
-                    <span class="input-div-icon"><i class="fas fa-building"></i></span>
-                    <input class="form-control @error('brand') is-invalid @enderror" type="text" name="brand" value="{{old('brand')}}">
+                <div class="sh-input-div">
+                    <span class="sh-input-div-icon"><i class="fas fa-building"></i></span>
+                    <input class="form-control @error('brand') is-invalid @enderror sh-input" type="text" name="brand" value="{{old('brand')}}">
                     @error('brand')
                     <span class="invalid-feedback" role="alert">
                         {{$message}}
@@ -29,11 +29,11 @@
             </div>
         </div>
         <div class="row mb-20">
-            <div class="col-lg-6">
+            <div class="col-lg-6 form-group">
                 <label class="form-label">Contact Email</label>
-                <div class="input-div">
-                    <span class="input-div-icon"><i class="fas fa-envelope"></i></span>
-                    <input class="form-control @error('email') is-invalid @enderror" type="text" name="email" value="{{old('email',auth()->user()->email)}}">
+                <div class="sh-input-div">
+                    <span class="sh-input-div-icon"><i class="fas fa-envelope"></i></span>
+                    <input class="form-control @error('email') is-invalid @enderror  sh-input" type="text" name="email" value="{{old('email',auth()->user()->email)}}" required>
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                         {{$message}}
@@ -41,11 +41,11 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-lg-6 mt-lg-0">
+            <div class="col-lg-6 form-group">
                 <label class="form-label">Contact Phone</label>
-                <div class="input-div">
-                    <span class="input-div-icon"><i class="fas fa-phone"></i></span>
-                    <input class="numeric form-control @error('phone') is-invalid @enderror" type="text" name="phone" value="{{old('phone')}}">
+                <div class="sh-input-div">
+                    <span class="sh-input-div-icon"><i class="fas fa-phone"></i></span>
+                    <input class="numeric form-control @error('phone') is-invalid @enderror sh-input" type="text" name="phone" value="{{old('phone')}}" required>
                     @error('phone')
                     <span class="invalid-feedback" role="alert">
                         {{$message}}
@@ -55,11 +55,11 @@
             </div>
         </div>
         <div class="row mb-20">
-            <div class="col-lg-12">
+            <div class="col-lg-12 form-group">
                 <label class="form-label">Category</label>
-                <div class="input-div">
-                    <span class="input-div-icon"><i class="fas fa-braille"></i></span>
-                    <select class="@error('category') is-invalid @enderror" name="category">
+                <div class="sh-input-div">
+                    <span class="sh-input-div-icon"><i class="fas fa-braille"></i></span>
+                    <select class="@error('category') is-invalid @enderror  sh-input" name="category" required>
                         <option>Select a category</option>
                         @foreach ($categories as $category)
                             <?php
@@ -81,7 +81,7 @@
             </div>
         </div>
         <div class="row mb-20">
-            <div class="col-lg-12">
+            <div class="col-lg-12 form-group">
                 <label class="form-label">Images</label>
                 <div class="input-images @error('product_photo') is-invalid @enderror"></div>
                 @error('product_photo')
@@ -92,9 +92,9 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12 mb-20">
-                <label>Product Description<abbr class="required" title="required">*</abbr></label>
-                <textarea class="form-control @error('description')is-invalid @enderror" placeholder="Give more details about your product" name="description">{{old('description')}}</textarea>
+            <div class="col-lg-12 mb-20 form-group">
+                <label>Product Description</label>
+                <textarea class="form-control @error('description')is-invalid @enderror" placeholder="Give more details about your product" name="description" required>{{old('description')}}</textarea>
                 @error('description')
                 <span class="invalid-feedback" role="alert">
                     {{$message}}
@@ -104,18 +104,18 @@
         </div>
         @include('front.report._google-map')
         @if($show)
-            <div class="row mb-20">
-            <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-12">
                 <div class="row mb-20">
                     <div class="col-lg-12">
                         <div class="form-check mb-10">
                             <input type="checkbox" id="featureCheckBox" name="featureCheckBox" value="true" {{old('featureCheckBox') ? 'checked' : ''}}>
-                            <label for="featureCheckBox">Feature Report</label>
-                            <span  data-toggle="tooltip" data-placement="top" title="$3/day"><i class="fas fa-info-circle"></i></span>
+                            <label for="featureCheckBox">Feature this Report?</label>
+                            <small class="form-text text-muted">Featuring report costs $12/day</small>
                         </div>
-                        <div class="input-div featureReportInput">
-                            <span class="input-div-icon"><i class="fas fa-funnel-dollar"></i></span>
-                            <input class="form-control @error('feature_report_duration') is-invalid @enderror " type="text" placeholder="No of days" name="feature_report_duration" value="{{old('feature_report_duration')}}">
+                        <div class="sh-input-div featureReportInput">
+                            <span class="sh-input-div-icon"><i class="fas fa-funnel-dollar"></i></span>
+                            <input class="form-control @error('feature_report_duration') is-invalid @enderror sh-input" type="text" placeholder="No of days" name="feature_report_duration" value="{{old('feature_report_duration')}}">
                             @error('feature_report_duration')
                             <span class="invalid-feedback" role="alert">
                                 {{$message}}
@@ -125,10 +125,10 @@
                     </div>
                 </div>
                 <div class="row mb-20 feature-image-box">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 from-group">
                         <label class="form-label">Featured Image</label>
-                        <div class="input-div featured-image-input">
-                            <input class=" @error('featured_image') is-invalid @enderror" type="file"  name="featured_image" id="image"
+                        <div class="sh-input-div sh-image-input-div">
+                            <input class=" @error('featured_image') is-invalid @enderror sh-input" type="file"  name="featured_image" id="image"
                                    onchange="loadPreview(this)">
                             @error('featured_image')
                             <span class="invalid-feedback" role="alert">
@@ -144,22 +144,23 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="form-check mb-10">
-                    <input type="checkbox" id="rewardCheckBox" name="rewardCheckBox" value="true" {{old('rewardCheckBox')? 'checked' : ''}}>
-                    <label for="rewardCheckBox">Reward</label>
-                </div>
-                <div class="input-div rewardInput">
-                    <span class="input-div-icon"><i class="fas fa-dollar-sign"></i></span>
-                    <input class="form-control @error('reward_amount') is-invalid @enderror" type="text" placeholder="Reward Amount in USD" name="reward_amount" value="{{old('reward_amount')}}">
-
-                    @error('reward_amount')
-                        <span class="invalid-feedback" role="alert">
-                            {{$message}}
-                        </span>
-                    @enderror
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="form-check mb-10">
+                <input type="checkbox" id="rewardCheckBox" name="rewardCheckBox" value="true" {{old('rewardCheckBox')? 'checked' : ''}}>
+                <label for="rewardCheckBox">Reward</label>
             </div>
+            <div class="sh-input-div rewardInput">
+                <span class="sh-input-div-icon"><i class="fas fa-dollar-sign"></i></span>
+                <input class="form-control @error('reward_amount') is-invalid @enderror  sh-input" type="text" placeholder="Reward Amount in USD" name="reward_amount" value="{{old('reward_amount')}}">
+                @error('reward_amount')
+                <span class="invalid-feedback" role="alert">
+                        {{$message}}
+                    </span>
+                @enderror
+            </div>
+        </div>
         </div>
         @endif
         <div class="Place-order">
@@ -295,11 +296,6 @@
                     e.preventDefault();
                     return false;
                 }
-            });
-
-            // image preview
-            $('#image').change(function(){
-                $('.sh_preview_image_container').removeClass('d-none');
             });
         } );
     </script>

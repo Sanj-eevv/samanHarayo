@@ -8,7 +8,6 @@
     paypal.Buttons({
         createOrder: function(data, actions) {
            let paypalAmount = basicFormPaypal.get("total");
-            console.log(paypalAmount,'sswwww');
             let adjustedAmount = adjustPaypalAmount(paypalAmount, chosenCurrency);
             return actions.order.create({
               purchase_units: [{
