@@ -5,12 +5,12 @@
     $currencyTextRaw = 'USD';
 
     $per_report_price = config('app.settings.per_report_price');
-    $per_feature_price = config('app.settings.per_feature_report_price');
-    $feature_report_duration =  session()->get('feature_report_duration') ? intval(session()->get('feature_report_duration')) : 0;
+    $per_feature_price = config('app.settings.per_feature_price');
+    $feature_report_duration =  session()->get('duration') ? intval(session()->get('duration')) : 0;
 
     $sanitized_per_feature_price = \App\Helpers\SanitizeData::currency(floatval($per_feature_price));
     $sanitized_per_report_price = \App\Helpers\SanitizeData::currency(floatval($per_report_price));
-    $sanitized_reward_amount = session()->get('reward_amount') ? \App\Helpers\SanitizeData::currency(floatval(session()->get('reward_amount'))) : 0;
+    $sanitized_reward_amount = session()->get('reward') ? \App\Helpers\SanitizeData::currency(floatval(session()->get('reward'))) : 0;
 
     $comma_removed_reward_amount = floatVal(\App\Helpers\SanitizeData::removeCurrecnyAndComma($sanitized_reward_amount));
     $comma_removed_per_feature_price = floatval(\App\Helpers\SanitizeData::removeCurrecnyAndComma($sanitized_per_feature_price));
@@ -55,18 +55,16 @@
                     <div class="payment-method-container">
                         <div class="payment-method-title">
                             <h3>Select a Payment Method</h3>
-                            <img alt="" src="assets/images/icon-img/payment.png">
                         </div>
                         <div class="payment-method">
                             <div class="payment-select-div">
                                 <input id="payment_method_stripe" class="input-radio" type="radio" checked="checked" name="payment_method">
                                 <label for="payment_method_stripe">Stripe</label>
                             </div>
-
                             <div class="payment-box">
                                 <p>Pay securely with your credit card via Stripe.</p>
                                 <div class="col-lg-8 mt-20">
-                                    <div id="stripe-card-element" class="xcard-input">
+                                    <div id="stripe-card-element" class="card-input">
                                         <!-- A Stripe Element will be inserted here. -->
                                     </div>
                                 </div>
@@ -91,7 +89,7 @@
                                             <div class="checkout-page Place-order">
                                                 <button class="button btn btn-payment btn-dark btn-block"
                                                         id="payStartBtnStripe" form="payment-form-stripe"
-                                                        type="submit">Place Order
+                                                        type="submit">Make Payment
                                                 </button>
                                             </div>
                                             <div class="spinner-border" id="payStartSpinner" role="status"  style="width: 2rem; height: 2rem; display: none">

@@ -7,12 +7,12 @@
             <div class="single-hero-slider d-flex">
                 <div class="hero-slider-content">
                         <h5>Item Lost</h5>
-                        <h1>{{$featured_report->name}}</h1>
-                        <p>{{\Illuminate\Support\Str::limit($featured_report->description, 140)}}</p>
-                        <span><a href="{{route('front.details',[$featured_report, "type" => \App\Models\Report::REPORT_TYPE_LOST])}}">More Details</a></span>
+                        <h1>{{ucwords($featured_report->report->title)}}</h1>
+                        <p>{{\Illuminate\Support\Str::limit($featured_report->report->description, 140)}}</p>
+                        <span><a href="">More Details</a></span>
                 </div>
                 <div class="hero-slider-img">
-                    <img class="img-fluid" src="{{asset('storage/uploads/featured/'.$featured_report->featured_photo->photo)}}" alt="">
+                    <img class="img-fluid" src="{{asset('storage/uploads/report/'.$featured_report->report->reported_by.'/feature_image/'.$featured_report->feature_image)}}" alt="">
                 </div>
             </div>
             @endforeach
@@ -34,7 +34,7 @@
 <div class="about-us-area mt-70 ">
     <div class="container">
         <div class="about-us-img">
-                <img class="img-fluid" src="{{asset('assets/abc.svg')}}" alt="">
+                <img class="img-fluid" src="{{asset('assets/images/common/home_about.svg')}}" alt="">
         </div>
         <div class="about-us-content">
             <h3 class="sh-title">Introduce</h3>
@@ -84,33 +84,37 @@
         <div class="product-grid">
         @foreach($lost_reports as $lost_report)
                 <div class="single-product-wrap lost-product product-item">
-
                     <div class="product-img">
-                    @if($lost_report->random_photo)
-                        @php
-                            $src = $lost_report->random_photo->featured === "yes" ? asset('storage/uploads/featured/'.$lost_report->random_photo->photo) : asset('storage/uploads/report/'.$lost_report->random_photo->photo)
-                       @endphp
-                        <a href="{{route('front.details',[$lost_report, "type" => \App\Models\Report::REPORT_TYPE_LOST])}}">
-                            <img src="{{$src}}" alt="" class="img-fluid">
+                    @if($lost_report->randomImage)
+                        <a href="{{route('front.details', $lost_report->slug)}}">
+                            <img src="{{asset('storage/uploads/report/'.$lost_report->reported_by.'/item_image/'.$lost_report->randomImage->image)}}" alt="" class="img-fluid">
                         </a>
                         @if($lost_report->reward)
                         <span class="pro-badge bg-red">Reward: ${{$lost_report->reward->reward_amount}}</span>
                         @endif
                     @else
-                        <img src="{{asset('storage/uploads/report/placeholder.jpg')}}" alt="" class="img-fluid"/>
+                        <a href="{{route('front.details', $lost_report->slug)}}">
+                    <img src="{{asset('assets/images/common/placeholder.jpg')}}" alt="" class="img-fluid"/>
+                        </a>
                     @endif
                     </div>
-                    <h4><a href="{{route('front.details',[$lost_report, "type" => \App\Models\Report::REPORT_TYPE_LOST])}}" class="underlined-link">{{$lost_report->name.' '.($lost_report->brand ? '('.$lost_report->brand.')' : '')}}</a></h4>
+                    <h4><a href="" class="underlined-link">{{ucwords($lost_report->title).' '.$lost_report->brand ? '('.ucwords($lost_report->brand).')' : ''}}</a></h4>
                 </div>
             @endforeach
             @foreach($found_reports as $found_report)
                 <div class="single-product-wrap found-product product-item">
                     <div class="product-img">
-                        <a href="{{route('front.details', [$found_report, "type" => \App\Models\Report::REPORT_TYPE_FOUND])}}">
-                            <img src="{{asset('storage/uploads/report/'.$found_report->random_photo->photo)}}" alt="" class="img-fluid">
-                    </a>
+                        @if($found_report->randomImage)
+                            <a href="{{route('front.details', $found_report->slug)}}">
+                                <img src="{{asset('storage/uploads/report/'.$found_report->reported_by.'/item_image/'.$found_report->randomImage->image)}}" alt="" class="img-fluid">
+                            </a>
+                        @else
+                            <a href="{{route('front.details', $found_report->slug)}}">
+                            <img src="{{asset('assets/images/common/placeholder.jpg')}}" alt="" class="img-fluid"/>
+                            </a>
+                        @endif
                 </div>
-                <h4><a href="{{route('front.details', [$found_report, "type" => \App\Models\Report::REPORT_TYPE_FOUND])}}" class="underlined-link">{{$found_report->name.' '.($found_report->brand ? '('.$found_report->brand.')' : '')}}</a></h4>
+                <h4><a href="" class="underlined-link">{{ucwords($found_report->title).' '.$found_report->brand ? '('.ucwords($lost_report->brand).')' : ''}}</a></h4>
             </div>
             @endforeach
         </div>

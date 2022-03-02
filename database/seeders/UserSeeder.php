@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
@@ -23,7 +24,6 @@ class UserSeeder extends Seeder
                 'last_name'                 => 'Bhandari',
                 'email'                     => 'sanjeevvsanjeev1@gmail.com',
                 'email_verified_at'         => now(),
-                'avatar'                    => null,
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
                 'role_id'                   => $role->id,
                 'remember_token'            => Str::random(10),
@@ -33,12 +33,18 @@ class UserSeeder extends Seeder
                 'last_name'                 => 'Bhandari',
                 'email'                     => 'sanjeevvsanjeev11@gmail.com',
                 'email_verified_at'         => now(),
-                'avatar'                    => null,
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
                 'role_id'                   => 3,
                 'remember_token'            => Str::random(10),
             ],
             ],['email'],[]);
-       User::factory(20)->create();
+        User::factory(20)->create();
+        $users = User::pluck('id');
+        $users->each(function ($id){
+            Storage::makeDirectory('/public/uploads/report/'.$id.'/item_image');
+            Storage::makeDirectory('/public/uploads/report/'.$id.'/feature_image');
+            Storage::makeDirectory('/public/uploads/report/'.$id.'/identity');
+
+        });
     }
 }

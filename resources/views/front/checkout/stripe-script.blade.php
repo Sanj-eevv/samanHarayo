@@ -6,7 +6,7 @@
     var elements = stripe.elements();
     var stripeForm = document.querySelector("#payment-form-stripe");
     var paymentIntentId = "0";
-    var serverErrorStripe = "server_error_occured_stripe";
+    var serverErrorStripe = "Server error occurred stripe";
     var require_identity = false;
     var basicFormStripe;
     var identity_front;
@@ -81,8 +81,6 @@
             }
         });
     }
-
-
 
     function completeStripePayment(cart_id)
     {

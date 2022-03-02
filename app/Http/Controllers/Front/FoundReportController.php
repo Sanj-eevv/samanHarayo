@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Front;
 
 use App\Helpers\SamanHarayoHelper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FoundReportRequest;
 use App\Http\Requests\ReportRequest;
 use App\Models\category;
+use App\Models\ItemImage;
 use App\Models\Location;
 use App\Models\Photo;
 use App\Models\Report;
@@ -16,12 +18,12 @@ class FoundReportController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
         $categories = category::all();
-        return view('front.report.report-found',  compact('categories'));
+        return view('front.report.found',  compact('categories'));
     }
 
     /**
@@ -38,34 +40,32 @@ class FoundReportController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(ReportRequest $request)
+    public function store(FoundReportRequest $request)
     {
         $report = Report::create([
-            'name'                  =>              $request->input('name'),
-            'description'           =>              $request->description,
-            'category_id'           =>              $request->input('category'),
-            'brand'                 =>              $request->input('brand'),
-            'report_type'           =>              Report::REPORT_TYPE_FOUND,
-            'status'                =>              Report::STATUS_PENDING,
-            'contact_number'        =>              $request->input('phone'),
-            'contact_email'         =>              $request->input('email') ?? auth()->user()->email,
+            'title'                     =>                  $request->input('title'),
+            'slug'                      =>                  SamanHarayoHelper::uniqueSlugify($request->input('title'), Report::class, null, 'slug'),
+            'description'               =>                  $request->description,
+            'reported_by'               =>                  auth()->user()->id,
+            'category_id'               =>                  $request->input('category'),
+            'brand'                     =>                  $request->input('brand'),
+            'report_type'               =>                  Report::REPORT_TYPE_FOUND,
+            'verified'                  =>                  0,
+            'contact_number'            =>                  $request->input('phone'),
+            'contact_email'             =>                  $request->input('email') ?? auth()->user()->email,
         ]);
-        $product_photos = $request->file('product_photo');
-        if($product_photos){
-            foreach($product_photos as $image) {
-                $imageName = SamanHarayoHelper::renameImageFileUpload($image);
-                $image->storeAs(
-                    'public/uploads/report', $imageName
-                );
-                Photo::create([
-                    'photo'         =>          $imageName,
-                    'report_id'     =>          $report->id,
-                    'store_type'    =>          Photo::STORE_TYPE_PERMANENT,
-                    'featured'      =>          Photo::NOT_FEATURED,
-                ]);
-            }
+        $item_images = $request->file('item_image');
+        foreach($item_images as $image) {
+            $imageName = SamanHarayoHelper::renameImageFileUpload($image);
+            $image->storeAs(
+                'public/uploads/report/'.$report->reported_by.'/item_image/', $imageName
+            );
+            ItemImage::create([
+                'image'     =>      $imageName,
+                'report_id' =>      $report->id,
+            ]);
         }
         Location::create([
             'latitude'              =>              $request->input('latitude'),

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePhotosTable extends Migration
+class CreateFeaturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreatePhotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('photos', function (Blueprint $table) {
+        Schema::create('features', function (Blueprint $table) {
             $table->id();
-            $table->string('photo');
-            $table->foreignId('report_id')->nullable()->constrained()->onDelete('cascade');;
-            $table->enum('store_type', ['temp', 'perm'])->default('temp');
-            $table->enum('featured', ['yes', 'no'])->default('no');
+            $table->string('feature_image');
+            $table->foreignId('report_id')->nullable()->constrained()->onDelete('cascade');
+            $table->date('expiry_date');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreatePhotosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('photos');
+        Schema::dropIfExists('features');
     }
 }

@@ -4,13 +4,14 @@ namespace App\Http\Controllers\Front;
 
 use App\Helpers\SamanHarayoHelper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LostReportRequest;
 use App\Http\Requests\ReportRequest;
 use App\Models\category;
-use App\Models\Location;
-use App\Models\Photo;
+
 use App\Models\Report;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class LostReportController extends Controller
 {
@@ -22,7 +23,7 @@ class LostReportController extends Controller
     public function index()
     {
         $categories = category::all();
-        return view('front.report.report-lost', compact('categories'));
+        return view('front.report.lost', compact('categories'));
     }
 
 
@@ -32,77 +33,72 @@ class LostReportController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(ReportRequest $request)
+    public function store(LostReportRequest $request)
     {
-            $product_photos = $request->file('product_photo');
-            if($product_photos){
-                foreach($product_photos as $image) {
+            $user_id = Auth::user()->id;
+            $slug =  SamanHarayoHelper::uniqueSlugify($request->input('title'), Report::class, null, 'slug');
+            $item_images = $request->file('item_image');
+            $path = 'storage/uploads/report/'.$user_id.'temp_report/';
+            if(File::exists($path.$slug)){
+                File::deleteDirectory(public_path($path.$slug));
+            }
+            if($item_images){
+                foreach($item_images as $image) {
                     $imageName = SamanHarayoHelper::renameImageFileUpload($image);
                     $image->storeAs(
-                        'public/uploads/report', $imageName
+                        'public/uploads/report/'.$user_id.'/temp_report/'.$slug.'/item_image/', $imageName
                     );
-                    Photo::create([
-                        'photo'         =>          $imageName,
-                        'report_id'     =>          null,
-                        'store_type'    =>          Photo::STORE_TYPE_TEMPORARY,
-                        'featured'      =>          Photo::NOT_FEATURED,
-                    ]);
                 }
             }
+
             $featured_image = $request->file('featured_image');
             if($featured_image){
                 $imageName = SamanHarayoHelper::renameImageFileUpload($featured_image);
-                $image->storeAs(
-                    'public/uploads/featured', $imageName
+                $featured_image->storeAs(
+                    'public/uploads/report/'.$user_id.'/temp_report/'.$slug.'/feature_image/', $imageName
                 );
-                Photo::create([
-                    'photo'         =>          $imageName,
-                    'report_id'     =>          null,
-                    'store_type'    =>          Photo::STORE_TYPE_TEMPORARY,
-                    'featured'      =>          Photo::FEATURED,
-                ]);
+                $duration = $request->input('duration');
+                if(session('duration')) {
+                    $request->session()->forget('duration');
+                }
+                session(['duration' => $duration]);
             }
 
-        if(session('lost_report_data')) {
-            $request->session()->forget('lost_report_data');
-        }
-            $lost_report_data = [
-                'name'                  =>              $request->input('name'),
-                'description'           =>              $request->description,
-                'category_id'           =>              $request->input('category'),
-                'brand'                 =>              $request->input('brand'),
-                'report_type'           =>              Report::REPORT_TYPE_LOST,
-                'verified'              =>              Report::STATUS_PENDING,
-                'contact_number'        =>              $request->input('phone'),
-                'contact_email'         =>              $request->input('email') ?? auth()->user()->email,
+            if(session('report')) {
+                $request->session()->forget('report');
+            }
+            $report = [
+                'title'                     =>              $request->input('title'),
+                'slug'                      =>              SamanHarayoHelper::uniqueSlugify($request->input('title'), Report::class, null, 'slug'),
+                'description'               =>              $request->input('description'),
+                'reported_by'               =>              $user_id,
+                'category_id'               =>              $request->input('category'),
+                'brand'                     =>              $request->input('brand'),
+                'report_type'               =>              Report::REPORT_TYPE_LOST,
+                'contact_number'            =>              $request->input('phone'),
+                'contact_email'             =>              $request->input('email'),
             ];
-            session(['lost_report_data' => $lost_report_data]);
+            session(['report' => $report]);
 
-             if(session('location_data')){
-                 $request->session()->forget('location_data');
+
+             if(session('location')){
+                 $request->session()->forget('location');
              }
-            $location_data = [
+            $location = [
                 'latitude'              =>              $request->input('latitude'),
                 'longitude'             =>              $request->input('longitude'),
                 'address'               =>              $request->input('address'),
-                'report_id'             =>              null,
             ];
-            session(['location_data' => $location_data]);
+            session(['location' => $location]);
 
-            if(session('reward_amount')) {
-                $request->session()->forget('reward_amount');
+            if(session('reward')) {
+                $request->session()->forget('reward');
             }
-            if($request->input('reward_amount')){
-                session(['reward_amount' => $request->input('reward_amount')]);
+            if($request->input('reward')){
+                session(['reward' => $request->input('reward')]);
             }
 
-            if(session('feature_report_duration')) {
-                $request->session()->forget('feature_report_duration');
-            }
-            if($request->input('feature_report_duration')){
-                session(['feature_report_duration' => $request->input('feature_report_duration')]);
-            }
-              return redirect()->route('checkout.index');
+            return redirect()->route('checkout.index');
 
     }
 

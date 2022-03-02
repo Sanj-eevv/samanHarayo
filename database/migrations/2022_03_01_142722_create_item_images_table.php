@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBoostsTable extends Migration
+class CreateItemImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateBoostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('boosts', function (Blueprint $table) {
+        Schema::create('item_images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('report_id')->constrained()->onDelete('cascade');
-            $table->unsignedInteger('boost_duration')->nullable();
+            $table->string('image');
+            $table->foreignId('report_id')->nullable()->constrained()->onDelete('cascade');
+            $table->boolean('claim')->default(0);
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateBoostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boosts');
+        Schema::dropIfExists('item_images');
     }
 }

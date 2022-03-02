@@ -6,8 +6,8 @@
                 <label class="form-label">Item name</label>
                 <div class="sh-input-div">
                     <span class="sh-input-div-icon"><i class="fas fa-people-carry"></i></span>
-                    <input class="form-control @error('name') is-invalid @enderror sh-input" type="text" name="name" value="{{old('name')}}" required>
-                    @error('name')
+                    <input class="form-control @error('title') is-invalid @enderror sh-input" type="text" name="title" value="{{old('title')}}" required>
+                    @error('title')
                     <span class="invalid-feedback" role="alert">
                         {{ $message }}
                     </span>
@@ -83,8 +83,8 @@
         <div class="row mb-20">
             <div class="col-lg-12 form-group">
                 <label class="form-label">Images</label>
-                <div class="input-images @error('product_photo') is-invalid @enderror"></div>
-                @error('product_photo')
+                <div class="input-images @error('item_image') is-invalid @enderror"></div>
+                @error('item_image')
                 <span class="invalid-feedback" role="alert">
                     {{$message}}
                 </span>
@@ -94,7 +94,7 @@
         <div class="row">
             <div class="col-lg-12 mb-20 form-group">
                 <label>Product Description</label>
-                <textarea class="form-control @error('description')is-invalid @enderror" placeholder="Give more details about your product" name="description" required>{{old('description')}}</textarea>
+                <textarea class="form-control @error('description')is-invalid @enderror" placeholder="Give details about the item" name="description" required>{{old('description')}}</textarea>
                 @error('description')
                 <span class="invalid-feedback" role="alert">
                     {{$message}}
@@ -109,14 +109,15 @@
                 <div class="row mb-20">
                     <div class="col-lg-12">
                         <div class="form-check mb-10">
-                            <input type="checkbox" id="featureCheckBox" name="featureCheckBox" value="true" {{old('featureCheckBox') ? 'checked' : ''}}>
+                            <input type="checkbox" id="featureCheckBox" name="is_featured" value="true" {{old('is_featured') ? 'checked' : ''}}>
                             <label for="featureCheckBox">Feature this Report?</label>
-                            <small class="form-text text-muted">Featuring report costs $12/day</small>
+                            <small class="form-text text-muted">Featuring report costs {{config('app.settings.per_feature_price')}}/day (USD)</small>
                         </div>
                         <div class="sh-input-div featureReportInput">
                             <span class="sh-input-div-icon"><i class="fas fa-funnel-dollar"></i></span>
-                            <input class="form-control @error('feature_report_duration') is-invalid @enderror sh-input" type="text" placeholder="No of days" name="feature_report_duration" value="{{old('feature_report_duration')}}">
-                            @error('feature_report_duration')
+                            <input class="form-control @error('duration') is-invalid @enderror sh-input" type="text" placeholder="No of days" name="duration" value="{{old('duration')}}">
+                            <small class="form-text text-muted">Max number of days allowed is {{config('app.settings.max_feature_days')}}</small>
+                            @error('duration')
                             <span class="invalid-feedback" role="alert">
                                 {{$message}}
                             </span>
@@ -148,12 +149,14 @@
         <div class="row">
             <div class="col-lg-12">
             <div class="form-check mb-10">
-                <input type="checkbox" id="rewardCheckBox" name="rewardCheckBox" value="true" {{old('rewardCheckBox')? 'checked' : ''}}>
+                <input type="checkbox" id="rewardCheckBox" name="has_reward" value="true" {{old('has_reward')? 'checked' : ''}}>
                 <label for="rewardCheckBox">Reward</label>
             </div>
             <div class="sh-input-div rewardInput">
                 <span class="sh-input-div-icon"><i class="fas fa-dollar-sign"></i></span>
                 <input class="form-control @error('reward_amount') is-invalid @enderror  sh-input" type="text" placeholder="Reward Amount in USD" name="reward_amount" value="{{old('reward_amount')}}">
+                <small class="form-text text-muted">Reward in US Dollar</small>
+
                 @error('reward_amount')
                 <span class="invalid-feedback" role="alert">
                         {{$message}}

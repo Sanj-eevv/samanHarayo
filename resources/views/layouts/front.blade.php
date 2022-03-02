@@ -5,10 +5,11 @@
 
 <body>
 <div class="main-wrapper">
+
     @include('_partials._front._header')
-
+    <div id="content-wrapper">
     @yield('content')
-
+    </div>
     @include('_partials._front._footer')
 </div>
 @include('_partials._front._foot')

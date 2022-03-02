@@ -32,7 +32,8 @@ class AppServiceProvider extends ServiceProvider
             $settings = Setting::getCachedValue();
             if($settings){
                 config([
-                    'app.settings.per_feature_report_price'         => $settings['per_feature_report_price'] ?? null,
+                    'app.settings.per_feature_price'                => $settings['per_feature_price'] ?? null,
+                    'app.settings.max_feature_days'                 => $settings['max_feature_days'] ?? null,
                     'app.settings.per_report_price'                 => $settings['per_report_price'] ?? null,
                     'app.settings.app_environment'                  => $settings['app_environment'] ?? null,
                     'app.settings.stripe_test_publishable_key'      => $settings['stripe_test_publishable_key'] ?? null,

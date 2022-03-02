@@ -54,7 +54,7 @@
         }
     }
     .product-details-small-img-slider {
-        width: 420px;
+        width: 450px;
         margin: 15px auto 0;
         img {
             cursor: pointer;
@@ -89,11 +89,11 @@
                 background-color: $theme-color-purple;
             }
             &.pro-dec-prev {
-                left: -9%;
+                left: -7%;
             }
             &.pro-dec-next {
                 left: auto;
-                right: -5.7%;
+                right: -6%;
             }
         }
     }

@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use League\Flysystem\Config;
 
 class ReportRequest extends FormRequest
 {
@@ -25,35 +26,6 @@ class ReportRequest extends FormRequest
      */
     public function rules(Request $request)
     {
-        $reward_amount = [
-            Rule::requiredIf(function () use ($request) {
-                if ($request->rewardCheckBox) {
-                    return true;
-                }
-                return false;
-            })
-        ];
-        $feature_check = [
-            Rule::requiredIf(function () use ($request) {
-                if ($request->featureCheckBox) {
-                    return true;
-                }
-                return false;
-            })
-        ];
-        return [
-            'name'                      =>          ['required', 'string', 'max:191'],
-            'description'               =>          ['required', 'string', 'min:100'],
-            'category'                  =>          ['required', 'exists:categories,id'],
-            'brand'                     =>          ['nullable', 'string', 'max:191'],
-            'phone'                     =>          ['required', 'numeric', 'digits:10'],
-            'email'                     =>          ['required', 'email'],
-            'product_photo'             =>          ['nullable'],
-            'product_photo.*'           =>          [ 'image', 'mimes:jpg,png,jepg'],
-            'address'                   =>          ['required', 'string', 'max:191'],
-            'reward_amount'             =>          [$reward_amount, 'numeric','nullable'],
-            'feature_report_duration'   =>          [$feature_check, 'numeric', 'max:30', 'nullable'],
-            'featured_image'            =>          [$feature_check, 'image', 'mimes:jpg,png,jepg'],
-        ];
+
     }
 }

@@ -26,6 +26,10 @@
     }
 }
 
+#content-wrapper{
+    min-height: 80vh;
+}
+
 
 .row {
 	margin-right: calc(var(--bs-gutter-x) * -.6);

@@ -93,7 +93,7 @@
         'extensions': ['.jpg', '.jpeg', '.png', '.JPG'],
         'mimes':   ['image/jpeg', 'image/png',],
         'maxFiles': 5,
-        'imagesInputName': 'product_photo'
+        'imagesInputName': 'item_image'
     });
 
     // phone number filed validaiton

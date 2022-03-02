@@ -24,11 +24,11 @@ class IdentityRequest extends FormRequest
     public function rules()
     {
         return [
-            'identity_front'                    =>              ['image', 'mimes:jpg,png,jepg'],
-            'identity_back'                     =>              ['image', 'mimes:jpg,png,jepg'],
-            'current_photo'                     =>              ['image', 'mimes:jpg,png,jepg'],
-            'product_photo'                     =>              ['nullable'],
-            'description'                       =>              ['required', 'string', 'min:100'],
+            'identity_front'                        =>              ['image', 'mimes:jpg,png,jepg', 'max:500000'],
+            'identity_back'                         =>              ['image', 'mimes:jpg,png,jepg', 'max:500000'],
+            'current_photo'                         =>              ['image', 'mimes:jpg,png,jepg', 'max:500000'],
+            'product_photo.*'                       =>              ['nullable', 'max:500000'],
+            'description'                           =>              ['required', 'string', 'min:100'],
         ];
     }
 }

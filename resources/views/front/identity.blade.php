@@ -29,6 +29,7 @@
                                 <div class="row mb-20">
                                     <div class="col-md-6 from-group">
                                         <label class="form-label">Identity (Front)</label>
+                                        <small class="form-text text-muted">(Citizenship card, license card)</small>
                                         <div class="sh-input-div sh-image-input-div">
                                             <input class="@error('identity_front') is-invalid @enderror sh-input" type="file"  name="identity_front" id="identity_front_input"
                                                    onchange="loadPreview(this, '#identity_front')" required>
@@ -39,13 +40,14 @@
                                             @enderror
                                             <div class="sh_preview_image_container d-none">
                                                 <img id="identity_front" src=""
-                                                     class="img-fluid " />
+                                                     class="img-fluid "  alt=""/>
                                                 <a href="!#" class="sh_preview_image_close"><i class="fas fa-times"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 from-group">
                                         <label class="form-label">Identity (Back)</label>
+                                        <small class="form-text text-muted">(Citizenship card, license card)</small>
                                         <div class="sh-input-div sh-image-input-div">
                                             <input class="@error('identity_back') is-invalid @enderror sh-input" type="file"  name="identity_back" id="identity_back_input"
                                                    onchange="loadPreview(this, '#identity_back')" required>
@@ -55,7 +57,7 @@
                                             </span>
                                             @enderror
                                             <div class="sh_preview_image_container d-none">
-                                                <img id="identity_back" src="" class="img-fluid " />
+                                                <img id="identity_back" src="" class="img-fluid "  alt=""/>
                                                 <a href="!#" class="sh_preview_image_close"><i class="fas fa-times"></i></a>
                                             </div>
                                         </div>
@@ -63,17 +65,18 @@
                                 </div>
                                 <div class="row mb-20">
                                     <div class="col-lg-12 from-group">
-                                        <label class="form-label">Current Photo</label>
+                                        <label class="form-label">Current Image</label>
+                                        <small class="form-text text-muted">(Image of a user without using filter)</small>
                                         <div class="sh-input-div sh-image-input-div">
-                                            <input class=" @error('current_photo') is-invalid @enderror sh-input" type="file"  name="current_photo" id="current_photo_input"
-                                                   onchange="loadPreview(this, '#current_photo')" required>
-                                            @error('current_photo')
+                                            <input class=" @error('current_image') is-invalid @enderror sh-input" type="file"  name="current_image" id="current_image_input"
+                                                   onchange="loadPreview(this, '#current_image')" required>
+                                            @error('current_image')
                                             <span class="invalid-feedback" role="alert">
                                                 {{$message}}
                                             </span>
                                             @enderror
                                             <div class="sh_preview_image_container d-none">
-                                                <img id="current_photo" src=""
+                                                <img id="current_image" src=""
                                                      class="img-fluid " />
                                                 <a href="!#" class="sh_preview_image_close"><i class="fas fa-times"></i></a>
                                             </div>
@@ -82,9 +85,9 @@
                                 </div>
                                 <div class="row mb-20">
                                     <div class="col-lg-12 form-group">
-                                        <label class="form-label">Your Images With Product (Optional)</label>
-                                        <div class="input-images @error('product_photo') is-invalid @enderror"></div>
-                                        @error('product_photo')
+                                        <label class="form-label">Your images with the product (Optional)</label>
+                                        <div class="input-images @error('item_image') is-invalid @enderror"></div>
+                                        @error('item_image')
                                         <span class="invalid-feedback" role="alert">
                                             {{$message}}
                                          </span>
@@ -108,7 +111,6 @@
                         <div class="payment-method-container">
                             <div class="payment-method-title">
                                 <h3>Select a Payment Method</h3>
-                                <img alt="" src="assets/images/icon-img/payment.png">
                             </div>
                             <div class="payment-method">
                                 <div class="payment-select-div">
@@ -119,7 +121,7 @@
                                 <div class="payment-box">
                                     <p>Pay securely with your credit card via Stripe.</p>
                                     <div class="col-lg-8 mt-20">
-                                        <div id="stripe-card-element" class="xcard-input">
+                                        <div id="stripe-card-element" class="card-input">
                                             <!-- A Stripe Element will be inserted here. -->
                                         </div>
                                     </div>

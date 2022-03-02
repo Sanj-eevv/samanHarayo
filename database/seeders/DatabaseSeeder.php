@@ -20,11 +20,6 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             SettingSeeder::class,
             ReportSeeder::class,
-            LocationSeeder::class,
-            RewardSeeder::class,
-            PaymentSeeder::class,
-            BoostSeeder::class,
-            PhotoSeeder::class
         ]);
     }
 }

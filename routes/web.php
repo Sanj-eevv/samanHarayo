@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('front.index');
-Route::get('/details/{report}', [\App\Http\Controllers\Front\IndexController::class , 'show'])->name('front.details');
+Route::get('/details/{slug}', [\App\Http\Controllers\Front\IndexController::class , 'show'])->name('front.details');
 
 // Social Routes
 Route::get('auth/facebook', [\App\Http\Controllers\Social\FacebookController::class, 'facebookRedirect'])->name('auth.facebookRedirect');
@@ -49,3 +49,4 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     });
 
 });
+//LocalHubHelper::uniqueSlugify($request->input('slug'), Post::class, null, 'slug'),

@@ -40,8 +40,16 @@ class SettingSeeder extends Seeder
                 'updated_at'                            => now()
             ],
             [
-                'key_name'                              => 'per_feature_report_price',
+                'key_name'                              => 'per_feature_price',
                 'key_value'                             => '80',
+                'type'                                  => 'text',
+                'availability'                          => 'all',
+                'created_at'                            => now(),
+                'updated_at'                            => now()
+            ],
+            [
+                'key_name'                              => 'max_feature_days',
+                'key_value'                             => '30',
                 'type'                                  => 'text',
                 'availability'                          => 'all',
                 'created_at'                            => now(),
