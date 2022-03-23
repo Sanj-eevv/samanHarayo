@@ -111,13 +111,21 @@ class CheckoutController extends Controller
         }
         $require_identity = $request->input('require_identity');
         if($require_identity === "true"){
+            $user = Auth::user();
+            $report = Report::where('slug', $request->input('report'))->first();
+            $has_reported = $user->reports()->where('id', $report->id)->exists();
+            if($request->created_by === $user->id){
+                return response()->json(["error"=> 'You cannot claim the report created by you.']);
+            }
+
+            if($has_reported){
+                return response()->json(["error"=> 'You have already claimed this item.']);
+            }
+
             $validator = Validator::make($request->all(), [
-                'identity_front'                    =>              ['required','image', 'mimes:jpg,png,jepg', 'max:10240'],
-                'identity_back'                     =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
-                'current_image'                     =>              ['required','image', 'mimes:jpg,png,jepg', 'max:10240'],
-                'item_image'                        =>              ['nullable'],
-                'item_image.*'                      =>              ['image', 'mimes:jpg,png,jepg', 'max:10240'],
-                'description'                       =>              ['required', 'string', 'min:100'],
+                'identity_front'                        =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
+                'identity_back'                         =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
+                'current_image'                         =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
             ]);
             if( $validator->fails() )
             {
@@ -133,6 +141,5 @@ class CheckoutController extends Controller
         return response()->json([
             'successful_validation' => 'success',
         ],200);
-
     }
 }

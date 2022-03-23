@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class IdentityRequest extends FormRequest
 {
@@ -21,14 +22,15 @@ class IdentityRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(Request $request)
     {
         return [
-            'identity_front'                        =>              ['image', 'mimes:jpg,png,jepg', 'max:500000'],
-            'identity_back'                         =>              ['image', 'mimes:jpg,png,jepg', 'max:500000'],
-            'current_photo'                         =>              ['image', 'mimes:jpg,png,jepg', 'max:500000'],
-            'product_photo.*'                       =>              ['nullable', 'max:500000'],
-            'description'                           =>              ['required', 'string', 'min:100'],
+            'identity_front'                        =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
+            'identity_back'                         =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
+            'current_image'                         =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
+//            'item_image'                            =>              ['nullable'],
+//            'item_image.*'                          =>              [ 'image', 'mimes:jpg,png,jepg', 'max:10240'],
+//            'description'                           =>              ['required', 'string', 'min:100'],
         ];
     }
 }

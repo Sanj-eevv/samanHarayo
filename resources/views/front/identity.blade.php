@@ -5,6 +5,7 @@
     $currencyTextRaw = 'USD';
     $per_report_price = config('app.settings.per_report_price');
     $total = floatval($per_report_price);
+    $report = $report->slug;
     ?>
 {{--    @include('utils._error_all')--}}
     <div class="checkout-main-area pt-50 pb-50">
@@ -27,7 +28,7 @@
                         <div class="identity-form-container">
                             <div class="report-form-product-details">
                                 <div class="row mb-20">
-                                    <div class="col-md-6 from-group">
+                                    <div class="col-md-12 from-group">
                                         <label class="form-label">Identity (Front)</label>
                                         <small class="form-text text-muted">(Citizenship card, license card)</small>
                                         <div class="sh-input-div sh-image-input-div">
@@ -45,23 +46,25 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 from-group">
-                                        <label class="form-label">Identity (Back)</label>
-                                        <small class="form-text text-muted">(Citizenship card, license card)</small>
-                                        <div class="sh-input-div sh-image-input-div">
-                                            <input class="@error('identity_back') is-invalid @enderror sh-input" type="file"  name="identity_back" id="identity_back_input"
-                                                   onchange="loadPreview(this, '#identity_back')" required>
-                                            @error('identity_front')
-                                            <span class="invalid-feedback" role="alert">
+                                </div>
+                                <div class="row mb-20">
+                                    <div class="col-md-12 from-group">
+                                    <label class="form-label">Identity (Back)</label>
+                                    <small class="form-text text-muted">(Citizenship card, license card)</small>
+                                    <div class="sh-input-div sh-image-input-div">
+                                        <input class="@error('identity_back') is-invalid @enderror sh-input" type="file"  name="identity_back" id="identity_back_input"
+                                               onchange="loadPreview(this, '#identity_back')" required>
+                                        @error('identity_front')
+                                        <span class="invalid-feedback" role="alert">
                                                 {{$message}}
                                             </span>
-                                            @enderror
-                                            <div class="sh_preview_image_container d-none">
-                                                <img id="identity_back" src="" class="img-fluid "  alt=""/>
-                                                <a href="!#" class="sh_preview_image_close"><i class="fas fa-times"></i></a>
-                                            </div>
+                                        @enderror
+                                        <div class="sh_preview_image_container d-none">
+                                            <img id="identity_back" src="" class="img-fluid "  alt=""/>
+                                            <a href="!#" class="sh_preview_image_close"><i class="fas fa-times"></i></a>
                                         </div>
                                     </div>
+                                </div>
                                 </div>
                                 <div class="row mb-20">
                                     <div class="col-lg-12 from-group">
@@ -83,28 +86,28 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mb-20">
-                                    <div class="col-lg-12 form-group">
-                                        <label class="form-label">Your images with the product (Optional)</label>
-                                        <div class="input-images @error('item_image') is-invalid @enderror"></div>
-                                        @error('item_image')
-                                        <span class="invalid-feedback" role="alert">
-                                            {{$message}}
-                                         </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-12 mb-20 form-group">
-                                        <label>Product Description</label>
-                                        <textarea class="form-control @error('description')is-invalid @enderror" placeholder="Give more details about your product" name="description" id="description" required>{{old('description')}}</textarea>
-                                        @error('description')
-                                        <span class="invalid-feedback" role="alert">
-                                        {{$message}}
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
+{{--                                <div class="row mb-20">--}}
+{{--                                    <div class="col-lg-12 form-group">--}}
+{{--                                        <label class="form-label">Your images with the product (Optional)</label>--}}
+{{--                                        <div class="input-images @error('item_image') is-invalid @enderror"></div>--}}
+{{--                                        @error('item_image')--}}
+{{--                                        <span class="invalid-feedback" role="alert">--}}
+{{--                                            {{$message}}--}}
+{{--                                         </span>--}}
+{{--                                        @enderror--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-lg-12 mb-20 form-group">--}}
+{{--                                        <label>Product Description</label>--}}
+{{--                                        <textarea class="form-control @error('description')is-invalid @enderror" placeholder="Give more details about your product" name="description" id="description" required>{{old('description')}}</textarea>--}}
+{{--                                        @error('description')--}}
+{{--                                        <span class="invalid-feedback" role="alert">--}}
+{{--                                        {{$message}}--}}
+{{--                                        </span>--}}
+{{--                                        @enderror--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                             </div>
                         </div>
                     <div class="report-form-payment-container">

@@ -47,4 +47,8 @@ class Report extends Model
         return $this->hasOne(ItemImage::class, 'report_id', 'id')->inRandomOrder();
     }
 
+    Public function users(){
+        return $this->belongsToMany(User::class);
+    }
+
 }

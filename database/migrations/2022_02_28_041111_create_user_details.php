@@ -18,6 +18,7 @@ class CreateUserDetails extends Migration
             $table->string('current_image');
             $table->string('identity_front');
             $table->string('identity_back');
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('avatar')->nullable();
             $table->timestamps();
         });

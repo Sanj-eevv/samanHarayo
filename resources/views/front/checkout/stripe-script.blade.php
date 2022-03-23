@@ -12,8 +12,6 @@
     var identity_front;
     var identity_back;
     var current_photo;
-    var product_photo;
-    var description;
 
 
     let style = {
@@ -38,10 +36,7 @@
     stripeForm.addEventListener("submit", function(event) {
         event.preventDefault();
         let current_path = window.location.pathname;
-        require_identity = false;
-        if(current_path === "/identity"){
-            require_identity = true;
-        }
+        require_identity = current_path === "/identity";
         let termsAreChecked = checkTermsAcceptance();
         if(termsAreChecked == false)
         {
@@ -125,12 +120,21 @@
                             url: "{{route('identity.store')}}",
                             method: "POST",
                             data: basicFormStripe,
+                            headers: {
+                                "X-CSRF-Token": "{{ csrf_token() }}",
+                            },
                             processData: false,
                             contentType: false,
                             success: function(result) {
+                                if( result.hasOwnProperty("successful_validation") )
+                                {
+                                    $("#payStartSpinner").hide();
+                                    alertifySuccessAndRedirect("Report Recorded Successfully. We'll will verify your claim soon.", BASE_URL);
+                                }
                             },
                             error: function(result) {
-                                showErrorAndScrollUp("Unknown error during validation.");
+                                $("#payStartSpinner").hide();
+                                showErrorAndScrollUp("Payment received with an error");
                             }
                         });
                     }else{

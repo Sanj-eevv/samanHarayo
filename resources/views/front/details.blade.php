@@ -22,7 +22,7 @@
                         <div class="info">
                             <h3>Categories:</h3>
                             <span>{{ucwords($report->category->name)}}</span>
-                        </div>s
+                        </div>
                         <div class="info">
                             <h3>Brand:</h3>
                             <span>{{$report->brand ? ucwords($report->brand) : "Not Specified"}}</span>
@@ -49,7 +49,7 @@
                         @if($report->report_type === \App\Models\Report::REPORT_TYPE_LOST)
                             <a class="sh-btn" href="">I've This Item</a>
                         @else
-                            <a class="sh-btn" href="{{route('identity.index')}}">This Belongs to Me</a>
+                            <a class="sh-btn" href="{{route('identity.index',['report'=>$report->slug])}}">This Belongs to Me</a>
                         @endif
                     </div>
                 </div>

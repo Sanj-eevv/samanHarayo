@@ -96,10 +96,11 @@
         'imagesInputName': 'item_image'
     });
 
-    // phone number filed validaiton
+    // phone number filed validation
     $('.numeric').on('input', function (event) {
         this.value = this.value.replace(/[^0-9]/g, '');
     });
+
 
     $(".front-logout").on('click', function (e){
         e.preventDefault();
