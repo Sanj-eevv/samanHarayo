@@ -108,36 +108,31 @@
     });
 
 
-    // var product_isotope = $('.product-grid').isotope({
-    //     // options
-    //     itemSelector: '.product-item',
-    //     filter: '.lost-product',
-    //     layoutMode: 'fitRows'
-    // });
-    // let isotope_lost_product_btn =  $('.lost-product-btn');
-    // let isotope_found_product_btn =  $('.found-product-btn');
-    //
-    // isotope_lost_product_btn.on('click', function(){
-    //     // $(this).prop('disabled', true);
-    //     // $(this).removeClass('bg-front-gray');
-    //     // $(this).addClass('bg-theme-blue');
-    //
-    //     // isotope_celebrities_btn.prop('disabled', false);
-    //     // isotope_celebrities_btn.addClass('bg-front-gray');
-    //     // isotope_celebrities_btn.removeClass('bg-theme-blue');
-    //     product_isotope.isotope({ filter: '.lost-product' });
-    // });
-    //
-    // isotope_found_product_btn.on('click', function(){
-    //     // $(this).prop('disabled', true);
-    //     // $(this).removeClass('bg-front-gray');
-    //     // $(this).addClass('bg-theme-blue');
-    //     //
-    //     // isotope_collection_btn.prop('disabled', false);
-    //     // isotope_collection_btn.removeClass('bg-theme-blue');
-    //     // $(isotope_collection_btn).addClass('bg-front-gray');
-    //     product_isotope.isotope({ filter: '.found-product' });
-    // });
+    //Isotopes Home page
+    let lost_product_btn = $('.product-area .lost-product-btn');
+    let found_product_btn = $('.product-area .found-product-btn');
+
+    var product_isotope = $('.product-area .product-grid').isotope({
+        itemSelector: '.product-item',
+        filter: '.lost-product',
+        layoutMode: 'fitRows'
+    });
+
+    lost_product_btn.on('click', function(){
+        $(this).prop('disabled', true);
+        $(this).addClass('active');
+        found_product_btn.prop('disabled', false);
+        found_product_btn.removeClass('active');
+        product_isotope.isotope({ filter: '.lost-product' });
+    });
+
+    found_product_btn.on('click', function(){
+        $(this).prop('disabled', true);
+        $(this).addClass('active');
+        lost_product_btn.prop('disabled', false);
+        lost_product_btn.removeClass('active');
+        product_isotope.isotope({ filter: '.found-product' });
+    });
 
     /*-------------------------------------
        Product details big image slider

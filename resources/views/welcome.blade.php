@@ -102,7 +102,7 @@
                 </div>
             @endforeach
             @foreach($found_reports as $found_report)
-                <div class="single-product-wrap found-product product-item">
+                <article class="single-product-wrap found-product product-item">
                     <div class="product-img">
                         @if($found_report->randomImage)
                             <a href="{{route('front.details', $found_report->slug)}}">
@@ -115,7 +115,7 @@
                         @endif
                 </div>
                 <h4><a href="" class="underlined-link">{{ucwords($found_report->title).' '.($found_report->brand ? '('.ucwords($lost_report->brand).')' : '')}}</a></h4>
-            </div>
+            </article>
             @endforeach
         </div>
     </div>
