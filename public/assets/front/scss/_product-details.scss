@@ -1,10 +1,6 @@
 /*-------- 16. Product details style ---------*/
 .product-details-area{
     .product-details-content {
-        margin: 25px 0 0;
-        @media #{$sm-layout} {
-            margin:0;
-        }
         h2 {
             padding-bottom: 20px;
             font-size: 22px;
@@ -54,21 +50,24 @@
         }
     }
     .product-details-small-img-slider {
-        width: 450px;
-        margin: 15px auto 0;
-        img {
-            cursor: pointer;
-            height: 100px;
-            width: 100px;
-            object-fit: cover;
-            object-position: center;
-            margin: 0 8px;
-            &.slick-active {
-                border: 1px solid transparent;
-                &.slick-current {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 15px;
+
+        .slick-slide {
+            margin: 0 10px;
+        }
+        .slick-active {
+            &.slick-current {
+                img{
                     border: 1px solid $theme-color-red;
                 }
             }
+        }
+        img {
+            cursor: pointer;
+            object-fit: cover;
+            object-position: center;
         }
         span {
             font-size: 10px;
@@ -89,11 +88,17 @@
                 background-color: $theme-color-purple;
             }
             &.pro-dec-prev {
-                left: -7%;
+                left: -2%;
+                @media #{$lg-layout} {
+                    left: -4%;
+                }
             }
             &.pro-dec-next {
                 left: auto;
-                right: -6%;
+                @media #{$lg-layout} {
+                    right: -4%;
+                }
+                right: -2%;
             }
         }
     }

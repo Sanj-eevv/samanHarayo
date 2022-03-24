@@ -1,8 +1,9 @@
 (function ($) {
-    // AOS.init();
     "use strict";
 
     /*------ Hero slider  ----*/
+    // This hero slider is needed in home page.
+    // Slider for featured product
     $('.hero-slider-active').slick({
         draggable: true,
         autoplay: true, /* this is the new line */
@@ -26,8 +27,8 @@
 
         navbarTrigger.on('click', function(e) {
             e.preventDefault();
-            container.addClass('sidebar-visible');
-            wrapper4.addClass('overlay-active-1');
+            container.toggleClass('sidebar-visible');
+            wrapper4.toggleClass('overlay-active-1');
         });
 
         endTrigger.on('click', function() {
@@ -50,9 +51,6 @@
         let parent_container = $(this).parent('.sh_preview_image_container');
         parent_container.addClass('d-none');
         parent_container.siblings("input[type='file']").val('');
-        // parent_container.siblings("input[type='hidden']").val('');
-        // $(this).siblings('.sh_preview_img_element').attr('src','#');
-        // $("#file_upload").replaceWith($("#file_upload").val('').clone(true));
     });
 
     /*-------------------------
@@ -102,6 +100,8 @@
     });
 
 
+    // Submit logout form
+    // Sign out user from the system
     $(".front-logout").on('click', function (e){
         e.preventDefault();
         document.getElementById('logout-form').submit();
@@ -134,6 +134,8 @@
         product_isotope.isotope({ filter: '.found-product' });
     });
 
+
+
     /*-------------------------------------
        Product details big image slider
    ---------------------------------------*/
@@ -144,6 +146,7 @@
         draggable: false,
         fade: false,
         asNavFor: '.product-details-small-img-slider',
+        lazyLoad: 'ondemand',
     });
 
     /*---------------------------------------
@@ -156,28 +159,23 @@
         dots: false,
         infinite: true,
         focusOnSelect: true,
+        arrows: true,
         fade: false,
         prevArrow: '<span class="pro-dec-prev"><i class="icon-arrow-left"></i></span>',
         nextArrow: '<span class="pro-dec-next"><i class="icon-arrow-right"></i></span>',
-        variableWidth: true,
+        // variableWidth: true,
         responsive: [{
-            breakpoint: 991,
+            breakpoint: 1024,
             settings: {
                 slidesToShow: 3,
             }
         },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 4,
-                }
-            },
-            {
-                breakpoint: 575,
-                settings: {
-                    slidesToShow: 2,
-                }
+        {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 2,
             }
+        }
         ]
     });
 

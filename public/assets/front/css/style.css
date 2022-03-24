@@ -1743,6 +1743,10 @@ textarea:focus {
 .underlined-link:hover::after {
   width: 100%; }
 
+img.cover-image {
+  object-position: center;
+  object-fit: cover; }
+
 /*Title*/
 .sh-title {
   cursor: pointer;
@@ -4506,39 +4510,43 @@ a.sh_preview_image_close:hover {
     padding-bottom: 55px; } }
 
 /*-------- 12. Footer style ---------*/
-.footer-area .footer-content {
-  display: grid;
-  grid-template-columns: 30% calc(100% - 30%);
-  gap: 10px; }
-  .footer-area .footer-content .footer-menu {
-    text-align: right; }
-
-.footer-area .footer-logo a img {
+.footer-area .footer-logo img {
   width: 150px;
-  height: 40px;
-  object-fit: cover; }
+  height: 40px; }
 
-.footer-menu nav ul li {
-  display: inline-block;
-  margin-right: 45px; }
-  .footer-menu nav ul li:last-child {
-    margin-right: 0; }
-  .footer-menu nav ul li a {
+@media (min-width: 768px) {
+  .footer-area .footer-menu {
+    text-align: right; } }
+
+.footer-area .footer-menu nav ul li {
+  display: block;
+  margin-bottom: 15px; }
+  @media (min-width: 768px) {
+    .footer-area .footer-menu nav ul li {
+      display: inline-block;
+      margin-right: 45px; }
+      .footer-area .footer-menu nav ul li:last-child {
+        margin-right: 0; } }
+  .footer-area .footer-menu nav ul li a {
     font-size: 14px;
+    font-weight: 500;
     letter-spacing: .25px;
     color: #000000;
     display: inline-block; }
-    .footer-menu nav ul li a:hover {
+    .footer-area .footer-menu nav ul li a:hover {
       color: #ff2f2f; }
 
-.copyright {
-  line-height: 0; }
-  .copyright p {
-    line-height: 0;
+.footer-area .copyright {
+  margin-top: 20px; }
+  @media (min-width: 768px) {
+    .footer-area .copyright {
+      margin-top: 5px; } }
+  .footer-area .copyright span {
+    white-space: nowrap;
     color: #999; }
-    .copyright p a {
-      color: #999; }
-      .copyright p a:hover {
+    .footer-area .copyright span a {
+      color: inherit; }
+      .footer-area .copyright span a:hover {
         color: #ff2f2f; }
 
 /*-------- 13. Instagram style ---------*/
@@ -4885,41 +4893,42 @@ a.sh_preview_image_close:hover {
     color: #6aae27; }
 
 /*-------- 16. Product details style ---------*/
-.product-details-area .product-details-content {
-  margin: 25px 0 0; }
-  @media (min-width: 640px) {
-    .product-details-area .product-details-content {
-      margin: 0; } }
-  .product-details-area .product-details-content h2 {
-    padding-bottom: 20px;
-    font-size: 22px;
-    font-weight: bold;
-    margin: 0; }
-  .product-details-area .product-details-content p, .product-details-area .product-details-content span {
-    font-size: 14px;
-    margin: 0;
-    top: 0;
-    color: #666; }
-  .product-details-area .product-details-content h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 5px; }
-  .product-details-area .product-details-content .info {
-    margin-bottom: 20px; }
-  .product-details-area .product-details-content span.price {
-    margin-top: 5px;
-    display: inline-block;
-    font-weight: 500;
-    color: white;
-    border-radius: 5px;
-    background: #6f50a7;
-    padding: 5px 10px;
-    cursor: pointer; }
-  .product-details-area .product-details-content a {
-    width: fit-content; }
-  .product-details-area .product-details-content iframe {
-    width: 100%;
-    height: 290px; }
+.product-details-area .product-details-content h2 {
+  padding-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0; }
+
+.product-details-area .product-details-content p, .product-details-area .product-details-content span {
+  font-size: 14px;
+  margin: 0;
+  top: 0;
+  color: #666; }
+
+.product-details-area .product-details-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px; }
+
+.product-details-area .product-details-content .info {
+  margin-bottom: 20px; }
+
+.product-details-area .product-details-content span.price {
+  margin-top: 5px;
+  display: inline-block;
+  font-weight: 500;
+  color: white;
+  border-radius: 5px;
+  background: #6f50a7;
+  padding: 5px 10px;
+  cursor: pointer; }
+
+.product-details-area .product-details-content a {
+  width: fit-content; }
+
+.product-details-area .product-details-content iframe {
+  width: 100%;
+  height: 290px; }
 
 .product-details-area .product-details-big-img-slider img {
   cursor: pointer;
@@ -4929,19 +4938,17 @@ a.sh_preview_image_close:hover {
   object-position: center; }
 
 .product-details-area .product-details-small-img-slider {
-  width: 450px;
-  margin: 15px auto 0; }
+  max-width: 100%;
+  width: 100%;
+  margin-top: 15px; }
+  .product-details-area .product-details-small-img-slider .slick-slide {
+    margin: 0 10px; }
+  .product-details-area .product-details-small-img-slider .slick-active.slick-current img {
+    border: 1px solid #ff2f2f; }
   .product-details-area .product-details-small-img-slider img {
     cursor: pointer;
-    height: 100px;
-    width: 100px;
     object-fit: cover;
-    object-position: center;
-    margin: 0 8px; }
-    .product-details-area .product-details-small-img-slider img.slick-active {
-      border: 1px solid transparent; }
-      .product-details-area .product-details-small-img-slider img.slick-active.slick-current {
-        border: 1px solid #ff2f2f; }
+    object-position: center; }
   .product-details-area .product-details-small-img-slider span {
     font-size: 10px;
     position: absolute;
@@ -4960,10 +4967,16 @@ a.sh_preview_image_close:hover {
       border: 1px solid #6f50a7;
       background-color: #6f50a7; }
     .product-details-area .product-details-small-img-slider span.pro-dec-prev {
-      left: -7%; }
+      left: -2%; }
+      @media (min-width: 1024px) {
+        .product-details-area .product-details-small-img-slider span.pro-dec-prev {
+          left: -4%; } }
     .product-details-area .product-details-small-img-slider span.pro-dec-next {
       left: auto;
-      right: -6%; }
+      right: -2%; }
+      @media (min-width: 1024px) {
+        .product-details-area .product-details-small-img-slider span.pro-dec-next {
+          right: -4%; } }
 
 .product-details-area .desc-para {
   font-size: 20px;

@@ -2103,6 +2103,12 @@ textarea:focus {
     width: 100%;
 }
 
+// Cover image
+img.cover-image{
+    object-position: center;
+    object-fit: cover;
+}
+
 /*Title*/
 
 .sh-title{

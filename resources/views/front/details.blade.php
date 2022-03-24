@@ -1,8 +1,8 @@
 @extends('layouts.front')
 @section('content')
-    <div class="product-details-area pt-50 pb-115 container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
+    <div class="product-details-area pt-25 pb-115 container">
+            <div class="row gy-4">
+                <div class="col-lg-6">
                     <div class="product-details-big-img-slider">
                         @foreach($report->itemImages as $item_image)
                             <a href="#">
@@ -12,11 +12,13 @@
                     </div>
                     <div class="product-details-small-img-slider">
                         @foreach($report->itemImages as $item_image)
+                            <div>
                                 <img src="{{asset('storage/uploads/report/'.$report->reported_by.'/item_image/'.$item_image->image)}}" alt="" class="img-fluid">
+                            </div>
                         @endforeach
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6">
                     <div class="product-details-content">
                         <h2>{{ucwords($report->title)}}</h2>
                         <div class="info">
@@ -54,7 +56,7 @@
                     </div>
                 </div>
             </div>
-        <div class="row">
+        <div class="row mt-4 mt-lg-0">
             <div class="col-md-12">
                 <h4 class="d-inline-block sh-title">Description</h4>
                 <p class="desc-para">{{$report->description}}</p>

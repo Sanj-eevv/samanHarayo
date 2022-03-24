@@ -1,7 +1,7 @@
 @extends('layouts.front')
 @section('content')
 {{--    @include('utils._error_all')--}}
-    <div class="checkout-main-area pt-50 pb-50">
+    <div class="checkout-main-area pt-25 pb-50">
         <div class="container">
             <div class="row">
                 <div class="report-lost-title d-flex pb-3">

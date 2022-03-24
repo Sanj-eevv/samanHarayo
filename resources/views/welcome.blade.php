@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-<div class="slider-area  pt-50">
+<div class="slider-area  pt-25">
     <div class="container">
         <div class="hero-slider-active bg-gray-7">
             @foreach($featured_reports as $featured_report)

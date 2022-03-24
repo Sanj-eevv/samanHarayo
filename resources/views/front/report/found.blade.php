@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-    <div class="checkout-main-area pt-50 pb-50">
+    <div class="checkout-main-area pt-25 pb-50">
         <div class="container">
             <div class="row">
                 <div class="d-flex pb-3">

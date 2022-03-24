@@ -1,91 +1,62 @@
 /*-------- 12. Footer style ---------*/
+
 .footer-area{
-    .footer-content{
-        display: grid;
-        grid-template-columns: 30% calc(100% - 30%);
-        gap: 10px;
-        //@media #{$md-layout} {
-        //    grid-template-columns: 100%;
-        //}
-        //@media #{$sm-layout} {
-        //    grid-template-columns: 100%;
-        //}
-        //@media #{$vsm-layout} {
-        //    grid-template-columns: 100%;
-        //}
-        .footer-menu{
-            text-align: right;
-            //@media #{$md-layout} {
-            //    text-align: left;
-            //}
-            //@media #{$sm-layout} {
-            //    text-align: left;
-            //}
-            //@media #{$vsm-layout} {
-            //    text-align: left;
-            //}
-        }
-    }
     .footer-logo {
-        a {
-            img {
-                width: 150px;
-                height: 40px;
-                object-fit: cover;
-            }
+        img {
+            width: 150px;
+            height: 40px;
         }
     }
-}
 
-
-.footer-menu {
-    nav {
-        ul {
-            li {
-                display: inline-block;
-                margin-right: 45px;
-                &:last-child {
-                    margin-right: 0;
-                }
-                //@media #{$sm-layout} {
-                //    display: block;
-                //}
-                //@media #{$vsm-layout} {
-                //   display: block;
-                //}
-                a {
-                    font-size: 14px;
-                    letter-spacing: .25px;
-                    color: $black;
-                    display: inline-block;
-                    &:hover {
-                        color: $theme-color-red;
+    .footer-menu {
+        @media #{$md-layout} {
+            text-align: right;
+        }
+        nav {
+            ul {
+                li {
+                    display: block;
+                    margin-bottom: 15px;
+                    @media #{$md-layout} {
+                        display: inline-block;
+                        margin-right: 45px;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                    a {
+                        font-size: 14px;
+                        font-weight: 500;
+                        letter-spacing: .25px;
+                        color: $black;
+                        display: inline-block;
+                        &:hover {
+                            color: $theme-color-red;
+                        }
                     }
                 }
             }
         }
     }
-}
 
-.copyright {
-    line-height: 0;
-    //@media #{$sm-layout} {
-    //   padding-bottom: 10px;
-    //}
-    //@media #{$vsm-layout} {
-    //    padding-bottom: 10px;
-    //}
-    p {
-        line-height: 0;
-        color: #999;
-        a {
+    .copyright {
+        margin-top: 20px;
+        @media #{$md-layout} {
+            margin-top: 5px;
+        }
+        span {
+            white-space: nowrap;
             color: #999;
-            &:hover {
-                color: $theme-color-red;
+            a {
+                color: inherit;
+                &:hover {
+                    color: $theme-color-red;
+                }
             }
         }
-    }
 
+    }
 }
+
 
 
