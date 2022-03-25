@@ -2391,11 +2391,18 @@ a.sh_preview_image_close:hover {
         font-size: 36px;
         margin-bottom: 20px; } }
   .hero-slider-content p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     text-align: justify;
     margin-bottom: 10px;
     font-size: 14px;
     letter-spacing: 0.8px;
     height: 72px; }
+    @media (min-width: 768px) {
+      .hero-slider-content p {
+        -webkit-line-clamp: 4; } }
     @media (min-width: 1024px) {
       .hero-slider-content p {
         font-size: 16px; } }
