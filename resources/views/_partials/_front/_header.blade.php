@@ -42,6 +42,7 @@
             </div>
         </div>
     </div>
+    <hr class="m-0">
     <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">@csrf</form>
 </header>
 <div class="mobile-header-active">
