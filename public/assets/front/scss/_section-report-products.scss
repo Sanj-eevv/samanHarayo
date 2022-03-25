@@ -1,11 +1,4 @@
 .section-report-area {
-    margin-top: 40px;
-    @media #{$md-layout} {
-        margin-top: 55px;
-    }
-    @media #{$lg-layout} {
-        margin-top: 70px;
-    }
     .section-report-area-wrapper{
         display: flex;
         @media #{$md-layout} {

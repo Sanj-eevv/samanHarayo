@@ -19,7 +19,7 @@
         </div>
     </div>
 </div>
-<div class="section-report-area">
+<div class="section-report-area mt-70">
     <div class="container section-report-area-wrapper">
             <a href="{{route('report-lost.index')}}">
                 <span><i class="fas fa-pencil-alt"></i></span>

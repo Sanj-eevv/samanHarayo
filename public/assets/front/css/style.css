@@ -6892,38 +6892,30 @@ div#stripe-card-element {
       .order-tracking-content .order-tracking-form .order-track-btn a:hover {
         background-color: #ff2f2f; }
 
-.section-report-area {
-  margin-top: 40px; }
+.section-report-area .section-report-area-wrapper {
+  display: flex;
+  row-gap: 30px;
+  flex-wrap: wrap;
+  white-space: nowrap; }
   @media (min-width: 768px) {
-    .section-report-area {
-      margin-top: 55px; } }
-  @media (min-width: 1024px) {
-    .section-report-area {
-      margin-top: 70px; } }
-  .section-report-area .section-report-area-wrapper {
-    display: flex;
-    row-gap: 30px;
-    flex-wrap: wrap;
-    white-space: nowrap; }
+    .section-report-area .section-report-area-wrapper {
+      column-gap: 6%; } }
+  .section-report-area .section-report-area-wrapper a {
+    text-align: center;
+    display: inline-block;
+    background-color: #eaeff2;
+    opacity: 0.8;
+    font-weight: 600;
+    padding: 20px 0;
+    width: 100%;
+    text-transform: uppercase; }
     @media (min-width: 768px) {
-      .section-report-area .section-report-area-wrapper {
-        column-gap: 6%; } }
-    .section-report-area .section-report-area-wrapper a {
-      text-align: center;
-      display: inline-block;
-      background-color: #eaeff2;
-      opacity: 0.8;
-      font-weight: 600;
-      padding: 20px 0;
-      width: 100%;
-      text-transform: uppercase; }
-      @media (min-width: 768px) {
-        .section-report-area .section-report-area-wrapper a {
-          width: 47%; } }
-      .section-report-area .section-report-area-wrapper a:hover {
-        color: #ff2f2f; }
-      .section-report-area .section-report-area-wrapper a span {
-        margin-right: 15px; }
+      .section-report-area .section-report-area-wrapper a {
+        width: 47%; } }
+    .section-report-area .section-report-area-wrapper a:hover {
+      color: #ff2f2f; }
+    .section-report-area .section-report-area-wrapper a span {
+      margin-right: 15px; }
 
 .report-info-area .container {
   justify-content: center;

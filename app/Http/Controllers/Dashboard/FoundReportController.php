@@ -21,7 +21,7 @@ class FoundReportController extends Controller
     {
         if ($request->ajax()) {
             $columns = array(
-                0 => 'name',
+                0 => 'title',
                 1 => 'brand',
                 2 => 'category_id',
                 3 => 'verified',
@@ -38,17 +38,17 @@ class FoundReportController extends Controller
                 ->join('categories as c', 'r.category_id', 'c.id')
                 ->select(
                     'r.id',
-                    'r.name',
+                    'r.title',
                     'r.brand',
                     'c.name as category',
-                    'r.status',
+                    'r.verified',
                     'r.created_at',
                 )->where('report_type', Report::REPORT_TYPE_FOUND);
             $query->where(function($query) use($search) {
-                $query->where('r.name', 'like', $search . '%')
+                $query->where('r.title', 'like', $search . '%')
                     ->orWhere('r.brand', 'like', $search . '%')
                     ->orWhere('c.name', 'like', $search . '%')
-                    ->orWhere('r.status', 'like', $search . '%')
+                    ->orWhere('r.verified', 'like', $search . '%')
                     ->orWhere('r.created_at', 'like', $search . '%');
             });
             $totalData = $query->count();
@@ -62,10 +62,10 @@ class FoundReportController extends Controller
             if (isset($records)) {
                 foreach ($records as $k => $v) {
                     $nestedData['id'] = $v->id;
-                    $nestedData['item_name'] = $v->name;
+                    $nestedData['item_name'] = $v->title;
                     $nestedData['brand'] = $v->brand ? ucwords($v->brand) : 'Not Specified';
                     $nestedData['category'] = ucwords($v->category);
-                    $nestedData['status'] = $v->status;
+                    $nestedData['status'] = $v->verified;
                     $nestedData['created_at'] = \Carbon\Carbon::parse($v->created_at)->format('Y-m-d');
                     $nestedData['action'] = \View::make('dashboard.found-reports._action')->with('r',$v)->render();
                     $data[] = $nestedData;
@@ -137,12 +137,13 @@ class FoundReportController extends Controller
     public function update(Request $request, $id)
     {
        $report = Report::findOrFail($id);
-       $report->status = Str::lower($request->status);
+       $report->verified ? $report->verified = 0 : $report->verified = 1;
        $report->updated_at = now();
        $report->save();
        return response()->json([
            'status'=> 'OK',
-           'message' => 'Status Updated'
+           'message' => 'Status Updated',
+           'report_status' => $report->verified ? "Verified" : "Pending",
        ]);
     }
 

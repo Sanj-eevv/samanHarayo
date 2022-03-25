@@ -18,7 +18,7 @@
                             <tbody>
                             <tr>
                                 <th scope="row">Item Name :</th>
-                                <td>{{ucwords($report->name)}}</td>
+                                <td>{{ucwords($report->title)}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Brand :</th>
@@ -58,7 +58,14 @@
                             </tr>
                             <tr>
                                 <th scope="row">Status :</th>
-                                <td class="position-relative"><span id="report-status" class="badge p-2 {{$report->status === 'verified'? 'bg-success' : 'bg-danger'}}">{{ucwords($report->status)}}</span><button id="toggle-report-status" class="btn"><span><i class="mdi mdi-menu-swap"></i></span></button></td>
+                                <td class="position-relative">
+                                    <span id="report-status" class="badge p-2 {{$report->verified === 1? 'bg-success' : 'bg-danger'}}">
+                                        {{$report->verified ? "Verified": "Pending"}}
+                                    </span>
+                                    <button id="toggle-report-status" class="btn">
+                                        <span><i class="mdi mdi-menu-swap"></i></span>
+                                    </button>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -75,13 +82,7 @@
             $('#toggle-report-status').click(function (e){
                 e.preventDefault();
                 let span_report_status = $('#report-status');
-                let report_status = span_report_status.text();
-                let updated_status = '';
-                if(report_status === 'Pending'){
-                    updated_status = 'Verified';
-                }else{
-                    updated_status = 'Pending';
-                }
+                let current_report_status = span_report_status.text().trim();
                 let report_id = JSON.parse("{{ json_encode($report->id) }}");
                 $.ajax({
                     url: BASE_URL+'/dashboard/found-reports/'+report_id,
@@ -89,33 +90,31 @@
                     headers: {
                         'X-CSRF-Token': CSRF_TOKEN
                     },
-                    data:{
-                        'status': updated_status
-                    },
                     beforeSend: function() {
-                        if(report_status === 'Pending'){
-                            span_report_status.removeClass('bg-danger');
-                            span_report_status.addClass('bg-success');
-                        }else{
+                        if(current_report_status === 'Verified'){
+                            span_report_status.text("Pending");
                             span_report_status.removeClass('bg-success');
                             span_report_status.addClass('bg-danger');
+                        }else{
+                            span_report_status.removeClass('bg-danger');
+                            span_report_status.addClass('bg-success');
+                            span_report_status.text("Verified");
                         }
-                        span_report_status.text(updated_status);
                     },
                     success: function (resp){
+                        let new_status = resp.report_status;
                         toastSuccess(resp.message);
                     },
                     error: function (xhr){
-                        let obj = JSON.parse(xhr.responseText);
-                        span_report_status.text(report_status);
-                        if(report_status === 'Pending'){
+                        span_report_status.text(current_report_status);
+                        if(current_report_status === 'Pending'){
                             span_report_status.removeClass('bg-success');
                             span_report_status.addClass('bg-danger');
                         }else{
                             span_report_status.removeClass('bg-danger');
                             span_report_status.addClass('bg-success');
                         }
-                        toastError(obj.message);
+                        toastError("Something went wrong!!!");
                     }
                 });
 

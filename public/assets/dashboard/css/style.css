@@ -47,3 +47,10 @@
     color: #495057;
     padding: 0;
 }
+
+/*Data table loading button */
+div.dataTables_wrapper div.dataTables_processing.card{
+    width: 0;
+    padding: 0;
+    top: calc(50% + 50px);
+}

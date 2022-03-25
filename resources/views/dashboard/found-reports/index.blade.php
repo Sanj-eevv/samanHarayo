@@ -35,12 +35,10 @@
                         "url": BASE_URL + '/dashboard/found-reports',
                         "dataType": "json",
                         "type": "GET",
-                        "data": {
-                            "_token": CSRF_TOKEN
-                        },
                         "tryCount" : 0,
                         "retryLimit" : 3,
                         error: function(xhr, ajaxOptions, thrownError) {
+                            toastError("Something went wrong!!!");
                         }
                     },
                     "columns": [{
@@ -55,8 +53,9 @@
                         {
                             "data": "status",
                             "render": function ( data, type, row, meta ) {
-                                badge_color = data === "verified" ? "bg-success" : "bg-danger"
-                                return '<span class="p-2 badge '+badge_color + '">'+data+'</span>';
+                                let badge_color = data === 1 ? "bg-success" : "bg-danger"
+                                let text = data === 1 ? 'Verified' : 'Pending'
+                                return '<span class="p-2 badge '+badge_color + '">'+text+'</span>';
                             }
                         },
                         {
@@ -81,8 +80,12 @@
                     "deferRender": true,
                     fixedHeader: true,
                     "searchable": false,
+                    "processing": true,
                     "language": {
-                        "emptyTable": " "
+                        "emptyTable": " ",
+                        "processing": "<div class='spinner-border text-primary' role='status'>"+
+                            "<span class='visually-hidden'>Loading...</span>"+
+                            "</div>"
                     },
                 });
             });

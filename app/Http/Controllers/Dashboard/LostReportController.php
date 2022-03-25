@@ -18,7 +18,7 @@ class LostReportController extends Controller
     {
         if ($request->ajax()) {
             $columns = array(
-                0 => 'name',
+                0 => 'title',
                 1 => 'brand',
                 2 => 'category_id',
                 3 => 'created_at',
@@ -35,13 +35,13 @@ class LostReportController extends Controller
                 ->join('categories as c', 'r.category_id', 'c.id')
                 ->select(
                     'r.id',
-                    'r.name',
+                    'r.title',
                     'r.brand',
                     'c.name as category',
                     'r.created_at',
                 )->where('report_type', Report::REPORT_TYPE_LOST);
             $query->where(function($query) use($search) {
-                $query->where('r.name', 'like', $search . '%')
+                $query->where('r.title', 'like', $search . '%')
                     ->orWhere('r.brand', 'like', $search . '%')
                     ->orWhere('c.name', 'like', $search . '%')
                     ->orWhere('r.created_at', 'like', $search . '%');
@@ -57,7 +57,7 @@ class LostReportController extends Controller
             if (isset($records)) {
                 foreach ($records as $k => $v) {
                     $nestedData['id'] = $v->id;
-                    $nestedData['item_name'] = $v->name;
+                    $nestedData['item_name'] = $v->title;
                     $nestedData['brand'] = $v->brand ? ucwords($v->brand) : 'Not Specified';
                     $nestedData['category'] = ucwords($v->category);
                     $nestedData['created_at'] = \Carbon\Carbon::parse($v->created_at)->format('Y-m-d');
@@ -134,10 +134,13 @@ class LostReportController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        //
+        Report::where('id', $id)->delete();
+        return response()->json([
+            'message' => 'Report Successfully Deleted',
+        ], 200);
     }
 }

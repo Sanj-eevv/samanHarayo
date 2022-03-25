@@ -25,7 +25,7 @@
     </div> <!-- end row -->
 @endsection
 @section('page_level_script')
-    @include('dashboard.found-reports._shared')
+    @include('dashboard.lost-reports._shared')
     <script>
             $(document).ready(function($) {
                 let table = $('#lostReportDatatable').DataTable({
@@ -34,13 +34,12 @@
                         "url": BASE_URL + '/dashboard/lost-reports',
                         "dataType": "json",
                         "type": "GET",
-                        "data": {
-                            "_token": CSRF_TOKEN
-                        },
                         "tryCount" : 0,
                         "retryLimit" : 3,
                         error: function(xhr, ajaxOptions, thrownError) {
-                        }
+                            toastError("Something went wrong!!!");
+
+                        },
                     },
                     "columns": [{
                             "data": "item_name",
@@ -73,11 +72,14 @@
                     fixedHeader: true,
                     // "pagingType": "simple",
                     "searchable": false,
+                    "bDestroy": true,
+                    "processing": true,
                     "language": {
-                        "emptyTable": " "
+                        "emptyTable": " ",
+                        "processing": "<div class='spinner-border text-primary' role='status'>"+
+                        "<span class='visually-hidden'>Loading...</span>"+
+                        "</div>"
                     },
-                    "bDestroy": true
-
                 });
             });
         </script>

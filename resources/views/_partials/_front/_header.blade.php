@@ -26,7 +26,7 @@
                     <a class="front-logout sh-btn" href="{{route('logout')}}">Logout</a>
                     <a href="#" class="header-user-icon">
                         @php
-                            $img_src = asset('assets/media/avatars/blank.png');
+                            $img_src = asset('assets/images/common/blank_user.png');
                             if (!empty(auth()->user()->image)) {
                                 $img_src = asset('storage/uploads/profiles/' . auth()->user()->avatar);
                             }
