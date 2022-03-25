@@ -48,7 +48,6 @@ class FoundReportController extends Controller
                 $query->where('r.title', 'like', $search . '%')
                     ->orWhere('r.brand', 'like', $search . '%')
                     ->orWhere('c.name', 'like', $search . '%')
-                    ->orWhere('r.verified', 'like', $search . '%')
                     ->orWhere('r.created_at', 'like', $search . '%');
             });
             $totalData = $query->count();
@@ -65,7 +64,7 @@ class FoundReportController extends Controller
                     $nestedData['item_name'] = $v->title;
                     $nestedData['brand'] = $v->brand ? ucwords($v->brand) : 'Not Specified';
                     $nestedData['category'] = ucwords($v->category);
-                    $nestedData['status'] = $v->verified;
+                    $nestedData['verified'] = $v->verified;
                     $nestedData['created_at'] = \Carbon\Carbon::parse($v->created_at)->format('Y-m-d');
                     $nestedData['action'] = \View::make('dashboard.found-reports._action')->with('r',$v)->render();
                     $data[] = $nestedData;

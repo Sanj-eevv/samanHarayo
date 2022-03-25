@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-        <div class="row mt-4 mt-lg-0">
+        <div class="row mt-4">
             <div class="col-md-12">
                 <h4 class="d-inline-block sh-title">Description</h4>
                 <p class="desc-para">{{$report->description}}</p>
