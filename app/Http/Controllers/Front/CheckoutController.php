@@ -106,38 +106,11 @@ class CheckoutController extends Controller
     }
 
     public function prePaymentValidation(Request $request){
-        if(!$request->has('require_identity')){
-            return response()->json(['Something went wrong!!!']);
-        }
-        $require_identity = $request->input('require_identity');
-        if($require_identity === "true"){
-            $user = Auth::user();
-            $report = Report::where('slug', $request->input('report'))->first();
-            $has_reported = $user->reports()->where('id', $report->id)->exists();
-            if($request->created_by === $user->id){
-                return response()->json(["error"=> 'You cannot claim the report created by you.']);
-            }
-
-            if($has_reported){
-                return response()->json(["error"=> 'You have already claimed this item.']);
-            }
-
-            $validator = Validator::make($request->all(), [
-                'identity_front'                        =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
-                'identity_back'                         =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
-                'current_image'                         =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
-            ]);
-            if( $validator->fails() )
-            {
-                return response()->json($validator->errors());
-            }
-        }
-        $session_total = $require_identity === "true"? config('app.settings.per_report_price'): session('total');
+        $session_total = session('total');
         $total = $request->input('total');
         if (floatval($total) != floatval($session_total)) {
             return response()->json(['Price Discrepancy']);
         }
-
         return response()->json([
             'successful_validation' => 'success',
         ],200);

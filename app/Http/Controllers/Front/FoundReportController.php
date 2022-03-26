@@ -12,6 +12,7 @@ use App\Models\Location;
 use App\Models\Photo;
 use App\Models\Report;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FoundReportController extends Controller
 {
@@ -44,35 +45,38 @@ class FoundReportController extends Controller
      */
     public function store(FoundReportRequest $request)
     {
-        $report = Report::create([
-            'title'                     =>                  $request->input('title'),
-            'slug'                      =>                  SamanHarayoHelper::uniqueSlugify($request->input('title'), Report::class, null, 'slug'),
-            'description'               =>                  $request->description,
-            'reported_by'               =>                  auth()->user()->id,
-            'category_id'               =>                  $request->input('category'),
-            'brand'                     =>                  $request->input('brand'),
-            'report_type'               =>                  Report::REPORT_TYPE_FOUND,
-            'verified'                  =>                  0,
-            'contact_number'            =>                  $request->input('phone'),
-            'contact_email'             =>                  $request->input('email') ?? auth()->user()->email,
-        ]);
-        $item_images = $request->file('item_image');
-        foreach($item_images as $image) {
-            $imageName = SamanHarayoHelper::renameImageFileUpload($image);
-            $image->storeAs(
-                'public/uploads/report/'.$report->reported_by.'/item_image/', $imageName
-            );
-            ItemImage::create([
-                'image'     =>      $imageName,
-                'report_id' =>      $report->id,
+        DB::transaction(function () use($request){
+            $report = Report::create([
+                'title'                     =>                  $request->input('title'),
+                'slug'                      =>                  SamanHarayoHelper::uniqueSlugify($request->input('title'), Report::class, null, 'slug'),
+                'description'               =>                  $request->description,
+                'reported_by'               =>                  auth()->user()->id,
+                'category_id'               =>                  $request->input('category'),
+                'brand'                     =>                  $request->input('brand'),
+                'report_type'               =>                  Report::REPORT_TYPE_FOUND,
+                'verified'                  =>                  0,
+                'contact_number'            =>                  $request->input('phone'),
+                'contact_email'             =>                  $request->input('email') ?? auth()->user()->email,
             ]);
-        }
-        Location::create([
-            'latitude'              =>              $request->input('latitude'),
-            'longitude'             =>              $request->input('longitude'),
-            'address'               =>              $request->input('address'),
-            'report_id'             =>              $report->id,
-        ]);
+            $item_images = $request->file('item_image');
+            foreach($item_images as $image) {
+                $imageName = SamanHarayoHelper::renameImageFileUpload($image);
+                $image->storeAs(
+                    'public/uploads/report/'.$report->reported_by.'/item_image/', $imageName
+                );
+                ItemImage::create([
+                    'image'     =>      $imageName,
+                    'report_id' =>      $report->id,
+                ]);
+            }
+            Location::create([
+                'latitude'              =>              $request->input('latitude'),
+                'longitude'             =>              $request->input('longitude'),
+                'address'               =>              $request->input('address'),
+                'report_id'             =>              $report->id,
+            ]);
+        });
+
         return redirect()->route('front.index')->with('toast.success', 'Report Waiting to be Verified!!');
     }
 

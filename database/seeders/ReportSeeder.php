@@ -81,6 +81,7 @@ class ReportSeeder extends Seeder
             ItemImage::factory(rand(4,8))->create([
                 'image'                 =>      $this->faker->image(storage_path('app/public/uploads/report/'.$user.'/item_image'), 400, 300, 'Product Image', false),
                 'report_id'             =>      $report->id,
+                'claimed_by'            =>      null,
             ]);
         });
     }

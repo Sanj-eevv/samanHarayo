@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('front.index');
 Route::get('/details/{slug}', [\App\Http\Controllers\Front\IndexController::class , 'show'])->name('front.details');
+Route::get('/listing', [\App\Http\Controllers\Front\IndexController::class , 'listing'])->name('front.listing');
+
 
 // Social Routes
 Route::get('auth/facebook', [\App\Http\Controllers\Social\FacebookController::class, 'facebookRedirect'])->name('auth.facebookRedirect');
@@ -32,9 +34,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('/report-found', \App\Http\Controllers\Front\FoundReportController::class);
     Route::resource('/identity', \App\Http\Controllers\Front\IdentityController::class);
     Route::post('payment/stripe', [\App\Http\Controllers\Front\PaymentController::class, 'getStripePaymentIntent'])->name('stripe.payment');
-    Route::post('payment/paypal', [\App\Http\Controllers\Front\PaymentController::class, 'getPaypalPaymentIntent'])->name('paypal.payment');
+//    Route::post('payment/paypal', [\App\Http\Controllers\Front\PaymentController::class, 'getPaypalPaymentIntent'])->name('paypal.payment');
     Route::post('payment/createOrderPaypal', [\App\Http\Controllers\Front\PaymentController::class, 'createOrderPaypal']);
-    Route::post('payment/pre-payment-validation', [\App\Http\Controllers\Front\CheckoutController::class, 'prePaymentValidation'])->name('checkout.prePaymentValidation');
+    Route::get('payment/pre-payment-validation', [\App\Http\Controllers\Front\CheckoutController::class, 'prePaymentValidation'])->name('checkout.prePaymentValidation');
 
 
     Route::get('/checkout', [\App\Http\Controllers\Front\CheckoutController::class, 'index'])->name('checkout.index');
@@ -50,3 +52,4 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
 });
 //LocalHubHelper::uniqueSlugify($request->input('slug'), Post::class, null, 'slug'),
+//        "facade/ignition": "^2.5",

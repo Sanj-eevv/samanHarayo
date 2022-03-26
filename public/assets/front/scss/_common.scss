@@ -2099,6 +2099,9 @@ textarea:focus {
     transition: width ease 0.6s;
     border-bottom: 3px solid #ff2f2f;
 }
+.underlined-link.active::after{
+    width: 100%;
+}
 .underlined-link:hover::after{
     width: 100%;
 }

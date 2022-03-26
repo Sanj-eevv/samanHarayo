@@ -28,9 +28,9 @@ class IdentityRequest extends FormRequest
             'identity_front'                        =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
             'identity_back'                         =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
             'current_image'                         =>              ['required', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
-//            'item_image'                            =>              ['nullable'],
-//            'item_image.*'                          =>              [ 'image', 'mimes:jpg,png,jepg', 'max:10240'],
-//            'description'                           =>              ['required', 'string', 'min:100'],
+            'item_image'                            =>              ['nullable'],
+            'item_image.*'                          =>              [ 'image', 'mimes:jpg,png,jepg', 'max:10240'],
+            'description'                           =>              ['required', 'string', 'min:100'],
         ];
     }
 }

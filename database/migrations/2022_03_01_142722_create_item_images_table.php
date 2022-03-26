@@ -18,6 +18,7 @@ class CreateItemImagesTable extends Migration
             $table->string('image');
             $table->foreignId('report_id')->nullable()->constrained()->onDelete('cascade');
             $table->boolean('claim')->default(0);
+            $table->foreignId('claimed_by')->nullable()->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

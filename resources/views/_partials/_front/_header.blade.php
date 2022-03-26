@@ -7,11 +7,11 @@
                 </a>
             </div>
             <div class="header-nav">
-                   <a class="underlined-link" href="{{route('front.index')}}">HOME </a>
-                   <a class="underlined-link" href="#">LISTING </a>
-                   <a class="underlined-link" href="#">FAQ </a>
-                   <a class="underlined-link" href="#">ABOUT US </a>
-                   <a class="underlined-link" href="#">CONTACT </a>
+                   <a class="underlined-link {{Request::segment(1) === null ? 'active' : ''}}" href="{{route('front.index')}}">HOME </a>
+                   <a class="underlined-link {{Request::segment(1) === 'listing' ? 'active' : ''}}" href="{{route('front.listing')}}">LISTING </a>
+                   <a class="underlined-link {{Request::segment(1) === 'faqs' ? 'active' : ''}}" href="#">FAQs </a>
+                   <a class="underlined-link {{Request::segment(1) === 'about' ? 'active' : ''}}" href="#">ABOUT US </a>
+                   <a class="underlined-link {{Request::segment(1) === 'contact' ? 'active' : ''}}" href="#">CONTACT </a>
             </div>
             <div class="header-action">
                 <div class="header-search">

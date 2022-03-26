@@ -22,6 +22,7 @@
 
     function showErrorAndScrollUp(errorText)
     {
+        console.log('sfsssssssssf');
         $("#paymentErrorAlert").hide();
         $("#validationErrorText").html(errorText);
         $("#validationErrorAlert").show();
@@ -31,6 +32,7 @@
 
     function resetFieldsAfterPayFail()
     {
+        console.log('sfasdfsadfasdfasdff');
         $("#payStartSpinner").hide();
         $("#terms_checkbox").prop("disabled", false);
 
@@ -58,30 +60,6 @@
         emptyForm.append("_token", "{{ csrf_token() }}");
         emptyForm.append("total", "{{$total}}");
         emptyForm.append("currency", "{{$currencyTextRaw}}");
-        emptyForm.append("require_identity", require_identity);
-        if(require_identity){
-            emptyForm.append("report", @json($report));
-            let identity_front  =   document.getElementById('identity_front_input').files[0];
-            let identity_back   =   document.getElementById('identity_back_input').files[0];
-            let current_image   =   document.getElementById('current_image_input').files[0];
-            // let item_image      =   document.querySelector("[name='item_image[]']").files;
-            // let description     =   document.getElementById('description').value;
-
-            if(identity_front){
-                emptyForm.append("identity_front", identity_front);
-            }
-            if(identity_back){
-                emptyForm.append("identity_back", identity_back);
-            }
-            if(current_image){
-                emptyForm.append("current_image", current_image);
-            }
-            // if(description){
-            //     emptyForm.append("description", description);
-            // }
-            // emptyForm.append("item_image", item_image);
-        }
-
     }
     function beautifyJson(passedStr)
     {

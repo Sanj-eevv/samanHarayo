@@ -37,18 +37,16 @@ class Report extends Model
         return $this->hasOne(Reward::class, 'report_id', 'id');
     }
 
-////    TODO: LocalScope;
-//    public function featured_photo(){
-//        return $this->hasOne(Photo::class, 'report_id', 'id')->where(function($q){
-//            $q->where('featured', 'yes');
-//        });
-//    }
     public function randomImage(){
         return $this->hasOne(ItemImage::class, 'report_id', 'id')->inRandomOrder();
     }
 
-    Public function users(){
+    public function users(){
         return $this->belongsToMany(User::class);
+    }
+
+    public function claimUsers(){
+            return $this->belongsToMany(User::class,'claim_user', 'report_id', 'user_id')->withTimestamps()->withPivot('description');
     }
 
 }

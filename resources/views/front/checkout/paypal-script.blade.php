@@ -26,7 +26,6 @@
         },
         onApprove: function(data, actions) {
             return actions.order.capture().then(function (details){
-                console.log( details.purchase_units[0].payments.captures[0].id);
                 document.querySelector('#total_paypal').value = basicFormPaypal.get("total");
                 document.querySelector('#transaction_paypal').value = details.purchase_units[0].payments.captures[0].id;
                 var paypalForm = document.querySelector('#payment-form-paypal');
@@ -43,17 +42,15 @@
             changeFieldsAfterPayStart();
             basicFormPaypal = new FormData();
             appendBasicData(basicFormPaypal);
-            return fetch("{{ url('payment/paypal') }}", {
-                method: "POST",
+            return fetch("{{route('checkout.prePaymentValidation')}}", {
+                method: "GET",
                 body: basicFormPaypal
             }).then(function(res){
-                if(!res.ok)
-                {
-                    return serverErrorPaypal;
-                }
-                else
+                if( res.hasOwnProperty("successful_validation") )
                 {
                     return res.json();
+                }else{
+                    return serverErrorPaypal;
                 }
             }).then(function(data){
                 if(data == serverErrorPaypal)

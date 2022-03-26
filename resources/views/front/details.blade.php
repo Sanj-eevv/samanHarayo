@@ -4,18 +4,26 @@
             <div class="row gy-4">
                 <div class="col-lg-6">
                     <div class="product-details-big-img-slider">
-                        @foreach($report->itemImages as $item_image)
+                        @forelse($report->itemImages as $item_image)
                             <a href="#">
                                 <img src="{{asset('storage/uploads/report/'.$report->reported_by.'/item_image/'.$item_image->image)}}" alt="" class="img-fluid">
                             </a>
-                        @endforeach
+                        @empty
+                            <a href="#">
+                                <img src="{{asset('assets/images/common/placeholder.jpg')}}" alt="" class="img-fluid">
+                            </a>
+                        @endforelse
                     </div>
                     <div class="product-details-small-img-slider">
-                        @foreach($report->itemImages as $item_image)
+                        @forelse($report->itemImages as $item_image)
                             <div>
                                 <img src="{{asset('storage/uploads/report/'.$report->reported_by.'/item_image/'.$item_image->image)}}" alt="" class="img-fluid">
                             </div>
-                        @endforeach
+                        @empty
+                            <div>
+                                <img src="{{asset('assets/images/common/placeholder.jpg')}}" alt="" class="img-fluid">
+                            </div>
+                        @endforelse
                     </div>
                 </div>
                 <div class="col-lg-6">

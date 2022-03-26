@@ -112,4 +112,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany(Report::class);
     }
 
+    public function claims(){
+        return $this->belongsToMany(Report::class,'claim_user', 'user_id', 'report_id')->withTimestamps()->withPivot('description');
+    }
+
+
 }

@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-    <?php
+<?php
     $stripePubKey = config('app.settings.stripe_publishable_key');
     $currencyTextRaw = 'USD';
 

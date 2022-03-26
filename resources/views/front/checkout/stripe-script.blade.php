@@ -7,12 +7,7 @@
     var stripeForm = document.querySelector("#payment-form-stripe");
     var paymentIntentId = "0";
     var serverErrorStripe = "Server error occurred stripe";
-    var require_identity = false;
     var basicFormStripe;
-    var identity_front;
-    var identity_back;
-    var current_photo;
-
 
     let style = {
         base: {
@@ -35,8 +30,6 @@
 
     stripeForm.addEventListener("submit", function(event) {
         event.preventDefault();
-        let current_path = window.location.pathname;
-        require_identity = current_path === "/identity";
         let termsAreChecked = checkTermsAcceptance();
         if(termsAreChecked == false)
         {
@@ -44,16 +37,16 @@
         }
         changeFieldsAfterPayStart();
         basicFormStripe = new FormData();
-        appendBasicData(basicFormStripe, require_identity);
-        validateDataStripe(require_identity);
+        appendBasicData(basicFormStripe);
+        validateDataStripe();
         // completeStripePayment(total_amount);
     });
 
-    function validateDataStripe(require_identity = false)
+    function validateDataStripe()
     {
         $.ajax({
             url: "{{route('checkout.prePaymentValidation')}}",
-            method: "POST",
+            method: "GET",
             data: basicFormStripe,
             processData: false,
             contentType: false,
@@ -64,9 +57,7 @@
                 }
                 else
                 {
-                    // let fieldErrors = JSON.stringify(result, null, 1);
-                    let values = Object.keys(result).map(function (key) { return result[key]; });
-                    let fieldErrors = values.toString();
+                    let fieldErrors = JSON.stringify(result, null, 1);
                     fieldErrors = beautifyJson(fieldErrors);
                     showErrorAndScrollUp(fieldErrors);
                 }
@@ -115,34 +106,9 @@
                     showErrorAndScrollUp(data.error.message);
                 }else if(data.paymentIntent){
                     basicFormStripe.append("transaction_id",  data.paymentIntent.id);
-                    if(require_identity){
-                        $.ajax({
-                            url: "{{route('identity.store')}}",
-                            method: "POST",
-                            data: basicFormStripe,
-                            headers: {
-                                "X-CSRF-Token": "{{ csrf_token() }}",
-                            },
-                            processData: false,
-                            contentType: false,
-                            success: function(result) {
-                                if( result.hasOwnProperty("successful_validation") )
-                                {
-                                    $("#payStartSpinner").hide();
-                                    alertifySuccessAndRedirect("Report Recorded Successfully. We'll will verify your claim soon.", BASE_URL);
-                                }
-                            },
-                            error: function(result) {
-                                $("#payStartSpinner").hide();
-                                showErrorAndScrollUp("Payment received with an error");
-                            }
-                        });
-                    }else{
                         document.querySelector('#transaction_stripe').value = data.paymentIntent.id;
                         document.querySelector('#total_stripe').value = basicFormStripe.get('total');
                         stripeForm.submit();
-                    }
-
                 }
             });
         });
