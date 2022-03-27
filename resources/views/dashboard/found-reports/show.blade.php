@@ -87,6 +87,8 @@
                 $.ajax({
                     url: BASE_URL+'/dashboard/found-reports/'+report_id,
                     type: 'PUT',
+                    "tryCount" : 0,
+                    "retryLimit" : 3,
                     headers: {
                         'X-CSRF-Token': CSRF_TOKEN
                     },
@@ -105,7 +107,14 @@
                         let new_status = resp.report_status;
                         toastSuccess(resp.message);
                     },
-                    error: function (xhr){
+                    error: function (xhr,ajaxOptions, thrownError){
+                        if (xhr.status === 500) {
+                            this.tryCount++;
+                            if (this.tryCount <= this.retryLimit) {
+                                //try again
+                                $.ajax(this);
+                            }
+                        }
                         span_report_status.text(current_report_status);
                         if(current_report_status === 'Pending'){
                             span_report_status.removeClass('bg-success');
@@ -114,7 +123,12 @@
                             span_report_status.removeClass('bg-danger');
                             span_report_status.addClass('bg-success');
                         }
-                        toastError("Something went wrong!!!");
+                        let obj = JSON.parse(xhr.responseText);
+                        if(obj.message){
+                            toastError(obj.message);
+                        }else{
+                            toastError("Something went wrong !!!");
+                        }
                     }
                 });
 

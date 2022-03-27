@@ -98,7 +98,7 @@
                         </a>
                     @endif
                     </div>
-                    <h4><a href="" class="underlined-link">{{ucwords($lost_report->title).' '.($lost_report->brand ? '('.ucwords($lost_report->brand).')' : '')}}</a></h4>
+                    <h4><a href="" class="clamp-line-1">{{ucwords($lost_report->title)}}</a></h4>
                 </div>
             @endforeach
             @foreach($found_reports as $found_report)
@@ -114,7 +114,7 @@
                             </a>
                         @endif
                 </div>
-                <h4><a href="" class="underlined-link">{{ucwords($found_report->title).' '.($found_report->brand ? '('.ucwords($lost_report->brand).')' : '')}}</a></h4>
+                <h4><a href="" class="underlined-link">{{ucwords($found_report->title)}}</a></h4>
             </article>
             @endforeach
         </div>

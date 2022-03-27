@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Helpers\AppHelper;
+use App\Helpers\SamanHarayoHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Feature;
 use App\Models\FoundReport;
 use App\Models\LostReport;
 use App\Models\Report;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class IndexController extends Controller
@@ -25,7 +28,54 @@ class IndexController extends Controller
         return view('front.details', compact('report'));
     }
 
-    public function listing(){
+    public function listing(Request $request){
+        if($request->ajax()){
+
+            $direction = $request->input('direction');
+            $meta['dir'] = $direction ?? 'desc';
+
+            $order = $request->input('order');
+            $meta['order'] = $order ? 'title' : 'created_at';
+
+            $page = $request->input('page');
+            $meta['page'] = $page ?? 1;
+
+
+            $meta = SamanHarayoHelper::defaultTableInput($meta);
+//            dd($meta);
+            $query = \DB::table('reports as r')
+                ->join('categories as c', 'r.category_id', 'c.id')
+                ->leftJoin('rewards as re', 're.report_id', 'r.id')
+                ->leftJoin('item_images as i',function($q){
+                    $q->on('r.id','=', DB::raw('(SELECT max(report_id) FROM item_images WHERE i.report_id = r.id group by i.report_id limit 1)')
+                    );
+                    })
+                ->select(
+                    'r.id', 'r.title', 'r.description', 'r.slug', 'r.report_type', 'r.created_at', 'r.reported_by', 'r.created_at',
+                    'c.name',
+                    're.reward_amount',
+                    'i.image'
+                );
+            $query->where(function($q) use($meta){
+                $q->orWhere('c.name', 'like', $meta['search'] . '%')
+                    ->orWhere('r.title', 'like', $meta['search'] . '%')
+                    ->orWhere('r.created_at', 'like', $meta['search'] . '%');
+            });
+             return $this->offsetAndSort($query, $meta);
+        }
         return view('front.listing');
+    }
+    public function offsetAndSort($query, $meta){
+        $total = $query->count();
+        $meta = SamanHarayoHelper::additionalMeta($meta, $total);
+        $query->orderBy($meta['order'], $meta['dir']);
+        if ($meta['perPage'] != '-1') {
+            $query->offset($meta['offset'])->limit($meta['perPage']);
+        }
+        $results = \View::make('front._partials.listing_card')->with(['reports'=>collect($query->get())])->render();
+        return [
+            'results'  => $results,
+            'meta'     =>  $meta
+        ];
     }
 }

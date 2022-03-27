@@ -2112,6 +2112,28 @@ img.cover-image{
     object-fit: cover;
 }
 
+// clamp line
+.clamp-line-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.clamp-line-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.clamp-line-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
 /*Title*/
 
 .sh-title{
@@ -2213,6 +2235,26 @@ a.sh_preview_image_close:hover{
     width: 100%;
 }
 
+// loader
+#loader{
+    display: flex;
+}
+
+.sh-view-more{
+    padding: 8px 32px;
+    border: 2px solid $black;
+    border-radius: 30px;
+    display: none;
+    background: transparent;
+    &:hover{
+        color: #fff;
+        background: $theme-color-purple;
+        border-color: $theme-color-purple;
+    }
+    &.active{
+    display: inline-block;
+    }
+}
 
 
 

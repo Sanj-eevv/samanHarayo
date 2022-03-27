@@ -35,8 +35,22 @@
                         "url": BASE_URL + '/dashboard/found-reports',
                         "dataType": "json",
                         "type": "GET",
+                        "tryCount" : 0,
+                        "retryLimit" : 3,
                         error: function(xhr, ajaxOptions, thrownError) {
-                            toastError("Something went wrong!!!");
+                            if (xhr.status === 500) {
+                                this.tryCount++;
+                                if (this.tryCount <= this.retryLimit) {
+                                    //try again
+                                    $.ajax(this);
+                                }
+                            }
+                            let obj = JSON.parse(xhr.responseText);
+                            if(obj.message){
+                                toastError(obj.message);
+                            }else{
+                                toastError("Something went wrong !!!");
+                            }
                         }
                     },
                     "columns": [{
