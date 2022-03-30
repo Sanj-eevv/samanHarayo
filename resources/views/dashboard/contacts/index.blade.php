@@ -1,17 +1,15 @@
 @extends('layouts.dashboard')
-@section('title','Dashboard')
+@section('title','Contact')
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <table id="userDatatable" class="table table-bordered dt-responsive  nowrap w-100">
+                    <table id="contactDatatable" class="table table-bordered dt-responsive  nowrap w-100">
                         <thead>
                             <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
+                                <th>Name</th>
                                 <th>Email</th>
-                                <th>Role</th>
                                 <th>Created at</th>
                                 <th>Actions</th>
                             </tr>
@@ -26,13 +24,13 @@
     </div> <!-- end row -->
 @endsection
 @section('page_level_script')
-    @include('dashboard.users._shared')
+    @include('dashboard.contacts._shared')
     <script>
             $(document).ready(function($) {
-                let table = $('#userDatatable').DataTable({
+                let table = $('#contactDatatable').DataTable({
                     "serverSide": true,
                     "ajax": {
-                        "url": BASE_URL + '/dashboard/users',
+                        "url": BASE_URL + '/dashboard/contacts',
                         "dataType": "json",
                         "type": "GET",
                         "data": {
@@ -53,16 +51,10 @@
                         }
                     },
                     "columns": [{
-                        "data": "first_name",
+                        "data": "name",
                     },
                         {
-                            "data": "last_name"
-                        },
-                        {
                             "data": "email"
-                        },
-                        {
-                            "data": "role"
                         },
                         {
                             "data": "created_at"

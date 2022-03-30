@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             SettingSeeder::class,
             ReportSeeder::class,
+            ContactSeeder::class,
         ]);
     }
 }

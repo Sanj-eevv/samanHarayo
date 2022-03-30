@@ -11,7 +11,7 @@
                    <a class="underlined-link {{Request::segment(1) === 'listing' ? 'active' : ''}}" href="{{route('front.listing')}}">LISTING </a>
                    <a class="underlined-link {{Request::segment(1) === 'faqs' ? 'active' : ''}}" href="#">FAQs </a>
                    <a class="underlined-link {{Request::segment(1) === 'about' ? 'active' : ''}}" href="#">ABOUT US </a>
-                   <a class="underlined-link {{Request::segment(1) === 'contact' ? 'active' : ''}}" href="#">CONTACT </a>
+                   <a class="underlined-link {{Request::segment(1) === 'contact' ? 'active' : ''}}" href="{{route('front.contact.index')}}">CONTACT </a>
             </div>
             <div class="header-action">
                 <div class="header-search">
@@ -67,7 +67,7 @@
                         </li>
                         <li class="menu-item-has-children "><a href="#">About Us</a>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{route('front.contact.index')}}">Contact</a></li>
                     </ul>
                 </nav>
                 <!-- mobile menu end -->

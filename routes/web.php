@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('front.index');
 Route::get('/details/{slug}', [\App\Http\Controllers\Front\IndexController::class , 'show'])->name('front.details');
 Route::get('/listing', [\App\Http\Controllers\Front\IndexController::class , 'listing'])->name('front.listing');
+Route::get('/contact', [\App\Http\Controllers\Front\ContactController::class, 'index'])->name('front.contact.index');
+Route::post('/contact', [\App\Http\Controllers\Front\ContactController::class, 'store'])->name('front.contact.store');
+
 
 
 // Social Routes
@@ -30,6 +33,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/email-verified', function (){
         return view('auth.email-verified');
     });
+
     Route::resource('/report-lost', \App\Http\Controllers\Front\LostReportController::class)->except('create' );
     Route::resource('/report-found', \App\Http\Controllers\Front\FoundReportController::class);
     Route::resource('/identity', \App\Http\Controllers\Front\IdentityController::class);
@@ -37,14 +41,13 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 //    Route::post('payment/paypal', [\App\Http\Controllers\Front\PaymentController::class, 'getPaypalPaymentIntent'])->name('paypal.payment');
     Route::post('payment/createOrderPaypal', [\App\Http\Controllers\Front\PaymentController::class, 'createOrderPaypal']);
     Route::get('payment/pre-payment-validation', [\App\Http\Controllers\Front\CheckoutController::class, 'prePaymentValidation'])->name('checkout.prePaymentValidation');
-
-
     Route::get('/checkout', [\App\Http\Controllers\Front\CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('checkout/fulfill-order', [\App\Http\Controllers\Front\CheckoutController::class, 'fulfillOrder'])->name('checkout.fulfillOrder');
 
     /** BackEnd Starts*/
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
+        Route::resource('contacts', \App\Http\Controllers\dashboard\ContactController::class);
         Route::resource('found-reports', \App\Http\Controllers\Dashboard\FoundReportController::class);
         Route::resource('lost-reports', \App\Http\Controllers\Dashboard\LostReportController::class);
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);

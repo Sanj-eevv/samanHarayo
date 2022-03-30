@@ -1,6 +1,9 @@
 
 /*-------- 22. Checkout style ---------*/
 .report-form-product-details {
+    input, div.upload-text{
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
     .flex-google-div {
         display: flex;
         gap: 20px;
@@ -15,6 +18,7 @@
     }
 
     select {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         -moz-appearance: none;
         -webkit-appearance: none;
         background: rgba(0, 0, 0, 0) url("../../images/icon-img/select.png") no-repeat scroll right 18px center;
@@ -27,6 +31,7 @@
         }
     }
     textarea {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         min-height: 120px;
         //background-color: #e9ecef;
         border: 1px solid rgba(0,0,0,0.3);

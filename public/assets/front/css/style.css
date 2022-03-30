@@ -5692,6 +5692,9 @@ h3.cart-page-title {
 
 /*------ end Compare Page Wrapper -----*/
 /*-------- 22. Checkout style ---------*/
+.report-form-product-details input, .report-form-product-details div.upload-text {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; }
+
 .report-form-product-details .flex-google-div {
   display: flex;
   gap: 20px; }
@@ -5705,6 +5708,7 @@ h3.cart-page-title {
   border-radius: .25rem; }
 
 .report-form-product-details select {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   -moz-appearance: none;
   -webkit-appearance: none;
   background: rgba(0, 0, 0, 0) url("../../images/icon-img/select.png") no-repeat scroll right 18px center; }
@@ -5716,6 +5720,7 @@ h3.cart-page-title {
     font-size: 12px; }
 
 .report-form-product-details textarea {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   min-height: 120px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   padding: 20px; }
@@ -6103,85 +6108,32 @@ div#stripe-card-element {
     padding-bottom: 60px; } }
 
 /*------- 25. Contect us style  -------*/
-.contact-info-wrap-3 h3, .get-in-touch-wrap h3 {
-  text-transform: capitalize;
-  font-size: 25px;
-  font-weight: 600;
-  margin: 0 0 30px; }
-  @media (min-width: 640px) {
-    .contact-info-wrap-3 h3, .get-in-touch-wrap h3 {
-      margin: 0 0 24px; } }
-
-@media (min-width: 768px) {
-  .contact-info-wrap-3.pb-85, .get-in-touch-wrap.pb-85 {
-    padding-bottom: 45px; } }
-
-@media (min-width: 640px) {
-  .contact-info-wrap-3.pb-85, .get-in-touch-wrap.pb-85 {
-    padding-bottom: 25px; } }
-
-.single-contact-info-3 {
+.single-contact {
   background-color: #f7f7f7;
-  padding: 48px 10px 49px; }
-  @media (min-width: 768px) {
-    .single-contact-info-3 {
-      padding: 28px 20px 29px; } }
-  .single-contact-info-3 > i {
+  padding: 48px 10px;
+  transition: all 0.3s ease-out; }
+  .single-contact > i {
     font-size: 24px;
     color: #ff2f2f;
     transition: all .3s ease 0s;
     display: block; }
-  .single-contact-info-3 h4 {
+  .single-contact h4 {
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.4px;
     text-transform: capitalize;
     margin: 19px 0 10px; }
-    @media (min-width: 768px) {
-      .single-contact-info-3 h4 {
-        font-size: 18px;
-        margin: 12px 0 10px; } }
-  .single-contact-info-3 p {
+  .single-contact p {
     letter-spacing: .4px;
     font-size: 15px;
     color: #000000; }
-  .single-contact-info-3 ul li {
-    border-bottom: 2px solid #fff;
-    letter-spacing: 0.4px;
-    margin-bottom: 23px;
-    padding-bottom: 26px;
-    font-size: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; }
-    @media (min-width: 768px) {
-      .single-contact-info-3 ul li {
-        display: block;
-        margin-bottom: 11px;
-        padding-bottom: 11px; } }
-    .single-contact-info-3 ul li:last-child {
-      padding-bottom: 0px;
-      margin-bottom: 0px;
-      border-bottom: none; }
-    .single-contact-info-3 ul li i {
-      font-size: 24px;
-      margin-right: 7px;
-      color: #ff2f2f;
-      transition: all .3s ease 0s;
-      display: inline-block; }
-      @media (min-width: 768px) {
-        .single-contact-info-3 ul li i {
-          display: block;
-          margin-right: 0px;
-          margin-bottom: 3px; } }
-    .single-contact-info-3 ul li a {
-      color: #000000; }
-      .single-contact-info-3 ul li a:hover {
-        color: #ff2f2f; }
-    .single-contact-info-3 ul li:hover i {
-      animation: 500ms ease-in-out 0s normal none 1 running tada; }
-  .single-contact-info-3:hover > i {
-    animation: 500ms ease-in-out 0s normal none 1 running tada; }
+    .single-contact p a:hover {
+      color: unset; }
+  .single-contact:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px; }
+
+.contact-from label {
+  margin-bottom: 30px; }
 
 .contact-from input, .contact-from textarea {
   background: #f7f7f7 none repeat scroll 0 0;
@@ -6189,33 +6141,22 @@ div#stripe-card-element {
   color: #000;
   height: 60px;
   padding: 2px 20px;
-  margin-bottom: 30px;
-  position: relative; }
-  @media (min-width: 640px) {
-    .contact-from input, .contact-from textarea {
-      margin-bottom: 20px; } }
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px; }
+  .contact-from input.form-control:focus, .contact-from textarea.form-control:focus {
+    background: #f7f7f7 !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px !important; }
 
 .contact-from textarea {
   height: 200px;
   padding: 20px 20px; }
 
-.contact-from button {
-  border: none;
-  background-color: transparent;
-  text-transform: capitalize;
-  background-color: #ff2f2f;
-  color: #fff;
-  padding: 12px 30px;
-  font-size: 15px;
-  font-weight: 600; }
-  .contact-from button:hover {
-    background-color: #000000; }
+.contact-from .add-query {
+  height: 60px;
+  width: 100%; }
 
 #map {
   height: 400px; }
-  @media (min-width: 640px) {
-    #map {
-      height: 300px; } }
 
 /*------ 26. Blog details style  -------*/
 .blog-details-top .blog-details-img {
@@ -6546,6 +6487,7 @@ div#stripe-card-element {
     .section-report-area .section-report-area-wrapper {
       column-gap: 6%; } }
   .section-report-area .section-report-area-wrapper a {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     text-align: center;
     display: inline-block;
     background-color: #eaeff2;

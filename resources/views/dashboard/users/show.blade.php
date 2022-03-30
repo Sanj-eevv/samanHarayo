@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title mb-0">Add user</h4>
+                        <h4 class="card-title mb-0">User Details</h4>
                         <div class="d-flex flex-wrap gap-2">
                             <a type="button" href="{{route('users.index')}}" class="btn btn-secondary waves-effect waves-light">Back</a>
                             <a type="button" href="{{route('users.edit', $user->id)}}" class="btn btn-info waves-effect waves-light">Edit</a>
