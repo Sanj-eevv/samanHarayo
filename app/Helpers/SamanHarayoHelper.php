@@ -11,7 +11,7 @@ class SamanHarayoHelper
         $page = isset($input['page']) ? (int)$input['page'] : 1;
         $perPage = isset($input['perPage']) ? (int)$input['perPage'] : 15;
         $order = $input['order'] ?? 'created_at';
-        $dir = $input['dir'] ?? 'desc';
+        $dir = $input['dir'] ?? 'asc';
 //        $searchCol = isset($input['searchCol']) ? json_decode($input['searchCol']) :  new \stdClass();
         $search = isset($input['search']) ? ($input['search']) : '';
         $offset = ($page - 1) * $perPage;
@@ -33,7 +33,7 @@ class SamanHarayoHelper
         if($meta['totalPage'] < $meta['page']){
             $meta['page'] = $meta['totalPage'];
         }
-        if($meta['page'] === $meta['totalPage']){
+        if($meta['page'] == $meta['totalPage']){
             $meta['hasMorePages'] = false;
         }else{
             $meta['hasMorePages'] = true;

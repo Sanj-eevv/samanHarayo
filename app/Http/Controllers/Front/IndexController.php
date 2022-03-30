@@ -30,19 +30,12 @@ class IndexController extends Controller
 
     public function listing(Request $request){
         if($request->ajax()){
-
-            $direction = $request->input('direction');
-            $meta['dir'] = $direction ?? 'desc';
-
-            $order = $request->input('order');
-            $meta['order'] = $order ? 'title' : 'created_at';
-
-            $page = $request->input('page');
+//            dd('a');
+            $type = $request->input('type') ? 'found' : 'lost' ;
+            $meta['order'] = $request->input('order') ? 'title' : 'created_at';
+            $page = $request->input('page') ;
             $meta['page'] = $page ?? 1;
-
-
             $meta = SamanHarayoHelper::defaultTableInput($meta);
-//            dd($meta);
             $query = \DB::table('reports as r')
                 ->join('categories as c', 'r.category_id', 'c.id')
                 ->leftJoin('rewards as re', 're.report_id', 'r.id')
@@ -56,6 +49,7 @@ class IndexController extends Controller
                     're.reward_amount',
                     'i.image'
                 );
+            $query->where('report_type', $type);
             $query->where(function($q) use($meta){
                 $q->orWhere('c.name', 'like', $meta['search'] . '%')
                     ->orWhere('r.title', 'like', $meta['search'] . '%')
@@ -72,7 +66,8 @@ class IndexController extends Controller
         if ($meta['perPage'] != '-1') {
             $query->offset($meta['offset'])->limit($meta['perPage']);
         }
-        $results = \View::make('front._partials.listing_card')->with(['reports'=>collect($query->get())])->render();
+        $data = $query->get();
+        $results = \View::make('front._partials.listing_card')->with(['reports'=>collect($data)])->render();
         return [
             'results'  => $results,
             'meta'     =>  $meta
