@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
         Route::resource('contacts', \App\Http\Controllers\dashboard\ContactController::class);
+        Route::resource('faqs', \App\Http\Controllers\Dashboard\FaqController::class);
         Route::resource('found-reports', \App\Http\Controllers\Dashboard\FoundReportController::class);
         Route::resource('lost-reports', \App\Http\Controllers\Dashboard\LostReportController::class);
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);

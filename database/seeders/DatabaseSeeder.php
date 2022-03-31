@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             SettingSeeder::class,
             ReportSeeder::class,
             ContactSeeder::class,
+            FaqSeeder::class
         ]);
     }
 }

@@ -29,6 +29,8 @@ class IdentityController extends Controller
         if(!$report){
             abort(404);
         }
+//        $user = Auth::user();
+//        if($user->)
         return view('front.identity',compact('report'));
     }
 

@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <table id="lostReportDatatable" class="table table-bordered dt-responsive  nowrap w-100">
+                    <table id="lostReportDatatable" class="table  table-striped dt-responsive  nowrap w-100">
                         <thead>
                             <tr>
                                 <th>Item Name</th>
@@ -44,12 +44,8 @@
                                     $.ajax(this);
                                 }
                             }
-                            let obj = JSON.parse(xhr.responseText);
-                            if(obj.message){
-                                toastError(obj.message);
-                            }else{
-                                toastError("Something went wrong !!!");
-                            }
+                            toastError("Something went wrong !!!");
+                            $('.spinner-border').hide();
                         },
                     },
                     "columns": [{

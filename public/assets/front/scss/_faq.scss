@@ -11,18 +11,26 @@
             margin-top: 8px;
             cursor: pointer;
             a {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                p{
+                    display: inline-block;
+                    top: 0
+                }
                 &:hover{
                     color: #000;
                 }
                 span{
-                    margin-right: 10px;
+                    height: fit-content;
+                    //margin-right: 10px;
                     background: #26333b;
                     color: #fff;
                     padding:  0 5px;
                     border-radius: 2px;
                     svg{
-                        top: -1px;
-                        position: relative;
+                        //top: -1px;
+                        //position: relative;
                         &.sh-minus{
                             display: none;
                         }
@@ -49,6 +57,7 @@
         display: none;
         padding-top: 10px;
         font-size: 13px;
+        text-align: justify;
     }
 }
 

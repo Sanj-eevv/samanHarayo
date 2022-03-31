@@ -1,15 +1,14 @@
 @extends('layouts.dashboard')
-@section('title','Contact')
+@section('title','Dashboard')
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <table id="contactDatatable" class="table table-striped dt-responsive  nowrap w-100">
+                    <table id="faqDatatable" class="table table-striped dt-responsive  nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Email</th>
+                                <th>Question</th>
                                 <th>Created at</th>
                                 <th>Actions</th>
                             </tr>
@@ -24,13 +23,13 @@
     </div> <!-- end row -->
 @endsection
 @section('page_level_script')
-    @include('dashboard.contacts._shared')
+    @include('dashboard.faqs._shared')
     <script>
             $(document).ready(function($) {
-                let table = $('#contactDatatable').DataTable({
+                let table = $('#faqDatatable').DataTable({
                     "serverSide": true,
                     "ajax": {
-                        "url": BASE_URL + '/dashboard/contacts',
+                        "url": BASE_URL + '/dashboard/faqs',
                         "dataType": "json",
                         "type": "GET",
                         "data": {
@@ -52,11 +51,8 @@
                         }
                     },
                     "columns": [{
-                        "data": "name",
+                        "data": "question",
                     },
-                        {
-                            "data": "email"
-                        },
                         {
                             "data": "created_at"
                         },

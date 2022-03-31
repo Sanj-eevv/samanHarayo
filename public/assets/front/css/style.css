@@ -6586,17 +6586,21 @@ div#stripe-card-element {
     margin-bottom: 8px;
     margin-top: 8px;
     cursor: pointer; }
-    .accordion .accordion-content .accordion-title a:hover {
-      color: #000; }
-    .accordion .accordion-content .accordion-title a span {
-      margin-right: 10px;
-      background: #26333b;
-      color: #fff;
-      padding: 0 5px;
-      border-radius: 2px; }
-      .accordion .accordion-content .accordion-title a span svg {
-        top: -1px;
-        position: relative; }
+    .accordion .accordion-content .accordion-title a {
+      display: flex;
+      align-items: center;
+      gap: 15px; }
+      .accordion .accordion-content .accordion-title a p {
+        display: inline-block;
+        top: 0; }
+      .accordion .accordion-content .accordion-title a:hover {
+        color: #000; }
+      .accordion .accordion-content .accordion-title a span {
+        height: fit-content;
+        background: #26333b;
+        color: #fff;
+        padding: 0 5px;
+        border-radius: 2px; }
         .accordion .accordion-content .accordion-title a span svg.sh-minus {
           display: none; }
     .accordion .accordion-content .accordion-title.active svg.sh-plus {
@@ -6611,4 +6615,5 @@ div#stripe-card-element {
   margin-bottom: 10px;
   display: none;
   padding-top: 10px;
-  font-size: 13px; }
+  font-size: 13px;
+  text-align: justify; }
