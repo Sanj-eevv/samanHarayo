@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('front.index');
-Route::get('/details/{slug}', [\App\Http\Controllers\Front\IndexController::class , 'show'])->name('front.details');
-Route::get('/listing', [\App\Http\Controllers\Front\IndexController::class , 'listing'])->name('front.listing');
 Route::get('/contact', [\App\Http\Controllers\Front\ContactController::class, 'index'])->name('front.contact.index');
 Route::post('/contact', [\App\Http\Controllers\Front\ContactController::class, 'store'])->name('front.contact.store');
+Route::get('/details/{slug}', [\App\Http\Controllers\Front\IndexController::class , 'show'])->name('front.details');
+Route::get('/faqs', [\App\Http\Controllers\Front\FaqController::class, 'index'])->name('front.faqs.index');
+Route::get('/listing', [\App\Http\Controllers\Front\IndexController::class , 'listing'])->name('front.listing');
 
 
 

@@ -9,7 +9,7 @@
             <div class="header-nav">
                    <a class="underlined-link {{Request::segment(1) === null ? 'active' : ''}}" href="{{route('front.index')}}">HOME </a>
                    <a class="underlined-link {{Request::segment(1) === 'listing' ? 'active' : ''}}" href="{{route('front.listing')}}">LISTING </a>
-                   <a class="underlined-link {{Request::segment(1) === 'faqs' ? 'active' : ''}}" href="#">FAQs </a>
+                   <a class="underlined-link {{Request::segment(1) === 'faqs' ? 'active' : ''}}" href="{{route('front.faqs.index')}}">FAQs </a>
                    <a class="underlined-link {{Request::segment(1) === 'about' ? 'active' : ''}}" href="#">ABOUT US </a>
                    <a class="underlined-link {{Request::segment(1) === 'contact' ? 'active' : ''}}" href="{{route('front.contact.index')}}">CONTACT </a>
             </div>
@@ -63,7 +63,7 @@
                         </li>
                         <li class="menu-item-has-children "><a href="#">Listing</a>
                         </li>
-                        <li class="menu-item-has-children"><a href="#">Faq</a>
+                        <li class="menu-item-has-children"><a href="{{route('front.faqs.index')}}">Faq</a>
                         </li>
                         <li class="menu-item-has-children "><a href="#">About Us</a>
                         </li>

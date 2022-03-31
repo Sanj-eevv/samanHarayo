@@ -179,6 +179,21 @@
         ]
     });
 
+    /*Faq page accordion*/
+    $('.accordion-title').on('click', function (){
+       let accordion_inner =  $(this).siblings('.accordion-inner');
+       if($(this).hasClass('active')){
+           accordion_inner.slideUp();
+           $(this).removeClass('active');
+           accordion_inner.removeClass('active');
+       }else{
+           accordion_inner.slideDown();
+           $(this).addClass('active');
+           accordion_inner.addClass('active');
+       }
+    });
+
+
 })(jQuery);
 
 /** preview currently uploaded images on form**/
