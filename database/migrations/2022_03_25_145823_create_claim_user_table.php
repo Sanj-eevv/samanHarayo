@@ -14,8 +14,8 @@ class CreateClaimUserTable extends Migration
     public function up()
     {
         Schema::create('claim_user', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('report_id')->constrained('reports');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');;
+            $table->foreignId('report_id')->constrained('reports')->onDelete('cascade');;
             $table->longText('description');
             $table->timestamps();
         });

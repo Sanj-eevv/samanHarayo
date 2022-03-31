@@ -22,7 +22,6 @@
 
     function showErrorAndScrollUp(errorText)
     {
-        console.log('sfsssssssssf');
         $("#paymentErrorAlert").hide();
         $("#validationErrorText").html(errorText);
         $("#validationErrorAlert").show();
@@ -32,7 +31,6 @@
 
     function resetFieldsAfterPayFail()
     {
-        console.log('sfasdfsadfasdfasdff');
         $("#payStartSpinner").hide();
         $("#terms_checkbox").prop("disabled", false);
 
@@ -55,12 +53,14 @@
             $("#payStartBtnStripe").prop("disabled", true);
         }
     }
-    function appendBasicData(emptyForm, require_identity = false)
+    function appendBasicData(emptyForm)
     {
         emptyForm.append("_token", "{{ csrf_token() }}");
         emptyForm.append("total", "{{$total}}");
         emptyForm.append("currency", "{{$currencyTextRaw}}");
+
     }
+
     function beautifyJson(passedStr)
     {
         passedStr = passedStr.replace(/{/g, "");
@@ -71,7 +71,6 @@
         passedStr = passedStr.replace(/"/g, "");
         passedStr = passedStr.replace(/:/g, ": ");
         passedStr = passedStr.replace(/\./g, ".</br>");
-
         return passedStr;
     }
 

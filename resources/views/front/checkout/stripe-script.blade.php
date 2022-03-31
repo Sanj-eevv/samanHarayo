@@ -46,10 +46,13 @@
     {
         $.ajax({
             url: "{{route('checkout.prePaymentValidation')}}",
-            method: "GET",
-            data: basicFormStripe,
+            type: "POST",
+            headers: {
+                'X-CSRF-Token': CSRF_TOKEN
+            },
             processData: false,
             contentType: false,
+            data: basicFormStripe,
             success: function(result) {
                 if( result.hasOwnProperty("successful_validation") )
                 {

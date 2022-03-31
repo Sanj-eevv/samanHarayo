@@ -1,10 +1,9 @@
-<script src="https://www.paypal.com/sdk/js?client-id={{config('app.settings.paypal_client_id')}}&currency=USD&disable-funding=credit,card">
-</script>
+<script src="https://www.paypal.com/sdk/js?client-id={{config('app.settings.paypal_client_id')}}&currency=USD&disable-funding=credit,card"></script>
 <script>
-    var chosenCurrency = @json($currencyTextRaw);
-    var basicFormPaypal;
-    var total_amount = @json($total);
-    var serverErrorPaypal = "server_error_occurred_paypal";
+    let chosenCurrency = @json($currencyTextRaw);
+    let basicFormPaypal;
+    let total_amount = @json($total);
+    let serverErrorPaypal = "server_error_occurred_paypal";
     paypal.Buttons({
         createOrder: function(data, actions) {
            let paypalAmount = basicFormPaypal.get("total");
@@ -43,14 +42,16 @@
             basicFormPaypal = new FormData();
             appendBasicData(basicFormPaypal);
             return fetch("{{route('checkout.prePaymentValidation')}}", {
-                method: "GET",
+                method: "POST",
                 body: basicFormPaypal
             }).then(function(res){
-                if( res.hasOwnProperty("successful_validation") )
+                if(!res.ok)
+                {
+                    return serverErrorPaypal;
+                }
+                else
                 {
                     return res.json();
-                }else{
-                    return serverErrorPaypal;
                 }
             }).then(function(data){
                 if(data == serverErrorPaypal)

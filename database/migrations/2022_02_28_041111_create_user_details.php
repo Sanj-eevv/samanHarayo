@@ -20,6 +20,7 @@ class CreateUserDetails extends Migration
             $table->string('identity_back');
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('avatar')->nullable();
+            $table->enum('verified',['verified', 'unverified'])->default('unverified');
             $table->timestamps();
         });
     }

@@ -29,8 +29,8 @@ class IdentityController extends Controller
         if(!$report){
             abort(404);
         }
-//        $user = Auth::user();
-//        if($user->)
+        $user = Auth::user()->with('user_detail');
+//        if($user->user_detail->current_image)
         return view('front.identity',compact('report'));
     }
 
@@ -95,9 +95,10 @@ class IdentityController extends Controller
             $user->reports()->attach($report->id);
 
             UserDetail::create([
-                'current_image' => $current_image_name,
-                'identity_front' => $identity_front_name,
-                'identity_back' => $identity_back_name,
+                'verified'          => UserDetail::VERIFIED,
+                'current_image'     => $current_image_name,
+                'identity_front'    => $identity_front_name,
+                'identity_back'     => $identity_back_name,
             ]);
 
             $current_image->storeAs(

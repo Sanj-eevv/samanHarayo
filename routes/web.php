@@ -41,7 +41,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('payment/stripe', [\App\Http\Controllers\Front\PaymentController::class, 'getStripePaymentIntent'])->name('stripe.payment');
 //    Route::post('payment/paypal', [\App\Http\Controllers\Front\PaymentController::class, 'getPaypalPaymentIntent'])->name('paypal.payment');
     Route::post('payment/createOrderPaypal', [\App\Http\Controllers\Front\PaymentController::class, 'createOrderPaypal']);
-    Route::get('payment/pre-payment-validation', [\App\Http\Controllers\Front\CheckoutController::class, 'prePaymentValidation'])->name('checkout.prePaymentValidation');
+    Route::post('payment/pre-payment-validation', [\App\Http\Controllers\Front\CheckoutController::class, 'prePaymentValidation'])->name('checkout.prePaymentValidation');
     Route::get('/checkout', [\App\Http\Controllers\Front\CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('checkout/fulfill-order', [\App\Http\Controllers\Front\CheckoutController::class, 'fulfillOrder'])->name('checkout.fulfillOrder');
 

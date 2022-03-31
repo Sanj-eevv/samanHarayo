@@ -144,7 +144,7 @@
     </div>
 @endsection
 @section('page_level_script')
+    @include('front.checkout.checkout-script')
     @include('front.checkout.stripe-script')
     @include('front.checkout.paypal-script')
-    @include('front.checkout.checkout-script')
 @endsection
