@@ -33,12 +33,14 @@ class IdentityController extends Controller
         }
         $user = User::with('userDetail')->find(Auth::id());
         $verified = false;
-        $need_current_image = false;
-        if($user->userDetail->verified === UserDetail::VERIFIED){
-            $verified = true;
-        }
-        if($user->userDetail->updated_at < Carbon::now()->subMonths(3)){
-            $need_current_image = true;
+        $need_current_image = true;
+        if($user->userDetail()->exists()){
+            if($user->userDetail->verified === UserDetail::VERIFIED){
+                $verified = true;
+            }
+            if($user->userDetail->updated_at > Carbon::now()->subMonths(3)){
+                $need_current_image = false;
+            }
         }
         return view('front.identity',compact('report', 'verified', 'need_current_image'));
     }
@@ -94,8 +96,7 @@ class IdentityController extends Controller
             $user->claims()->attach($report->id,['description'=>$description]);
 
 //        These are the image for user identification. It will be stored in user details page.
-            $current_image = $request->file('current_image');
-
+            $current_image = $request->file('current_image');;
             $current_image_name = null;
             $identity_front_name = null;
             $identity_back_name = null;

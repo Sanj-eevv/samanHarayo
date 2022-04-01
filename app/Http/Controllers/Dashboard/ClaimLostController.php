@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Location;
 use App\Models\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class LostReportController extends Controller
+class ClaimLostController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
@@ -73,7 +72,7 @@ class LostReportController extends Controller
                 "data" => $data
             ], 200);
         }
-        return view('dashboard.lost-reports.index');
+        return view('dashboard.claim-lost.index');
     }
 
     /**
@@ -105,9 +104,7 @@ class LostReportController extends Controller
      */
     public function show($id)
     {
-        $report = Report::where('id', $id)->with('category')->first();
-        $location = Location::where('report_id', $id)->first();
-        return view('dashboard.lost-reports.show', compact('report', 'location'));
+        //
     }
 
     /**
@@ -137,13 +134,10 @@ class LostReportController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        Report::where('id', $id)->delete();
-        return response()->json([
-            'message' => 'Report Successfully Deleted',
-        ], 200);
+        //
     }
 }

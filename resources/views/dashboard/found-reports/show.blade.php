@@ -5,8 +5,8 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="d-flex align-items-center justify-content-end">
-{{--                        <h4 class="card-title mb-0">Add user</h4>--}}
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="card-title mb-0">Report Details</h4>
                         <div class="d-flex flex-wrap gap-2 justify-content-end">
                             <a type="button" href="{{route('found-reports.index')}}" class="btn btn-secondary waves-effect waves-light">Back</a>
                             <button onclick="confirmDelete(() => {deleteReport({{$report->id}},true)})" class="btn btn-danger waves-effect waves-light">Delete</button>
@@ -70,6 +70,42 @@
                             </tbody>
                         </table>
                     </div>
+                    <hr>
+                    <div class="py-2">
+                        <h4 class="card-title mb-0">Claim Details</h4>
+                    </div>
+                    @if($report->claimUsers->count() > 0)
+                    <div class="table-responsive">
+                        <table class="table table-bordered mb-0">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Claimed Date</th>
+                                <th>action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($report->claimUsers as $user)
+                                <tr>
+                                    <th scope="row">{{$user->first_name.' '.$user->last_name}}</th>
+                                    <td>{{$user->email}}</td>
+                                    <td>{{\Carbon\Carbon::parse($user->pivot->created_at)->format('d M, Y')}}</td>
+                                    <td>
+                                        <a href="{{route('found-reports.claim.show', ['user_id'=> $user->id, 'report' => $report->slug])}}" class="btn btn-primary position-relative p-0 avatar-xs rounded waves-effect waves-light">
+                                            <span class="avatar-title bg-transparent">
+                                                <i class="mdi mdi-eye-outline"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    @else
+                        <div class="alert alert-danger">This report is not claime by any user yet.</div>
+                    @endif
                 </div>
             </div>
         </div>

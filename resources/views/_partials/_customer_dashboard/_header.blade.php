@@ -4,7 +4,7 @@
             <!-- LOGO -->
             <div class="navbar-brand-box">
 
-                <a href="{{route('dashboard.index')}}" class="logo logo-light">
+                <a href="{{route('front.index')}}" class="logo logo-light">
                     <span class="logo-lg">
                          <span class="text-white-50">{{config('app.name')}}</span>
                     </span>

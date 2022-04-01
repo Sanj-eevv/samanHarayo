@@ -110,7 +110,7 @@ class FoundReportController extends Controller
     public function show($id)
     {
 //        $this->authorize('view', User::class);
-        $report = Report::where('id', $id)->with('category')->first();
+        $report = Report::where('id', $id)->with('category', 'claimUsers')->first();
         $location = Location::where('report_id', $id)->first();
         return view('dashboard.found-reports.show', compact('report', 'location'));
     }

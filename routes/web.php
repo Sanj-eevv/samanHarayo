@@ -50,7 +50,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     /** BackEnd Starts*/
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
-        Route::resource('contacts', \App\Http\Controllers\dashboard\ContactController::class);
+        Route::get('/claim/show/{user_id}/{report}', [\App\Http\Controllers\Dashboard\ClaimFoundController::class, 'show'])->name('found-reports.claim.show');
+        Route::resource('contacts', \App\Http\Controllers\Dashboard\ContactController::class);
         Route::resource('faqs', \App\Http\Controllers\Dashboard\FaqController::class);
         Route::resource('found-reports', \App\Http\Controllers\Dashboard\FoundReportController::class);
         Route::resource('lost-reports', \App\Http\Controllers\Dashboard\LostReportController::class);

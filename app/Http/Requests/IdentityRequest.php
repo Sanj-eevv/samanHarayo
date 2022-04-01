@@ -32,16 +32,20 @@ class IdentityRequest extends FormRequest
         $user = User::with('userDetail')->find(Auth::id());
         $identity = [
             Rule::requiredIf(function () use ($user) {
-                if ($user->userDetail->verified === UserDetail::VERIFIED) {
-                    return false;
+                if($user->userDetail()->exists()){
+                    if ($user->userDetail->verified === UserDetail::VERIFIED) {
+                        return false;
+                    }
                 }
                 return true;
             })
         ];
         $current_image = [
             Rule::requiredIf(function () use($user){
-                if($user->userDetail->updated_at < Carbon::now()->subMonths(3)){
-                    return true;
+                if($user->userDetail()->exists()) {
+                    if ($user->userDetail->updated_at < Carbon::now()->subMonths(3)) {
+                        return true;
+                    }
                 }
                 return false;
             })

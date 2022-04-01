@@ -5,20 +5,20 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="d-flex align-items-center justify-content-end">
-{{--                        <h4 class="card-title mb-0">Add user</h4>--}}
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="card-title mb-0">Report Details</h4>
                         <div class="d-flex flex-wrap gap-2 justify-content-end">
-                            <a type="button" href="{{route('reports.index')}}" class="btn btn-secondary waves-effect waves-light">Back</a>
+                            <a type="button" href="{{route('lost-reports.index')}}" class="btn btn-secondary waves-effect waves-light">Back</a>
                             <button onclick="confirmDelete(() => {deleteReport({{$report->id}},true)})" class="btn btn-danger waves-effect waves-light">Delete</button>
                         </div>
                     </div>
                     <hr>
                     <div class="table-responsive">
-                        <table class="table table-nowrap mb-0 table-borderless">
+                        <table class="table mb-0 table-borderless">
                             <tbody>
                             <tr>
                                 <th scope="row">Item Name :</th>
-                                <td>{{ucwords($report->name)}}</td>
+                                <td>{{ucwords($report->title)}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Brand :</th>
@@ -56,84 +56,17 @@
                                 <th scope="row">Email :</th>
                                 <td>{{$report->contact_email}}</td>
                             </tr>
-                            <tr>
-                                <th scope="row">Status :</th>
-                                <td class="position-relative"><span id="report-status" class="badge p-2 {{$report->status === 'verified'? 'bg-success' : 'bg-danger'}}">{{ucwords($report->status)}}</span><button id="toggle-report-status" class="btn"><span><i class="mdi mdi-menu-swap"></i></span></button></td>
-                            </tr>
-{{--                            <tr>--}}
-{{--                                <th scope="row">Image: </th>--}}
-{{--                                @php--}}
-{{--                                    $img_src = asset('assets/media/avatars/blank.png');--}}
-{{--                                    if ($user->avatar) {--}}
-{{--                                        $img_src = asset('storage/uploads/profiles/' . $user->avatar);--}}
-{{--                                    }--}}
-{{--                                @endphp--}}
-{{--                                <td>--}}
-{{--                                    <img class="rounded avatar-md" src="{{$img_src}}" data-holder-rendered="true">--}}
-{{--                                </td>--}}
-{{--                            </tr>--}}
                             </tbody>
                         </table>
                     </div>
+                    <hr>
+
                 </div>
             </div>
         </div>
     </div>
 @endsection
 @section('page_level_script')
-    @include('dashboard.found-reports._shared')
-    <script>
-        $(document).ready(function($) {
-            $('#toggle-report-status').click(function (e){
-                e.preventDefault();
-                e.stopImmediatePropagation();
-                let span_report_status = $('#report-status');
-                let report_status = span_report_status.text();
-                let updated_status = '';
-                if(report_status === 'Pending'){
-                    updated_status = 'Verified';
-                }else{
-                    updated_status = 'Pending';
-                }
-                let report_id = JSON.parse("{{ json_encode($report->id) }}");
-                $.ajax({
-                    url: BASE_URL+'/dashboard/reports/'+report_id,
-                    type: 'PUT',
-                    headers: {
-                        'X-CSRF-Token': CSRF_TOKEN
-                    },
-                    data:{
-                        'status': updated_status
-                    },
-                    beforeSend: function() {
-                        if(report_status === 'Pending'){
-                            span_report_status.removeClass('bg-danger');
-                            span_report_status.addClass('bg-success');
-                        }else{
-                            span_report_status.removeClass('bg-success');
-                            span_report_status.addClass('bg-danger');
-                        }
-                        span_report_status.text(updated_status);
-                    },
-                    success: function (resp){
-                        toastSuccess(resp.message);
-                    },
-                    error: function (xhr){
-                        let obj = JSON.parse(xhr.responseText);
-                        span_report_status.text(report_status);
-                        if(report_status === 'Pending'){
-                            span_report_status.removeClass('bg-success');
-                            span_report_status.addClass('bg-danger');
-                        }else{
-                            span_report_status.removeClass('bg-danger');
-                            span_report_status.addClass('bg-success');
-                        }
-                        toastError(obj.message);
-                    }
-                });
-
-            });
-        });
-    </script>
+    @include('dashboard.lost-reports._shared')
 @endsection
 

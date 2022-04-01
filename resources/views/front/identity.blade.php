@@ -22,7 +22,7 @@
                                             <small class="form-text text-muted">(Citizenship card, license card)</small>
                                             <div class="sh-input-div sh-image-input-div">
                                                 <input class="@error('identity_front') is-invalid @enderror sh-input" type="file"  name="identity_front" id="identity_front_input"
-                                                       onchange="loadPreview(this, '#identity_front')" required>
+                                                       onchange="loadPreview(this, '#identity_front')">
                                                 @error('identity_front')
                                                 <span class="invalid-feedback" role="alert">
                                                 {{$message}}
@@ -42,7 +42,7 @@
                                             <small class="form-text text-muted">(Citizenship card, license card)</small>
                                             <div class="sh-input-div sh-image-input-div">
                                                 <input class="@error('identity_back') is-invalid @enderror sh-input" type="file"  name="identity_back" id="identity_back_input"
-                                                       onchange="loadPreview(this, '#identity_back')" required>
+                                                       onchange="loadPreview(this, '#identity_back')">
                                                 @error('identity_front')
                                                 <span class="invalid-feedback" role="alert">
                                                 {{$message}}
@@ -63,7 +63,7 @@
                                             <small class="form-text text-muted">(Image of a user without using filter)</small>
                                             <div class="sh-input-div sh-image-input-div">
                                                 <input class=" @error('current_image') is-invalid @enderror sh-input" type="file"  name="current_image" id="current_image_input"
-                                                       onchange="loadPreview(this, '#current_image')" required>
+                                                       onchange="loadPreview(this, '#current_image')">
                                                 @error('current_image')
                                                 <span class="invalid-feedback" role="alert">
                                                 {{$message}}
