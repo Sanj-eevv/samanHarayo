@@ -11,6 +11,6 @@ class UserDetail extends Model
 
     protected $guarded = ['id'];
 
-    const VERIFIED = 'VERIFIED';
-    const NOT_VERIFIED = 'UNVERIFIED';
+    const VERIFIED = 'verified';
+    const NOT_VERIFIED = 'unverified';
 }

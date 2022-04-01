@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-{{--    @include('utils._error_all')--}}
+    @include('utils._error_all')
     <div class="checkout-main-area pt-25 pb-50">
         <div class="container">
             <div class="row">
@@ -15,6 +15,7 @@
                                 <form action="{{route('identity.store')}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" value="{{$report->slug}}" name="report" >
+                                    @if(!$verified)
                                     <div class="row mb-20">
                                         <div class="col-md-12 from-group">
                                             <label class="form-label">Identity (Front)</label>
@@ -54,6 +55,8 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
+                                    @if($need_current_image)
                                     <div class="row mb-20">
                                         <div class="col-lg-12 from-group">
                                             <label class="form-label">Current Image</label>
@@ -74,6 +77,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
                                     <div class="row mb-20">
                                         <div class="col-lg-12 form-group">
                                             <label class="form-label">Item images (If any)</label>
