@@ -26,6 +26,9 @@ class CheckoutController extends Controller
      */
     public function index()
     {
+        if(!session('report')){
+            abort(401);
+        }
         return view('front.checkout.index');
     }
 
@@ -35,6 +38,9 @@ class CheckoutController extends Controller
             // Data for reports table
 //            $report =  $request->session()->pull('report');
             $report = session('report');
+            if(!$report){
+                abort(401);
+            }
             $duration = session('duration');
             $report['verified'] = 1;
             $report = Report::create($report);

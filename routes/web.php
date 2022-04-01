@@ -45,6 +45,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/checkout', [\App\Http\Controllers\Front\CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('checkout/fulfill-order', [\App\Http\Controllers\Front\CheckoutController::class, 'fulfillOrder'])->name('checkout.fulfillOrder');
 
+    /* Customer Dashboard */
+    Route::get('customer-dashboard', [\App\Http\Controllers\Customer\DashboardController::class, 'index'])->name('customerDashboard.index');
     /** BackEnd Starts*/
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');

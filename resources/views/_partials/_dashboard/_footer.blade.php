@@ -4,11 +4,6 @@
             <div class="col-sm-6">
                 <script>{{now()->year}}</script> © {{config('app.name')}}.
             </div>
-{{--            <div class="col-sm-6">--}}
-{{--                <div class="text-sm-end d-none d-sm-block">--}}
-{{--                    Design & Develop by Themesbrand--}}
-{{--                </div>--}}
-{{--            </div>--}}
         </div>
     </div>
 </footer>
