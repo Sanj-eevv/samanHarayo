@@ -43,8 +43,6 @@ class UserSeeder extends Seeder
         $users->each(function ($id){
             Storage::makeDirectory('/public/uploads/report/'.$id.'/item_image');
             Storage::makeDirectory('/public/uploads/report/'.$id.'/feature_image');
-            Storage::makeDirectory('/public/uploads/report/'.$id.'/identity');
-
         });
     }
 }

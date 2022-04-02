@@ -8,10 +8,15 @@
     <link href="{{asset("assets/dashboard/css/plugins/datatables.net-bs4/dataTables.bootstrap4.min.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{asset("assets/dashboard/css/plugins/datatables.net-buttons-bs4/buttons.bootstrap4.min.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{asset("assets/dashboard/css/plugins/datatables.net-responsive-bs4/responsive.bootstrap4.min.css")}}" rel="stylesheet" type="text/css" />
+
     <!-- Icons Css -->
     <link href="{{asset("assets/dashboard/css/plugins/icons.min.css")}}" rel="stylesheet" type="text/css" />
 
-    @include('_partials._common._stylesheet')
+    <!-- Package Css --->
+    <link href="{{asset("assets/dashboard/css/plugins/magnific-popup/magnific-popup.css")}}" rel="stylesheet" type="text/css" />
+
+
+@include('_partials._common._stylesheet')
 
     <!-- App Css-->
     <link href="{{asset("assets/dashboard/css/app.min.css")}}" id="app-style" rel="stylesheet" type="text/css" />

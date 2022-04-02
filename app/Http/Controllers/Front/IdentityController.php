@@ -82,7 +82,7 @@ class IdentityController extends Controller
                 foreach ($item_images as $image) {
                     $imageName = SamanHarayoHelper::renameImageFileUpload($image);
                     $image->storeAs(
-                        'public/uploads/report/' . $report->reported_by . '/claimed/', $imageName
+                        'public/uploads/report/' . $user->id . '/claimed/', $imageName
                     );
                     ItemImage::create([
                         'image' => $imageName,

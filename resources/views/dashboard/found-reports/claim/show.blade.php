@@ -17,16 +17,34 @@
                         <table class="table mb-0 table-borderless">
                             <tbody>
                             <tr>
-                                <th scope="row">Item Name :</th>
+                                <th style="white-space: nowrap;" scope="row">Item Name :</th>
                                 <td>{{ucwords($_report->title)}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Claimed by :</th>
+                                <th style="white-space: nowrap;" scope="row">Claimed by :</th>
                                 <td>{{ucwords($user->first_name).' '.ucwords($user->last_name)}}</td>
                             </tr>
-
+                            <tr>
+                                <th style="white-space: nowrap;" scope="row">Description :</th>
+                                @foreach($_report->claimUsers as $user)
+                                <td>{{$user->pivot->description}}</td>
+                                @endforeach
+                            </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <hr>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="card-title mb-0">Item Images</h4>
+                    </div>
+                    <div class="magnetic-container">
+                    @forelse($item_images as $image)
+                        <a href="{{asset('storage/uploads/report/'.$user->id.'/claimed/'.$image->image)}}">
+                        <img src="{{asset('storage/uploads/report/'.$user->id.'/claimed/'.$image->image)}}" class="cover-image popup-img img-fluid"  alt="">
+                        </a>
+                    @empty
+                    <div class="alert alert-danger">Images not available.</div>
+                    @endforelse
                     </div>
                 </div>
             </div>

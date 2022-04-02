@@ -1,4 +1,10 @@
 $(function () {
+    $('.magnetic-container').magnificPopup({
+        type: 'image',
+        delegate: 'a',
+        gallery:{enabled:true}
+        // other options
+    });
 });
 
 /** confirm delete will be triggered as confirm box for every delete request **/

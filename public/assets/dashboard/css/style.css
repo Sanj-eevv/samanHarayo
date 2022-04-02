@@ -54,3 +54,15 @@ div.dataTables_wrapper div.dataTables_processing.card{
     padding: 0;
     top: calc(50% + 50px);
 }
+
+/*magnetic popup*/
+.magnetic-container{
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+.magnetic-container img{
+    height: 200px;
+    width: 200px;
+}
