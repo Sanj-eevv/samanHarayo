@@ -66,3 +66,7 @@ div.dataTables_wrapper div.dataTables_processing.card{
     height: 200px;
     width: 200px;
 }
+
+.individual-permission{
+    padding-bottom: 1.5rem;
+}

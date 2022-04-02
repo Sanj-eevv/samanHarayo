@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Social;
 
+use App\Helpers\SamanHarayoHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Role;
 use App\Models\User;
@@ -31,6 +32,7 @@ class GoogleController extends Controller
                 [
                     'first_name'                    => $response->user['given_name'],
                     'last_name'                     => $response->user['family_name'],
+                    'slug'                          => SamanHarayoHelper::uniqueSlugify($response->user['given_name'], User::class, null, 'slug'),
                     'email'                         => $response->email,
                     'email_verified_at'             => now(),
                     'role_id'                       => $defaultRole,

@@ -7,10 +7,10 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title mb-0">Report Details</h4>
-{{--                        <div class="d-flex flex-wrap gap-2 justify-content-end">--}}
-{{--                            <a type="button" href="{{route('found-reports.index')}}" class="btn btn-secondary waves-effect waves-light">Back</a>--}}
-{{--                            <button onclick="confirmDelete(() => {deleteReport({{$report->id}},true)})" class="btn btn-danger waves-effect waves-light">Delete</button>--}}
-{{--                        </div>--}}
+                        <div class="d-flex flex-wrap gap-2 justify-content-end">
+                            <a type="button" href="{{route('found-reports.show', $_report->id)}}" class="btn btn-secondary waves-effect waves-light">Back</a>
+                            <button onclick="confirmDelete(() => {deleteClaim({{$report->id}},true)})" class="btn btn-danger waves-effect waves-light">Delete</button>
+                        </div>
                     </div>
                     <hr>
                     <div class="table-responsive">
@@ -52,6 +52,7 @@
     </div>
 @endsection
 @section('page_level_script')
+    @include('dashboard.found-reports.claim._shared')
 {{--    @include('dashboard.found-reports._shared')--}}
 {{--    <script type="text/javascript">--}}
 {{--        $(document).ready(function($) {--}}

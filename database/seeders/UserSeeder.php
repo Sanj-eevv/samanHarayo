@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
             [
                 'first_name'                => 'Sanjeev',
                 'last_name'                 => 'Bhandari',
+                'slug'                      =>  'sanjeev',
                 'email'                     => 'sanjeevvsanjeev1@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -31,6 +32,7 @@ class UserSeeder extends Seeder
             [
                 'first_name'                => 'Sanjeev',
                 'last_name'                 => 'Bhandari',
+                'slug'                      =>  'sanjeev-1',
                 'email'                     => 'sanjeevvsanjeev11@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

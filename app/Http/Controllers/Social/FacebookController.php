@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Social;
 
+use App\Helpers\SamanHarayoHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Responses\LoginResponse;
 use App\Models\Role;
@@ -36,6 +37,7 @@ class FacebookController extends Controller
                 [
                     'first_name'        => $response->user['first_name'],
                     'last_name'         => $response->user['last_name'],
+                    'slug'              => SamanHarayoHelper::uniqueSlugify($response->user['given_name'], User::class, null, 'slug'),
                     'email'             => $response->email,
                     'email_verified_at' => now(),
                     'role_id'           => $defaultRole,

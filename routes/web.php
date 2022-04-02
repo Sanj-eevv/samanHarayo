@@ -51,13 +51,13 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
         Route::get('/claim/show/{user_id}/{report}', [\App\Http\Controllers\Dashboard\ClaimFoundController::class, 'show'])->name('found-reports.claim.show');
+//        Route::delete('/claim/delete/{report}', [\App\Http\Controllers\Dashboard\ClaimFoundController::class, 'show'])->name('found-reports.claim.show');
         Route::resource('contacts', \App\Http\Controllers\Dashboard\ContactController::class);
         Route::resource('faqs', \App\Http\Controllers\Dashboard\FaqController::class);
         Route::resource('found-reports', \App\Http\Controllers\Dashboard\FoundReportController::class);
         Route::resource('lost-reports', \App\Http\Controllers\Dashboard\LostReportController::class);
+        Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class);
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
     });
 
 });
-//LocalHubHelper::uniqueSlugify($request->input('slug'), Post::class, null, 'slug'),
-//        "facade/ignition": "^2.5",

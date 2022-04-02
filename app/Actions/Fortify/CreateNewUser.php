@@ -2,6 +2,8 @@
 
 namespace App\Actions\Fortify;
 
+use App\Helpers\SamanHarayoHelper;
+use App\Models\Report;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -32,6 +34,7 @@ class CreateNewUser implements CreatesNewUsers
         return User::create([
             'first_name'                =>          $input['first_name'],
             'last_name'                 =>          $input['last_name'],
+            'slug'                      =>          SamanHarayoHelper::uniqueSlugify($input['first_name'], User::class, null, 'slug'),
             'email'                     =>          $input['email'],
             'password'                  =>          Hash::make($input['password']),
             'role_id'                   =>          Role::getDefaultRoleId(),

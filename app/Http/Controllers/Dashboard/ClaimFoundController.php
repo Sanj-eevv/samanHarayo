@@ -15,7 +15,7 @@ class ClaimFoundController extends Controller
         $_report = Report::with(['claimUsers' => function($q) use($user_id){
             $q->where('user_id', $user_id);
         }])->where('slug', $report)->first();
-        if(!$user && !$_report){
+        if($_report->claimUsers->count() < 1){
             abort(404);
         }
         $item_images = ItemImage::where('report_id', $_report->id)->where('claimed_by', $user_id)->get();

@@ -64,20 +64,15 @@ class IdentityController extends Controller
     public function store(IdentityRequest $request)
     {
         $report = $request->input('report');
-        if(!$report){
-            abort(404);
-        }
         $report = Report::where('slug', $report)->first();
         if(!$report){
             abort(404);
         }
-
         \DB::transaction(function() use($report, $request){
 //        Adding new row in images table. This row basically gives images of claimed report and the user who has claimed the report.
             $item_images = $request->file('item_image');
             $user = Auth::user();
             $user_has_detail = UserDetail::where('user_id', $user->id)->first();
-
             if($item_images){
                 foreach ($item_images as $image) {
                     $imageName = SamanHarayoHelper::renameImageFileUpload($image);

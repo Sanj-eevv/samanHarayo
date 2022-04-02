@@ -24,9 +24,12 @@ class UserFactory extends Factory
                 'description' => 'Just Some Dummy User',
             ]
         );
+        $first_name = $this->faker->unique->firstName();
+        $slug = Str::slug($first_name, '-');
         return [
-            'first_name'                => $this->faker->firstName(),
+            'first_name'                => $first_name,
             'last_name'                 => $this->faker->lastName(),
+            'slug'                      => $slug,
             'email'                     => $this->faker->unique()->safeEmail(),
             'email_verified_at'         => now(),
             'role_id'                   => $role->id,

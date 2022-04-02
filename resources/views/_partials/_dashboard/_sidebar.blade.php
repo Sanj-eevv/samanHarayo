@@ -46,8 +46,17 @@
                         <li><a href="{{route('users.create')}}">Add User</a></li>
                     </ul>
                 </li>
-                <li class="menu-title">Apps</li>
-
+                <li class="menu-title">Admin options</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-user-circle"></i>
+                        <span>Roles</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('roles.index')}}">Role Listing</a></li>
+                        <li><a href="{{route('roles.create')}}">Add Role</a></li>
+                    </ul>
+                </li>
             </ul>
 
 
