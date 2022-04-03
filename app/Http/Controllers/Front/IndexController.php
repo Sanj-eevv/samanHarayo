@@ -49,6 +49,7 @@ class IndexController extends Controller
                     're.reward_amount',
                     'i.image'
                 );
+            $query->where('verified', 1);
             $query->where('report_type', $type);
             $query->where(function($q) use($meta){
                 $q->orWhere('c.name', 'like', $meta['search'] . '%')

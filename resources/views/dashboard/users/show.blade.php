@@ -36,13 +36,37 @@
                             <tr>
                                 <th scope="row">Image: </th>
                                 @php
-                                    $img_src = asset('assets/media/avatars/blank.png');
+                                    $img_src = asset('assets/images/common/blank_user.png');
                                     if ($user->avatar) {
-                                        $img_src = asset('storage/uploads/profiles/' . $user->avatar);
+                                        $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->userDetail->avatar);
                                     }
                                 @endphp
                                 <td>
                                     <img class="rounded avatar-md" src="{{$img_src}}" data-holder-rendered="true">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div  class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="card-title mb-0">User Detail</h4>
+                    </div>
+                    <hr>
+                    <div class="table-responsive">
+                        <table class="table table-nowrap mb-0 table-borderless">
+                            <tbody>
+                            <tr>
+                                <th scope="row">Identity Front :</th>
+                                <td>
+                                    <img class="rounded avatar-md" src="{{asset('storage/uploads/users/' . $user->id.'/'.$user->userDetail->identity_front)}}" data-holder-rendered="true" alt="">
                                 </td>
                             </tr>
                             </tbody>

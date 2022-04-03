@@ -13,6 +13,7 @@
                                 <div class="spinner-border" role="status">
                                 </div>
                             </button>
+                            <a type="button" href="{{route('users.show', $claim_detail->user_id)}}" class="btn btn-light waves-effect waves-light">View User</a>
                         </div>
                     </div>
                     <hr>

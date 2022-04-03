@@ -29,6 +29,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'remember_token',
     ];
 
+    const VERIFIED = 'verified';
+    const UNVERIFIED = 'unverified';
+
     /**
      * The attributes that should be cast.
      *
@@ -112,12 +115,10 @@ class User extends Authenticatable implements MustVerifyEmail
 //        return $this->belongsToMany(Report::class);
 //    }
 
-    public function claims(){
+    public function claims(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
         return $this->belongsToMany(Report::class,'claim_user', 'user_id', 'report_id')->withTimestamps()->withPivot('description','detail_verified', 'report_status');
     }
 
-    public function userDetail(){
-        return $this->hasOne(UserDetail::class, 'user_id', 'id');
-    }
 
 }

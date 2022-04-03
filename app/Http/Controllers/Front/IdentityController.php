@@ -14,6 +14,7 @@ use Carbon\Carbon;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class IdentityController extends Controller
 {
@@ -25,23 +26,19 @@ class IdentityController extends Controller
     public function index(Request $request)
     {
         $report = $request->input('report');
-        if(!$report){
-            abort(404);
-        }
         $report = Report::where('slug', $report)->first();
         if(!$report){
             abort(404);
         }
-        $user = User::with('userDetail')->find(Auth::id());
+        $user = Auth::user();
         $verified = false;
         $need_current_image = true;
-        if($user->userDetail()->exists()){
-            if($user->userDetail->verified === UserDetail::VERIFIED){
-                $verified = true;
-            }
-            if($user->userDetail->updated_at > Carbon::now()->subMonths(3)){
-                $need_current_image = false;
-            }
+        if($user->verified === User::VERIFIED){
+            $verified = true;
+        }
+        /* TODO: This submonths value should be retrieve from the settings table */
+        if($user->updated_at > Carbon::now()->subMonths(3) && $user->current_image){
+            $need_current_image = false;
         }
         return view('front.identity',compact('report', 'verified', 'need_current_image'));
     }
@@ -74,7 +71,6 @@ class IdentityController extends Controller
 //        Adding new row in images table. This row basically gives images of claimed report and the user who has claimed the report.
             $item_images = $request->file('item_image');
             $user = Auth::user();
-            $user_has_detail = UserDetail::where('user_id', $user->id)->first();
             if($item_images){
                 foreach ($item_images as $image) {
                     $imageName = SamanHarayoHelper::renameImageFileUpload($image);
@@ -93,46 +89,44 @@ class IdentityController extends Controller
             $description = $request->input('description');
             $detail_status = Report::DETAIL_STATUS;
             $report_status = Report::REPORT_STATUS;
+
+            /** detail_status[0] => pending */
+             /** report_status[0] => pending */
             $user->claims()->attach($report->id,['description'=>$description, 'detail_verified'=>$detail_status[0], 'report_status'=>$report_status[0]]);
 
-//        These are the image for user identification. It will be stored in user details page.
+//        These are the image for user identification.
             $current_image = $request->file('current_image');;
-            $current_image_name = null;
-            $identity_front_name = null;
-            $identity_back_name = null;
-
             if($current_image){
+//                Deleting old current image if exitsts
+                /** Storage points to storage/app */
+                if($user->current_image){
+                        Storage::delete('public/uploads/users/'.$user->id.'/'.$user->current_image);
+                }
                 $current_image_name = SamanHarayoHelper::renameImageFileUpload($current_image);
                 $current_image->storeAs(
-                    'public/uploads/report/' . $user->id . '/user_detail/', $current_image_name
+                    'public/uploads/users/' . $user->id, $current_image_name
                 );
-                if($user_has_detail){
-                    $user_has_detail->current_image = $current_image_name;
-                    $user->updated_at = now();
-                    $user_has_detail->save();
-                }
+                $user->current_image = $current_image_name;
+                $user->updated_at = now();
+                $user->save();
             }
             $identity_front = $request->file('identity_front');
             $identity_back = $request->file('identity_back');
-
             if($identity_front || $identity_back){
                 $identity_front_name = SamanHarayoHelper::renameImageFileUpload($identity_front);
                 $identity_back_name = SamanHarayoHelper::renameImageFileUpload($identity_back);
 
                 $identity_front->storeAs(
-                    'public/uploads/report/' . $user->id . '/user_detail/', $identity_front_name
+                    'public/uploads/users/' . $user->id, $identity_front_name
                 );
-
                 $identity_back->storeAs(
-                    'public/uploads/report/' . $user->id . '/user_detail/', $identity_back_name
+                    'public/uploads/users/' . $user->id, $identity_back_name
                 );
-                UserDetail::create([
-                    'verified'          => UserDetail::VERIFIED,
-                    'current_image'     => $current_image_name,
-                    'identity_front'    => $identity_front_name,
-                    'identity_back'     => $identity_back_name,
-                    'user_id'           =>  $user->id,
-                ]);
+                $user->verified = User::VERIFIED;
+                $user->identity_front = $identity_front_name;
+                $user->identity_back = $identity_back_name;
+                $user->updated_at = now();
+                $user->save();
             }
              \DB::commit();
         }catch (QueryException $e){

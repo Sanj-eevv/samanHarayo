@@ -29,23 +29,20 @@ class IdentityRequest extends FormRequest
      */
     public function rules(Request $request)
     {
-        $user = User::with('userDetail')->find(Auth::id());
+        $user = Auth::user();
         $identity = [
             Rule::requiredIf(function () use ($user) {
-                if($user->userDetail()->exists()){
-                    if ($user->userDetail->verified === UserDetail::VERIFIED) {
+                    if ($user->verified === User::VERIFIED) {
                         return false;
                     }
-                }
                 return true;
             })
         ];
         $current_image = [
             Rule::requiredIf(function () use($user){
-                if($user->userDetail()->exists()) {
-                    if ($user->userDetail->updated_at < Carbon::now()->subMonths(3)) {
-                        return true;
-                    }
+                /*TODO: This submonths needed to be retrieve from settings table */
+                if ($user->updated_at < Carbon::now()->subMonths(3) || !($user->current_image)) {
+                    return true;
                 }
                 return false;
             })

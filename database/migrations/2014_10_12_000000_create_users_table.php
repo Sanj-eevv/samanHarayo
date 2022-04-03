@@ -19,6 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('slug');
             $table->string('email')->unique();
+            $table->string('current_image')->nullable();
+            $table->string('identity_front')->nullable();
+            $table->string('identity_back')->nullable();
+            $table->string('avatar')->nullable();
+            $table->enum('verified',['verified', 'unverified'])->default('unverified');
             $table->string('facebook_id')->nullable();
             $table->string('google_id')->nullable();
             $table->unsignedBigInteger('role_id');

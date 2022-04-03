@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title mb-0">User Details</h4>
+                        <h4 class="card-title mb-0">Role Details</h4>
                         <div class="d-flex flex-wrap gap-2">
                             <a type="button" href="{{route('roles.index')}}" class="btn btn-secondary waves-effect waves-light">Back</a>
                             <a type="button" href="{{route('roles.edit', $role->id)}}" class="btn btn-info waves-effect waves-light">Edit</a>
@@ -37,6 +37,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row">
         <div  class="col-lg-12">
             <div class="card">
                 <div class="card-body">
