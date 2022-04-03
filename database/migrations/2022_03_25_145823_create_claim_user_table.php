@@ -19,6 +19,7 @@ class CreateClaimUserTable extends Migration
             $table->enum('detail_verified', ['verified', 'pending', 'rejected'])->default('pending');
             $table->enum('report_status', ['verified', 'pending', 'rejected'])->default('pending');
             $table->longText('description');
+            $table->primary(['user_id', 'report_id']);
             $table->timestamps();
         });
     }

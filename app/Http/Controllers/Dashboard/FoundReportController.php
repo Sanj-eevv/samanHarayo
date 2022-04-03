@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
 use App\Models\Report;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 
-class FoundReportController extends Controller
+class FoundReportController extends BaseDashboardController
 {
     /**
      * Display a listing of the resource.

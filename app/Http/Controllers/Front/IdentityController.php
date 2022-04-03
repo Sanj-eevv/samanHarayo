@@ -11,6 +11,7 @@ use App\Models\Report;
 use App\Models\User;
 use App\Models\UserDetail;
 use Carbon\Carbon;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -68,7 +69,8 @@ class IdentityController extends Controller
         if(!$report){
             abort(404);
         }
-        \DB::transaction(function() use($report, $request){
+        \DB::beginTransaction();
+         try{
 //        Adding new row in images table. This row basically gives images of claimed report and the user who has claimed the report.
             $item_images = $request->file('item_image');
             $user = Auth::user();
@@ -83,12 +85,15 @@ class IdentityController extends Controller
                         'image' => $imageName,
                         'report_id' => $report->id,
                         'claimed_by' => $user->id,
+                        'claim'     => 1,
                     ]);
                 }
             }
 //        Syncing data in pivot table claim_user.
             $description = $request->input('description');
-            $user->claims()->attach($report->id,['description'=>$description]);
+            $detail_status = Report::DETAIL_STATUS;
+            $report_status = Report::REPORT_STATUS;
+            $user->claims()->attach($report->id,['description'=>$description, 'detail_verified'=>$detail_status[0], 'report_status'=>$report_status[0]]);
 
 //        These are the image for user identification. It will be stored in user details page.
             $current_image = $request->file('current_image');;
@@ -129,8 +134,10 @@ class IdentityController extends Controller
                     'user_id'           =>  $user->id,
                 ]);
             }
-
-        });
+             \DB::commit();
+        }catch (QueryException $e){
+             return redirect()->route('front.index')->with('toast.error', 'Duplicate Entry !!');
+         }
         return redirect()->route('front.index')->with('toast.success', 'Report Claimed Successfully !!');
     }
 

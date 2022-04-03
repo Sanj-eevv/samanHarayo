@@ -19,6 +19,7 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        $this->authorize('view', User::class);
         if ($request->ajax()) {
             $columns = array(
                 0 => 'first_name',

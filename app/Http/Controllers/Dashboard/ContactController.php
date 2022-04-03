@@ -7,7 +7,7 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ContactController extends Controller
+class ContactController extends BaseDashboardController
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +16,7 @@ class ContactController extends Controller
      */
     public function index(Request $request)
     {
+        $this->authorize('view', Contact::class);
         if ($request->ajax()) {
             $columns = array(
                 0 => 'name',
@@ -68,27 +69,6 @@ class ContactController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -96,6 +76,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
+        $this->authorize('view', Contact::class);
         return view('dashboard.contacts.show', compact('contact'));
     }
 
@@ -108,6 +89,7 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
+        $this->authorize('destroy', Contact::class);
         Contact::where('id', $id)->delete();
         return response()->json([
             'message' => 'Contact Successfully Deleted',

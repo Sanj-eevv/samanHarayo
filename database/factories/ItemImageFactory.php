@@ -14,7 +14,7 @@ class ItemImageFactory extends Factory
     public function definition()
     {
         return [
-            'claim'             =>              $this->faker->biasedNumberBetween($min = 0, $max = 1, $function = 'sqrt'),
+            'claim'             =>              0,
             'created_at'        =>              now(),
             'updated_at'        =>              now(),
         ];

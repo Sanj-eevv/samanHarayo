@@ -45,7 +45,6 @@
                                     $.ajax(this);
                                 }
                             }
-                            let obj = JSON.parse(xhr.responseText);
                             toastError("Something went wrong !!!");
                             $('.spinner-border').hide();
                         }

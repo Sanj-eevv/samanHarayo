@@ -20,10 +20,15 @@ class Report extends Model
 
     const REPORT_TYPE_LOST = 'lost';
     const REPORT_TYPE_FOUND = 'found';
+    const DETAIL_STATUS = ['pending','verified', 'rejected' ];
+    const REPORT_STATUS = [ 'pending', 'verified', 'rejected'];
 
 
     public function ItemImages(){
-        return $this->hasMany(ItemImage::class, 'report_id', 'id');
+        return $this->hasMany(ItemImage::class, 'report_id', 'id')->where('claim', 0);
+    }
+    public function claimImages(){
+        return $this->hasMany(ItemImage::class, 'report_id', 'id')->where('claim', 1);
     }
     public function location(){
         return $this->hasOne(Location::class);
@@ -38,15 +43,15 @@ class Report extends Model
     }
 
     public function randomImage(){
-        return $this->hasOne(ItemImage::class, 'report_id', 'id')->inRandomOrder();
+        return $this->hasOne(ItemImage::class, 'report_id', 'id')->where('claim', 0)->inRandomOrder();
     }
 
-    public function users(){
-        return $this->belongsToMany(User::class);
-    }
+//    public function users(){
+//        return $this->belongsToMany(User::class);
+//    }
 
     public function claimUsers(){
-            return $this->belongsToMany(User::class,'claim_user', 'report_id', 'user_id')->withTimestamps()->withPivot('description');
+            return $this->belongsToMany(User::class,'claim_user', 'report_id', 'user_id')->withTimestamps()->withPivot('description', 'detail_verified', 'report_status');
     }
 
 }

@@ -8,8 +8,11 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title mb-0">Report Details</h4>
                         <div class="d-flex flex-wrap gap-2 justify-content-end">
-                            <a type="button" href="{{route('found-reports.show', $_report->id)}}" class="btn btn-secondary waves-effect waves-light">Back</a>
-                            <button onclick="confirmDelete(() => {deleteClaim({{$report->id}},true)})" class="btn btn-danger waves-effect waves-light">Delete</button>
+                            <a type="button" href="{{route('found-reports.show', $report->id)}}" class="btn btn-secondary waves-effect waves-light">Back</a>
+                            <button onclick="confirmDelete(() => {deleteClaim({{$user->id}},{{$report->id}},true)})" id="delete-btn" class="btn btn-danger waves-effect waves-light">Delete
+                                <div class="spinner-border" role="status">
+                                </div>
+                            </button>
                         </div>
                     </div>
                     <hr>
@@ -18,7 +21,7 @@
                             <tbody>
                             <tr>
                                 <th style="white-space: nowrap;" scope="row">Item Name :</th>
-                                <td>{{ucwords($_report->title)}}</td>
+                                <td>{{ucwords($report->title)}}</td>
                             </tr>
                             <tr>
                                 <th style="white-space: nowrap;" scope="row">Claimed by :</th>
@@ -26,9 +29,7 @@
                             </tr>
                             <tr>
                                 <th style="white-space: nowrap;" scope="row">Description :</th>
-                                @foreach($_report->claimUsers as $user)
-                                <td>{{$user->pivot->description}}</td>
-                                @endforeach
+                                <td>{{$claim_detail->description}}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -38,7 +39,7 @@
                         <h4 class="card-title mb-0">Item Images</h4>
                     </div>
                     <div class="magnetic-container">
-                    @forelse($item_images as $image)
+                    @forelse($report->claimImages as $image)
                         <a href="{{asset('storage/uploads/report/'.$user->id.'/claimed/'.$image->image)}}">
                         <img src="{{asset('storage/uploads/report/'.$user->id.'/claimed/'.$image->image)}}" class="cover-image popup-img img-fluid"  alt="">
                         </a>

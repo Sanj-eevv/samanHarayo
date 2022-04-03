@@ -108,12 +108,12 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsTo(Role::class);
     }
 
-    public function reports(){
-        return $this->belongsToMany(Report::class);
-    }
+//    public function reports(){
+//        return $this->belongsToMany(Report::class);
+//    }
 
     public function claims(){
-        return $this->belongsToMany(Report::class,'claim_user', 'user_id', 'report_id')->withTimestamps()->withPivot('description');
+        return $this->belongsToMany(Report::class,'claim_user', 'user_id', 'report_id')->withTimestamps()->withPivot('description','detail_verified', 'report_status');
     }
 
     public function userDetail(){

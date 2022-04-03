@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\FaqRequest;
 use App\Models\Faq;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class FaqController extends Controller
+class FaqController extends BaseDashboardController
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +16,8 @@ class FaqController extends Controller
      */
     public function index(Request $request)
     {
-//        dd('a');
+        $this->authorize('view', Faq::class);
+
         if ($request->ajax()) {
             $columns = array(
                 0 => 'question',
@@ -73,6 +73,7 @@ class FaqController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Faq::class);
         $faq = new Faq();
         return view('dashboard.faqs.create', compact('faq' ));
     }
@@ -85,6 +86,7 @@ class FaqController extends Controller
      */
     public function store(FaqRequest $request)
     {
+        $this->authorize('create', Faq::class);
         $faq = Faq::create([
             'question'          => $request->input('question'),
             'answer'            => $request->input('answer'),
@@ -100,6 +102,7 @@ class FaqController extends Controller
      */
     public function show(Faq $faq)
     {
+        $this->authorize('view', Faq::class);
         return view('dashboard.faqs.show', compact('faq'));
 
     }
@@ -112,6 +115,7 @@ class FaqController extends Controller
      */
     public function edit(Faq $faq)
     {
+        $this->authorize('update', Faq::class);
         return view('dashboard.faqs.edit', compact('faq'));
     }
 
@@ -124,6 +128,7 @@ class FaqController extends Controller
      */
     public function update(FaqRequest $request, Faq $faq)
     {
+        $this->authorize('update', Faq::class);
         Faq::where('id', $faq->id)->update([
             'question'        => $request->input('question'),
             'answer'         => $request->input('answer'),
@@ -140,7 +145,7 @@ class FaqController extends Controller
      */
     public function destroy($id)
     {
-//        $this->authorize('destroy', User::class);
+        $this->authorize('destroy', Faq::class);
         Faq::where('id', $id)->delete();
         return response()->json([
             'message' => 'Faq Successfully Deleted',

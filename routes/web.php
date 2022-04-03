@@ -34,7 +34,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/email-verified', function (){
         return view('auth.email-verified');
     });
-
     Route::resource('/report-lost', \App\Http\Controllers\Front\LostReportController::class)->except('create' );
     Route::resource('/report-found', \App\Http\Controllers\Front\FoundReportController::class);
     Route::resource('/identity', \App\Http\Controllers\Front\IdentityController::class);
@@ -47,12 +46,14 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     /* Customer Dashboard */
     Route::get('customer-dashboard', [\App\Http\Controllers\Customer\DashboardController::class, 'index'])->name('customerDashboard.index');
-    /** BackEnd Starts*/
+
+
+    /** BackEnd Starts */
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
-        Route::get('/claim/show/{user_id}/{report}', [\App\Http\Controllers\Dashboard\ClaimFoundController::class, 'show'])->name('found-reports.claim.show');
-//        Route::delete('/claim/delete/{report}', [\App\Http\Controllers\Dashboard\ClaimFoundController::class, 'show'])->name('found-reports.claim.show');
-        Route::resource('contacts', \App\Http\Controllers\Dashboard\ContactController::class);
+        Route::get('/claim/show/{user}/{report}', [\App\Http\Controllers\Dashboard\ClaimFoundController::class, 'show'])->name('found-reports.claim.show');
+        Route::delete('/claim/delete/{user_id}/{report_id}', [\App\Http\Controllers\Dashboard\ClaimFoundController::class, 'delete'])->name('found-reports.claim.delete');
+        Route::resource('contacts', \App\Http\Controllers\Dashboard\ContactController::class)->except(['create', 'update', 'edit', 'create']);
         Route::resource('faqs', \App\Http\Controllers\Dashboard\FaqController::class);
         Route::resource('found-reports', \App\Http\Controllers\Dashboard\FoundReportController::class);
         Route::resource('lost-reports', \App\Http\Controllers\Dashboard\LostReportController::class);
