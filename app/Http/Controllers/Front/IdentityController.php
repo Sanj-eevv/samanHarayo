@@ -92,7 +92,7 @@ class IdentityController extends Controller
 
             /** detail_status[0] => pending */
              /** report_status[0] => pending */
-            $user->claims()->attach($report->id,['description'=>$description, 'detail_verified'=>$detail_status[0], 'report_status'=>$report_status[0]]);
+            $user->claims()->attach($report->id,['description'=>$description, 'detail_status'=>$detail_status[0], 'report_status'=>$report_status[0]]);
 
 //        These are the image for user identification.
             $current_image = $request->file('current_image');;

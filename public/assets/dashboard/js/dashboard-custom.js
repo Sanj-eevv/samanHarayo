@@ -1,4 +1,15 @@
 $(function () {
+    $('.image-popup').magnificPopup({
+        type: 'image',
+        delegate: 'a',
+        image: {
+            verticalFit: true
+        },
+        gallery:{enabled:false},
+        fixedContentPos: true,
+        closeBtnInside: false,
+    });
+
     $('.magnetic-container').magnificPopup({
         type: 'image',
         delegate: 'a',

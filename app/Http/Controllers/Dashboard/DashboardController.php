@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class DashboardController extends BaseDashboardController
 {
+
     public function index(){
         return view('dashboard.dashboard.index');
     }

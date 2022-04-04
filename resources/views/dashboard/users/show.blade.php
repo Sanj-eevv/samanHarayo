@@ -60,17 +60,84 @@
                         <h4 class="card-title mb-0">User Detail</h4>
                     </div>
                     <hr>
+                    <h5 class="pb-2">User Identity</h5>
+                    <div class="identity_container pb-4">
+                        <div>
+                            @php
+                                $img_src = asset('assets/images/common/placeholder.jpg');
+                                if ($user->identity_front) {
+                                    $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->identity_front);
+                                }
+                            @endphp
+                            <a href="{{$img_src}}">
+                                <img class="img-fluid identity-img cover-img image-popup" src="{{$img_src}}" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            @php
+                                $img_src = asset('assets/images/common/placeholder.jpg');
+                                if ($user->identity_back) {
+                                    $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->identity_back);
+                                }
+                            @endphp
+                            <a href="{{$img_src}}">
+                            <img class="img-fluid identity-img cover-img image-popup" src="{{$img_src}}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <h5 class="pb-2">User Image</h5>
+                    <div class="identity_container">
+                        @php
+                            $img_src = asset('assets/images/common/blank_user.png');
+                            if ($user->current_image) {
+                                $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->current_image);
+                            }
+                        @endphp
+                        <a href="{{$img_src}}">
+                        <img class="img-fluid identity-img cover-img image-popup" src="{{$img_src}}" alt="">
+                        </a>
+                    </div>
                     <div class="table-responsive">
-                        <table class="table table-nowrap mb-0 table-borderless">
-                            <tbody>
-                            <tr>
-                                <th scope="row">Identity Front :</th>
-                                <td>
-                                    <img class="rounded avatar-md" src="{{asset('storage/uploads/users/' . $user->id.'/'.$user->identity_front)}}" data-holder-rendered="true" alt="">
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+{{--                        <table class="table table-nowrap mb-0 table-borderless">--}}
+{{--                            <tbody>--}}
+{{--                            <tr>--}}
+{{--                                <th scope="row">Identity Front :</th>--}}
+{{--                                <td>--}}
+{{--                                    @php--}}
+{{--                                        $img_src = asset('assets/images/common/placeholder.jpg');--}}
+{{--                                        if ($user->identity_front) {--}}
+{{--                                            $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->identity_front);--}}
+{{--                                        }--}}
+{{--                                    @endphp--}}
+{{--                                    <img class="img-fluid identity-img cover-img" src="{{$img_src}}" alt="">--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+{{--                            <tr>--}}
+{{--                                <th scope="row">Identity Back :</th>--}}
+{{--                                <td>--}}
+{{--                                    @php--}}
+{{--                                        $img_src = asset('assets/images/common/placeholder.jpg');--}}
+{{--                                        if ($user->identity_back) {--}}
+{{--                                            $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->identity_back);--}}
+{{--                                        }--}}
+{{--                                    @endphp--}}
+{{--                                    <img class="img-fluid identity-img cover-img" src="{{$img_src}}" alt="">--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+{{--                            <tr>--}}
+{{--                                <th scope="row">Current Image :</th>--}}
+{{--                                <td>--}}
+{{--                                    @php--}}
+{{--                                        $img_src = asset('assets/images/common/blank_user.png');--}}
+{{--                                        if ($user->current_image) {--}}
+{{--                                            $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->current_image);--}}
+{{--                                        }--}}
+{{--                                    @endphp--}}
+{{--                                    <img class="img-fluid placeholder-img cover-img" src="{{$img_src}}" alt="">--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+{{--                            </tbody>--}}
+{{--                        </table>--}}
                     </div>
                 </div>
             </div>

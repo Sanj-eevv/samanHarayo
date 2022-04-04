@@ -81,6 +81,7 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Detail Status</th>
                                 <th>Claimed Date</th>
                                 <th>action</th>
                             </tr>
@@ -90,6 +91,22 @@
                                 <tr>
                                     <th scope="row">{{$user->first_name.' '.$user->last_name}}</th>
                                     <td>{{$user->email}}</td>
+                                    <td>
+                                        <?php
+                                        $report_status = $user->pivot->detail_status;
+                                        $bg_color = 'bg-danger';
+                                        switch ($report_status){
+                                            case \App\Models\Report::REPORT_STATUS[0]:
+                                                $bg_color = 'bg-info';
+                                                break;
+                                            case \App\Models\Report::REPORT_STATUS[1]:
+                                                $bg_color = 'bg-success';
+                                        }
+                                        ?>
+                                    <span class="badge p-2 {{$bg_color}}">
+                                        {{ucwords($report_status)}}
+                                    </span>
+                                    </td>
                                     <td>{{\Carbon\Carbon::parse($user->pivot->created_at)->format('d M, Y')}}</td>
                                     <td>
                                         <a href="{{route('found-reports.claim.show', ['user'=> $user->slug, 'report' => $report->slug])}}" class="btn btn-primary position-relative p-0 avatar-xs rounded waves-effect waves-light">

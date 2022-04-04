@@ -8,8 +8,10 @@
     border-radius: 0 !important;
     box-shadow: none !important;
 }
-
 img.cover-image{
     object-fit: cover;
     object-position: center;
+}
+#toast-container>div{
+    opacity: 1;
 }

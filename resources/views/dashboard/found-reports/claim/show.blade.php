@@ -32,6 +32,58 @@
                                 <th style="white-space: nowrap;" scope="row">Description :</th>
                                 <td>{{$claim_detail->description}}</td>
                             </tr>
+                            <tr>
+                                <th style="white-space: nowrap;" scope="row">Report Status :</th>
+                                <td>
+                                    <?php
+                                    $report_status = $claim_detail->report_status;
+                                    $bg_color = 'bg-danger';
+                                    switch ($report_status){
+                                        case \App\Models\Report::REPORT_STATUS[0]:
+                                            $bg_color = 'bg-info';
+                                            break;
+                                        case \App\Models\Report::REPORT_STATUS[1]:
+                                            $bg_color = 'bg-success';
+
+                                    }
+                                    ?>
+                                <span id="report-status" class="badge p-2 {{$bg_color}}">
+                                        {{ucwords($report_status)}}
+                                </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="white-space: nowrap;" scope="row">Detail Status :</th>
+                                <td class="py-0" style="vertical-align: middle">
+                                    <form action="{{route('found-reports.claim.update', ['user' => $claim_detail->user_id, 'report' => $claim_detail->report_id])}}" method="POST" name="update_claim">
+                                        {{ method_field('PUT') }}
+                                        @csrf
+                                        <div class="detail-status-container">
+                                        <select class="form-select" name="detail_status" id="detail-status" disabled>
+                                            @foreach (\App\Models\Report::DETAIL_STATUS as $k => $v)
+                                                <?php
+                                                if (old('detail_status', $claim_detail->detail_status) == $v) {
+                                                    $selected = 'selected';
+                                                } else {
+                                                    $selected = '';
+                                                }
+                                                ?>
+                                                <option value="{{ $v }}" {{ $selected }}>{{ ucwords($v) }}</option>
+                                            @endforeach
+                                        </select>
+                                        <span id="edit-detail-status" class="active">
+                                            <i class="mdi mdi-pencil mdi-18px"></i>
+                                        </span>
+                                        <span id="update-detail-status" type="submit" onclick="update_claim.submit()" class="text-primary">
+                                            <i class="fas fa-check fa-lg"></i>
+                                        </span>
+                                        <span id="cancel-detail-status" class="text-danger">
+                                            <i class="fas fa-times fa-lg"></i>
+                                        </span>
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -40,7 +92,7 @@
                         <h4 class="card-title mb-0">Item Images</h4>
                     </div>
                     <div class="magnetic-container">
-                    @forelse($report->claimImages as $image)
+                    @forelse($item_images as $image)
                         <a href="{{asset('storage/uploads/report/'.$user->id.'/claimed/'.$image->image)}}">
                         <img src="{{asset('storage/uploads/report/'.$user->id.'/claimed/'.$image->image)}}" class="cover-image popup-img img-fluid"  alt="">
                         </a>
@@ -55,6 +107,24 @@
 @endsection
 @section('page_level_script')
     @include('dashboard.found-reports.claim._shared')
+    <script>
+        $(document).ready(function($){
+            let detail_status ="{{$claim_detail->detail_status}}";
+            $('#edit-detail-status').on('click',function (){
+                $('#detail-status').prop('disabled', false);
+                $(this).removeClass('active');
+                $('#cancel-detail-status').addClass('active');
+                $('#update-detail-status').addClass('active');
+            });
+            $('#cancel-detail-status').on('click', function (){
+                $('#detail-status').val(detail_status);
+                $('#detail-status').prop('disabled', true);
+                $(this).removeClass('active');
+                $('#edit-detail-status').addClass('active');
+                $('#update-detail-status').removeClass('active');
+            });
+        });
+    </script>
 {{--    @include('dashboard.found-reports._shared')--}}
 {{--    <script type="text/javascript">--}}
 {{--        $(document).ready(function($) {--}}

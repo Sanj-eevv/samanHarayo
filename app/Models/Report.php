@@ -51,7 +51,7 @@ class Report extends Model
 //    }
 
     public function claimUsers(){
-            return $this->belongsToMany(User::class,'claim_user', 'report_id', 'user_id')->withTimestamps()->withPivot('description', 'detail_verified', 'report_status');
+            return $this->belongsToMany(User::class,'claim_user', 'report_id', 'user_id')->withTimestamps()->withPivot('description', 'detail_status', 'report_status');
     }
 
 }

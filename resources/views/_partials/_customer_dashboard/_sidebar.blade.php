@@ -10,10 +10,10 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-user-circle"></i>
-                        <span>Contact</span>
+                        <span>Report</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{route('contacts.index')}}">Contact Listing</a></li>
+                        <li><a href="{{route('customerDashboard.claim')}}">Claimed Report</a></li>
                     </ul>
                 </li>
             </ul>
