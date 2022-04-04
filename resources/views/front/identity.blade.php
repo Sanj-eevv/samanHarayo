@@ -25,7 +25,7 @@
                                                 @error('identity_front')
                                                 <span class="invalid-feedback" role="alert">
                                                 {{$message}}
-                                            </span>
+                                                </span>
                                                 @enderror
                                                 <div class="sh_preview_image_container d-none">
                                                     <img id="identity_front" src=""

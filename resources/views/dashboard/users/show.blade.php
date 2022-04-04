@@ -66,7 +66,7 @@
                             <tr>
                                 <th scope="row">Identity Front :</th>
                                 <td>
-                                    <img class="rounded avatar-md" src="{{asset('storage/uploads/users/' . $user->id.'/'.$user->userDetail->identity_front)}}" data-holder-rendered="true" alt="">
+                                    <img class="rounded avatar-md" src="{{asset('storage/uploads/users/' . $user->id.'/'.$user->identity_front)}}" data-holder-rendered="true" alt="">
                                 </td>
                             </tr>
                             </tbody>

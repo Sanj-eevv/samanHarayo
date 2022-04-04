@@ -126,10 +126,6 @@ class UserController extends Controller
     public function show(User $user)
     {
         $this->authorize('view', User::class);
-        $userss = User::where('id',$user->id)->with('userDetail')->get();
-        dd($userss);
-
-        $user->load('userDetail');
         return view('dashboard.users.show', compact('user'));
     }
 
