@@ -109,7 +109,7 @@
                                     </td>
                                     <td>{{\Carbon\Carbon::parse($user->pivot->created_at)->format('d M, Y')}}</td>
                                     <td>
-                                        <a href="{{route('found-reports.claim.show', ['user'=> $user->slug, 'report' => $report->slug])}}" class="btn btn-primary position-relative p-0 avatar-xs rounded waves-effect waves-light">
+                                        <a href="{{route('dashboard.claim.show', ['user'=> $user->slug, 'report' => $report->slug])}}" class="btn btn-primary position-relative p-0 avatar-xs rounded waves-effect waves-light">
                                             <span class="avatar-title bg-transparent">
                                                 <i class="mdi mdi-eye-outline"></i>
                                             </span>

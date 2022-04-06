@@ -43,24 +43,28 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/checkout', [\App\Http\Controllers\Front\CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('checkout/fulfill-order', [\App\Http\Controllers\Front\CheckoutController::class, 'fulfillOrder'])->name('checkout.fulfillOrder');
 
-    /* Customer Dashboard */
+
+
+    /** Customer Dashboard */
     Route::group(['prefix' => 'customer-dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Customer\DashboardController::class, 'index'])->name('customerDashboard.index');
         Route::get('/claim', [\App\Http\Controllers\Customer\ClaimController::class, 'index'])->name('customerDashboard.claim');
         Route::get('/claim/{slug}', [\App\Http\Controllers\Customer\ClaimController::class, 'show'])->name('customerDashboard.claim.show');
-
+        Route::get('/report', [\App\Http\Controllers\Customer\ReportController::class, 'index'])->name('customerDashboard.report');
+        Route::get('/report/claim/{user}/{report}', [\App\Http\Controllers\Customer\ReportController::class, 'claimShow'])->name('customerDashboard.report.claim.show');
+        Route::get('/report/{slug}', [\App\Http\Controllers\Customer\ReportController::class, 'show'])->name('customerDashboard.report.show');
     });
 
-    /** BackEnd Starts */
+    /** Admin Dashboard */
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
-        Route::get('/claim/show/{user}/{report}', [\App\Http\Controllers\Dashboard\ClaimFoundController::class, 'show'])->name('found-reports.claim.show');
-        Route::put('/claim/update/{user}/{report}', [\App\Http\Controllers\Dashboard\ClaimFoundController::class, 'update'])->name('found-reports.claim.update');
-        Route::delete('/claim/delete/{user_id}/{report_id}', [\App\Http\Controllers\Dashboard\ClaimFoundController::class, 'delete'])->name('found-reports.claim.delete');
-        Route::resource('contacts', \App\Http\Controllers\Dashboard\ContactController::class)->except(['create', 'update', 'edit', 'create']);
+        Route::delete('/claim/delete/{user_id}/{report_id}', [\App\Http\Controllers\Dashboard\ClaimController::class, 'delete'])->name('dashboard.claim.delete');
+        Route::get('/claim/show/{user}/{report}', [\App\Http\Controllers\Dashboard\ClaimController::class, 'show'])->name('dashboard.claim.show');
+        Route::put('/claim/update/{user}/{report}', [\App\Http\Controllers\Dashboard\ClaimController::class, 'update'])->name('dashboard.claim.update');
+        Route::resource('contacts', \App\Http\Controllers\Dashboard\ContactController::class)->except(['update', 'edit', 'create', 'store']);
         Route::resource('faqs', \App\Http\Controllers\Dashboard\FaqController::class);
-        Route::resource('found-reports', \App\Http\Controllers\Dashboard\FoundReportController::class);
-        Route::resource('lost-reports', \App\Http\Controllers\Dashboard\LostReportController::class);
+        Route::resource('found-reports', \App\Http\Controllers\Dashboard\FoundReportController::class)->except('create','edit', 'store');
+        Route::resource('lost-reports', \App\Http\Controllers\Dashboard\LostReportController::class)->only('index','show', 'destroy');
         Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class);
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
     });

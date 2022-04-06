@@ -8,13 +8,16 @@
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title">Menu</li>
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <a href="{{route('customerDashboard.report')}}">
                         <i class="bx bx-user-circle"></i>
-                        <span>Report</span>
+                        <span> Reported Items</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{route('customerDashboard.claim')}}">Claimed Report</a></li>
-                    </ul>
+                </li>
+                <li>
+                    <a href="{{route('customerDashboard.claim')}}">
+                        <i class="bx bx-user-circle"></i>
+                        <span> Claimed Items</span>
+                    </a>
                 </li>
             </ul>
 

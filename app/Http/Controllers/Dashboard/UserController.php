@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Helpers\SamanHarayoHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\Models\Role;
@@ -9,8 +10,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
-class UserController extends Controller
+class UserController extends BaseDashboardController
 {
     /**
      * Display a listing of the resource.
@@ -107,10 +109,15 @@ class UserController extends Controller
         $user = User::create([
             'first_name'        => $request->input('first_name'),
             'last_name'         => $request->input('last_name'),
+            'slug'              => SamanHarayoHelper::uniqueSlugify($request->input('last_name'), User::class, null, 'slug'),
             'email'             => $request->input('email'),
             'role_id'           => $request->input('role_id'),
-            'fb_id'             => null,
+            'current_image'     => null,
+            'identity_front'    => null,
+            'identity_back'     => null,
             'avatar'            => null,
+            'facebook_id'             => null,
+            'google_id'         => null,
             'email_verified_at' => now(),
             'password'          => $request->input('password')
         ]);
@@ -157,8 +164,6 @@ class UserController extends Controller
             'first_name'        => $request->input('first_name'),
             'last_name'         => $request->input('last_name'),
             'email'             => $request->input('email'),
-            'fb_id'             => null,
-            'avatar'            => null,
             'role_id'           => $request->input('role_id'),
             'updated_at'        => now(),
         ]);
@@ -174,7 +179,11 @@ class UserController extends Controller
     public function destroy($id)
     {
         $this->authorize('destroy', User::class);
-        User::where('id', $id)->delete();
+            $user = User::where('id', $id)->first();
+        /** Storage points to storage/app */
+            Storage::delete('public/uploads/users/'.$user->id);
+            Storage::delete('public/uploads/report/'.$user->id);
+        $user->delete();
         return response()->json([
             'message' => 'User Successfully Deleted',
         ], 200);

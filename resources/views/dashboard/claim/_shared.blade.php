@@ -1,5 +1,5 @@
 <script>
-    function deleteClaim(user_id, report_id,redirect = false)
+    function deleteClaim(user_id,report_id,type,redirect = false)
     {
         let action = BASE_URL+"/dashboard/claim/delete/"+user_id+'/'+report_id;
         $.ajax({
@@ -13,7 +13,11 @@
             },
             success:function(resp){
                 if(redirect){
-                    alertifySuccessAndRedirect(resp.message, BASE_URL+"/dashboard/found-reports/"+report_id);
+                    let url = BASE_URL+"/dashboard/lost-reports/"+report_id;
+                    if(type === 'found'){
+                        url = BASE_URL+"/dashboard/found-reports/"+report_id;
+                    }
+                    alertifySuccessAndRedirect(resp.message, url);
                 }else{
                     alertifySuccess(resp.message);
                 }

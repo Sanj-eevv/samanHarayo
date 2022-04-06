@@ -79,7 +79,7 @@
                         [25, 50, 100, 500]
                     ],
                     "pageLength": 25,
-                    fixedHeader: true,
+                    "fixedHeader": true,
                     "searchable": false,
                     "processing": true,
                     "language": {

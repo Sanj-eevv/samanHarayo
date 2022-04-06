@@ -8,8 +8,12 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title mb-0">Report Details</h4>
                         <div class="d-flex flex-wrap gap-2 justify-content-end">
-                            <a type="button" href="{{route('found-reports.show', $report->id)}}" class="btn btn-secondary waves-effect waves-light">Back</a>
-                            <button onclick="confirmDelete(() => {deleteClaim({{$user->id}},{{$report->id}},true)})" id="delete-btn" class="btn btn-danger waves-effect waves-light">Delete
+                            <?php
+                                $href= $report->report_type == \App\Models\Report::REPORT_TYPE_LOST ? route('lost-reports.show', $report->id) :  route('found-reports.show', $report->id);
+                                $type = $report->report_type;
+                            ?>
+                            <a type="button" href="{{$href}}" class="btn btn-secondary waves-effect waves-light">Back</a>
+                            <button onclick="confirmDelete(() => {deleteClaim({{$user->id}},{{$report->id}},'{{$report->report_type}}',true)})" id="delete-btn" class="btn btn-danger waves-effect waves-light">Delete
                                 <div class="spinner-border" role="status">
                                 </div>
                             </button>
@@ -55,7 +59,7 @@
                             <tr>
                                 <th style="white-space: nowrap;" scope="row">Detail Status :</th>
                                 <td class="py-0" style="vertical-align: middle">
-                                    <form action="{{route('found-reports.claim.update', ['user' => $claim_detail->user_id, 'report' => $claim_detail->report_id])}}" method="POST" name="update_claim">
+                                    <form action="{{route('dashboard.claim.update', ['user' => $claim_detail->user_id, 'report' => $claim_detail->report_id])}}" method="POST" name="update_claim">
                                         {{ method_field('PUT') }}
                                         @csrf
                                         <div class="detail-status-container">
@@ -106,7 +110,7 @@
     </div>
 @endsection
 @section('page_level_script')
-    @include('dashboard.found-reports.claim._shared')
+    @include('dashboard.claim._shared')
     <script>
         $(document).ready(function($){
             let detail_status ="{{$claim_detail->detail_status}}";

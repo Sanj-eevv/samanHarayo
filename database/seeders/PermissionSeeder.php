@@ -64,13 +64,13 @@ class PermissionSeeder extends Seeder
 //                'created_at' => now(),
 //                'updated_at' => now()
 //            ],
-//            [
-//                'name' => 'report-update',
-//                'label' => 'Report Update',
-//                'description' => 'Allows to update report',
-//                'created_at' => now(),
-//                'updated_at' => now()
-//            ],
+            [
+                'name' => 'report-update',
+                'label' => 'Report Update',
+                'description' => 'Allows to update report',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
             [
                 'name' => 'report-destroy',
                 'label' => 'Report Destroy',
@@ -142,8 +142,7 @@ class PermissionSeeder extends Seeder
             ],
             ],['name'],['label','description','updated_at']);
         $permissions = Permission::all();
-        $permissions->each(function ($permission){
-           $permission->roles()->sync([1]);
+        $permissions->each(function ($permission){$permission->roles()->sync([1]);
         });
 
     }

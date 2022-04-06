@@ -9,7 +9,7 @@
                     @foreach(Request::segments() as $segment)
                         <?php $segments .= '/'.$segment; ?>
                         <li class="breadcrumb-item">
-                            <a href="{{ $segments }}">{{ucwords($segment)}}</a>
+                            <a href="{{ $segments }}">{{ucwords(str_replace('-', ' ',$segment))}}</a>
                         </li>
                     @endforeach
 {{--                    <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>--}}

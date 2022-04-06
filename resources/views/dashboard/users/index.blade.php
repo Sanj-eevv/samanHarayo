@@ -85,7 +85,7 @@
                     ],
                     "pageLength": 25,
                     "deferRender": true,
-                    fixedHeader: true,
+                    "fixedHeader": true,
                     // "pagingType": "simple",
                     "searchable": false,
                     "processing": true,

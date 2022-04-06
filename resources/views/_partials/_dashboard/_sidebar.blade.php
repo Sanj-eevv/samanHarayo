@@ -32,6 +32,7 @@
                     </ul>
                 </li>
                 @endcan
+                @can('view',\App\Models\Report::class)
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-user-circle"></i>
@@ -42,6 +43,8 @@
                         <li><a href="{{route('found-reports.index')}}">Found Report Listing</a></li>
                     </ul>
                 </li>
+                @endcan
+                @can('view',\App\Models\User::class)
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-user-circle"></i>
@@ -52,6 +55,7 @@
                         <li><a href="{{route('users.create')}}">Add User</a></li>
                     </ul>
                 </li>
+                @endcan
                 <li class="menu-title">Admin options</li>
                 @if (auth()->user()->isAdmin())
                 <li>

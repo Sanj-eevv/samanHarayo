@@ -1,6 +1,5 @@
 <div>
-    @if(!in_array($role->name, \App\Models\Role::ADMIN_ROLE))
-    <div class="row">
+    <div class="row   @if(in_array($role->name, \App\Models\Role::ADMIN_ROLE)) d-none @endif">
         <div class="col-lg-12">
             <div>
                 <label class="form-label">{{ __('Name') }}</label>
@@ -14,7 +13,6 @@
             </div>
         </div>
     </div>
-    @endif
     <div class="row">
         <div class="col-lg-12">
             <div class="mt-4">
@@ -29,6 +27,7 @@
         </div>
     </div>
 </div>
+@if(!in_array($role->name,\App\Models\Role::ADMIN_ROLE))
 <div class="row mt-4">
     <div class="col-lg-12">
         <div class="card">
@@ -68,6 +67,7 @@
         </div>
     </div>
 </div>
+@endif
 <div class="d-flex flex-wrap gap-2 pt-4">
     <a type="button" href="{{route('roles.index')}}" class="btn btn-secondary waves-effect waves-light">Back</a>
     <button type="submit" class="btn btn-info waves-effect waves-light">{{$buttonText}}</button>

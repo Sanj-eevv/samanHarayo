@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
 use App\Models\Location;
 use App\Models\Report;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
-class LostReportController extends Controller
+class LostReportController extends BaseDashboardController
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +18,7 @@ class LostReportController extends Controller
      */
     public function index(Request $request)
     {
+        $this->authorize('view', User::class);
         if ($request->ajax()) {
             $columns = array(
                 0 => 'title',
@@ -76,26 +78,6 @@ class LostReportController extends Controller
         return view('dashboard.lost-reports.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -105,33 +87,15 @@ class LostReportController extends Controller
      */
     public function show($id)
     {
+        $this->authorize('view', User::class);
         $report = Report::where('id', $id)->with('category')->first();
+        if($report->report_type != Report::REPORT_TYPE_LOST){
+            abort(404);
+        }
         $location = Location::where('report_id', $id)->first();
         return view('dashboard.lost-reports.show', compact('report', 'location'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -141,7 +105,19 @@ class LostReportController extends Controller
      */
     public function destroy($id)
     {
-        Report::where('id', $id)->delete();
+        $this->authorize('destroy', User::class);
+        $report = Report::with(['itemImages', 'claimImages' ,'feature'])->where('id', $id)->first();
+        $reported_by = $report->reported_by;
+        foreach ($report->itemImages as $itemImage){
+            Storage::delete('public/uploads/report/'.$reported_by.'/item_image/'.$itemImage->image);
+        }
+        foreach ($report->claimImages as $claimImage){
+            Storage::delete('public/uploads/report/'.$reported_by.'/claimed/'.$claimImage->image);
+        }
+        if($report->feature){
+            Storage::delete('public/uploads/report/'.$reported_by.'/feature_image/'.$report->feature->feature_image);
+        }
+        $report->delete();
         return response()->json([
             'message' => 'Report Successfully Deleted',
         ], 200);

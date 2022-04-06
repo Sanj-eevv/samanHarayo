@@ -33,11 +33,11 @@
                             </tr>
                             <tr>
                                 <th scope="row" style="white-space: nowrap">Reported at :</th>
-                                <td>{{\Carbon\Carbon::parse($report->created_at)->format('Y-m-d')}}</td>
+                                <td>{{\Carbon\Carbon::parse($report->created_at)->format('d M, Y')}}</td>
                             </tr>
                             <tr>
                                 <th scope="row" style="white-space: nowrap">Claimed at :</th>
-                                <td>{{\Carbon\Carbon::parse($claim_user->created_at)->format('Y-m-d')}}</td>
+                                <td>{{\Carbon\Carbon::parse($claim_user->created_at)->format('d M, Y')}}</td>
                             </tr>
                             <tr>
                                 <th style="white-space: nowrap;" scope="row">Description :</th>
@@ -62,7 +62,7 @@
                                 </span>
                                 </td>
                             </tr>
-                            @if($claim_user->detail_status !== 'rejected')
+                            @if($claim_user->detail_status === \App\Models\Report::DETAIL_STATUS[1] )
                             <tr>
                                 <th style="white-space: nowrap;" scope="row">Report Status :</th>
                                 <td>
@@ -84,7 +84,7 @@
                                 </td>
                             </tr>
                             @endif
-                            @if($claim_user->report_status === 'verified')
+                            @if($claim_user->report_status === App\Models\Report::REPORT_STATUS[1])
                             <tr>
                                 <th scope="row" style="white-space: nowrap;">Contact Number :</th>
                                 <td>{{$report->contact_number}}</td>

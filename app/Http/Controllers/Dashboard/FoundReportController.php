@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Report;
 use App\Models\Location;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 
 class FoundReportController extends BaseDashboardController
@@ -17,6 +19,7 @@ class FoundReportController extends BaseDashboardController
      */
     public function index(Request $request)
     {
+        $this->authorize('view', User::class);
         if ($request->ajax()) {
             $columns = array(
                 0 => 'title',
@@ -79,27 +82,6 @@ class FoundReportController extends BaseDashboardController
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -107,21 +89,13 @@ class FoundReportController extends BaseDashboardController
      */
     public function show($id)
     {
-//        $this->authorize('view', User::class);
+        $this->authorize('view', User::class);
         $report = Report::where('id', $id)->with('category', 'claimUsers')->first();
+        if($report->report_type != Report::REPORT_TYPE_FOUND){
+            abort(404);
+        }
         $location = Location::where('report_id', $id)->first();
         return view('dashboard.found-reports.show', compact('report', 'location'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -133,6 +107,7 @@ class FoundReportController extends BaseDashboardController
      */
     public function update(Request $request, $id)
     {
+       $this->authorize('update', User::class);
        $report = Report::findOrFail($id);
        $report->verified ? $report->verified = 0 : $report->verified = 1;
        $report->updated_at = now();
@@ -152,8 +127,16 @@ class FoundReportController extends BaseDashboardController
      */
     public function destroy($id)
     {
-//        $this->authorize('destroy', User::class);
-        Report::where('id', $id)->delete();
+        $this->authorize('destroy', User::class);
+        $report = Report::with(['itemImages', 'claimImages'])->where('id', $id)->first();
+        $reported_by = $report->reported_by;
+        foreach ($report->itemImages as $itemImage){
+            Storage::delete('public/uploads/report/'.$reported_by.'/item_image/'.$itemImage->image);
+        }
+        foreach ($report->claimImages as $claimImage){
+            Storage::delete('public/uploads/report/'.$reported_by.'/claimed/'.$claimImage->image);
+        }
+        $report->delete();
         return response()->json([
             'message' => 'Report Successfully Deleted',
         ], 200);

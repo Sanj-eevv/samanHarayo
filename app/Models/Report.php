@@ -24,34 +24,45 @@ class Report extends Model
     const REPORT_STATUS = [ 'pending', 'verified', 'rejected'];
 
 
-    public function ItemImages(){
-        return $this->hasMany(ItemImage::class, 'report_id', 'id')->where('claim', 0);
-    }
-    public function claimImages(){
-        return $this->hasMany(ItemImage::class, 'report_id', 'id')->where('claim', 1);
-    }
-    public function location(){
-        return $this->hasOne(Location::class);
-    }
-
-    public function category(){
+    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(category::class);
     }
 
-    public function reward(){
-        return $this->hasOne(Reward::class, 'report_id', 'id');
+    public function claimImages(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ItemImage::class, 'report_id', 'id')->where('claim', 1);
+    }
+
+    public function claimUsers(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(User::class,'claim_user', 'report_id', 'user_id')->withTimestamps()->withPivot('description', 'detail_status', 'report_status');
+    }
+
+    public function feature(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Feature::class);
+    }
+
+    public function itemImages(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ItemImage::class, 'report_id', 'id')->where('claim', 0);
+    }
+
+    public function location(){
+        return $this->hasOne(Location::class);
     }
 
     public function randomImage(){
         return $this->hasOne(ItemImage::class, 'report_id', 'id')->where('claim', 0)->inRandomOrder();
     }
 
+    public function reward(){
+        return $this->hasOne(Reward::class, 'report_id', 'id');
+    }
 //    public function users(){
 //        return $this->belongsToMany(User::class);
-//    }
 
-    public function claimUsers(){
-            return $this->belongsToMany(User::class,'claim_user', 'report_id', 'user_id')->withTimestamps()->withPivot('description', 'detail_status', 'report_status');
-    }
+//    }
 
 }
