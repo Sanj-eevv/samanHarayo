@@ -57,9 +57,9 @@
                             </iframe>
                         </div>
                         @if($report->report_type === \App\Models\Report::REPORT_TYPE_LOST)
-                            <a class="sh-btn" href="">I've This Item</a>
+                            <a class="sh-btn {{$disabled ? 'disabled' : '' }}" href="">I've This Item</a>
                         @else
-                            <a class="sh-btn" href="{{route('identity.index',['report'=>$report->slug])}}">This Belongs to Me</a>
+                            <a class="sh-btn {{$disabled ? 'disabled' : '' }}" href="{{route('identity.index',['report'=>$report->slug])}}">This Belongs to Me</a>
                         @endif
                     </div>
                 </div>

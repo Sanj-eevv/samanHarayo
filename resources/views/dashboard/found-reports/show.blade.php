@@ -17,47 +17,47 @@
                         <table class="table mb-0 table-borderless">
                             <tbody>
                             <tr>
-                                <th scope="row">Item Name :</th>
+                                <th scope="row" style="white-space: nowrap;">Item Name :</th>
                                 <td>{{ucwords($report->title)}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Brand :</th>
+                                <th scope="row" style="white-space: nowrap;">Brand :</th>
                                 <td>{{ucwords($report->brand ?? 'Not Specified')}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Category :</th>
+                                <th scope="row" style="white-space: nowrap;">Category :</th>
                                 <td>{{ucwords($report->category->name)}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Description :</th>
+                                <th scope="row" style="white-space: nowrap;">Description :</th>
                                 <td>{{ucwords($report->description)}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Reported at :</th>
+                                <th scope="row" style="white-space: nowrap;">Reported at :</th>
                                 <td>{{\Carbon\Carbon::parse($report->created_at)->format('Y-m-d')}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Contact Number :</th>
+                                <th scope="row" style="white-space: nowrap;">Contact Number :</th>
                                 <td>{{$report->contact_number}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Location:</th>
+                                <th scope="row" style="white-space: nowrap;">Location:</th>
                                 <td>{{$location->address}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Latitude:</th>
+                                <th scope="row" style="white-space: nowrap;">Latitude:</th>
                                 <td>{{$location->latitude}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Longitude:</th>
+                                <th scope="row" style="white-space: nowrap;">Longitude:</th>
                                 <td>{{$location->longitude}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Email :</th>
+                                <th scope="row" style="white-space: nowrap;">Email :</th>
                                 <td>{{$report->contact_email}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Status :</th>
+                                <th scope="row" style="white-space: nowrap;">Status :</th>
                                 <td class="position-relative">
                                     <span id="report-status" class="badge p-2 {{$report->verified === 1? 'bg-success' : 'bg-danger'}}">
                                         {{$report->verified ? "Verified": "Pending"}}
@@ -71,7 +71,20 @@
                         </table>
                     </div>
                     <hr>
-                    <div class="py-2">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="card-title mb-0">Item Images</h4>
+                    </div>
+                    <div class="magnetic-container">
+                        @forelse($report->itemImages as $image)
+                            <a href="{{asset('storage/uploads/report/'.$report->reported_by.'/item_image/'.$image->image)}}">
+                                <img src="{{asset('storage/uploads/report/'.$report->reported_by.'/item_image/'.$image->image)}}" class="cover-image popup-img img-fluid"  alt="">
+                            </a>
+                        @empty
+                            <div class="alert alert-danger">Images not available.</div>
+                        @endforelse
+                    </div>
+                    <hr>
+                    <div class="pb-2">
                         <h4 class="card-title mb-0">Claim Details</h4>
                     </div>
                     @if($report->claimUsers->count() > 0)

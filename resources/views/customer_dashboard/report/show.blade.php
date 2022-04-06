@@ -55,7 +55,7 @@
                                 <th scope="row">Email :</th>
                                 <td>{{$report->contact_email}}</td>
                             </tr>
-                            @if($report->report_type === \App\Models\Report::REPORT_TYPE_LOST)
+                            @if($report->report_type === \App\Models\Report::REPORT_TYPE_FOUND)
                             <tr>
                                 <th scope="row">Status :</th>
                                 <td class="position-relative">
@@ -65,44 +65,65 @@
                                 </td>
                             </tr>
                             @endif
+                            @if($report->verifiedUser)
+                                <tr>
+                                    <th scope="col" style="white-space: nowrap">Item Claimed To : </th>
+                                    <td>{{$report->verifiedUser->first_name.' '.$report->verifiedUser->last_name}}</td>
+                                </tr>
+                            @endif
                             </tbody>
                         </table>
                     </div>
                     <hr>
-                    <div class="py-2">
-                        <h4 class="card-title mb-0">Claim Details</h4>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="card-title mb-0">Item Images</h4>
                     </div>
-                    @if($report->claimUsers->count() > 0)
-                    <div class="table-responsive">
-                        <table class="table table-bordered mb-0">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Claimed Date</th>
-                                <th>action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($report->claimUsers as $user)
+                    <div class="magnetic-container">
+                        @forelse($report->itemImages as $image)
+                            <a href="{{asset('storage/uploads/report/'.$report->reported_by.'/item_image/'.$image->image)}}">
+                                <img src="{{asset('storage/uploads/report/'.$report->reported_by.'/item_image/'.$image->image)}}" class="cover-image popup-img img-fluid"  alt="">
+                            </a>
+                        @empty
+                            <div class="alert alert-danger">Images not available.</div>
+                        @endforelse
+                    </div>
+                    @if($report->verified === 1 && $report->verified_user == null)
+                        <hr>
+                        <div class="py-2">
+                            <h4 class="card-title mb-0">Claim Details</h4>
+                        </div>
+                        @if($report->claimUsers->count() > 0)
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0">
+                                <thead>
                                 <tr>
-                                    <th scope="row">{{$user->first_name.' '.$user->last_name}}</th>
-                                    <td>{{$user->email}}</td>
-                                    <td>{{\Carbon\Carbon::parse($user->pivot->created_at)->format('d M, Y')}}</td>
-                                    <td>
-                                        <a href="{{route('customerDashboard.report.claim.show', ['user'=> $user->slug, 'report' => $report->slug])}}" class="btn btn-primary position-relative p-0 avatar-xs rounded waves-effect waves-light">
-                                            <span class="avatar-title bg-transparent">
-                                                <i class="mdi mdi-eye-outline"></i>
-                                            </span>
-                                        </a>
-                                    </td>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Claimed Date</th>
+                                    <th>action</th>
                                 </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    @else
-                        <div class="alert alert-danger">This report is not claime by any user yet.</div>
+                                </thead>
+                                <tbody>
+                                @foreach($report->claimUsers as $user)
+                                    <tr>
+                                        <th scope="row">{{$user->first_name.' '.$user->last_name}}</th>
+                                        <td>{{$user->email}}</td>
+                                        <td>{{\Carbon\Carbon::parse($user->pivot->created_at)->format('d M, Y')}}</td>
+                                        <td>
+                                            <a href="{{route('customerDashboard.report.claim.show', ['user'=> $user->slug, 'report' => $report->slug])}}" class="btn btn-primary position-relative p-0 avatar-xs rounded waves-effect waves-light">
+                                                <span class="avatar-title bg-transparent">
+                                                    <i class="mdi mdi-eye-outline"></i>
+                                                </span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        @else
+                            <div class="alert alert-danger">This report is not claimed by any user yet.</div>
+                        @endif
                     @endif
                 </div>
             </div>

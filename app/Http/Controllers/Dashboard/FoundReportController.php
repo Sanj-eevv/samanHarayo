@@ -90,7 +90,7 @@ class FoundReportController extends BaseDashboardController
     public function show($id)
     {
         $this->authorize('view', User::class);
-        $report = Report::where('id', $id)->with('category', 'claimUsers')->first();
+        $report = Report::where('id', $id)->with('category', 'claimUsers', 'itemImages')->first();
         if($report->report_type != Report::REPORT_TYPE_FOUND){
             abort(404);
         }

@@ -21,7 +21,7 @@ class IdentityController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function index(Request $request)
     {
@@ -29,6 +29,9 @@ class IdentityController extends Controller
         $report = Report::where('slug', $report)->first();
         if(!$report){
             abort(404);
+        }
+        if($report->reported_by === \auth()->user()->id){
+            return redirect()->back()->with('toast.error', 'Sorry! You cannot claim your own reported items');
         }
         $user = Auth::user();
         $verified = false;
@@ -65,6 +68,9 @@ class IdentityController extends Controller
         $report = Report::where('slug', $report)->first();
         if(!$report){
             abort(404);
+        }
+        if($report->reported_by === \auth()->user()->id){
+            return redirect()->back()->with('toast.error', 'Sorry! You cannot claim your own reported items');
         }
         \DB::beginTransaction();
          try{

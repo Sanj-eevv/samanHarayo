@@ -143,3 +143,21 @@ select#detail-status{
 #edit-detail-status.active{
     display: inline-block;
 }
+
+#edit-report-status,
+#cancel-report-status,
+#update-report-status{
+    cursor: pointer;
+}
+
+#cancel-report-status,
+#update-report-status,
+#edit-report-status{
+    display: none;
+}
+#cancel-report-status.active,
+#update-report-status.active,
+#edit-report-status.active{
+    display: inline-block;
+}
+

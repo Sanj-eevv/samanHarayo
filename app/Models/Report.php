@@ -44,6 +44,11 @@ class Report extends Model
         return $this->hasOne(Feature::class);
     }
 
+    public function verifiedUser(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class, 'verified_user', 'id');
+    }
+
     public function itemImages(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(ItemImage::class, 'report_id', 'id')->where('claim', 0);

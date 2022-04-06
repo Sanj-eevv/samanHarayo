@@ -75,7 +75,6 @@
                                             break;
                                         case \App\Models\Report::REPORT_STATUS[1]:
                                             $bg_color = 'bg-success';
-
                                     }
                                     ?>
                                     <span id="report-status" class="badge p-2 {{$bg_color}}">

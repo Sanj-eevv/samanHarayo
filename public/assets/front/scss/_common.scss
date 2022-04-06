@@ -2256,6 +2256,12 @@ a.sh_preview_image_close:hover{
     }
 }
 
+a.disabled{
+    pointer-events: none;
+    cursor: not-allowed;
+    background: grey;
+}
+
 
 
 

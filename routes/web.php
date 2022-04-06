@@ -52,7 +52,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/claim/{slug}', [\App\Http\Controllers\Customer\ClaimController::class, 'show'])->name('customerDashboard.claim.show');
         Route::get('/report', [\App\Http\Controllers\Customer\ReportController::class, 'index'])->name('customerDashboard.report');
         Route::get('/report/claim/{user}/{report}', [\App\Http\Controllers\Customer\ReportController::class, 'claimShow'])->name('customerDashboard.report.claim.show');
+        Route::put('/report/verify/{user}/{report}', [\App\Http\Controllers\Customer\ReportController::class, 'verify'])->name('customerDashboard.report.claim.verify');
         Route::get('/report/{slug}', [\App\Http\Controllers\Customer\ReportController::class, 'show'])->name('customerDashboard.report.show');
+
     });
 
     /** Admin Dashboard */

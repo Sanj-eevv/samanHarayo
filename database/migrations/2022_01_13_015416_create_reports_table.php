@@ -25,6 +25,7 @@ class CreateReportsTable extends Migration
             $table->boolean('verified')->default(0);
             $table->string('contact_number');
             $table->string('contact_email');
+            $table->foreignId('verified_user')->nullable()->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

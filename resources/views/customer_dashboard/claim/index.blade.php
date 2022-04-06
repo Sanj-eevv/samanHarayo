@@ -36,6 +36,9 @@
                         "type": "GET",
                         "tryCount" : 0,
                         "retryLimit" : 3,
+                        "data": {
+                            'csrf_token' : CSRF_TOKEN
+                        },
                         error: function(xhr, ajaxOptions, thrownError) {
                             if (xhr.status === 500) {
                                 this.tryCount++;
@@ -83,7 +86,7 @@
                     "searchable": false,
                     "processing": true,
                     "language": {
-                        "emptyTable": " ",
+                        "emptyTable": "No record found",
                         "processing": "<div class='spinner-border text-primary' role='status'>"+
                             "<span class='visually-hidden'>Loading...</span>"+
                             "</div>"

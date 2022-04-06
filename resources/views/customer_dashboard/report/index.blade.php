@@ -34,6 +34,9 @@
                         "url": BASE_URL + '/customer-dashboard/report',
                         "dataType": "json",
                         "type": "GET",
+                        "data": {
+                            'csrf_token' : CSRF_TOKEN
+                        },
                         "tryCount" : 0,
                         "retryLimit" : 3,
                         error: function(xhr, ajaxOptions, thrownError) {
@@ -44,6 +47,7 @@
                                     $.ajax(this);
                                 }
                             }
+                            console.log(xhr);
                             toastError("Something went wrong !!!");
                             $('.spinner-border').hide();
                         }
@@ -90,7 +94,7 @@
                     "searchable": false,
                     "processing": true,
                     "language": {
-                        "emptyTable": " ",
+                        "emptyTable": "No Record Found",
                         "processing": "<div class='spinner-border text-primary' role='status'>"+
                             "<span class='visually-hidden'>Loading...</span>"+
                             "</div>"
