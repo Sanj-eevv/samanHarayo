@@ -17,15 +17,17 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
     public function index(){
-        $featured_reports   = Feature::with('report')->get();
-        $found_reports = Report::with('randomImage')->where('report_type', Report::REPORT_TYPE_FOUND)->where('verified', 1)->orderBy('created_at', 'desc')->take(12)->get();
-        $lost_reports  = Report::with(['randomImage', 'reward'])->where('report_type', Report::REPORT_TYPE_LOST)->orderBy('created_at', 'desc')->take(12)->get();
+        $featured_reports   = Feature::with(['report' => function($q){
+            $q->where('verified_user', null);
+        }])->get();
+        $found_reports = Report::with('randomImage')->where('report_type', Report::REPORT_TYPE_FOUND)->where('verified', 1)->where('verified_user', null)->orderBy('created_at', 'desc')->take(12)->get();
+        $lost_reports  = Report::with(['randomImage', 'reward'])->where('report_type', Report::REPORT_TYPE_LOST)->where('verified_user', null)->orderBy('created_at', 'desc')->take(12)->get();
         return view('welcome', compact('featured_reports', 'found_reports', 'lost_reports'));
     }
 
     public function show($slug,  Request $request){
         $report = Report::where('slug',$slug)->first();
-        if(!$report){
+        if(!$report || $report->verified_user != null || !$report->verified){
             abort(404);
         }
         $disabled = false;
@@ -61,7 +63,7 @@ class IndexController extends Controller
 //                );
             $query = Report::with(['category'=>function($q) use($meta){
                 $q->where('name', 'like',  $meta['search'].'%');
-            }, 'reward', 'randomImage'])->where('verified', 1);
+            }, 'reward', 'randomImage'])->where('verified', 1)->where('verified_user', null);
 //            $query->where('verified', 1);
             $query = $query->where('report_type', $type);
             $query = $query->where(function($q) use($meta){

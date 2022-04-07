@@ -180,7 +180,8 @@
     });
 
     /*Faq page accordion*/
-    $('.accordion-title').on('click', function (){
+    $('.accordion-title').on('click', function (e){
+        e.preventDefault();
        let accordion_inner =  $(this).siblings('.accordion-inner');
        if($(this).hasClass('active')){
            accordion_inner.slideUp();
