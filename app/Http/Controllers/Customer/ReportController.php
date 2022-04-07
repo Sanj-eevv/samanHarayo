@@ -121,26 +121,29 @@ class ReportController extends Controller
         if(!$claim_detail){
             abort(404);
         }
-       DB::beginTransaction();
+        if($claim_detail->report_status === Report::REPORT_STATUS[0]){
+        DB::beginTransaction();
         try {
-            if($claim_detail->report_status === Report::REPORT_STATUS[0]){
-                \DB::table('claim_user')->where('report_id', $report->id)->where('user_id', $user->id)->update([
+
+                 \DB::table('claim_user')->where('report_id', $report->id)->where('user_id', $user->id)->update([
                     'report_status'         =>          $status
                 ]);
-            }
-            if($status === Report::REPORT_STATUS[1]){
-                $report->verified_user = $user->id;
-                $report->save();
-            }
+                if($status === Report::REPORT_STATUS[1]){
+                    $report->verified_user = $user->id;
+                    $report->save();
+                }
         }catch (\Exception $e){
             DB::rollBack();
+            return redirect()->back()->with('toast.error', 'Could not update status');
+        }
+        }else{
             return redirect()->back()->with('toast.error', 'Could not update status');
         }
 
 //        DB::table('claim_user')->where('user_id', $user->id)->where('report_id', $report->id)->update([
 //            'report_status'             =>             $status,
 //        ]);
-
+         DB::commit();
         return redirect()->back()->with('toast.success', 'Report status updated successfully');
     }
 }

@@ -34,6 +34,7 @@
                             <tr>
                                 <th style="white-space: nowrap;" scope="row">Report Status :</th>
                                 <td class="py-0" style="vertical-align: middle">
+                                    @if($claim_detail->report_status === \App\Models\Report::REPORT_STATUS[0])
                                     <form action="{{route('customerDashboard.report.claim.verify', ['user' => $user->slug, 'report' => $report->slug])}}" method="POST" name="update_claim">
                                         {{ method_field('PUT') }}
                                         @csrf
@@ -61,6 +62,22 @@
                                         </span>
                                         </div>
                                     </form>
+                                    @else
+                                        <?php
+                                        $report_status = $claim_detail->report_status;
+                                        $bg_color = 'bg-danger';
+                                        switch ($report_status){
+                                            case \App\Models\Report::REPORT_STATUS[0]:
+                                                $bg_color = 'bg-info';
+                                                break;
+                                            case \App\Models\Report::REPORT_STATUS[1]:
+                                                $bg_color = 'bg-success';
+                                        }
+                                        ?>
+                                        <span id="report-status" class="badge p-2 {{$bg_color}}">
+                                        {{ucwords($report_status)}}
+                                </span>
+                                    @endif
                                 </td>
                             </tr>
                             </tbody>

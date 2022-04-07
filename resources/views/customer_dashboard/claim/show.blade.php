@@ -84,6 +84,11 @@
                             </tr>
                             @endif
                             @if($claim_user->report_status === App\Models\Report::REPORT_STATUS[1])
+                                <tr>
+                                    <th colspan="2">
+                                        <span class="text-danger">Your Claim has been successfully verified. The follwing are the details of finder of your items</span>
+                                    </th>
+                                </tr>
                             <tr>
                                 <th scope="row" style="white-space: nowrap;">Contact Number :</th>
                                 <td>{{$report->contact_number}}</td>
