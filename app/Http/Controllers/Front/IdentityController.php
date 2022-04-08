@@ -66,7 +66,7 @@ class IdentityController extends Controller
     {
         $report = $request->input('report');
         $report = Report::where('slug', $report)->first();
-        if(!$report || !$report->veified || $report->verified_user != null){
+        if(!$report || !$report->verified || $report->verified_user != null){
             abort(404);
         }
         if($report->reported_by === \auth()->user()->id){

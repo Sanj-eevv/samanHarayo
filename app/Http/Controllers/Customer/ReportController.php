@@ -6,10 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Location;
 use App\Models\Report;
 use App\Models\User;
+use App\Notifications\ClaimReportStatusRejected;
+use App\Providers\ClaimReportStatusRejectedEvent;
+use App\Providers\ClaimReportStatusVerifiedEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ReportController extends Controller
+class ReportController extends BaseCustomerDashboardController
 {
     public function index(Request $request){
         if ($request->ajax()) {
@@ -139,11 +142,12 @@ class ReportController extends Controller
         }else{
             return redirect()->back()->with('toast.error', 'Could not update status');
         }
-
-//        DB::table('claim_user')->where('user_id', $user->id)->where('report_id', $report->id)->update([
-//            'report_status'             =>             $status,
-//        ]);
-         DB::commit();
+        DB::commit();
+        if($status === Report::REPORT_STATUS[1]){
+            event(new ClaimReportStatusVerifiedEvent($user, $report));
+        }else{
+            event(new ClaimReportStatusRejectedEvent($user, $report));
+        }
         return redirect()->back()->with('toast.success', 'Report status updated successfully');
     }
 }

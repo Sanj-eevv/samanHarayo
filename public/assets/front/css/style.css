@@ -5029,6 +5029,33 @@ a.disabled {
   line-height: 40px;
   overflow: hidden; }
 
+.pagination-style ul li.disabled a {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #dee2e6; }
+
+.pagination-style ul li a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 16px;
+  border-radius: 100%; }
+  .pagination-style ul li a.active {
+    background-color: #ff2f2f;
+    color: #fff;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .pagination-style ul li a.prev, .pagination-style ul li a.next {
+    background-color: #f0f4f6;
+    color: #000000;
+    font-size: 14px;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
 /*------ 17. Breadcrumb style  --------*/
 .breadcrumb-area {
   padding: 45px 0; }

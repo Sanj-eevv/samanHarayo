@@ -37,7 +37,7 @@
                         "tryCount" : 0,
                         "retryLimit" : 3,
                         "data": {
-                            'csrf_token' : CSRF_TOKEN
+                            "_token": '{{csrf_token()}}'
                         },
                         error: function(xhr, ajaxOptions, thrownError) {
                             if (xhr.status === 500) {

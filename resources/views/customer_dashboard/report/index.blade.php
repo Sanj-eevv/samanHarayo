@@ -35,7 +35,7 @@
                         "dataType": "json",
                         "type": "GET",
                         "data": {
-                            'csrf_token' : CSRF_TOKEN
+                            "_token": '{{csrf_token()}}'
                         },
                         "tryCount" : 0,
                         "retryLimit" : 3,

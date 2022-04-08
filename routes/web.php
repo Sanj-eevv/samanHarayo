@@ -19,6 +19,8 @@ Route::post('/contact', [\App\Http\Controllers\Front\ContactController::class, '
 Route::get('/details/{slug}', [\App\Http\Controllers\Front\IndexController::class , 'show'])->name('front.details');
 Route::get('/faqs', [\App\Http\Controllers\Front\FaqController::class, 'index'])->name('front.faqs.index');
 Route::get('/listing', [\App\Http\Controllers\Front\IndexController::class , 'listing'])->name('front.listing');
+Route::get('/search', [\App\Http\Controllers\Front\IndexController::class , 'search'])->name('front.search');
+
 
 
 
@@ -50,6 +52,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/', [\App\Http\Controllers\Customer\DashboardController::class, 'index'])->name('customerDashboard.index');
         Route::get('/claim', [\App\Http\Controllers\Customer\ClaimController::class, 'index'])->name('customerDashboard.claim');
         Route::get('/claim/{slug}', [\App\Http\Controllers\Customer\ClaimController::class, 'show'])->name('customerDashboard.claim.show');
+        Route::get('/notifications', [\App\Http\Controllers\Customer\NotificationController::class, 'index'])->name('customerDashboard.notification.index');
+        Route::post('/notification/mark', [\App\Http\Controllers\Customer\NotificationController::class, 'markNotification'])->name('customerDashboard.notification.mark');
         Route::get('/report', [\App\Http\Controllers\Customer\ReportController::class, 'index'])->name('customerDashboard.report');
         Route::get('/report/claim/{user}/{report}', [\App\Http\Controllers\Customer\ReportController::class, 'claimShow'])->name('customerDashboard.report.claim.show');
         Route::put('/report/verify/{user}/{report}', [\App\Http\Controllers\Customer\ReportController::class, 'verify'])->name('customerDashboard.report.claim.verify');

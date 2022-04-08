@@ -15,11 +15,11 @@
             </div>
             <div class="header-action">
                 <div class="header-search">
-                        <form action="#">
+                        <form action="{{route('front.search')}}" method="get">
                             <label>
-                                <input placeholder="Search products…" type="text">
+                                <input placeholder="Search products…" type="text" name="search">
                             </label>
-                            <button class="button-search"><i class="icon-magnifier"></i></button>
+                            <button class="button-search" type="submit"><i class="icon-magnifier"></i></button>
                         </form>
                 </div>
                 @auth

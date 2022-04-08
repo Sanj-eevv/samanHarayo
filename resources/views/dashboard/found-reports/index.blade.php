@@ -36,6 +36,9 @@
                         "dataType": "json",
                         "type": "GET",
                         "tryCount" : 0,
+                        "data": {
+                            "_token": '{{csrf_token()}}'
+                        },
                         "retryLimit" : 3,
                         error: function(xhr, ajaxOptions, thrownError) {
                             if (xhr.status === 500) {

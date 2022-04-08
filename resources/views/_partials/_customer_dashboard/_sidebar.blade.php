@@ -19,6 +19,13 @@
                         <span> Claimed Items</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('customerDashboard.notification.index')}}">
+                        <i class="bx bx-user-circle"></i>
+                        <span class="badge rounded-pill bg-info float-end" id="cust-notification">{{$GLOBAL_CUSTOMER_NOTIFICATION}}</span>
+                        <span>Notifications</span>
+                    </a>
+                </li>
             </ul>
 
 
