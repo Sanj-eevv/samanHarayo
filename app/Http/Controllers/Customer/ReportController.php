@@ -77,22 +77,21 @@ class ReportController extends BaseCustomerDashboardController
         }
         return view('customer_dashboard.report.index');
     }
+
     public function show($report){
-        $report = Report::where('slug', $report)->with(['category','itemImages','verifiedUser','claimUsers'=>function($q){
-            $q->where('detail_status',Report::DETAIL_STATUS[1])
-            ->where('report_status', Report::REPORT_STATUS[0]);
-        }])->first();
-        if(!$report || $report->reported_by != auth()->user()->id){
-            abort(400);
-        }
-        $location = Location::where('report_id', $report->id)->first();
-        return view('customer_dashboard.report.show', compact('report', 'location'));
+        $report = Report::where('slug', $report)->where('reported_by', auth()->user()->id)
+            ->with(['category','itemImages','verifiedUser','location','claimUsers'=>function($q){
+                $q->where('detail_status',Report::DETAIL_STATUS[1])
+                    ->where('report_status', Report::REPORT_STATUS[0]);
+            }])->first();
+        abort_if(!$report, 404);
+        return view('customer_dashboard.report.show', compact('report'));
     }
 
     public function claimShow($user,$report){
         $user = User::where('slug', $user)->first();
         $report = Report::where('slug', $report)->first();
-        if((!$user || !$report) || ($report->reported_by !== auth()->user()->id)){
+        if(!$user || !$report || $report->reported_by !== auth()->user()->id){
             abort(404);
         }
         $item_images = DB::table('item_images')->where('report_id', $report->id)->where('claimed_by', $user->id)->get();
@@ -100,25 +99,20 @@ class ReportController extends BaseCustomerDashboardController
         if(!$claim_detail){
             abort(404);
         }
-//        $item_images = ItemImage::where('report_id', $report->id)->where('claimed_by', $user->id)->get();
         return view('customer_dashboard.report.claim.show', compact('claim_detail','user', 'report', 'item_images'));
     }
 
     public function verify(Request $request,$user,$report){
         $request->validate([
-            'report_status' => 'in:pending,verified,rejected',
+            'report_status' => 'required,in:pending,verified,rejected',
         ]);
-        $status = $request->input('report_status');
-        if($status === Report::REPORT_STATUS[0]){
-            return redirect()->back()->with('toast.error', 'Could not update status');
-        }
         $user = User::where('slug', $user)->first();
         $report = Report::where('slug', $report)->first();
-        if(!$user || !$report){
-            abort(404);
-        }
-        if($report->reported_by !== auth()->user()->id){
-            abort(401);
+        $status = $request->input('report_status');
+        abort_if(!$user || !$report || $report->reported_by !== auth()->user()->id, 404);
+
+        if($status === Report::REPORT_STATUS[0]){
+            return redirect()->back()->with('toast.error', 'Select other options');
         }
         $claim_detail = \DB::table('claim_user')->where('report_id', $report->id)->where('user_id', $user->id)->first();
         if(!$claim_detail){
@@ -134,20 +128,23 @@ class ReportController extends BaseCustomerDashboardController
                 if($status === Report::REPORT_STATUS[1]){
                     $report->verified_user = $user->id;
                     $report->save();
+
+                    DB::table('claim_user')->where('report_id', $report->id)->where('report_status', Report::REPORT_STATUS[0])
+                        ->update([
+                            'report_status'         =>          Report::REPORT_STATUS[2],
+                        ]);
+                    event(new ClaimReportStatusVerifiedEvent($user, $report));
+                }else{
+                    event(new ClaimReportStatusRejectedEvent($user, $report));
                 }
-        }catch (\Exception $e){
-            DB::rollBack();
-            return redirect()->back()->with('toast.error', 'Could not update status');
-        }
+            }catch (\Exception $e){
+                DB::rollBack();
+                return redirect()->back()->with('toast.error', 'Could not update status');
+            }
         }else{
             return redirect()->back()->with('toast.error', 'Could not update status');
         }
         DB::commit();
-        if($status === Report::REPORT_STATUS[1]){
-            event(new ClaimReportStatusVerifiedEvent($user, $report));
-        }else{
-            event(new ClaimReportStatusRejectedEvent($user, $report));
-        }
         return redirect()->back()->with('toast.success', 'Report status updated successfully');
     }
 }

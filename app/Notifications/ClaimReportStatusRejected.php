@@ -59,7 +59,7 @@ class ClaimReportStatusRejected extends Notification
     {
         return [
             'title'                         =>      $this->report->title,
-            'slug'                   =>     $this->report->slug,
+            'slug'                          =>     $this->report->slug,
         ];
     }
 }

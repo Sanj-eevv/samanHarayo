@@ -91,11 +91,13 @@ class FoundReportController extends BaseDashboardController
     {
         $this->authorize('view', User::class);
         $report = Report::where('id', $id)->with('category', 'claimUsers', 'itemImages')->first();
-        if($report->report_type != Report::REPORT_TYPE_FOUND){
-            abort(404);
+        if($report){
+           return $report->when($report->report_type === Report::REPORT_TYPE_FOUND, function () use ($id,$report){
+                $location = Location::where('report_id', $id)->first();
+                return view('dashboard.found-reports.show', compact('report', 'location'));
+            });
         }
-        $location = Location::where('report_id', $id)->first();
-        return view('dashboard.found-reports.show', compact('report', 'location'));
+        abort(404);
     }
 
     /**

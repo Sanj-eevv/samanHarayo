@@ -42,19 +42,19 @@
                             </tr>
                             <tr>
                                 <th scope="row" style="white-space: nowrap;">Location:</th>
-                                <td>{{$location->address}}</td>
+                                <td>{{$report->location->address}}</td>
                             </tr>
                             <tr>
                                 <th scope="row" style="white-space: nowrap;">Latitude:</th>
-                                <td>{{$location->latitude}}</td>
+                                <td>{{$report->location->latitude}}</td>
                             </tr>
                             <tr>
                                 <th scope="row" style="white-space: nowrap;">Longitude:</th>
-                                <td>{{$location->longitude}}</td>
+                                <td>{{$report->location->longitude}}</td>
                             </tr>
                             <tr>
                                 <th scope="row" style="white-space: nowrap;">Email :</th>
-                                <td>{{$report->contact_email}}</td>
+                                <td>{{$report->location->contact_email}}</td>
                             </tr>
                             </tbody>
                         </table>

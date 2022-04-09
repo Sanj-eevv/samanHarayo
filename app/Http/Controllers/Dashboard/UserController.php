@@ -119,7 +119,7 @@ class UserController extends BaseDashboardController
             'facebook_id'             => null,
             'google_id'         => null,
             'email_verified_at' => now(),
-            'password'          => $request->input('password')
+            'password'          =>  Hash::make($request->input('password'))
         ]);
         return redirect()->route('users.show', compact('user'))->with('alert.success', 'User Successfully Created !!');
     }

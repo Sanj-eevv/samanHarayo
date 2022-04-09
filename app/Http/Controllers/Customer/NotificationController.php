@@ -17,7 +17,7 @@ class NotificationController extends BaseCustomerDashboardController
             $notification['url'] = url('/').'/customer-dashboard/claim/'.$notification->data['slug'];
             if ($notification->type === "App\Notifications\ClaimReportStatusRejected") {
                 $notification['class'] = "alert-danger";
-            } elseif ($notification->type === "pp\Notifications\ClaimReportStatusVerified"){
+            } elseif ($notification->type === "App\Notifications\ClaimReportStatusVerified"){
                 $notification['class'] = "alert-success";
             }
         }

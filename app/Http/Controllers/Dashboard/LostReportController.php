@@ -88,12 +88,13 @@ class LostReportController extends BaseDashboardController
     public function show($id)
     {
         $this->authorize('view', User::class);
-        $report = Report::where('id', $id)->with('category', 'itemImages', 'claimUsers')->first();
-        if($report->report_type != Report::REPORT_TYPE_LOST){
-            abort(404);
+        $report = Report::where('id', $id)->with('category', 'itemImages', 'claimUsers', 'location')->first();
+        if($report){
+            return $report->when($report->report_type === Report::REPORT_TYPE_LOST, function () use ($id,$report){
+                return view('dashboard.lost-reports.show', compact('report'));
+            });
         }
-        $location = Location::where('report_id', $id)->first();
-        return view('dashboard.lost-reports.show', compact('report', 'location'));
+        abort(401);
     }
 
 

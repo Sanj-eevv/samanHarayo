@@ -83,7 +83,7 @@
                     ],
                     "rowId": 'id',
                     "order": [
-                        [0, "asc"]
+                        [4, "desc"]
                     ],
                     "lengthMenu": [
                         [25, 50, 100, 500],

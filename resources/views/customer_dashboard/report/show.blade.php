@@ -49,7 +49,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">Location:</th>
-                                <td>{{$location->address}}</td>
+                                <td>{{$report->location->address}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Email :</th>

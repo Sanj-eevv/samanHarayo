@@ -3,9 +3,12 @@
 @section('content')
     <div>
         @forelse($notifications as $notification)
+            <?php
+            $text = $notification['class'] === "alert-danger" ? 'Rejected' : 'Verified'
+            ?>
         <div class="alert {{$notification['class']}} d-flex justify-content-between" role="alert">
             <a href="{{$notification->url}}" class="{{$notification['class']}}">
-                {{ucwords($notification->data['title'])}}
+                {{ucwords($notification->data['title']).'('.$text.')'}}
             </a>
             <span class="mark-as-read" style="cursor: pointer;" data-id="{{$notification->id}}">Mark as read</span>
         </div>

@@ -13,17 +13,14 @@ use Illuminate\Support\Facades\Storage;
 class ClaimController extends BaseDashboardController
 {
     public function show($user,$report){
+//        dd('dsdf');
        $user = User::where('slug', $user)->first();
         $report = Report::where('slug', $report)->first();
         if(!$user || !$report){
             abort(404);
         }
         $item_images = DB::table('item_images')->where('report_id', $report->id)->where('claimed_by', $user->id)->get();
-       $claim_detail = \DB::table('claim_user')->where('report_id', $report->id)->where('user_id', $user->id)->first();
-        if(!$claim_detail){
-            abort(404);
-        }
-//        $item_images = ItemImage::where('report_id', $report->id)->where('claimed_by', $user->id)->get();
+        $claim_detail = \DB::table('claim_user')->where('report_id', $report->id)->where('user_id', $user->id)->first();
         return view('dashboard.claim.show', compact('claim_detail','user', 'report', 'item_images'));
     }
 
