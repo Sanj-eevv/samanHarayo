@@ -56,7 +56,7 @@
             success: function(result) {
                 if( result.hasOwnProperty("successful_validation") )
                 {
-                    completeStripePayment(total_amount);
+                    completeStripePayment(total);
                 }
                 else
                 {

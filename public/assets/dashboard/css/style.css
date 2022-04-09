@@ -161,3 +161,21 @@ select#detail-status{
     display: inline-block;
 }
 
+.cross-icon-profile{
+    position: absolute;
+    right: -8px;
+    bottom: -5px;
+    /*box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;*/
+    border-radius: 100%;
+    background: #fff;
+    color: #a1a5b7;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.cross-icon-profile:hover{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}

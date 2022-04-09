@@ -56,8 +56,30 @@
                     </ul>
                 </li>
                 @endcan
-                <li class="menu-title">Admin options</li>
                 @if (auth()->user()->isAdmin())
+                    <li class="menu-title">Admin Profile</li>
+                @endif
+                <li>
+                    <a href="{{route('dashboard.user-report.index')}}">
+                        <i class="bx bx-user-circle"></i>
+                        <span> Reported Items</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('dashboard.user-claim.index')}}">
+                        <i class="bx bx-user-circle"></i>
+                        <span> Claimed Items</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('dashboard.user-notification.index')}}">
+                        <i class="bx bx-user-circle"></i>
+                        <span class="badge rounded-pill bg-info float-end" id="cust-notification">{{$GLOBAL_CUSTOMER_NOTIFICATION}}</span>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+                @if (auth()->user()->isAdmin())
+                <li class="menu-title">Admin options</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-user-circle"></i>
@@ -68,10 +90,9 @@
                         <li><a href="{{route('roles.create')}}">Add Role</a></li>
                     </ul>
                 </li>
-                @endcan
+                @endif
+
             </ul>
-
-
         </div>
         <!-- Sidebar -->
     </div>

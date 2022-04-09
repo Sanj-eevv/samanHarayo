@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\Customer;
 
-use App\Http\Controllers\Controller;
-use App\Models\Location;
+
 use App\Models\Report;
 use App\Models\User;
-use App\Notifications\ClaimReportStatusRejected;
 use App\Providers\ClaimReportStatusRejectedEvent;
 use App\Providers\ClaimReportStatusVerifiedEvent;
 use Illuminate\Http\Request;
@@ -64,7 +62,7 @@ class ReportController extends BaseCustomerDashboardController
                     $nestedData['category'] = ucwords($v->category);
                     $nestedData['verified'] = $v->verified;
                     $nestedData['created_at'] = \Carbon\Carbon::parse($v->created_at)->format('Y-m-d');
-                    $nestedData['action'] = \View::make('customer_dashboard.report._action')->with('r',$v)->render();
+                    $nestedData['action'] = \View::make('dashboard.current_user.report._action')->with('r',$v)->render();
                     $data[] = $nestedData;
                 }
             }
@@ -75,7 +73,7 @@ class ReportController extends BaseCustomerDashboardController
                 "data" => $data
             ], 200);
         }
-        return view('customer_dashboard.report.index');
+        return view('dashboard.current_user.report.index');
     }
 
     public function show($report){
@@ -85,7 +83,7 @@ class ReportController extends BaseCustomerDashboardController
                     ->where('report_status', Report::REPORT_STATUS[0]);
             }])->first();
         abort_if(!$report, 404);
-        return view('customer_dashboard.report.show', compact('report'));
+        return view('dashboard.current_user.report.show', compact('report'));
     }
 
     public function claimShow($user,$report){
@@ -99,12 +97,12 @@ class ReportController extends BaseCustomerDashboardController
         if(!$claim_detail){
             abort(404);
         }
-        return view('customer_dashboard.report.claim.show', compact('claim_detail','user', 'report', 'item_images'));
+        return view('dashboard.current_user.report.claim.show', compact('claim_detail','user', 'report', 'item_images'));
     }
 
     public function verify(Request $request,$user,$report){
         $request->validate([
-            'report_status' => 'required,in:pending,verified,rejected',
+            'report_status' => ['required' ,'in:pending,verified,rejected'],
         ]);
         $user = User::where('slug', $user)->first();
         $report = Report::where('slug', $report)->first();

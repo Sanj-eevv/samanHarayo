@@ -59,7 +59,7 @@ class ClaimController extends BaseCustomerDashboardController
                     $nestedData['category'] = ucwords($v->category);
                     $nestedData['claimed_date'] = \Carbon\Carbon::parse($v->created_at)->format('Y-m-d');
                     $nestedData['detail_status'] = ucwords($v->detail_status);
-                    $nestedData['action'] = \View::make('customer_dashboard.claim._action')->with('r',$v)->render();
+                    $nestedData['action'] = \View::make('dashboard.current_user.claim._action')->with('r',$v)->render();
                     $data[] = $nestedData;
                 }
             }
@@ -70,7 +70,7 @@ class ClaimController extends BaseCustomerDashboardController
                 "data" => $data
             ], 200);
         }
-        return view('customer_dashboard.claim.index');
+        return view('dashboard.current_user.claim.index');
     }
 
     public function show($slug){
@@ -83,8 +83,8 @@ class ClaimController extends BaseCustomerDashboardController
             }
             $location = Location::where('report_id', $report->id)->first();
             $item_images = DB::table('item_images')->where('report_id', $report->id)->where('claimed_by', $user->id)->get();
-            return view('customer_dashboard.claim.show', compact('report', 'location', 'claim_user', 'item_images', 'user'));
+            return view('dashboard.current_user.claim.show', compact('report', 'location', 'claim_user', 'item_images', 'user'));
         }
-        abort('404');
+        abort(404);
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.customer_dashboard')
+@extends('layouts.dashboard')
 @section('title', 'Notification')
 @section('content')
     <div>
@@ -27,7 +27,7 @@
 @section('page_level_script')
     <script>
         function sendMarkRequest(id=null){
-            return $.ajax("{{route('customerDashboard.notification.mark')}}", {
+            return $.ajax("{{route('dashboard.user-notification.mark')}}", {
                 method:  "POST",
                 data: {
                     "_token" : CSRF_TOKEN,

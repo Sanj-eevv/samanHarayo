@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/email-verified', function (){
         return view('auth.email-verified');
     });
+
     Route::resource('/report-lost', \App\Http\Controllers\Front\LostReportController::class)->except('create' );
     Route::resource('/report-found', \App\Http\Controllers\Front\FoundReportController::class);
     Route::resource('/identity', \App\Http\Controllers\Front\IdentityController::class);
@@ -45,21 +46,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/checkout', [\App\Http\Controllers\Front\CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('checkout/fulfill-order', [\App\Http\Controllers\Front\CheckoutController::class, 'fulfillOrder'])->name('checkout.fulfillOrder');
 
-
-
-    /** Customer Dashboard */
-    Route::group(['prefix' => 'customer-dashboard'], function () {
-        Route::get('/', [\App\Http\Controllers\Customer\DashboardController::class, 'index'])->name('customerDashboard.index');
-        Route::get('/claim', [\App\Http\Controllers\Customer\ClaimController::class, 'index'])->name('customerDashboard.claim');
-        Route::get('/claim/{slug}', [\App\Http\Controllers\Customer\ClaimController::class, 'show'])->name('customerDashboard.claim.show');
-        Route::get('/notifications', [\App\Http\Controllers\Customer\NotificationController::class, 'index'])->name('customerDashboard.notification.index');
-        Route::post('/notification/mark', [\App\Http\Controllers\Customer\NotificationController::class, 'markNotification'])->name('customerDashboard.notification.mark');
-        Route::get('/report', [\App\Http\Controllers\Customer\ReportController::class, 'index'])->name('customerDashboard.report');
-        Route::get('/report/claim/{user}/{report}', [\App\Http\Controllers\Customer\ReportController::class, 'claimShow'])->name('customerDashboard.report.claim.show');
-        Route::put('/report/verify/{user}/{report}', [\App\Http\Controllers\Customer\ReportController::class, 'verify'])->name('customerDashboard.report.claim.verify');
-        Route::get('/report/{slug}', [\App\Http\Controllers\Customer\ReportController::class, 'show'])->name('customerDashboard.report.show');
-
-    });
 
     /** Admin Dashboard */
     Route::group(['prefix' => 'dashboard'], function () {
@@ -73,6 +59,25 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::resource('lost-reports', \App\Http\Controllers\Dashboard\LostReportController::class)->only('index','show', 'destroy');
         Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class);
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
+
+        /** This route are user specific*/
+        Route::get('/claim', [\App\Http\Controllers\Customer\ClaimController::class, 'index'])->name('dashboard.user-claim.index');
+        Route::get('/claim/{slug}', [\App\Http\Controllers\Customer\ClaimController::class, 'show'])->name('dashboard.user-claim.show');
+        Route::get('/notifications', [\App\Http\Controllers\Customer\NotificationController::class, 'index'])->name('dashboard.user-notification.index');
+        Route::post('/notification/mark', [\App\Http\Controllers\Customer\NotificationController::class, 'markNotification'])->name('dashboard.user-notification.mark');
+        Route::get('/report', [\App\Http\Controllers\Customer\ReportController::class, 'index'])->name('dashboard.user-report.index');
+        Route::get('/report/claim/{user}/{report}', [\App\Http\Controllers\Customer\ReportController::class, 'claimShow'])->name('dashboard.user-report.claim.show');
+        Route::put('/report/verify/{user}/{report}', [\App\Http\Controllers\Customer\ReportController::class, 'verify'])->name('dashboard.user-report.claim.verify');
+        Route::get('/report/{slug}', [\App\Http\Controllers\Customer\ReportController::class, 'show'])->name('dashboard.user-report.show');
+
+
+        /** Common Route */
+        Route::get('profile', [\App\Http\Controllers\Common\ProfileController::class, 'index'])->name('profile.index');
+        Route::get('profile/change-password', [\App\Http\Controllers\Common\ProfileController::class, 'editPassword'])->name('profile.getChangePassword');
+        Route::post('profile/change-password', [\App\Http\Controllers\Common\ProfileController::class, 'updatePassword'])->name('profile.postChangePassword');
+        Route::get('profile/edit', [\App\Http\Controllers\Common\ProfileController::class, 'edit'])->name('profile.edit');
+        Route::put('profile/edit', [\App\Http\Controllers\Common\ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('profile/remove-avatar', [\App\Http\Controllers\Common\ProfileController::class, 'removeAvatar'])->name('profile.removeAvatar');
     });
 
 });

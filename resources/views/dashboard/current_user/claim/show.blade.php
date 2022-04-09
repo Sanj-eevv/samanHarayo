@@ -1,4 +1,4 @@
-@extends('layouts.customer_dashboard')
+@extends('layouts.dashboard')
 @section('title', 'Report Details')
 @section('content')
     <div class="row">
@@ -8,7 +8,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title mb-0">Report Details</h4>
                         <div class="d-flex flex-wrap gap-2 justify-content-end">
-                            <a type="button" href="{{route('customerDashboard.claim')}}" class="btn btn-secondary waves-effect waves-light">Back</a>
+                            <a type="button" href="{{route('dashboard.user-claim.index')}}" class="btn btn-secondary waves-effect waves-light">Back</a>
                         </div>
                     </div>
                     <hr>

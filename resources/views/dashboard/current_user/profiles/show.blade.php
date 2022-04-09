@@ -38,7 +38,7 @@
                                 @php
                                     $img_src = asset('assets/images/common/blank_user.png');
                                     if ($user->avatar) {
-                                        $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->avatar);
+                                        $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->userDetail->avatar);
                                     }
                                 @endphp
                                 <td>

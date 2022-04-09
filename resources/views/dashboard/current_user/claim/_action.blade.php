@@ -1,5 +1,5 @@
 {{--@can('view',\App\Models\User::class)--}}
-<a href="{{route('customerDashboard.claim.show', $r->slug)}}" class="btn btn-secondary position-relative p-0 avatar-xs rounded waves-effect waves-light">
+<a href="{{route('dashboard.user-claim.show', $r->slug)}}" class="btn btn-secondary position-relative p-0 avatar-xs rounded waves-effect waves-light">
     <span class="avatar-title bg-transparent">
         <i class="mdi mdi-eye-outline"></i>
     </span>

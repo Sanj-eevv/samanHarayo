@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'User Details')
+@section('title','Dashboard')
 @section('content')
     <div class="row">
         <div class="col-lg-12">
@@ -8,9 +8,9 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title mb-0">User Details</h4>
                         <div class="d-flex flex-wrap gap-2">
-                            <a type="button" href="{{route('users.index')}}" class="btn btn-secondary waves-effect waves-light">Back</a>
-                            <a type="button" href="{{route('users.edit', $user->id)}}" class="btn btn-info waves-effect waves-light">Edit</a>
-                            <button type="button" onclick="confirmDelete(() => {deleteUser({{$user->id}}, true)})" class="btn btn-light waves-effect waves-light">Delete</button>
+                            <button type="button" onclick="history.go(-1); return true;" class="btn btn-secondary waves-effect waves-light">Back</button>
+                            <a type="button" href="{{route('profile.getChangePassword')}}" class="btn btn-info waves-effect waves-light">Update Password</a>
+                            <a type="button" href="{{route('profile.edit', $user->id)}}" class="btn btn-light waves-effect waves-light">Edit</a>
                         </div>
                     </div>
                     <hr>
@@ -31,7 +31,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">Created at :</th>
-                                <td>{{\Carbon\Carbon::parse($user->created_at)->format('Y-m-d')}}</td>
+                                <td>{{\Carbon\Carbon::parse($user->created_at)->format('d M, Y')}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Image: </th>
@@ -81,7 +81,7 @@
                                 }
                             @endphp
                             <a href="{{$img_src}}">
-                            <img class="img-fluid identity-img cover-img image-popup" src="{{$img_src}}" alt="">
+                                <img class="img-fluid identity-img cover-img image-popup" src="{{$img_src}}" alt="">
                             </a>
                         </div>
                     </div>
@@ -94,57 +94,12 @@
                             }
                         @endphp
                         <a href="{{$img_src}}">
-                        <img class="img-fluid identity-img cover-img image-popup" src="{{$img_src}}" alt="">
+                            <img class="img-fluid identity-img cover-img image-popup" src="{{$img_src}}" alt="">
                         </a>
-                    </div>
-                    <div class="table-responsive">
-{{--                        <table class="table table-nowrap mb-0 table-borderless">--}}
-{{--                            <tbody>--}}
-{{--                            <tr>--}}
-{{--                                <th scope="row">Identity Front :</th>--}}
-{{--                                <td>--}}
-{{--                                    @php--}}
-{{--                                        $img_src = asset('assets/images/common/placeholder.jpg');--}}
-{{--                                        if ($user->identity_front) {--}}
-{{--                                            $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->identity_front);--}}
-{{--                                        }--}}
-{{--                                    @endphp--}}
-{{--                                    <img class="img-fluid identity-img cover-img" src="{{$img_src}}" alt="">--}}
-{{--                                </td>--}}
-{{--                            </tr>--}}
-{{--                            <tr>--}}
-{{--                                <th scope="row">Identity Back :</th>--}}
-{{--                                <td>--}}
-{{--                                    @php--}}
-{{--                                        $img_src = asset('assets/images/common/placeholder.jpg');--}}
-{{--                                        if ($user->identity_back) {--}}
-{{--                                            $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->identity_back);--}}
-{{--                                        }--}}
-{{--                                    @endphp--}}
-{{--                                    <img class="img-fluid identity-img cover-img" src="{{$img_src}}" alt="">--}}
-{{--                                </td>--}}
-{{--                            </tr>--}}
-{{--                            <tr>--}}
-{{--                                <th scope="row">Current Image :</th>--}}
-{{--                                <td>--}}
-{{--                                    @php--}}
-{{--                                        $img_src = asset('assets/images/common/blank_user.png');--}}
-{{--                                        if ($user->current_image) {--}}
-{{--                                            $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->current_image);--}}
-{{--                                        }--}}
-{{--                                    @endphp--}}
-{{--                                    <img class="img-fluid placeholder-img cover-img" src="{{$img_src}}" alt="">--}}
-{{--                                </td>--}}
-{{--                            </tr>--}}
-{{--                            </tbody>--}}
-{{--                        </table>--}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-@endsection
-@section('page_level_script')
-    @include('dashboard.users._shared')
 @endsection
 

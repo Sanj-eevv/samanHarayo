@@ -14,14 +14,14 @@ class NotificationController extends BaseCustomerDashboardController
         $user = Auth::user();
         $notifications = $user->unreadNotifications;
         foreach ($notifications as $notification){
-            $notification['url'] = url('/').'/customer-dashboard/claim/'.$notification->data['slug'];
+            $notification['url'] = url('/').'/dashboard/claim/'.$notification->data['slug'];
             if ($notification->type === "App\Notifications\ClaimReportStatusRejected") {
                 $notification['class'] = "alert-danger";
             } elseif ($notification->type === "App\Notifications\ClaimReportStatusVerified"){
                 $notification['class'] = "alert-success";
             }
         }
-        return view('customer_dashboard.notification.index', compact('notifications'));
+        return view('dashboard.current_user.notification.index', compact('notifications'));
     }
 
     public function markNotification(Request $request): \Illuminate\Http\Response

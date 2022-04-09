@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Models\Setting;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Guard $auth)
     {
         Schema::defaultStringLength(191);
         Model::preventLazyLoading(!$this->app->isProduction());
@@ -69,5 +71,14 @@ class AppServiceProvider extends ServiceProvider
                 }
             }
         }
+
+        $notification_count = 0;
+        view()->composer('*', function($view) use ($auth, &$notification_count) {
+            if (Schema::hasTable('notifications') && Auth::check()) {
+                $user = Auth::user();
+                $notification_count = $user->unreadNotifications->count();
+            }
+            \View::share('GLOBAL_CUSTOMER_NOTIFICATION', $notification_count);
+        });
     }
 }
