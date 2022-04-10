@@ -40,7 +40,7 @@ class ProfileController extends Controller
 
     public function removeAvatar(){
 
-        ProfileHelper::profileRemoveAvatar();
+        return ProfileHelper::profileRemoveAvatar();
     }
 
     public function updatePassword(PasswordRequest $request): \Illuminate\Http\RedirectResponse

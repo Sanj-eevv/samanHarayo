@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-lg-12">
             <label class="form-label">Avatar</label>
-            <input class="form-control" type="file" name="image" accept=".png, .jpg, .jpeg" onchange="loadImage(this,'#img-container')">
+            <input class="form-control" type="file" name="image" accept=".png, .jpg, .jpeg" onchange="loadImage(this,'#img-container')" id="img-input">
             <input type="hidden" name="image" />
         </div>
     </div>
@@ -56,7 +56,6 @@
         $(function(){
             $('.remove-profile-image').click(function(){
                 //send ajax request to
-                console.log('sfsf');
                 let action = BASE_URL+"/dashboard/profile/remove-avatar";
                 $.ajax({
                     "url": action,
@@ -69,12 +68,12 @@
                     },
                     success:function(resp){
                         $("#img-container").attr("src",BASE_URL+"/assets/images/common/blank_user.png");
-                        toastSuccess(resp.message);
+                        $("#img-input").val('');
                     },
                     error: function(xhr){
                         console.log(xhr)
-                        let obj = JSON.parse(xhr.responseText);
-                        toastError(obj.message);
+                        // let obj = JSON.parse(xhr.responseText);
+                        toastError(xhr.responseText);
                     }
                 });
             });

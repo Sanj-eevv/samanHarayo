@@ -6,6 +6,7 @@ namespace App\Helpers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileHelper
 {
@@ -32,7 +33,7 @@ class ProfileHelper
     public static function profileRemoveAvatar(){
         $user = Auth::user();
         if(empty(!$user->avatar)){
-            @unlink(public_path('storage/uploads/users/'.$user->id.'/'. $user->avatar));
+            Storage::delete('public/uploads/users/'.$user->id.'/'.$user->avatar);
             $user->avatar = '';
             $user->updated_at = now();
             $user->save();
