@@ -15,9 +15,9 @@ class NotificationController extends BaseCustomerDashboardController
         $notifications = $user->unreadNotifications;
         foreach ($notifications as $notification){
             $notification['url'] = url('/').'/dashboard/claim/'.$notification->data['slug'];
-            if ($notification->type === "App\Notifications\ClaimReportStatusRejected") {
+            if ($notification->type === "App\Notifications\ClaimReportStatusRejected" || $notification->type === "App\Notifications\DetailStatusRejected") {
                 $notification['class'] = "alert-danger";
-            } elseif ($notification->type === "App\Notifications\ClaimReportStatusVerified"){
+            }elseif ($notification->type === "App\Notifications\ClaimReportStatusVerified" || $notification->type === "App\Notifications\DetailStatusVerified"){
                 $notification['class'] = "alert-success";
             }
         }

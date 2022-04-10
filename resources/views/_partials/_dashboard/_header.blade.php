@@ -109,9 +109,12 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="{{asset('assets/images/common/blank_user.png')}}"
+                    <?php
+                    $src = auth()->user()->avatar ?  asset('storage/uploads/users/'.auth()->user()->id.'/'.auth()->user()->avatar):asset('assets/images/common/blank_user.png')
+                    ?>
+                    <img class="rounded-circle header-profile-user" src="{{$src}}"
                          alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">Henry</span>
+                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ucwords(auth()->user()->first_name)}}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">

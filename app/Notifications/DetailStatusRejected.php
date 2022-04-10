@@ -2,23 +2,21 @@
 
 namespace App\Notifications;
 
-use App\Models\Report;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class ClaimReportStatusRejected extends Notification
+class DetailStatusRejected extends Notification
 {
     use Queueable;
-
-    public $report;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
+    public $report;
     public function __construct($report)
     {
         $this->report = $report;
@@ -43,10 +41,10 @@ class ClaimReportStatusRejected extends Notification
      */
     public function toMail($notifiable)
     {
-//        return (new MailMessage)
-//                    ->line('The introduction to the notification.')
-//                    ->action('Notification Action', url('/'))
-//                    ->line('Thank you for using our application!');
+        return (new MailMessage)
+                    ->line('The introduction to the notification.')
+                    ->action('Notification Action', url('/'))
+                    ->line('Thank you for using our application!');
     }
 
     /**
@@ -58,7 +56,7 @@ class ClaimReportStatusRejected extends Notification
     public function toArray($notifiable)
     {
         return [
-            'message'                       =>      'Your claim for the report has been rejected',
+            'message'                       =>      'Your detail has been rejected by the admin.',
             'title'                         =>      $this->report->title,
             'slug'                          =>      $this->report->slug,
         ];

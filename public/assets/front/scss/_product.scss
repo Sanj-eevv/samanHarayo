@@ -45,10 +45,13 @@
     flex-wrap: wrap;
     .lost-product.single-product-wrap,
     .found-product.single-product-wrap{
-        &:first-of-type{
+        &:nth-child(odd){
             margin-right: 2%;
         }
         @media #{$md-layout} {
+            &:nth-child(odd){
+                margin-right: unset;
+            }
             &:not(:nth-of-type(3n)){
                 margin-right: 2%;
             }

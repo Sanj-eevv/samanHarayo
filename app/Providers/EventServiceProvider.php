@@ -24,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         ClaimReportStatusRejectedEvent::class => [
             ClaimReportStatusRejectedListener::class
         ],
+        ClaimDetailStatusEvent::class => [
+            ClaimDetailStatusListener::class
+        ],
     ];
 
     /**

@@ -43,10 +43,16 @@
     .product-details-big-img-slider{
         img{
             cursor: pointer;
-            height: 540px;
+            height: 300px;
             width: 100%;
             object-fit: cover;
             object-position: center;
+            @media #{$sm-layout} {
+                height: 400px;
+            }
+            @media #{$md-layout} {
+                height: 540px;
+            }
         }
     }
     .product-details-small-img-slider {

@@ -10,6 +10,7 @@
             <a href="{{$notification->url}}" class="{{$notification['class']}}">
                 {{ucwords($notification->data['title']).'('.$text.')'}}
             </a>
+            <span>{{$notification->data['message']}}</span>
             <span class="mark-as-read" style="cursor: pointer;" data-id="{{$notification->id}}">Mark as read</span>
         </div>
         @empty

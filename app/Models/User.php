@@ -121,4 +121,18 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
 
+    public function initialLettersOfName(): ?string
+    {
+        if(auth()->check()){
+            $words = explode(" ",  auth()->user()->first_name.' '.auth()->user()->last_name);
+            $initials = null;
+            foreach ($words as $w) {
+                $initials .= $w[0];
+            }
+            return strtoupper($initials);
+        }
+        return null;
+    }
+
+
 }

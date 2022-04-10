@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ItemImage;
 use App\Models\Report;
 use App\Models\User;
+use App\Providers\ClaimDetailStatusEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -55,6 +56,9 @@ class ClaimController extends BaseDashboardController
        DB::table('claim_user')->where('user_id', $user->id)->where('report_id', $report->id)->update([
             'detail_status'             =>              $request->input('detail_status'),
         ]);
+        if($request->input('detail_status') === Report::DETAIL_STATUS[1] || $request->input('detail_status') === Report::DETAIL_STATUS[2]){
+            event(new ClaimDetailStatusEvent($user, $report, $request->input('detail_status')));
+        }
         return redirect()->back()->with('toast.success', 'Claim status updated successfully');
     }
 }

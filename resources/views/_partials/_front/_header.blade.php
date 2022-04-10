@@ -25,13 +25,8 @@
                 @auth
                     <a class="front-logout sh-btn" href="{{route('logout')}}">Logout</a>
                     <a href="#" class="header-user-icon">
-                        @php
-                            $img_src = asset('assets/images/common/blank_user.png');
-                            if (!empty(auth()->user()->image)) {
-                                $img_src = asset('storage/uploads/profiles/' . auth()->user()->avatar);
-                            }
-                        @endphp
-                        <img class="img-fluid" alt="" src="{{$img_src}}">
+                        <span>{{auth()->user()->initialLettersOfName()}}</span>
+{{--                        <img class="img-fluid" alt="" src="{{$img_src}}">--}}
                     </a>
                 @else
                     <a class="sh-btn" href="{{route('login')}}">Login</a>

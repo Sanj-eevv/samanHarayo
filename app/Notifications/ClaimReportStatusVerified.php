@@ -58,8 +58,9 @@ class ClaimReportStatusVerified extends Notification
     public function toArray($notifiable)
     {
         return [
+            'message'                   =>      'Your claim has been verified.',
             'title'                     =>      $this->report->title,
-            'slug'               =>     $this->report->slug,
+            'slug'                      =>      $this->report->slug,
         ];
     }
 }
