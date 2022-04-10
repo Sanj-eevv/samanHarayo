@@ -93,12 +93,12 @@ class IdentityController extends Controller
             }
 //        Syncing data in pivot table claim_user.
             $description = $request->input('description');
-            $detail_status = Report::DETAIL_STATUS;
-            $report_status = Report::REPORT_STATUS;
+
 
             /** detail_status[0] => pending */
              /** report_status[0] => pending */
-            $user->claims()->attach($report->id,['description'=>$description, 'detail_status'=>$detail_status[0], 'report_status'=>$report_status[0]]);
+//             $detail_status = $report->report_type === Report::REPORT_TYPE_LOST ? Report::DETAIL_STATUS[1] : Report::DETAIL_STATUS[0];
+             $user->claims()->attach($report->id,['description'=>$description, 'detail_status'=>Report::DETAIL_STATUS[0], 'report_status'=>Report::REPORT_STATUS[0]]);
 
 //        These are the image for user identification.
             $current_image = $request->file('current_image');;

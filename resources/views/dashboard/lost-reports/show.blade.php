@@ -28,6 +28,15 @@
                                 <th scope="row" style="white-space: nowrap;">Category :</th>
                                 <td>{{ucwords($report->category->name)}}</td>
                             </tr>
+                            @if($report->reward)
+                            <tr>
+                                <th scope="row" style="white-space: nowrap;">Reward :</th>
+                                <td> <span class="badge p-2 bg-info">
+                                            ${{ucwords($report->reward->reward_amount)}}
+                                        </span>
+                                </td>
+                            </tr>
+                            @endif
                             <tr>
                                 <th scope="row" style="white-space: nowrap;">Description :</th>
                                 <td>{{ucwords($report->description)}}</td>
@@ -54,7 +63,7 @@
                             </tr>
                             <tr>
                                 <th scope="row" style="white-space: nowrap;">Email :</th>
-                                <td>{{$report->location->contact_email}}</td>
+                                <td>{{$report->contact_email}}</td>
                             </tr>
                             </tbody>
                         </table>

@@ -39,6 +39,16 @@
                                 <th scope="row">Description :</th>
                                 <td>{{ucwords($report->description)}}</td>
                             </tr>
+                            @if($report->report_type === \App\Models\Report::REPORT_TYPE_LOST)
+                                <tr>
+                                    <th style="white-space: nowrap;" scope="row">Reward:</th>
+                                    <td>
+                                        <span class="badge p-2 bg-info">
+                                            ${{$report->reward ? ucwords($report->reward->reward_amount) : "0"}}
+                                        </span>
+                                    </td>
+                                </tr>
+                            @endif
                             <tr>
                                 <th scope="row">Reported at :</th>
                                 <td>{{\Carbon\Carbon::parse($report->created_at)->format('Y-m-d')}}</td>
@@ -67,9 +77,27 @@
                             @endif
                             @if($report->verifiedUser)
                                 <tr>
-                                    <th scope="col" style="white-space: nowrap">Item Claimed To : </th>
+                                    <?php
+                                    $label = $report->report_type === \App\Models\Report::REPORT_TYPE_FOUND ? 'Item claimed to :' : 'Item found by :'
+                                    ?>
+                                    <th scope="col" style="white-space: nowrap">{{$label}}</th>
                                     <td>{{$report->verifiedUser->first_name.' '.$report->verifiedUser->last_name}}</td>
                                 </tr>
+                                @if($report->report_type === \App\Models\Report::REPORT_TYPE_LOST && $report->reward)
+                                    <tr>
+                                        <th>Reward</th>
+
+                                        <td>
+                                            @if($report->reward->owned_by === null)
+                                            <a href="{{route('dashboard.user-reward.send', $report->slug)}}" class="btn btn-primary">
+                                                Send Reward
+                                            </a>
+                                            @else
+                                                Rewarded
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endif
                             @endif
                             </tbody>
                         </table>
@@ -110,7 +138,7 @@
                                         <td>{{$user->email}}</td>
                                         <td>{{\Carbon\Carbon::parse($user->pivot->created_at)->format('d M, Y')}}</td>
                                         <td>
-                                            <a href="{{route('dashboard.use-report.claim.show', ['user'=> $user->slug, 'report' => $report->slug])}}" class="btn btn-primary position-relative p-0 avatar-xs rounded waves-effect waves-light">
+                                            <a href="{{route('dashboard.user-report.claim.show', ['user'=> $user->slug, 'report' => $report->slug])}}" class="btn btn-primary position-relative p-0 avatar-xs rounded waves-effect waves-light">
                                                 <span class="avatar-title bg-transparent">
                                                     <i class="mdi mdi-eye-outline"></i>
                                                 </span>

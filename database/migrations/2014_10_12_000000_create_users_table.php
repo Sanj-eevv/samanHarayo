@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->enum('verified',['verified', 'unverified'])->default('unverified');
             $table->string('facebook_id')->nullable();
             $table->string('google_id')->nullable();
+            $table->float('balance')->default(0);
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
             $table->timestamp('email_verified_at')->nullable();

@@ -17,7 +17,7 @@
                 <div class="header-search">
                         <form action="{{route('front.search')}}" method="get">
                             <label>
-                                <input placeholder="Search products…" type="text" name="search">
+                                <input placeholder="Search products…"  value="{{old('search')}}" type="text" name="search">
                             </label>
                             <button class="button-search" type="submit"><i class="icon-magnifier"></i></button>
                         </form>

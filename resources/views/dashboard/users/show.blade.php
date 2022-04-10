@@ -30,6 +30,10 @@
                                 <td>{{$user->role->label}}</td>
                             </tr>
                             <tr>
+                                <th scope="row">Balance :</th>
+                                <td>${{$user->balance}}</td>
+                            </tr>
+                            <tr>
                                 <th scope="row">Created at :</th>
                                 <td>{{\Carbon\Carbon::parse($user->created_at)->format('Y-m-d')}}</td>
                             </tr>

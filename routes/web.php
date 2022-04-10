@@ -68,6 +68,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/report', [\App\Http\Controllers\Customer\ReportController::class, 'index'])->name('dashboard.user-report.index');
         Route::get('/report/claim/{user}/{report}', [\App\Http\Controllers\Customer\ReportController::class, 'claimShow'])->name('dashboard.user-report.claim.show');
         Route::put('/report/verify/{user}/{report}', [\App\Http\Controllers\Customer\ReportController::class, 'verify'])->name('dashboard.user-report.claim.verify');
+        Route::get('/report/request/reward/{report}', [\App\Http\Controllers\Customer\RewardController::class, 'request'])->name('dashboard.user-reward.request');
+        Route::get('/report/send/reward/{report}', [\App\Http\Controllers\Customer\RewardController::class, 'sendReward'])->name('dashboard.user-reward.send');
+
         Route::get('/report/{slug}', [\App\Http\Controllers\Customer\ReportController::class, 'show'])->name('dashboard.user-report.show');
 
 

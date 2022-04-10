@@ -51,7 +51,7 @@ class ClaimController extends BaseDashboardController
         $user = User::where('id', $user)->first();
         $report = Report::where('id', $report)->first();
         if(!$user || !$report){
-            abort(400);
+            abort(401);
         }
        DB::table('claim_user')->where('user_id', $user->id)->where('report_id', $report->id)->update([
             'detail_status'             =>              $request->input('detail_status'),

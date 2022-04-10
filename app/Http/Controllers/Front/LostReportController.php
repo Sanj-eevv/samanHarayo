@@ -94,8 +94,8 @@ class LostReportController extends Controller
             if(session('reward')) {
                 $request->session()->forget('reward');
             }
-            if($request->input('reward')){
-                session(['reward' => $request->input('reward')]);
+            if($request->input('reward_amount')){
+                session(['reward' => $request->input('reward_amount')]);
             }
             return redirect()->route('checkout.index');
 

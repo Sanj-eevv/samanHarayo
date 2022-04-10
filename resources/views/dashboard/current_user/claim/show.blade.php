@@ -19,6 +19,16 @@
                                 <th scope="row" style="white-space: nowrap">Item Name :</th>
                                 <td>{{ucwords($report->title)}}</td>
                             </tr>
+                            @if($report->report_type === \App\Models\Report::REPORT_TYPE_LOST)
+                                <tr>
+                                    <th style="white-space: nowrap;" scope="row">Reward :</th>
+                                    <td>
+                                        <span class="badge p-2 bg-info">
+                                            ${{$report->reward ? ucwords($report->reward->reward_amount) : "0"}}
+                                        </span>
+                                    </td>
+                                </tr>
+                            @endif
                             <tr>
                                 <th scope="row" style="white-space: nowrap">Brand :</th>
                                 <td>{{ucwords($report->brand ?? 'Not Specified')}}</td>
@@ -101,6 +111,18 @@
                                 <th scope="row" style="white-space: nowrap;">Email :</th>
                                 <td>{{$report->contact_email}}</td>
                             </tr>
+                             @if($report->report_type === \App\Models\Report::REPORT_TYPE_LOST && $report->reward)
+                                 <tr>
+                                     <th>
+                                     </th>
+                                     <th scope="row">
+                                         <form method="get" action="{{route('dashboard.user-reward.request', ['report' => $report->slug])}}">
+                                             @csrf
+                                             <button type="submit" class="btn btn-secondary">Request Reward</button>
+                                         </form>
+                                     </th>
+                                 </tr>
+                             @endif
                             @endif
                             </tbody>
                         </table>

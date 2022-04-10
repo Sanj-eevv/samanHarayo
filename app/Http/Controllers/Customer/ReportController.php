@@ -78,7 +78,7 @@ class ReportController extends BaseCustomerDashboardController
 
     public function show($report){
         $report = Report::where('slug', $report)->where('reported_by', auth()->user()->id)
-            ->with(['category','itemImages','verifiedUser','location','claimUsers'=>function($q){
+            ->with(['category','reward','itemImages','verifiedUser','location','claimUsers'=>function($q){
                 $q->where('detail_status',Report::DETAIL_STATUS[1])
                     ->where('report_status', Report::REPORT_STATUS[0]);
             }])->first();
@@ -143,6 +143,10 @@ class ReportController extends BaseCustomerDashboardController
             return redirect()->back()->with('toast.error', 'Could not update status');
         }
         DB::commit();
+        if($report->reward && $status == Report::REPORT_STATUS[1]){
+            return redirect()->route('dashboard.user-report.show', $report->slug)->with('toast.success', 'Report status updated successfully');
+        }
         return redirect()->back()->with('toast.success', 'Report status updated successfully');
+
     }
 }
