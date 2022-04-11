@@ -85,6 +85,7 @@
                                         <input type="hidden" id="transaction_stripe"
                                                name="transaction_id" />
                                         <input type="hidden" id="total_stripe" name="total" />
+                                        <input type="hidden" id="via_stripe" name="via" />
                                         <div class="place-order-flex-box">
                                             <div class="checkout-page Place-order">
                                                 <button class="button btn btn-payment btn-dark btn-block"
@@ -128,6 +129,7 @@
                                         @csrf
                                         <input type="hidden" id="transaction_paypal"
                                                name="transaction_id" />
+                                        <input type="hidden" id="via_stripe" name="via" />
                                         <input type="hidden" id="total_paypal" name="total" />
                                         <div class="place-order-flex-box">
                                             <div class="spinner-border" id="PaypalpayStartSpinner" role="status"  style="width: 2rem; height: 2rem; display: none">

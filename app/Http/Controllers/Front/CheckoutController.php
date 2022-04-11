@@ -79,10 +79,12 @@ class CheckoutController extends Controller
                 }
             }
             // Data for payments table
-            $transactionId = $request->transaction_id;
-            $total = $request->total;
+            $transactionId = $request->input('transaction_id');
+            $total = $request->input('total');
+            $via = $request->input('via');
             Payment::create([
                 'report_id'         => $report->id,
+                'via'               =>  $via,
                 'total'             => $total,
                 'transaction_id'    => $transactionId,
             ]);

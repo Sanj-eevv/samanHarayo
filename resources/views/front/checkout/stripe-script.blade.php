@@ -108,10 +108,12 @@
                 {
                     showErrorAndScrollUp(data.error.message);
                 }else if(data.paymentIntent){
-                    basicFormStripe.append("transaction_id",  data.paymentIntent.id);
+                        basicFormStripe.append("transaction_id",  data.paymentIntent.id);
                         document.querySelector('#transaction_stripe').value = data.paymentIntent.id;
                         document.querySelector('#total_stripe').value = basicFormStripe.get('total');
-                        stripeForm.submit();
+                       document.querySelector('#via_stripe').value = 'stripe';
+
+                    stripeForm.submit();
                 }
             });
         });

@@ -11,4 +11,7 @@ class Payment extends Model
     protected $guarded = ['id'];
     protected $dates = ['created_at','updated_at'];
 
+    const VIA_STRIPE = 'stripe';
+    const VIA_PAYPAL = 'paypal';
+
 }

@@ -27,6 +27,7 @@
             return actions.order.capture().then(function (details){
                 document.querySelector('#total_paypal').value = basicFormPaypal.get("total");
                 document.querySelector('#transaction_paypal').value = details.purchase_units[0].payments.captures[0].id;
+                document.querySelector('#via_paypal').value = 'paypal';
                 var paypalForm = document.querySelector('#payment-form-paypal');
                 paypalForm.submit();
             });

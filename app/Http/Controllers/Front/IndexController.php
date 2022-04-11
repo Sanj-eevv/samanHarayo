@@ -77,6 +77,7 @@ class IndexController extends Controller
 
     public function search(Request $request){
         $search = $request->input('search');
+        $type =
         $page = $request->input('page') ?? 1;
         $pageLimit  = 8;
         $offset = ($pageLimit * $page) - $pageLimit;

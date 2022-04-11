@@ -16,6 +16,7 @@ class CreatePaymentsTable extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->float('total');
+            $table->enum('via', ['paypal', 'stripe']);
             $table->string('transaction_id');
             $table->foreignId('report_id')->constrained()->onDelete('cascade');;
             $table->timestamps();
