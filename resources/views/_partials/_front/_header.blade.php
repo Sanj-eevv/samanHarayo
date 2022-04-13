@@ -10,7 +10,7 @@
                    <a class="underlined-link {{Request::segment(1) === null ? 'active' : ''}}" href="{{route('front.index')}}">HOME </a>
                    <a class="underlined-link {{Request::segment(1) === 'listing' ? 'active' : ''}}" href="{{route('front.listing')}}">LISTING </a>
                    <a class="underlined-link {{Request::segment(1) === 'faqs' ? 'active' : ''}}" href="{{route('front.faqs.index')}}">FAQs </a>
-                   <a class="underlined-link {{Request::segment(1) === 'about' ? 'active' : ''}}" href="#">ABOUT US </a>
+{{--                   <a class="underlined-link {{Request::segment(1) === 'about' ? 'active' : ''}}" href="#">ABOUT US </a>--}}
                    <a class="underlined-link {{Request::segment(1) === 'contact' ? 'active' : ''}}" href="{{route('front.contact.index')}}">CONTACT </a>
             </div>
             <div class="header-action">
@@ -23,13 +23,13 @@
                         </form>
                 </div>
                 @auth
-                    <a class="front-logout sh-btn" href="{{route('logout')}}">Logout</a>
-                    <a href="#" class="header-user-icon">
+                    <a class="desktop front-logout sh-btn" href="{{route('logout')}}">Logout</a>
+                    <a href="{{route('profile.index')}}" class="header-user-icon">
                         <span>{{auth()->user()->initialLettersOfName()}}</span>
 {{--                        <img class="img-fluid" alt="" src="{{$img_src}}">--}}
                     </a>
                 @else
-                    <a class="sh-btn" href="{{route('login')}}">Login</a>
+                    <a class="desktop front-login sh-btn" href="{{route('login')}}">Login</a>
                 @endauth
                     <div class="mobile-header-button-active">
                         <a href="#"><i class="icon-menu"></i></a>
@@ -45,27 +45,37 @@
         <a class="sidebar-close"><i class="icon_close"></i></a>
         <div class="mobile-header-content-area">
             <div class="mobile-search mobile-header-padding-border-1">
-                <form class="search-form" action="#">
-                    <input type="text" placeholder="Search here…">
-                    <button class="button-search"><i class="icon-magnifier"></i></button>
+                <form class="search-form" action="{{route('front.search')}}" method="get">
+                    <input placeholder="Search here…" value="{{old('search')}}" type="text" name="search">
+                    <button class="button-search" type="submit"><i class="icon-magnifier"></i></button>
                 </form>
             </div>
             <div class="mobile-menu-wrap mobile-header-padding-border-2">
                 <!-- mobile menu start -->
                 <nav>
                     <ul class="mobile-menu">
-                        <li class="menu-item-has-children"><a href="index.html">Home</a>
+                        <li>
+                            <a class="underlined-link {{Request::segment(1) === null ? 'active' : ''}}" href="{{route('front.index')}}">HOME </a>
                         </li>
-                        <li class="menu-item-has-children "><a href="#">Listing</a>
+                        <li>
+                            <a class="underlined-link {{Request::segment(1) === 'listing' ? 'active' : ''}}" href="{{route('front.listing')}}">LISTING </a>
                         </li>
-                        <li class="menu-item-has-children"><a href="{{route('front.faqs.index')}}">Faq</a>
+                        <li>
+                            <a class="underlined-link {{Request::segment(1) === 'faqs' ? 'active' : ''}}" href="{{route('front.faqs.index')}}">FAQs </a>
                         </li>
-                        <li class="menu-item-has-children "><a href="#">About Us</a>
+                        <li>
+                            <a class="underlined-link {{Request::segment(1) === 'contact' ? 'active' : ''}}" href="{{route('front.contact.index')}}">CONTACT </a>
                         </li>
-                        <li><a href="{{route('front.contact.index')}}">Contact</a></li>
                     </ul>
                 </nav>
                 <!-- mobile menu end -->
+            </div>
+            <div class="mobile-header-padding-border-2">
+                @auth
+                    <a class="mobile front-logout sh-btn" href="{{route('logout')}}">Logout</a>
+                @else
+                    <a class="mobile front-login sh-btn" href="{{route('login')}}">Login</a>
+                @endauth
             </div>
             <div class="mobile-contact-info mobile-header-padding-border-4">
                 <ul>
@@ -73,10 +83,6 @@
                     <li><i class="icon-envelope-open "></i> norda@domain.com</li>
                     <li><i class="icon-home"></i> PO Box 1622 Colins Street West Australia</li>
                 </ul>
-            </div>
-            <div class="mobile-social-icon">
-                <a class="facebook" href="#"><i class="icon-social-facebook"></i></a>
-                <a class="twitter" href="#"><i class="icon-social-twitter"></i></a>
             </div>
         </div>
     </div>

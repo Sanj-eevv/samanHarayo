@@ -5,11 +5,18 @@
                 <div class="footer-menu">
                     <nav>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="shop.html">Listing</a></li>
-                            <li><a href="shop.html">Faq</a></li>
-                            <li><a href="contact.html">About us</a></li>
-                            <li><a href="blog.html">Contact</a></li>
+                            <li>
+                                <a class="underlined-link {{Request::segment(1) === null ? 'active' : ''}}" href="{{route('front.index')}}">HOME </a>
+                            </li>
+                            <li>
+                                <a class="underlined-link {{Request::segment(1) === 'listing' ? 'active' : ''}}" href="{{route('front.listing')}}">LISTING </a>
+                            </li>
+                            <li>
+                                <a class="underlined-link {{Request::segment(1) === 'faqs' ? 'active' : ''}}" href="{{route('front.faqs.index')}}">FAQs </a>
+                            </li>
+                            <li>
+                                <a class="underlined-link {{Request::segment(1) === 'contact' ? 'active' : ''}}" href="{{route('front.contact.index')}}">CONTACT </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>

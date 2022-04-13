@@ -15,6 +15,7 @@ class Feature extends Model
      */
     protected $guarded = ['id'];
     protected $table = 'features';
+    protected $dates = ['created_at', 'updated_at', 'expiry_date'];
 
     public function report(){
         return $this->belongsTo(Report::class, 'report_id', 'id');

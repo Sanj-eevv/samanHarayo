@@ -23,7 +23,6 @@ Route::get('/search', [\App\Http\Controllers\Front\IndexController::class , 'sea
 
 
 
-
 // Social Routes
 Route::get('auth/facebook', [\App\Http\Controllers\Social\FacebookController::class, 'facebookRedirect'])->name('auth.facebookRedirect');
 Route::get('auth/facebook/callback', [\App\Http\Controllers\Social\FacebookController::class, 'loginWithFacebook'])->name('auth.facebookLogin');
@@ -70,7 +69,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::put('/report/verify/{user}/{report}', [\App\Http\Controllers\Customer\ReportController::class, 'verify'])->name('dashboard.user-report.claim.verify');
         Route::get('/report/request/reward/{report}', [\App\Http\Controllers\Customer\RewardController::class, 'request'])->name('dashboard.user-reward.request');
         Route::get('/report/send/reward/{report}', [\App\Http\Controllers\Customer\RewardController::class, 'sendReward'])->name('dashboard.user-reward.send');
-
+        Route::delete('/report/{slug}/delete', [\App\Http\Controllers\Customer\ReportController::class, 'deleteReport'])->name('dashboard.user-report.delete');
         Route::get('/report/{slug}', [\App\Http\Controllers\Customer\ReportController::class, 'show'])->name('dashboard.user-report.show');
 
 

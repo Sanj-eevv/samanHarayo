@@ -1,5 +1,6 @@
 @extends('layouts.front')
 @section('content')
+@if($featured_reports)
 <div class="slider-area  pt-25">
     <div class="container">
         <div class="hero-slider-active bg-gray-7">
@@ -19,6 +20,7 @@
         </div>
     </div>
 </div>
+@endif
 <div class="section-report-area mt-70">
     <div class="container section-report-area-wrapper">
             <a href="{{route('report-lost.index')}}">

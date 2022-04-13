@@ -13,8 +13,8 @@
                                 <label>Sort by :</label>
                                 <select id="sortby">
                                     <option value="{{route('front.search')}}?order=title&dir=asc" {{ ($metaData['order'] == 'title' && $metaData['dir'] == 'asc')?'selected': ''}}>Title</option>
-                                    <option value="{{route('front.search')}}?order=created_at&dir=desc" {{ ($metaData['order'] == 'created_at' && $metaData['dir'] == 'desc')?'selected': ''}}>Latest Reported</option>
-                                    <option value="{{route('front.search')}}?order=created_at&dir=asc" {{ ($metaData['order'] == 'created_at' && $metaData['dir'] == 'asc')?'selected': ''}}>Oldest Reported</option>
+                                    <option value="{{route('front.search')}}?order=created_at&dir=desc" {{ ($metaData['order'] == 'created_at' && $metaData['dir'] == 'desc')?'selected': ''}}>Latest</option>
+                                    <option value="{{route('front.search')}}?order=created_at&dir=asc" {{ ($metaData['order'] == 'created_at' && $metaData['dir'] == 'asc')?'selected': ''}}>Oldest</option>
                                 </select>
                             </div>
 {{--                            <div class="product-filter sorting-style">--}}

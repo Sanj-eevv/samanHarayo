@@ -99,6 +99,17 @@
                                     </tr>
                                 @endif
                             @endif
+                            @if($report->report_type === \App\Models\Report::REPORT_TYPE_LOST)
+                                <tr>
+                                    <th>Dismiss Report</th>
+                                    <td>
+                                        <button class="btn btn-danger d-flex" style="gap: 5px" id="delete-button" onclick="confirmDelete(() => {deleteReport('{{$report->slug}}')})">
+                                            <span>Dismiss Report</span>
+                                            <div class="spinner-border" id="payStartSpinner" role="status"  style="width: 1rem; height: 1rem; display: none;"></div>
+                                        </button>
+                                    </td>
+                                </tr>
+                            @endif
                             </tbody>
                         </table>
                     </div>
@@ -157,5 +168,35 @@
             </div>
         </div>
     </div>
+@endsection
+@section('page_level_script')
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        stripe_sccret = "{{config('app.settings.stripe_test_secret_key')}}"
+        function deleteReport(slug){
+            console.log('sf');
+            $.ajax({
+                "url": BASE_URL + '/dashboard/report/' + slug + '/delete',
+                "dataType": "json",
+                "type": "DELETE",
+                "data": {"_token": CSRF_TOKEN},
+                beforeSend: function () {
+                    $('#delete-button .spinner-border').show();
+                    $('#delete-button').prop('disabled', true);
+                },
+                success: function (xhr) {
+                    alertifySuccessAndRedirect(xhr.message, xhr.redirect)
+                },
+                error: function (xhr) {
+                    $('#delete-button .spinner-border').hide();
+                    $('#delete-button').prop('disabled', false);
+                    let obj = JSON.parse(xhr.responseText);
+                    if(obj.hasOwnProperty('error_validation')){
+                        toastError(obj.message);
+                    }
+                }
+            });
+        }
+    </script>
 @endsection
 

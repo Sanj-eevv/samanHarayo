@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-use PayPal\Api\Item;
 
 class Report extends Model
 {
@@ -22,6 +21,8 @@ class Report extends Model
 
     const REPORT_TYPE_LOST = 'lost';
     const REPORT_TYPE_FOUND = 'found';
+    const VIA_STRIPE = 'stripe';
+    const VIA_PAYPAL = 'paypal';
     const DETAIL_STATUS = ['pending','verified', 'rejected' ];
     const REPORT_STATUS = [ 'pending', 'verified', 'rejected'];
 
@@ -67,9 +68,9 @@ class Report extends Model
     public function reward(){
         return $this->hasOne(Reward::class, 'report_id', 'id');
     }
-//    public function users(){
-//        return $this->belongsToMany(User::class);
-
-//    }
+    public function payment(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Payment::class);
+    }
 
 }

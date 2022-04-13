@@ -2182,21 +2182,21 @@ a.disabled {
         border-radius: 100%;
         padding: 4px;
         background-color: #f6f6f6;
-        justify-content: center;
-        align-items: center; }
-        .header-area #sh_nav_bar .header-container-flex-box .header-action .header-user-icon img {
-          border-radius: 50%; }
-        .header-area #sh_nav_bar .header-container-flex-box .header-action .header-user-icon:hover {
-          padding: 2px;
-          transition: all 0.3s ease; }
-      @media (min-width: 1320px) {
-        .header-area #sh_nav_bar .header-container-flex-box .header-action .mobile-header-button-active {
-          display: none; } }
+        justify-content: center; }
+        .header-area #sh_nav_bar .header-container-flex-box .header-action .header-user-icon:hover span {
+          color: #ff2f2f; }
       @media (min-width: 1280px) {
         .header-area #sh_nav_bar .header-container-flex-box .header-action .mobile-header-button-active {
           display: none; } }
       .header-area #sh_nav_bar .header-container-flex-box .header-action .mobile-header-button-active a {
         font-size: 20px; }
+      .header-area #sh_nav_bar .header-container-flex-box .header-action .desktop.front-login,
+      .header-area #sh_nav_bar .header-container-flex-box .header-action .desktop.front-logout {
+        display: none; }
+        @media (min-width: 1280px) {
+          .header-area #sh_nav_bar .header-container-flex-box .header-action .desktop.front-login,
+          .header-area #sh_nav_bar .header-container-flex-box .header-action .desktop.front-logout {
+            display: inline-block; } }
 
 .main-wrapper .body-overlay {
   background-color: #232324;
@@ -5103,9 +5103,11 @@ a.disabled {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
-  padding: 15px 25px; }
+  padding: 15px 25px;
+  gap: 15px; }
   .listing-area .topbar-wrapper .product-sorting-wrapper {
     flex-wrap: wrap;
+    flex: 1;
     row-gap: 10px;
     display: flex;
     column-gap: 30px; }
@@ -5114,7 +5116,8 @@ a.disabled {
         margin-left: auto;
         flex-wrap: nowrap; } }
     .listing-area .topbar-wrapper .product-sorting-wrapper .sorting-style {
-      display: flex; }
+      display: flex;
+      align-items: center; }
       .listing-area .topbar-wrapper .product-sorting-wrapper .sorting-style label {
         color: #000000;
         cursor: pointer;
@@ -5133,7 +5136,8 @@ a.disabled {
         cursor: pointer;
         font-size: 14px;
         height: 30px;
-        padding-left: 10px; }
+        padding-left: 10px;
+        padding-right: 20px; }
         @media (min-width: 640px) {
           .listing-area .topbar-wrapper .product-sorting-wrapper .sorting-style select {
             width: 170px; } }

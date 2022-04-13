@@ -7,8 +7,10 @@ use App\Models\Report;
 use App\Models\User;
 use App\Providers\ClaimReportStatusRejectedEvent;
 use App\Providers\ClaimReportStatusVerifiedEvent;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ReportController extends BaseCustomerDashboardController
 {
@@ -147,6 +149,51 @@ class ReportController extends BaseCustomerDashboardController
             return redirect()->route('dashboard.user-report.show', $report->slug)->with('toast.success', 'Report status updated successfully');
         }
         return redirect()->back()->with('toast.success', 'Report status updated successfully');
+    }
 
+    public function deleteReport($slug){
+
+      $report = Report::with(['itemImages', 'claimImages' ,'feature'])->where('slug', $slug)->first();
+      if(!$report) return response()->json(['error_validation' => 'error','message' => 'Data Discrepancy'], 404);
+      if($report->reported_by !== auth()->user()->id || $report->report_type == Report::REPORT_TYPE_FOUND) return response()->json(['error_validation' => 'error','message' => 'unauthorized action'], 401);
+        if($report->reward && $report->payment->via === Report::VIA_STRIPE){
+            if(!($report->verified_user === null)) return response()->json(['error_validation' => 'error','message' => 'unauthorized action'], 401);
+            $transaction_id = $report->payment->transaction_id;
+          $total = $report->reward->reward_amount;
+          $stripe = new \Stripe\StripeClient(config('app.settings.stripe_test_secret_key'));
+            try {
+                $resp = $stripe->refunds->create(
+                    ['payment_intent' => $transaction_id, 'amount' => $total]
+                );
+            }catch (\Exception $e){
+                    return response()->json(["error_validation" => "error", "message" => "Server error, Try again later"], 500);
+            }
+        }
+        $reported_by = $report->reported_by;
+        foreach ($report->itemImages as $itemImage){
+            Storage::delete('public/uploads/report/'.$reported_by.'/item_image/'.$itemImage->image);
+        }
+        foreach ($report->claimImages as $claimImage){
+            Storage::delete('public/uploads/report/'.$reported_by.'/claimed/'.$claimImage->image);
+        }
+        if($report->feature){
+            Storage::delete('public/uploads/report/'.$reported_by.'/feature_image/'.$report->feature->feature_image);
+        }
+        $report->delete();
+        return response()->json([
+            'success_validation' => 'ok',
+            'message' => 'Report Successfully Deleted',
+            'redirect'  => route('dashboard.user-report.index'),
+        ], 200);
+//      return $report->reward ? response()->json([
+//            'validation_success'                =>          "Success",
+//            "has_reward"                        =>          true,
+//            'reward_amount'                     =>          $report->reward->reward_amount,
+//            'payment_type'                      =>          $report->payment->via,
+//            'transaction_id'                    =>          $report->payment->transaction_id,
+//        ]) : response()->json([
+//            'validation_success'                =>              "Success",
+//            "has_reward"                        =>              false,
+//        ]);
     }
 }

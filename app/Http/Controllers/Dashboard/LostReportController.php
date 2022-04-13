@@ -107,7 +107,7 @@ class LostReportController extends BaseDashboardController
     public function destroy($id)
     {
         $this->authorize('destroy', User::class);
-        $report = Report::with(['itemImages', 'claimImages' ,'feature', 'reward'])->where('id', $id)->first();
+        $report = Report::with(['itemImages', 'claimImages' ,'feature'])->where('id', $id)->first();
         $reported_by = $report->reported_by;
         foreach ($report->itemImages as $itemImage){
             Storage::delete('public/uploads/report/'.$reported_by.'/item_image/'.$itemImage->image);

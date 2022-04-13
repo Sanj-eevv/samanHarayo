@@ -90,25 +90,26 @@
                     padding: 4px;
                     background-color: #f6f6f6;
                     justify-content: center;
-                    align-items: center;
-                    img {
-                        border-radius: 50%;
-                    }
-                    &:hover{
-                        padding: 2px;
-                        transition: all 0.3s ease;
+                    &:hover {
+                        span{
+                            color: $theme-color-red;
+                        }
                     }
 
                 }
                 .mobile-header-button-active{
-                    @media #{$xx-layout} {
-                        display: none;
-                    }
                     @media #{$xl-layout} {
                         display: none;
                     }
                     a {
                         font-size: 20px;
+                    }
+                }
+                .desktop.front-login,
+                .desktop.front-logout {
+                    display: none;
+                    @media #{$xl-layout} {
+                        display: inline-block;
                     }
                 }
             }

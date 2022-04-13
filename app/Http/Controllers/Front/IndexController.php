@@ -19,7 +19,7 @@ class IndexController extends Controller
     public function index(){
         $featured_reports   = Feature::with(['report' => function($q){
             $q->where('verified_user', null);
-        }])->get();
+        }])->where('expiry_date','>',now())->get();
         $found_reports = Report::with('randomImage')->where('report_type', Report::REPORT_TYPE_FOUND)->where('verified', 1)->where('verified_user', null)->orderBy('created_at', 'desc')->take(12)->get();
         $lost_reports  = Report::with(['randomImage', 'reward'])->where('report_type', Report::REPORT_TYPE_LOST)->where('verified', 1)->where('verified_user', null)->orderBy('created_at', 'desc')->take(12)->get();
         return view('welcome', compact('featured_reports', 'found_reports', 'lost_reports'));
