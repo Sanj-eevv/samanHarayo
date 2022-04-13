@@ -24,8 +24,32 @@ class SettingSeeder extends Seeder
                 'updated_at'                            => now()
             ],
             [
+                'key_name'                              => 'app_logo',
+                'key_value'                             => 'logo.png',
+                'type'                                  => 'image',
+                'availability'                          => 'all',
+                'created_at'                            => now(),
+                'updated_at'                            => now()
+            ],
+            [
                 'key_name'                              => 'admin_email',
                 'key_value'                             => 'sanjeevvsanjeev1@gmail.com',
+                'type'                                  => 'text',
+                'availability'                          => 'all',
+                'created_at'                            => now(),
+                'updated_at'                            => now()
+            ],
+            [
+                'key_name'                              => 'company_address',
+                'key_value'                             => 'Itahari-5, Nepal',
+                'type'                                  => 'text',
+                'availability'                          => 'all',
+                'created_at'                            => now(),
+                'updated_at'                            => now()
+            ],
+            [
+                'key_name'                              => 'contact_email',
+                'key_value'                             => 'samanharayo@test.com',
                 'type'                                  => 'text',
                 'availability'                          => 'all',
                 'created_at'                            => now(),
@@ -81,7 +105,7 @@ class SettingSeeder extends Seeder
             ],
             [
                 'key_name'                              => 'stripe_live_publishable_key',
-                'key_value'                             => null,
+                'key_value'                             => "pk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                 'type'                                  => 'text',
                 'availability'                          => 'all',
                 'created_at'                            => now(),
@@ -89,7 +113,7 @@ class SettingSeeder extends Seeder
             ],
             [
                 'key_name'                              => 'stripe_live_secret_key',
-                'key_value'                             => null,
+                'key_value'                             => 'sk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
                 'type'                                  => 'text',
                 'availability'                          => 'all',
                 'created_at'                            => now(),
@@ -113,7 +137,7 @@ class SettingSeeder extends Seeder
             ],
             [
                 'key_name'                              => 'paypal_live_client_id',
-                'key_value'                             => null,
+                'key_value'                             => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
                 'type'                                  => 'text',
                 'availability'                          => 'all',
                 'created_at'                            => now(),
@@ -121,7 +145,7 @@ class SettingSeeder extends Seeder
             ],
             [
                 'key_name'                              => 'paypal_live_secret_key',
-                'key_value'                             => null,
+                'key_value'                             => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
                 'type'                                  => 'text',
                 'availability'                          => 'all',
                 'created_at'                            => now(),

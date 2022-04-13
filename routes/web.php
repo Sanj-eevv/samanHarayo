@@ -58,6 +58,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::resource('lost-reports', \App\Http\Controllers\Dashboard\LostReportController::class)->only('index','show', 'destroy');
         Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class);
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
+        Route::resource('settings', \App\Http\Controllers\Dashboard\SettingController::class)->only(['index','store']);
+
 
         /** This route are user specific*/
         Route::get('/claim', [\App\Http\Controllers\Customer\ClaimController::class, 'index'])->name('dashboard.user-claim.index');

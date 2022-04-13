@@ -2155,31 +2155,6 @@ img.cover-image{
 }
 
 
-.sh_preview_image_container{
-    width: fit-content;
-    padding-top: 10px;
-    position: relative;
-}
-.sh_preview_image_container img{
-    max-width: 200px;
-    max-height: 200px;
-}
-.sh_preview_image_close{
-    background-color: rgba(0,0,0,.5);
-    border-radius: 50%;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 14px;
-    right: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-a.sh_preview_image_close:hover{
-    color: unset;
-}
-
 .sh-input-div{
     position: relative;
     flex: 1;

@@ -34,6 +34,11 @@ class AppServiceProvider extends ServiceProvider
             $settings = Setting::getCachedValue();
             if($settings){
                 config([
+                    'app.name'                                      => $settings['app_name'] ?? null,
+                    'app.settings.app_logo'                         => $settings['app_logo'] ?? null,
+                    'app.settings.admin_email'                      => $settings['admin_email'] ?? null,
+                    'app.settings.contact_email'                    => $settings['contact_email'] ?? null,
+                    'app.settings.company_address'                  => $settings['company_address'] ?? null,
                     'app.settings.per_feature_price'                => $settings['per_feature_price'] ?? null,
                     'app.settings.max_feature_days'                 => $settings['max_feature_days'] ?? null,
                     'app.settings.per_report_price'                 => $settings['per_report_price'] ?? null,

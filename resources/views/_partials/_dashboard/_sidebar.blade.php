@@ -90,6 +90,12 @@
                         <li><a href="{{route('roles.create')}}">Add Role</a></li>
                     </ul>
                 </li>
+                    <li>
+                        <a href="{{route('settings.index')}}">
+                            <i class="bx bx-user-circle"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
                 @endif
 
             </ul>
