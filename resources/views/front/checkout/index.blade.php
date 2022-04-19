@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="col-lg-8 mt-20">
                                     <div class="checkout-terms form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
+                                        <input class="form-check-input stripe_agreement" type="checkbox" value="" name="stripe_agreement"
                                                id="terms_checkbox">
                                         <label class="form-check-label" for="terms_checkbox">
                                             I agree to {{config('app.name')}}<a href="#" class="text-muted"> terms and conditions.</a>

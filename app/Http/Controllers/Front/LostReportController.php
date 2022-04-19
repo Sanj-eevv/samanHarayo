@@ -50,7 +50,6 @@ class LostReportController extends Controller
                     );
                 }
             }
-
             $featured_image = $request->file('featured_image');
             if($featured_image){
                 $imageName = SamanHarayoHelper::renameImageFileUpload($featured_image);
@@ -72,15 +71,13 @@ class LostReportController extends Controller
                 'slug'                      =>              SamanHarayoHelper::uniqueSlugify($request->input('title'), Report::class, null, 'slug'),
                 'description'               =>              $request->input('description'),
                 'reported_by'               =>              $user_id,
-                'category_id'               =>              $request->input('category'),
+                'category_id'               =>              $request->input('category_id'),
                 'brand'                     =>              $request->input('brand'),
                 'report_type'               =>              Report::REPORT_TYPE_LOST,
-                'contact_number'            =>              $request->input('phone'),
-                'contact_email'             =>              $request->input('email'),
+                'contact_number'            =>              $request->input('contact_number'),
+                'contact_email'             =>              $request->input('contact_email'),
             ];
             session(['report' => $report]);
-
-
              if(session('location')){
                  $request->session()->forget('location');
              }

@@ -53,8 +53,21 @@
         <div class="row">
             <div class="col-lg-12">
                 <div>
+                    <label class="form-label mt-4">Contact Phone</label>
+                    <input class="form-control @error('contact_phone') is-invalid @enderror" type="text" name="contact_phone" value="{{ old('contact_phone', $all_settings['contact_phone']) }}">
+                    @error('contact_phone')
+                    <span class="invalid-feedback" role="alert">
+                        {{ $message }}
+                    </span>
+                    @enderror
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div>
                     <label class="form-label mt-4">Contact Email</label>
-                    <input class="form-control @error('contact_email') is-invalid @enderror" type="text" name="company_address" value="{{ old('contact_email', $all_settings['contact_email']) }}">
+                    <input class="form-control @error('contact_email') is-invalid @enderror" type="text" name="contact_email" value="{{ old('contact_email', $all_settings['contact_email']) }}">
                     @error('contact_email')
                     <span class="invalid-feedback" role="alert">
                         {{ $message }}
@@ -234,19 +247,19 @@
         <div class="row">
             <div class="col-lg-12">
                 <div>
-                    <label class="form-label">App Logo</label>
-                    <input class="form-control mt-4" type="file" name="image" accept=".png, .jpg, .jpeg" onchange="loadImage(this)" id="img-input" value="{{ old('app_logo', $all_settings['app_logo']) }}" />
-                        <input type="hidden" name="image" />
+                    <label class="form-label mt-4">App Logo</label>
+                    <input type="hidden" name="logo_hidden_value" value="{{old('app_logo',$all_settings['app_logo'])}}"/>
+                    <input class="form-control @error('app_logo') is-invalid @enderror" type="file" name="app_logo" accept=".png, .jpg, .jpeg" onchange="loadImage(this)" id="img-input" value="{{ old('app_logo', $all_settings['app_logo']) }}" />
+                    @error('app_logo')
+                        <span style="width: 100%;margin-top: 0.25rem;font-size: 80%;color: #f46a6a;" role="alert">
+                            {{$message}}
+                        </span>
+                    @enderror
                     <div class="sh_preview_image_container  {{(empty($all_settings['app_logo']))?'d-none':''}}">
                         <img id="sh_preview_img" src="{{(empty($all_settings['app_logo']))?'':asset('storage/uploads/settings/'.$all_settings['app_logo'])}}"
                              class="img-fluid "/>
                         <a href="!#" class="sh_preview_image_close"><i class="fas fa-times"></i></a>
                     </div>
-                    @error('app_logo')
-                    <span class="invalid-feedback" role="alert">
-                        {{$message}}
-                    </span>
-                    @enderror
                 </div>
             </div>
         </div>
@@ -262,6 +275,7 @@
                 let parent_container = $(this).parent('.sh_preview_image_container');
                 parent_container.addClass('d-none');
                 parent_container.siblings("input[type='file']").val('');
+                parent_container.siblings("input[type='hidden']").val('');
             });
 
         });

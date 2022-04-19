@@ -17,8 +17,8 @@ class LocationFactory extends Factory
             'latitude'          =>          $this->faker->latitude($min = -90, $max = 90),
             'longitude'         =>          $this->faker->longitude($min = -180, $max = 180),
             'address'           =>          $this->faker->address,
-            'created_at'        =>          now(),
-            'updated_at'        =>          now(),
+//            'created_at'        =>          now(),
+//            'updated_at'        =>          now(),
         ];
     }
 }

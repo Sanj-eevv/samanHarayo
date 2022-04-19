@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Report;
 use App\Models\Reward;
 use App\Models\User;
+use App\Providers\RewardRequestEvent;
 use Illuminate\Http\Request;
 
 class RewardController extends Controller
@@ -16,6 +17,11 @@ class RewardController extends Controller
        if($report->report_type != Report::REPORT_TYPE_LOST || $report->verified_user === null || $report->verified_user != auth()->user()->id ){
            abort(401);
        }
+       if($report->reward->owned_by != null){
+           return redirect()->back()->with('toast.error', 'Rewarded already provided to '.$report->verifiedUser->first_name.' '.$report->verifiedUser->last_name);
+       }
+        event(new RewardRequestEvent($report));
+       return redirect()->back()->with('toast.success', 'notified to the user');
     }
 
     public function sendReward($report){

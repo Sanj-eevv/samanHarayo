@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\Controller;
 use App\Models\Location;
 use App\Models\Report;
 use App\Models\User;
@@ -9,8 +10,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
-class LostReportController extends BaseDashboardController
+class LostReportController extends Controller
 {
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','isAdmin']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +42,7 @@ class LostReportController extends BaseDashboardController
 
             $limit  = $request->input('length') ?? '-1';
             $start  = $request->input('start') ?? 0;
-            $order  = $columns[$request->input('order.0.column')] ?? $columns[0];
+            $order  = $columns[$request->input('order.0.column')] ?? $columns[3];
             $dir    = $request->input('order.0.dir') ?? 'asc';
             $search = $request->input('search.value') ?? '';
 

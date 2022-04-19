@@ -24,10 +24,6 @@ class CategorySeeder extends Seeder
                 'created_at'        =>           now(),
             ],
             [
-                'name'              =>          'electronics',
-                'created_at'        =>          now(),
-            ],
-            [
                 'name'              =>          'documents',
                 'created_at'        =>           now(),
             ],

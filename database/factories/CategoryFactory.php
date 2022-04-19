@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ItemImageFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,9 +14,8 @@ class ItemImageFactory extends Factory
     public function definition()
     {
         return [
-            'claim'             =>              0,
-            'created_at'        =>              now(),
-            'updated_at'        =>              now(),
+                'name'              =>          'electronics',
+                'created_at'        =>          now(),
         ];
     }
 }

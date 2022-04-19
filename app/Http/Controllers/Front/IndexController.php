@@ -17,12 +17,16 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
     public function index(){
-        $featured_reports   = Feature::with(['report' => function($q){
+        $featured_reports   = Feature::whereHas('report' , function($q){
             $q->where('verified_user', null);
-        }])->where('expiry_date','>',now())->get();
+        })->with('report')->where('expiry_date','>',now())->get();
         $found_reports = Report::with('randomImage')->where('report_type', Report::REPORT_TYPE_FOUND)->where('verified', 1)->where('verified_user', null)->orderBy('created_at', 'desc')->take(12)->get();
         $lost_reports  = Report::with(['randomImage', 'reward'])->where('report_type', Report::REPORT_TYPE_LOST)->where('verified', 1)->where('verified_user', null)->orderBy('created_at', 'desc')->take(12)->get();
-        return view('welcome', compact('featured_reports', 'found_reports', 'lost_reports'));
+        $lost_count = $lost_reports->count();
+//        don't confuse with the found count. It is the total found items. after lost items are reported. So it cannot be greater than lost count.
+        $found_count = Report::where('verified_user','!=','null')->count();
+        $total_count = Report::where('verified', 1)->count();
+        return view('welcome', compact('featured_reports', 'found_reports', 'lost_reports', 'lost_count', 'found_count', 'total_count'));
     }
 
     public function show($slug,  Request $request){
@@ -77,7 +81,6 @@ class IndexController extends Controller
 
     public function search(Request $request){
         $search = $request->input('search');
-        $type =
         $page = $request->input('page') ?? 1;
         $pageLimit  = 8;
         $offset = ($pageLimit * $page) - $pageLimit;

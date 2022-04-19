@@ -9,7 +9,7 @@ use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class RoleController extends BaseDashboardController
+class RoleController extends Controller
 {
     /**
      * Instantiate a new controller instance.
@@ -18,9 +18,10 @@ class RoleController extends BaseDashboardController
      */
     public function __construct()
     {
-        parent::__construct();
-        $this->middleware('isAdmin');
+
+        $this->middleware(['auth','isAdmin']);
     }
+
 
     /**
      * Display a listing of the resource.

@@ -51,12 +51,12 @@ class FoundReportController extends Controller
                 'slug'                      =>                  SamanHarayoHelper::uniqueSlugify($request->input('title'), Report::class, null, 'slug'),
                 'description'               =>                  $request->description,
                 'reported_by'               =>                  auth()->user()->id,
-                'category_id'               =>                  $request->input('category'),
+                'category_id'               =>                  $request->input('category_id'),
                 'brand'                     =>                  $request->input('brand'),
                 'report_type'               =>                  Report::REPORT_TYPE_FOUND,
                 'verified'                  =>                  0,
-                'contact_number'            =>                  $request->input('phone'),
-                'contact_email'             =>                  $request->input('email') ?? auth()->user()->email,
+                'contact_number'            =>                  $request->input('contact_number'),
+                'contact_email'             =>                  $request->input('contact_email') ?? auth()->user()->email,
             ]);
             $item_images = $request->file('item_image');
             foreach($item_images as $image) {

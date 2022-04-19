@@ -37,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
                     'app.name'                                      => $settings['app_name'] ?? null,
                     'app.settings.app_logo'                         => $settings['app_logo'] ?? null,
                     'app.settings.admin_email'                      => $settings['admin_email'] ?? null,
+                    'app.settings.contact_phone'                    => $settings['contact_phone'] ?? null,
                     'app.settings.contact_email'                    => $settings['contact_email'] ?? null,
                     'app.settings.company_address'                  => $settings['company_address'] ?? null,
                     'app.settings.per_feature_price'                => $settings['per_feature_price'] ?? null,

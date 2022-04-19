@@ -52,36 +52,179 @@ class ReportSeeder extends Seeder
      */
     public function run()
     {
-        Report::factory()->count(50)->create()->each(function ($report){
-            if($report->report_type === 'lost' ) {
-                Payment::factory()->create([
-                    'report_id' => $report->id,
-                ]);
 
-                if ($report->id % 9 === 0) {
-                    Reward::factory()->create([
-                        'report_id' => $report->id,
-                    ]);
-                }
+//
+//                if ($report->id % 7) {
+//                    Feature::factory()->create([
+//                        'feature_image' => $this->faker->image(storage_path('app/public/uploads/report/' . $report->reported_by . '/feature_image'), 400, 300, 'Featured Photo', false),
+//                        'report_id' => $report->id
+//                    ]);
+//                }
+//            }
+//
+//            ItemImage::factory(rand(4,8))->create([
+//                'image'                 =>      $this->faker->image(storage_path('app/public/uploads/report/'.$user.'/item_image'), 400, 300, 'Product Image', false),
+//                'report_id'             =>      $report->id,
+//                'claimed_by'            =>      null,
+//            ]);
+//        });
 
-                if ($report->id % 7) {
-                    Feature::factory()->create([
-                        'feature_image' => $this->faker->image(storage_path('app/public/uploads/report/' . $report->reported_by . '/feature_image'), 400, 300, 'Featured Photo', false),
-                        'report_id' => $report->id
-                    ]);
-                }
-            }
 
+        Report::upsert([
+            [
+                'title'                 =>                'Samsung S22 6gb Ram',
+                'slug'                  =>                'samsung-s22-6gb-ram',
+                'description'           =>                 $this->faker->paragraph(rand(5,10), $variableNbSentences = true),
+                'reported_by'           =>                 1,
+                'category_id'           =>                 1,
+                'brand'                 =>                 'Samsung',
+                'report_type'           =>                 'lost',
+                'verified'              =>                 1,
+                'contact_number'        =>                 "9812380822",
+                'contact_email'         =>                 "sanjeevvsanjeev1@gmail.com",
+                'verified_user'         =>                 null,
+                'created_at'            =>                 now(),
+                'updated_at'            =>                 now(),
+            ],
+            [
+                'title'                 =>                'I lost My Bag',
+                'slug'                  =>                'i-lost-my-bag',
+                'description'           =>                 $this->faker->paragraph(rand(5,10), $variableNbSentences = true),
+                'reported_by'           =>                 1,
+                'category_id'           =>                 4,
+                'brand'                 =>                 null,
+                'report_type'           =>                 'lost',
+                'verified'              =>                 1,
+                'contact_number'        =>                 "9812380822",
+                'contact_email'         =>                 "sanjeevvsanjeev1@gmail.com",
+                'verified_user'         =>                 null,
+                'created_at'            =>                 now(),
+                'updated_at'            =>                 now(),
+            ],
+            [
+                'title'                 =>                'Ear Ring',
+                'slug'                  =>                'ear-ring',
+                'description'           =>                 $this->faker->paragraph(rand(5,10), $variableNbSentences = true),
+                'reported_by'           =>                 2,
+                'category_id'           =>                 2,
+                'brand'                 =>                 null,
+                'report_type'           =>                 'lost',
+                'verified'              =>                 1,
+                'contact_number'        =>                 "9815362308",
+                'contact_email'         =>                 "sanjeevvsanjeev11@gmail.com",
+                'verified_user'         =>                 null,
+                'created_at'            =>                 now(),
+                'updated_at'            =>                 now(),
+            ],
+            [
+                'title'                 =>                'Guitar',
+                'slug'                  =>                'guitar',
+                'description'           =>                 $this->faker->paragraph(rand(5,10), $variableNbSentences = true),
+                'reported_by'           =>                 4,
+                'category_id'           =>                 4,
+                'brand'                 =>                 "Mantra",
+                'report_type'           =>                 'lost',
+                'verified'              =>                 1,
+                'contact_number'        =>                 "9842030041",
+                'contact_email'         =>                 "test@gmail.com",
+                'verified_user'         =>                 null,
+                'created_at'            =>                 now(),
+                'updated_at'            =>                 now(),
+            ],
+            [
+                'title'                 =>                'Laptop',
+                'slug'                  =>                'laptop',
+                'description'           =>                 $this->faker->paragraph(rand(5,10), $variableNbSentences = true),
+                'reported_by'           =>                 5,
+                'category_id'           =>                 1,
+                'brand'                 =>                 "Apple",
+                'report_type'           =>                 'lost',
+                'verified'              =>                 1,
+                'contact_number'        =>                 "9842263674",
+                'contact_email'         =>                 "test2@gmail.com",
+                'verified_user'         =>                 null,
+                'created_at'            =>                 now(),
+                'updated_at'            =>                 now(),
+            ],
+            [
+                'title'                 =>                'Citizenship Card',
+                'slug'                  =>                'citizenship card',
+                'description'           =>                 $this->faker->paragraph(rand(5,10), $variableNbSentences = true),
+                'reported_by'           =>                 1,
+                'category_id'           =>                 3,
+                'brand'                 =>                 null,
+                'report_type'           =>                 'lost',
+                'verified'              =>                 1,
+                'contact_number'        =>                 "9842263674",
+                'contact_email'         =>                 "sanjeevvsanjeev1@gmail.com",
+                'verified_user'         =>                 null,
+                'created_at'            =>                 now(),
+                'updated_at'            =>                 now(),
+            ],
+            [
+                'title'                 =>                'Laptop',
+                'slug'                  =>                'laptop-1',
+                'description'           =>                 $this->faker->paragraph(rand(5,10), $variableNbSentences = true),
+                'reported_by'           =>                 7,
+                'category_id'           =>                 1,
+                'brand'                 =>                 'Xiaomi',
+                'report_type'           =>                 'found',
+                'verified'              =>                 1,
+                'contact_number'        =>                 "9842263674",
+                'contact_email'         =>                 "sanjeevvsanjeev1@gmail.com",
+                'verified_user'         =>                 null,
+                'created_at'            =>                 now(),
+                'updated_at'            =>                 now(),
+            ],
+            [
+                'title'                 =>                'Mobile Phone',
+                'slug'                  =>                'mobile-phone',
+                'description'           =>                 $this->faker->paragraph(rand(5,10), $variableNbSentences = true),
+                'reported_by'           =>                 10,
+                'category_id'           =>                 1,
+                'brand'                 =>                 'Sony',
+                'report_type'           =>                 'found',
+                'verified'              =>                 1,
+                'contact_number'        =>                 "9842263674",
+                'contact_email'         =>                 "testfound@gmail.com",
+                'verified_user'         =>                 null,
+                'created_at'            =>                 now(),
+                'updated_at'            =>                 now(),
+            ],
+            [
+                'title'                 =>                'License',
+                'slug'                  =>                'license',
+                'description'           =>                 $this->faker->paragraph(rand(5,10), $variableNbSentences = true),
+                'reported_by'           =>                 9,
+                'category_id'           =>                 3,
+                'brand'                 =>                 null,
+                'report_type'           =>                 'found',
+                'verified'              =>                 1,
+                'contact_number'        =>                 "9812380822",
+                'contact_email'         =>                 "testfound2@gmail.com",
+                'verified_user'         =>                 null,
+                'created_at'            =>                 now(),
+                'updated_at'            =>                 now(),
+            ],
+            [
+                'title'                 =>                'Citizenship card',
+                'slug'                  =>                'citizenship-card-1',
+                'description'           =>                 $this->faker->paragraph(rand(5,10), $variableNbSentences = true),
+                'reported_by'           =>                 10,
+                'category_id'           =>                 3,
+                'brand'                 =>                 null,
+                'report_type'           =>                 'found',
+                'verified'              =>                 1,
+                'contact_number'        =>                 "9842263674",
+                'contact_email'         =>                 "testfound2@gmail.com",
+                'verified_user'         =>                 null,
+                'created_at'            =>                 now(),
+                'updated_at'            =>                 now(),
+            ],
+        ],[],[]);
+        Report::all()->each(function ($q){
             Location::factory()->create([
-                'report_id'     =>          $report->id,
-            ]);
-
-            $user = $report->reported_by;
-
-            ItemImage::factory(rand(4,8))->create([
-                'image'                 =>      $this->faker->image(storage_path('app/public/uploads/report/'.$user.'/item_image'), 400, 300, 'Product Image', false),
-                'report_id'             =>      $report->id,
-                'claimed_by'            =>      null,
+                'report_id'     =>          $q->id,
             ]);
         });
     }

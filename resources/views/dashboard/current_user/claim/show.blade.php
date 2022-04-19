@@ -111,7 +111,7 @@
                                 <th scope="row" style="white-space: nowrap;">Email :</th>
                                 <td>{{$report->contact_email}}</td>
                             </tr>
-                             @if($report->report_type === \App\Models\Report::REPORT_TYPE_LOST && $report->reward)
+                             @if($report->report_type === \App\Models\Report::REPORT_TYPE_LOST && $report->reward && $report->reward->owned_by === null)
                                  <tr>
                                      <th>
                                      </th>

@@ -25,7 +25,7 @@
                 <div class="logo-container">
                     <div class="footer-logo">
                         <a href="{{route('front.index')}}">
-                            <img class="img-fluid cover-image" src="{{asset('storage/uploads/settings/logo.png')}}">
+                            <img class="img-fluid cover-image" src="{{asset('storage/uploads/settings/'.config('app.settings.app_logo'))}}">
                         </a>
                     </div>
                     <div class="copyright">

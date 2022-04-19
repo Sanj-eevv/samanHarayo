@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class ClaimController extends BaseCustomerDashboardController
+class ClaimController extends Controller
 {
     public function index(Request $request){
         if ($request->ajax()) {

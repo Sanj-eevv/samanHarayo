@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\Controller;
 use App\Models\Report;
 use App\Models\Location;
 use App\Models\User;
@@ -10,8 +11,19 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 
-class FoundReportController extends BaseDashboardController
+class FoundReportController extends Controller
 {
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','isAdmin']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -31,7 +43,7 @@ class FoundReportController extends BaseDashboardController
             );
             $limit  = $request->input('length') ?? '-1';
             $start  = $request->input('start') ?? 0;
-            $order  = $columns[$request->input('order.0.column')] ?? $columns[0];
+            $order  = $columns[$request->input('order.0.column')] ?? $columns[4];
             $dir    = $request->input('order.0.dir') ?? 'asc';
             $search = $request->input('search.value') ?? '';
 

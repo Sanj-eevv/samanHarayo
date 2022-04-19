@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 
+use App\Http\Controllers\Controller;
 use App\Models\Report;
 use App\Models\User;
 use App\Providers\ClaimReportStatusRejectedEvent;
@@ -12,7 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
-class ReportController extends BaseCustomerDashboardController
+class ReportController extends Controller
 {
     public function index(Request $request){
         if ($request->ajax()) {
@@ -160,7 +161,7 @@ class ReportController extends BaseCustomerDashboardController
             if(!($report->verified_user === null)) return response()->json(['error_validation' => 'error','message' => 'unauthorized action'], 401);
             $transaction_id = $report->payment->transaction_id;
           $total = $report->reward->reward_amount;
-          $stripe = new \Stripe\StripeClient(config('app.settings.stripe_test_secret_key'));
+          $stripe = new \Stripe\StripeClient(config('app.settings.stripe_secret_key'));
             try {
                 $resp = $stripe->refunds->create(
                     ['payment_intent' => $transaction_id, 'amount' => $total]

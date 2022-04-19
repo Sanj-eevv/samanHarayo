@@ -33,8 +33,8 @@
                 <label class="form-label">Contact Email</label>
                 <div class="sh-input-div">
                     <span class="sh-input-div-icon"><i class="fas fa-envelope"></i></span>
-                    <input class="form-control @error('email') is-invalid @enderror  sh-input" type="text" name="email" value="{{old('email',auth()->user()->email)}}" required>
-                    @error('email')
+                    <input class="form-control @error('contact_email') is-invalid @enderror  sh-input" type="text" name="contact_email" value="{{old('contact_email',auth()->user()->email)}}" required>
+                    @error('contact_email')
                     <span class="invalid-feedback" role="alert">
                         {{$message}}
                     </span>
@@ -45,8 +45,8 @@
                 <label class="form-label">Contact Phone</label>
                 <div class="sh-input-div">
                     <span class="sh-input-div-icon"><i class="fas fa-phone"></i></span>
-                    <input class="numeric form-control @error('phone') is-invalid @enderror sh-input" type="text" name="phone" value="{{old('phone')}}" required>
-                    @error('phone')
+                    <input class="numeric form-control @error('contact_number') is-invalid @enderror sh-input" type="text" name="contact_number" value="{{old('contact_number')}}" required>
+                    @error('contact_number')
                     <span class="invalid-feedback" role="alert">
                         {{$message}}
                     </span>
@@ -59,11 +59,11 @@
                 <label class="form-label">Category</label>
                 <div class="sh-input-div">
                     <span class="sh-input-div-icon"><i class="fas fa-braille"></i></span>
-                    <select class="@error('category') is-invalid @enderror  sh-input" name="category" required>
+                    <select class="@error('category_id') is-invalid @enderror  sh-input" name="category_id" required>
                         <option>Select a category</option>
                         @foreach ($categories as $category)
                             <?php
-                            if(old('category') == $category->id){
+                            if(old('category_id') == $category->id){
                                 $selected = 'selected';
                             }else{
                                 $selected = '';
@@ -72,7 +72,7 @@
                             <option value="{{ $category->id }}" {{ $selected }}>{{ ucwords($category->name) }}</option>
                         @endforeach
                     </select>
-                    @error('category')
+                    @error('category_id')
                     <span class="invalid-feedback" role="alert">
                         {{$message}}
                     </span>

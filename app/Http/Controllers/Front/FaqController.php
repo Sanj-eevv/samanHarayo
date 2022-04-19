@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class FaqController extends Controller
 {
     public function index(){
-        $faqs = Faq::all();
+        $faqs = Faq::orderBy('created_at', 'desc')->get();
         return view('front.faqs', compact('faqs'));
     }
 }

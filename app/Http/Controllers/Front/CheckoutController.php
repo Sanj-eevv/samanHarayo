@@ -45,19 +45,18 @@ class CheckoutController extends Controller
             $report['verified'] = 1;
             $report = Report::create($report);
             $slug = $report->slug;
-            $path = 'storage/uploads/report/'.$report->reported_by.'/temp_report/';
-
+            $path = 'public/uploads/report/'.$report->reported_by.'/temp_report/'.$slug;
             /*
                 Base directory for Storage:: is root directory defined in filesystem.php
                 By default it is "storage/app"
             */
-            if(File::exists($path.$slug)) {
-                if (File::exists($path . $slug . '/item_image')) {
-                    $files = Storage::files('/public/uploads/report/'.$report->reported_by.'/temp_report/'.$slug .'/item_image');
+            if(Storage::exists($path)) {
+                if (Storage::exists($path. '/item_image')) {
+                    $files = Storage::files($path.'/item_image');
                     if($files){
-                        Storage::makeDirectory('/public/uploads/report/'.$report->reported_by.'/item_image');
+                        Storage::makeDirectory('public/uploads/report/'.$report->reported_by.'/item_image');
                         foreach ($files as $image) {
-                            File::move(storage_path('app/'.$image), public_path('storage/uploads/report/'.$report->reported_by.'/item_image/'.basename($image)));
+                            Storage::move($image, 'public/uploads/report/'.$report->reported_by.'/item_image/'.basename($image));
                             ItemImage::create([
                                 'image' => basename($image),
                                 'report_id' => $report->id,
@@ -65,11 +64,11 @@ class CheckoutController extends Controller
                         }
                     }
                 }
-                if(File::exists($path . $slug . '/feature_image')) {
-                    $file = Storage::files('/public/uploads/report/'.$report->reported_by.'/temp_report/'.$slug.'/feature_image');
+                if(Storage::exists($path  . '/feature_image')) {
+                    $file = Storage::files($path.'/feature_image');
                     if($file){
                         Storage::makeDirectory('/public/uploads/report/'.$report->reported_by.'/feature_image');
-                        File::move(storage_path('app/'.$file[0]), public_path('storage/uploads/report/'.$report->reported_by.'/feature_image/'.basename($file[0])));
+                        Storage::move($file[0], '/public/uploads/report/'.$report->reported_by.'/feature_image/'.basename($file[0]));
                         Feature::create([
                         'feature_image'         =>          basename($file[0]),
                         'report_id'             =>          $report->id,
@@ -77,6 +76,7 @@ class CheckoutController extends Controller
                         ]);
                     }
                 }
+                Storage::delete($path);
             }
             // Data for payments table
             $transactionId = $request->input('transaction_id');
@@ -96,7 +96,6 @@ class CheckoutController extends Controller
                     'owned_by'              =>          null,
                 ]);
             }
-
             // Data for Location table
             $location_data = session('location');
             $location_data['report_id'] = $report->id;

@@ -7,8 +7,20 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ContactController extends BaseDashboardController
+class ContactController extends Controller
 {
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','isAdmin']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *

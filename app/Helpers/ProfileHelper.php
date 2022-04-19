@@ -44,13 +44,13 @@ class ProfileHelper
             return response()->json([], 204);
         }
     }
-    public static function profileSetTimeZone($request){
-
-        $user = \Auth::user();
-        $user->timezone = $request->input('timezone');
-        $user->save();
-        return response()->json([],200);
-    }
+//    public static function profileSetTimeZone($request){
+//
+//        $user = \Auth::user();
+//        $user->timezone = $request->input('timezone');
+//        $user->save();
+//        return response()->json([],200);
+//    }
 
     public static function changeProfile($request){
 

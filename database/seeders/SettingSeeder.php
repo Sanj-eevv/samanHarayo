@@ -48,6 +48,14 @@ class SettingSeeder extends Seeder
                 'updated_at'                            => now()
             ],
             [
+                'key_name'                              => 'contact_phone',
+                'key_value'                             => '9812380822',
+                'type'                                  => 'text',
+                'availability'                          => 'all',
+                'created_at'                            => now(),
+                'updated_at'                            => now()
+            ],
+            [
                 'key_name'                              => 'contact_email',
                 'key_value'                             => 'samanharayo@test.com',
                 'type'                                  => 'text',

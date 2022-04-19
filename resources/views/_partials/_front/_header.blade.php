@@ -3,7 +3,7 @@
         <div class="container header-container-flex-box">
             <div class="logo">
                 <a href="{{route('front.index')}}">
-                    <img class="img-fluid" src="{{asset('storage/uploads/settings/logo.png')}}" alt="">
+                    <img class="img-fluid" src="{{asset('storage/uploads/settings/'.config('app.settings.app_logo'))}}" alt="">
                 </a>
             </div>
             <div class="header-nav">
@@ -79,9 +79,9 @@
             </div>
             <div class="mobile-contact-info mobile-header-padding-border-4">
                 <ul>
-                    <li><i class="icon-phone "></i> (+612) 2531 5600</li>
-                    <li><i class="icon-envelope-open "></i> norda@domain.com</li>
-                    <li><i class="icon-home"></i> PO Box 1622 Colins Street West Australia</li>
+                    <li><i class="icon-phone "></i>{{config('app.settings.contact_phone')}}</li>
+                    <li><i class="icon-envelope-open "></i>{{config('app.settings.contact_email')}}</li>
+                    <li><i class="icon-home"></i>{{config('app.settings.company_address')}}</li>
                 </ul>
             </div>
         </div>

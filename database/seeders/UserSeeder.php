@@ -40,11 +40,6 @@ class UserSeeder extends Seeder
                 'remember_token'            => Str::random(10),
             ],
             ],['email'],[]);
-        User::factory(20)->create();
-        $users = User::pluck('id');
-        $users->each(function ($id){
-            Storage::makeDirectory('/public/uploads/report/'.$id.'/item_image');
-            Storage::makeDirectory('/public/uploads/report/'.$id.'/feature_image');
-        });
+        User::factory(8)->create();
     }
 }

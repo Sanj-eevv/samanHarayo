@@ -40,10 +40,10 @@
         </div>
         <div class="about-us-content">
             <h3 class="sh-title">Introduce</h3>
-            <p>We are living on the era of technology and innovation. As days are passing by the technology is also improving along with days. There has been drastic change in the technology which has direct impact on the life of the people. Every aspect of life is leaning towards the maximum use of technology for the better and easier lifestyle...
-                <span class="text-primary"><a href="#">Read more.</a></span>
+            <p>We are living on the era of technology and innovation. As days are passing by the technology is also improving along with days. There has been drastic change in the technology which has direct impact on the life of the people. Every aspect of life is leaning towards the maximum use of technology for the better and easier lifestyle.
+{{--                <span class="text-primary"><a href="#">Read more.</a></span>--}}
             </p>
-            <h2>Sanju Bhandari</h2>
+{{--            <h2>Sanju Bhandari</h2>--}}
         </div>
     </div>
 </div>
@@ -52,21 +52,21 @@
         <div class="highlight">
             <div class="highlight--circle">
                     <div class="highlight--circle__content">
-                        <strong>3333</strong> Items found
+                        <strong>{{$found_count}}</strong> Items found
                     </div>
             </div>
         </div>
         <div class="highlight">
             <div class="highlight--circle">
                     <div class="highlight--circle__content">
-                        <strong>21332</strong> items reported
+                        <strong>{{$total_count}}</strong> items reported
                     </div>
             </div>
         </div>
         <div class="highlight ">
             <div class="highlight--circle">
                     <div class="highlight--circle__content">
-                        <strong>3100</strong> items lost
+                        <strong>{{$lost_count}}</strong> items lost
                     </div>
             </div>
         </div>

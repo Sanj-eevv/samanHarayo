@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -44,17 +45,23 @@ class LostReportRequest extends FormRequest
         $max_feature_days = \config('app.settings.max_feature_days');
         return [
             'title'                     =>              ['required', 'string', 'max:191'],
-            'description'               =>              ['required', 'string', 'min:100'],
-            'category'                  =>              ['required', 'exists:categories,id'],
+            'description'               =>              ['required', 'string', 'min:10'],
+            'category_id'               =>              ['required', 'exists:categories,id'],
             'brand'                     =>              ['nullable', 'string', 'max:191'],
-            'phone'                     =>              ['required', 'numeric', 'digits:10'],
-            'email'                     =>              ['required', 'email', 'max:191'],
+            'contact_number'            =>              ['required', 'numeric', 'digits:10'],
+            'contact_email'             =>              ['required', 'email', 'max:191'],
             'item_image'                =>              ['nullable'],
-            'item_image.*'              =>              [ 'image', 'mimes:jpg,png,jepg', 'max:10240'],
+            'item_image.*'              =>              ['image', 'mimes:jpg,png,jepg', 'max:10240'],
             'address'                   =>              ['required', 'string', 'max:191'],
             'reward_amount'             =>              [$reward_check, 'numeric','nullable'],
             'duration'                  =>              [$feature_check, 'numeric', 'max:'.$max_feature_days, 'nullable'],
             'featured_image'            =>              [$feature_check, 'image', 'mimes:jpg,png,jepg', 'max:10240'],
+            'latitude'                  =>              ['required', 'string', 'max:191'],
+            'longitude'                  =>             ['required', 'string', 'max:191'],
         ];
+    }
+
+    protected function failedValidation(Validator $validator) {
+        dd($validator->errors());
     }
 }
