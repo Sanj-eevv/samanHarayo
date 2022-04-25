@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ProfileHelper
 {
-    public static function updateProfile($request)
+    public static function updateProfile($request): bool
     {
         $user = Auth::User();
         //dd($request->hasFile('image'));
@@ -30,7 +30,8 @@ class ProfileHelper
         });
         return true;
     }
-    public static function profileRemoveAvatar(){
+    public static function profileRemoveAvatar(): \Illuminate\Http\JsonResponse
+    {
         $user = Auth::user();
         if(empty(!$user->avatar)){
             Storage::delete('public/uploads/users/'.$user->id.'/'.$user->avatar);

@@ -10,7 +10,7 @@
                         <h5>Item Lost</h5>
                         <h1>{{ucwords($featured_report->report->title)}}</h1>
                         <p>{{\Illuminate\Support\Str::limit($featured_report->report->description, 140)}}</p>
-                        <span><a href="">More Details</a></span>
+                        <span><a href="{{route('front.details', $featured_report->report->slug)}}">More Details</a></span>
                 </div>
                 <div class="hero-slider-img">
                     <img class="img-fluid" src="{{asset('storage/uploads/report/'.$featured_report->report->reported_by.'/feature_image/'.$featured_report->feature_image)}}" alt="">

@@ -32,13 +32,14 @@ class ProfileController extends Controller
      * @param User $user
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(ProfileRequest $request)
+    public function update(ProfileRequest $request): \Illuminate\Http\RedirectResponse
     {
         ProfileHelper::updateProfile($request);
         return redirect()->route('profile.index')->with('alert.success','Successfully Updated!!');
     }
 
-    public function removeAvatar(){
+    public function removeAvatar(): \Illuminate\Http\JsonResponse
+    {
 
         return ProfileHelper::profileRemoveAvatar();
     }

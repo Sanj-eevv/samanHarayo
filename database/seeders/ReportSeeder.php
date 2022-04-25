@@ -52,24 +52,6 @@ class ReportSeeder extends Seeder
      */
     public function run()
     {
-
-//
-//                if ($report->id % 7) {
-//                    Feature::factory()->create([
-//                        'feature_image' => $this->faker->image(storage_path('app/public/uploads/report/' . $report->reported_by . '/feature_image'), 400, 300, 'Featured Photo', false),
-//                        'report_id' => $report->id
-//                    ]);
-//                }
-//            }
-//
-//            ItemImage::factory(rand(4,8))->create([
-//                'image'                 =>      $this->faker->image(storage_path('app/public/uploads/report/'.$user.'/item_image'), 400, 300, 'Product Image', false),
-//                'report_id'             =>      $report->id,
-//                'claimed_by'            =>      null,
-//            ]);
-//        });
-
-
         Report::upsert([
             [
                 'title'                 =>                'Samsung S22 6gb Ram',

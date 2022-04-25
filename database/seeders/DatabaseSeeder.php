@@ -22,7 +22,9 @@ class DatabaseSeeder extends Seeder
             ReportSeeder::class,
             RewardSeeder::class,
             ContactSeeder::class,
-            FaqSeeder::class
+            FaqSeeder::class,
+            ItemImageSeeder::class,
+            FeatureSeeder::class,
         ]);
     }
 }
