@@ -9,21 +9,21 @@
                         <div class="single-contact text-center">
                             <i class="icon-location-pin"></i>
                             <h4>our address</h4>
-                            <p>77 seventh Street, USA. </p>
+                            <p>{{config('app.settings.company_address')}}</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <div class="single-contact text-center">
                             <i class="icon-screen-smartphone"></i>
                             <h4>our Phone</h4>
-                            <p><a class="tel:716 298 1822">716-298-1822</a></p>
+                            <p><a class="tel:{{config('app.settings.contact_phone')}}">{{config('app.settings.contact_phone')}}</a></p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <div class="single-contact text-center">
                             <i class="icon-envelope "></i>
                             <h4>our Email</h4>
-                            <p><a href="mailto:info@example.com">info@example.com</a></p>
+                            <p><a href="mailto:{{config('app.settings.admin_email')}}">{{config('app.settings.admin_email')}}</a></p>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                 <iframe
                     style="border:0; height: 100%; width: 100%;"
                     loading="lazy"
-                    src="https://www.google.com/maps/embed/v1/place?key={{config('services.google_map.api_key')}}&q=28.394857,84.12400799999999&zoom=18">
+                    src="https://www.google.com/maps/embed/v1/place?key={{config('services.google_map.api_key')}}&q={{config('app.settings.company_address')}}&zoom=18">
                 </iframe>
             </div>
             <div class="get-in-touch-wrap pb-70">

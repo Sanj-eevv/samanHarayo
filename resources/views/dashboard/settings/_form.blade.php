@@ -264,7 +264,7 @@
             </div>
         </div>
     <div class="d-flex flex-wrap gap-2 pt-4">
-        <a type="button" href="{{route('dashboard.index')}}" class="btn btn-secondary waves-effect waves-light">Back</a>
+        <a type="button" href="{{route('profile.index')}}" class="btn btn-secondary waves-effect waves-light">Back</a>
         <button type="submit" class="btn btn-info waves-effect waves-light">{{$buttonText}}</button>
     </div>
     @section('page_level_script')

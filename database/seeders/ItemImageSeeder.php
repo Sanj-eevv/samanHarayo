@@ -128,7 +128,7 @@ class ItemImageSeeder extends Seeder
                 'updated_at'    =>          now(),
             ],
             [
-                'image'         =>          '10.webp',
+                'image'         =>          '14.jpg',
                 'report_id'     =>          9,
                 'claim'         =>          0,
                 'claimed_by'    =>          null,

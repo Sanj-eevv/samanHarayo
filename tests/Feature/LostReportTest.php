@@ -133,17 +133,6 @@ class LostReportTest extends TestCase
             'address'               =>          'Nepal',
         ];
         $attributes = array_merge($report_attributes, $location_attributes);
-        $results = [
-            'title'                     =>              $attributes['title'],
-            'slug'                      =>              SamanHarayoHelper::uniqueSlugify($attributes['title'], Report::class, null, 'slug'),
-            'description'               =>              $attributes['description'],
-            'reported_by'               =>              $user->id,
-            'category_id'               =>              $attributes['category_id'],
-            'brand'                     =>              $attributes['brand'],
-            'report_type'               =>              Report::REPORT_TYPE_LOST,
-            'contact_number'            =>              $attributes['contact_number'],
-            'contact_email'             =>              $attributes['contact_email'],
-        ];
         $this->post(url('/report-lost'),$attributes);
         $pre_payment_validation_attributes = ["_token" => csrf_token(), "total" => config::get('app.settings.per_report_price'), "currency" => "USD"];
         $this->get('/checkout');
@@ -160,6 +149,30 @@ class LostReportTest extends TestCase
         $this->assertDatabaseHas(ItemImage::class, ['image' => $imageName[0]]);
         $this->assertDatabaseHas(ItemImage::class, ['image' => $imageName[1]]);
 
+    }
+
+    public function test_mime_type_of_uploaded_image(){
+            $user = $this->signInAsBasicUser();
+            $featured_image = UploadedFile::fake()->image('file3.pdf', 250, 150);
+            $report_attributes =  [
+                'title'                 =>                  'Samsung S22 6gb Ram',
+                'slug'                  =>                  SamanHarayoHelper::uniqueSlugify('Samsung S22 6gb Ram', Report::class, null, 'slug'),
+                'description'           =>                 'Description test',
+                'brand'                 =>                 'Samsung',
+                'contact_number'        =>                  9812380822,
+                'contact_email'         =>                 "sanjeevvsanjeev1@gmail.com",
+                'category_id'           =>                  1,
+                'reported_by'           =>                  $user->id,
+                'report_type'           =>                  Report::REPORT_TYPE_LOST,
+                'is_featured'           =>                  true,
+                'duration'              =>                  10,
+                'featured_image'        =>                  $featured_image,
+                'latitude'              =>                  '981s2313',
+                'longitude'             =>                  '1313s1313',
+                'address'               =>                  'Nepal',
+            ];
+            $this->post(url('/report-lost'),$report_attributes)
+                ->assertSessionHasErrors(['featured_image']);
     }
 
 }

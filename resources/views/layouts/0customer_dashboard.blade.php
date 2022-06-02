@@ -5,8 +5,8 @@
 
 <body data-sidebar="dark">
 <div id="layout-wrapper">
-    @include('_partials._customer_dashboard._header')
-    @include('_partials._customer_dashboard._sidebar')
+    @include('_partials.0_customer_dashboard._header')
+    @include('_partials.0_customer_dashboard._sidebar')
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">

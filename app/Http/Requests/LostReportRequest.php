@@ -61,7 +61,7 @@ class LostReportRequest extends FormRequest
         ];
     }
 
-    protected function failedValidation(Validator $validator) {
-        dd($validator->errors());
-    }
+//    protected function failedValidation(Validator $validator) {
+//        dd($validator->errors());
+//    }
 }

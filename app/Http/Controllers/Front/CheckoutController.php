@@ -32,7 +32,7 @@ class CheckoutController extends Controller
         return view('front.checkout.index');
     }
 
-    public function fulfillOrder(Request $request)
+    public function fulfillOrder(Request $request): \Illuminate\Http\RedirectResponse
     {
         DB::transaction(function () use ($request) {
             // Data for reports table

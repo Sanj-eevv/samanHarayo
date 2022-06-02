@@ -10,7 +10,7 @@
                 @can('view',\App\Models\Contact::class)
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-user-circle"></i>
+                        <i class="bx bxs-contact"></i>
                         <span>Contact</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -21,7 +21,7 @@
                 @can('view',\App\Models\Faq::class)
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-user-circle"></i>
+                        <i class="bx bx-question-mark"></i>
                         <span>Faqs</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -35,7 +35,7 @@
                 @can('view',\App\Models\Report::class)
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-user-circle"></i>
+                        <i class="bx bxs-report"></i>
                         <span>Reports</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -61,19 +61,19 @@
                 @endif
                 <li>
                     <a href="{{route('dashboard.user-report.index')}}">
-                        <i class="bx bx-user-circle"></i>
+                        <i class="bx bxs-server"></i>
                         <span> Reported Items</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('dashboard.user-claim.index')}}">
-                        <i class="bx bx-user-circle"></i>
+                        <i class="bx bxs-shield"></i>
                         <span> Claimed Items</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('dashboard.user-notification.index')}}">
-                        <i class="bx bx-user-circle"></i>
+                        <i class="bx bx-bell"></i>
                         <span class="badge rounded-pill bg-info float-end" id="cust-notification">{{$GLOBAL_CUSTOMER_NOTIFICATION}}</span>
                         <span>Notifications</span>
                     </a>
@@ -82,7 +82,7 @@
                 <li class="menu-title">Admin options</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-user-circle"></i>
+                        <i class="bx bx-user-x"></i>
                         <span>Roles</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -92,7 +92,7 @@
                 </li>
                     <li>
                         <a href="{{route('settings.index')}}">
-                            <i class="bx bx-user-circle"></i>
+                            <i class="bx bx-cog"></i>
                             <span>Settings</span>
                         </a>
                     </li>

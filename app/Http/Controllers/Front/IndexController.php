@@ -87,7 +87,9 @@ class IndexController extends Controller
         $order  = $request->input('order') ?? 'created_at';
         $dir    = $request->input('dir') ?? 'desc';
         $search = $request->input('search') ?? '';
-        $query =  Report::with('randomImage', 'reward', 'location', 'category')->where('verified', 1)->where('verified_user', null)->where(function($q)use($search){
+        $query =  Report::with('randomImage', 'reward', 'location', 'category')
+            ->where('verified', 1)->where('verified_user', null)
+            ->where(function($q)use($search){
             $q->whereRaw( 'LOWER(`title`) like ?', '%'.strtolower($search).'%' )
                 ->orWhereRaw( 'LOWER(`description`) like ?', array( '%'.strtolower($search).'%' ) );
         });

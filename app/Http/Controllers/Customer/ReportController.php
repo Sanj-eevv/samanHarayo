@@ -157,17 +157,19 @@ class ReportController extends Controller
       $report = Report::with(['itemImages', 'claimImages' ,'feature'])->where('slug', $slug)->first();
       if(!$report) return response()->json(['error_validation' => 'error','message' => 'Data Discrepancy'], 404);
       if($report->reported_by !== auth()->user()->id || $report->report_type == Report::REPORT_TYPE_FOUND) return response()->json(['error_validation' => 'error','message' => 'unauthorized action'], 401);
-        if($report->reward && $report->payment->via === Report::VIA_STRIPE){
+        if($report->reward && $report->payment){
             if(!($report->verified_user === null)) return response()->json(['error_validation' => 'error','message' => 'unauthorized action'], 401);
-            $transaction_id = $report->payment->transaction_id;
-          $total = $report->reward->reward_amount;
-          $stripe = new \Stripe\StripeClient(config('app.settings.stripe_secret_key'));
-            try {
-                $resp = $stripe->refunds->create(
-                    ['payment_intent' => $transaction_id, 'amount' => $total]
-                );
-            }catch (\Exception $e){
+            if($report->payment->via === Report::VIA_STRIPE){
+                $transaction_id = $report->payment->transaction_id;
+                $total = $report->reward->reward_amount;
+                $stripe = new \Stripe\StripeClient(config('app.settings.stripe_secret_key'));
+                try {
+                    $resp = $stripe->refunds->create(
+                        ['payment_intent' => $transaction_id, 'amount' => $total]
+                    );
+                }catch (\Exception $e){
                     return response()->json(["error_validation" => "error", "message" => "Server error, Try again later"], 500);
+                }
             }
         }
         $reported_by = $report->reported_by;
@@ -186,15 +188,5 @@ class ReportController extends Controller
             'message' => 'Report Successfully Deleted',
             'redirect'  => route('dashboard.user-report.index'),
         ], 200);
-//      return $report->reward ? response()->json([
-//            'validation_success'                =>          "Success",
-//            "has_reward"                        =>          true,
-//            'reward_amount'                     =>          $report->reward->reward_amount,
-//            'payment_type'                      =>          $report->payment->via,
-//            'transaction_id'                    =>          $report->payment->transaction_id,
-//        ]) : response()->json([
-//            'validation_success'                =>              "Success",
-//            "has_reward"                        =>              false,
-//        ]);
     }
 }

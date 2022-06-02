@@ -15,7 +15,7 @@ class LoginResponse implements LoginResponseContract
      */
     public function toResponse($request)
     {
-     $home = auth()->user()->isAdmin() ? '/dashboard' : '/';
+     $home = auth()->user()->isAdmin() ? '/dashboard/profile' : '/';
         return redirect()->intended($home);
     }
 }
